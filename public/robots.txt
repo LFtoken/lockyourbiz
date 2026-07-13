@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lockyourbiz.com/sitemap-index.xml

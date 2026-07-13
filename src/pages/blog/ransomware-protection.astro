@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Ransomware Protection: What Small Businesses Need to Know in 2026"
+  description="Ransomware can destroy a small business. Learn how it works, how to prevent it, and exactly what to do if you are attacked — including backup strategies that work."
+>
+  <article class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-3xl">
+      <div class="flex items-center gap-x-4 text-sm mb-4">
+        <time datetime="2026-06-28" class="text-gray-500">June 28, 2026</time>
+        <span class="rounded-full bg-primary-50 px-3 py-1 font-medium text-primary-700">Threats</span>
+        <span class="text-gray-500">9 min read</span>
+      </div>
+
+      <h1 class="text-4xl font-extrabold tracking-tight text-gray-900">Ransomware Protection: What Small Businesses Need to Know in 2026</h1>
+      <p class="mt-4 text-lg leading-8 text-gray-600">
+        Ransomware can lock your files, halt your operations, and demand thousands of dollars. Here is exactly how to prevent it, prepare for it, and recover if it happens.
+      </p>
+
+      <div class="mt-10 prose prose-lg prose-gray max-w-none">
+        <div class="rounded-2xl bg-red-50 border border-red-200 p-6 not-prose">
+          <p class="text-sm font-semibold text-red-800">The Reality</p>
+          <p class="mt-2 text-sm text-red-700">
+            A ransomware attack occurs every 11 seconds. 60% of small businesses that suffer a major data loss close within six months. The average ransom demand is increasing year over year. Paying the ransom does not guarantee you will get your data back. But here is what matters: <strong>ransomware is almost entirely preventable with the right backups and basic security hygiene.</strong>
+          </p>
+        </div>
+
+        <h2>How Ransomware Actually Works</h2>
+        <p>Understanding the attack chain helps you defend against it. Ransomware typically gets in through one of these paths:</p>
+        <ol>
+          <li><strong>Phishing email with a malicious attachment</strong> (most common) — Employee opens what looks like an invoice PDF but is actually a malicious file that runs ransomware.</li>
+          <li><strong>Phishing email with a link to a malicious website</strong> — Employee clicks a link, the site exploits a browser vulnerability, ransomware downloads.</li>
+          <li><strong>Remote Desktop Protocol (RDP) exposed to the internet</strong> — If you have RDP (remote desktop) accessible from the internet with a weak password, attackers scan for and find these within hours.</li>
+          <li><strong>Unpatched software vulnerability</strong> — Attackers exploit a known vulnerability in software that hasn't been updated.</li>
+        </ol>
+        <p>Once the ransomware runs, it encrypts every file it can reach — local files, network shares, cloud storage folders synced to the computer — and displays a ransom note demanding payment (usually in Bitcoin) in exchange for the decryption key.</p>
+
+        <h2>Prevention: Stop Ransomware Before It Runs</h2>
+
+        <h3>1. The 3-2-1 Backup Rule Is Non-Negotiable</h3>
+        <p>Backups are your ransomware insurance policy. If you have clean, recent, offline backups, ransomware becomes an inconvenience rather than a disaster. The rule:</p>
+        <ul>
+          <li><strong>3 copies</strong> of your data</li>
+          <li><strong>2 different media types</strong> (e.g., cloud + external hard drive)</li>
+          <li><strong>1 copy offsite</strong> (cloud or physical drive stored elsewhere)</li>
+        </ul>
+        <p>But not all backups are equal. Ransomware actively seeks out and encrypts connected backups. A backup drive that is permanently plugged in will be encrypted along with everything else. This is why <strong>immutable backups</strong> — backups that cannot be modified or deleted once written — are critical. Veeam Community Edition (free for up to 10 workloads) supports immutable backups. Backblaze B2 and Wasabi (cloud storage) also support object lock for immutability.</p>
+        <p><strong>Test your backups.</strong> A backup you have never restored from is a hope, not a backup. Once a quarter, actually restore a file from backup to verify it works.</p>
+
+        <h3>2. Block the Attack Vectors</h3>
+        <ul>
+          <li><strong>Email:</strong> Enable advanced phishing protection in Google Workspace or Microsoft 365. Configure DMARC, SPF, and DKIM for your domain. Block executable attachments (.exe, .scr, .js, .vbs) at the email gateway.</li>
+          <li><strong>RDP:</strong> Never expose RDP (port 3389) directly to the internet. If remote desktop access is needed, put it behind a VPN or zero-trust proxy.</li>
+          <li><strong>Software:</strong> Enable automatic updates on everything. The WannaCry ransomware in 2017 exploited a vulnerability that had been patched months earlier — victims were simply unpatched.</li>
+        </ul>
+
+        <h3>3. Principle of Least Privilege</h3>
+        <p>Each employee should only have access to the files and systems they actually need for their job. If the marketing intern's computer gets infected, the ransomware can only encrypt files the intern had access to — not the entire company file server. This is built into Google Workspace and M365: create shared drives with specific access permissions rather than giving everyone access to everything.</p>
+
+        <h3>4. Application Whitelisting (for High-Risk Roles)</h3>
+        <p>For employees in finance, HR, or executive roles — the most targeted positions — consider application whitelisting. Windows AppLocker (built into Windows Pro and Enterprise) allows only approved applications to run. If ransomware tries to execute, it is blocked regardless of whether the antivirus recognizes it.</p>
+
+        <h2>Response: What to Do If You Are Attacked</h2>
+
+        <h3>Immediate Actions (First 30 Minutes)</h3>
+        <ol>
+          <li><strong>Isolate the infected computer:</strong> Disconnect it from the network immediately (Wi-Fi off, Ethernet cable unplugged). Do not shut it down yet — there may be forensic evidence in memory.</li>
+          <li><strong>Identify the scope:</strong> Check other computers and file shares. Is it one machine or multiple?</li>
+          <li><strong>Disconnect your backups:</strong> Physically unplug backup drives and revoke cloud backup access tokens to prevent the ransomware from reaching them. This should be your highest priority after isolation.</li>
+          <li><strong>Change all privileged account passwords</strong> from a clean device — domain admin, cloud admin, email admin.</li>
+        </ol>
+
+        <h3>Should You Pay the Ransom?</h3>
+        <p>The official guidance from law enforcement (FBI, CISA, Europol) is: <strong>do not pay.</strong> Reasons:</p>
+        <ul>
+          <li>Paying funds further criminal activity and encourages more attacks</li>
+          <li>There is no guarantee you will get your data back — about 40% of victims who pay never receive working decryption keys</li>
+          <li>Even if you get the key, decryption is often slow and imperfect</li>
+          <li>You may be targeted again — attackers share lists of "payers"</li>
+        </ul>
+        <p>The only scenario where paying might make sense: your backups have failed, the ransom is less than the cost of rebuilding from scratch, and you have exhausted all other recovery options. Even then, consult with a professional incident response firm and law enforcement first.</p>
+
+        <h3>Recovery</h3>
+        <ol>
+          <li><strong>Wipe and rebuild</strong> infected machines from scratch. Do not try to clean them — you can never be sure the malware is completely gone.</li>
+          <li><strong>Restore from clean backups.</strong> Verify that your backups are clean before restoring (some ransomware lies dormant for weeks before activating, meaning your backups may contain the malware).</li>
+          <li><strong>Conduct a post-incident review.</strong> How did it get in? What failed? What needs to change?</li>
+          <li><strong>Notify affected parties.</strong> Depending on your jurisdiction and the type of data affected, you may be legally required to notify customers, regulators, or law enforcement.</li>
+        </ol>
+
+        <h2>Your Ransomware Preparedness Checklist</h2>
+        <div class="rounded-xl border border-gray-200 p-6 not-prose bg-gray-50">
+          <ol class="text-sm space-y-2">
+            <li>✅ 3-2-1 backup strategy implemented and tested quarterly</li>
+            <li>✅ Immutable backups configured (cannot be modified by ransomware)</li>
+            <li>✅ Phishing protection enabled on email (DMARC, SPF, DKIM)</li>
+            <li>✅ RDP not exposed to the internet</li>
+            <li>✅ Automatic updates enabled on all systems</li>
+            <li>✅ Principle of least privilege applied to file access</li>
+            <li>✅ Incident response plan documented and accessible offline</li>
+            <li>✅ Cyber insurance coverage reviewed (does it cover ransomware?)</li>
+            <li>✅ Offline copy of critical contact information (IT support, insurance, legal)</li>
+          </ol>
+        </div>
+
+        <h2>The Bottom Line</h2>
+        <p>Ransomware is not some exotic threat that only happens to other people. It is a commodity criminal enterprise that targets small businesses specifically because they tend to have weaker defenses. But the defense is straightforward: backups, patching, phishing training, and least-privilege access. These four things prevent the vast majority of ransomware attacks. If your backup strategy is solid, ransomware is a cleanup job, not a catastrophe.</p>
+      </div>
+    </div>
+  </article>
+</BaseLayout>

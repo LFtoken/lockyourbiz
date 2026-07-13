@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Securing Remote Workers: A Practical Guide for Small Teams"
+  description="Remote work security does not require an enterprise budget. Learn about VPN alternatives, device policies, and simple steps to protect your data when your team works from home."
+>
+  <article class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-3xl">
+      <div class="flex items-center gap-x-4 text-sm mb-4">
+        <time datetime="2026-07-03" class="text-gray-500">July 3, 2026</time>
+        <span class="rounded-full bg-primary-50 px-3 py-1 font-medium text-primary-700">Remote Work</span>
+        <span class="text-gray-500">7 min read</span>
+      </div>
+
+      <h1 class="text-4xl font-extrabold tracking-tight text-gray-900">Securing Remote Workers: A Practical Guide for Small Teams</h1>
+      <p class="mt-4 text-lg leading-8 text-gray-600">
+        Your employees are working from coffee shops, home offices, and co-working spaces. Here is how to keep your business data secure without making everyone hate the IT policies.
+      </p>
+
+      <div class="mt-10 prose prose-lg prose-gray max-w-none">
+        <div class="rounded-2xl bg-yellow-50 border border-yellow-200 p-6 not-prose">
+          <p class="text-sm font-semibold text-yellow-800">The Challenge</p>
+          <p class="mt-2 text-sm text-yellow-700">
+            Remote work is here to stay — but it expands your attack surface significantly. Employees working from home are outside your office firewall, often on home Wi-Fi networks shared with smart TVs, gaming consoles, and family members' devices. The good news: a few simple policies can dramatically reduce your risk.
+          </p>
+        </div>
+
+        <h2>1. Skip the Traditional VPN — Use Zero Trust Instead</h2>
+        <p>
+          The old model was: everyone connects to the office VPN, and the VPN gives them access to everything on the corporate network. This is a security nightmare. If an attacker compromises one remote laptop, they now have access to your entire internal network through the VPN tunnel.
+        </p>
+        <p>
+          The modern approach is <strong>zero trust</strong>: each employee authenticates to each application individually. They get access to the CRM, not the whole network. If their laptop is compromised, the damage is contained to the apps they had access to.
+        </p>
+        <p>
+          <strong>How to do it:</strong> <a href="https://www.cloudflare.com/zero-trust/" target="_blank" rel="noopener">Cloudflare Zero Trust</a> (free for up to 50 users) acts as a reverse proxy. Your internal apps sit behind Cloudflare, and employees authenticate through Cloudflare's identity-aware proxy before accessing anything. No VPN client needed, no network-wide access, and it is free for small teams.
+        </p>
+
+        <h2>2. Enforce Device-Level Security</h2>
+        <p>Every device that accesses your business data should meet a minimum security baseline. This sounds technical, but it comes down to a few simple checks:</p>
+        <ul>
+          <li><strong>Full disk encryption is on</strong> (BitLocker on Windows, FileVault on Mac — both built in and free). If a laptop is stolen, the thief cannot read the data.</li>
+          <li><strong>Screen lock is set</strong> to activate after 5 minutes of inactivity with a password or biometric required to unlock.</li>
+          <li><strong>Operating system is up to date</strong> with automatic updates enabled.</li>
+          <li><strong>Antivirus is active</strong> (Windows Defender is sufficient for most small businesses).</li>
+          <li><strong>No jailbroken/rooted mobile devices</strong> are used for work.</li>
+        </ul>
+        <p>For Google Workspace users, <strong>Endpoint Management</strong> (included with Business Standard and above) can enforce these policies automatically. For Microsoft 365, <strong>Intune</strong> (included in Business Premium) does the same.</p>
+
+        <h2>3. Home Wi-Fi: Simple Rules That Actually Help</h2>
+        <p>You cannot control your employees' home networks, but you can give them clear instructions:</p>
+        <ul>
+          <li>Change the default router admin password (this is still the default in a shocking number of homes)</li>
+          <li>Enable WPA3 or WPA2 encryption on Wi-Fi (no open networks)</li>
+          <li>Keep the router firmware updated</li>
+          <li>Separate work and personal devices onto different networks if the router supports a guest network</li>
+        </ul>
+        <p>Send this as a one-page setup guide when someone joins. It takes the employee 15 minutes and eliminates the most common home network risks.</p>
+
+        <h2>4. Public Wi-Fi: A Simple Rule</h2>
+        <p>Public Wi-Fi (coffee shops, airports, hotels) is inherently untrusted. Anyone on the same network can potentially intercept unencrypted traffic. The rule for employees should be simple:</p>
+        <p class="text-lg font-semibold text-gray-900">"If you are on public Wi-Fi, always use your company's zero-trust proxy or a personal hotspot. Never access business data over raw public Wi-Fi."</p>
+        <p>With Cloudflare Zero Trust set up (point 1), this is handled automatically — all traffic is encrypted through Cloudflare's tunnel regardless of the underlying network.</p>
+
+        <h2>5. Use Company-Provided or Company-Managed Devices</h2>
+        <p>If your budget allows, provide company laptops. Personal devices have personal software — games, torrent clients, browser extensions of dubious origin — that dramatically increase malware risk.</p>
+        <p>If employees must use personal devices, at a minimum:</p>
+        <ul>
+          <li>They access business tools through the browser (no local data stored)</li>
+          <li>Two-factor authentication is enforced on all business accounts</li>
+          <li>You can remotely wipe business data (Google Workspace and M365 both support this)</li>
+        </ul>
+
+        <h2>6. Establish Clear Data Handling Rules</h2>
+        <p>Where does your business data live? The answer should be: in the cloud, not on individual laptops. Define and communicate these rules:</p>
+        <ul>
+          <li>All work files are stored in Google Drive / SharePoint / OneDrive — never only on a local hard drive</li>
+          <li>Sensitive documents are not downloaded to personal devices</li>
+          <li>Customer data is never sent to personal email accounts</li>
+          <li>Printed documents with sensitive information are shredded, not thrown in the trash at home</li>
+        </ul>
+
+        <h2>7. The Remote Work Security Checklist</h2>
+        <p>Give every remote employee this checklist on day one:</p>
+        <div class="rounded-xl border border-gray-200 p-6 not-prose bg-gray-50">
+          <ol class="text-sm space-y-2">
+            <li>✅ Full disk encryption is enabled on your work laptop</li>
+            <li>✅ Screen lock activates after 5 minutes of inactivity</li>
+            <li>✅ You use a password manager for all work accounts</li>
+            <li>✅ Two-factor authentication is enabled on email and critical apps</li>
+            <li>✅ Home Wi-Fi has a strong password and the router admin password has been changed from default</li>
+            <li>✅ You never access business data over public Wi-Fi without the company proxy</li>
+            <li>✅ All work files are saved to cloud storage, not just your local drive</li>
+            <li>✅ You know who to contact if you suspect a security issue</li>
+          </ol>
+        </div>
+
+        <h2>The Bottom Line</h2>
+        <p>Remote work security is about building good habits, not buying expensive tools. Start with Cloudflare Zero Trust (free), enforce basic device security (built into your existing email platform), and give your team clear, simple rules. Review these policies every 6 months — the threat landscape changes, and so should your defenses.</p>
+      </div>
+    </div>
+  </article>
+</BaseLayout>

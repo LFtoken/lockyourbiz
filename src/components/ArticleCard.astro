@@ -1,0 +1,27 @@
+---
+export interface Props {
+  title: string;
+  excerpt: string;
+  href: string;
+  date: string;
+  category: string;
+  readTime: string;
+}
+
+const { title, excerpt, href, date, category, readTime } = Astro.props;
+---
+<article class="card group">
+  <div class="flex items-center gap-x-4 text-xs">
+    <time datetime={date} class="text-gray-500">{date}</time>
+    <span class="relative z-10 rounded-full bg-primary-50 px-3 py-1.5 font-medium text-primary-700">{category}</span>
+  </div>
+  <h3 class="mt-4 text-lg font-semibold text-gray-900">
+    <a href={href} class="group-hover:text-primary-700 transition-colors no-underline">
+      {title}
+    </a>
+  </h3>
+  <p class="mt-2 text-sm leading-6 text-gray-600">{excerpt}</p>
+  <div class="mt-4 flex items-center gap-x-4 text-xs text-gray-500">
+    <span>{readTime} min read</span>
+  </div>
+</article>

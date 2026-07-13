@@ -1,0 +1,18 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  icon: string;
+  href: string;
+}
+
+const { title, description, icon, href } = Astro.props;
+---
+<a href={href} class="card group block no-underline">
+  <div class="mb-4 text-4xl" role="img" aria-hidden="true">{icon}</div>
+  <h3 class="text-lg font-semibold text-gray-900 group-hover:text-primary-700 transition-colors">{title}</h3>
+  <p class="mt-2 text-sm leading-6 text-gray-600">{description}</p>
+  <span class="mt-4 inline-flex items-center text-sm font-medium text-primary-600 group-hover:text-primary-700">
+    Try it <span aria-hidden="true" class="ml-1">&rarr;</span>
+  </span>
+</a>

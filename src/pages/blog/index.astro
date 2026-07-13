@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+
+const articles = [
+  {
+    title: 'Cybersecurity 101 for Small Business Owners: The Complete Guide',
+    excerpt: 'Everything you need to know to protect your small business from cyber threats. Explained in plain English — no technical background required. Covers passwords, 2FA, backups, phishing, and more.',
+    href: '/blog/cybersecurity-101/',
+    date: '2026-07-10',
+    category: 'Basics',
+    readTime: '8',
+  },
+  {
+    title: 'How to Spot a Phishing Email: A Guide for Non-Technical Teams',
+    excerpt: '90% of cyberattacks begin with a phishing email. Learn the 7 red flags your employees need to check before clicking any link or opening an attachment.',
+    href: '/blog/phishing-prevention/',
+    date: '2026-07-08',
+    category: 'Email Security',
+    readTime: '6',
+  },
+  {
+    title: 'The 10 Best Free Security Tools Every Small Business Should Use',
+    excerpt: 'You do not need an enterprise budget to protect your business. From password managers to antivirus and backup — these free tools cover all the essentials.',
+    href: '/blog/free-security-tools/',
+    date: '2026-07-05',
+    category: 'Tools',
+    readTime: '10',
+  },
+  {
+    title: 'Securing Remote Workers: A Practical Guide for Small Teams',
+    excerpt: 'Remote work does not have to mean security gaps. VPN alternatives, device policies, and simple steps to protect your data when your team works from home.',
+    href: '/blog/remote-work-security/',
+    date: '2026-07-03',
+    category: 'Remote Work',
+    readTime: '7',
+  },
+  {
+    title: 'Ransomware Protection: What Small Businesses Need to Know',
+    excerpt: 'Ransomware can destroy a small business overnight. Learn how it works, how to prevent it, and what to do if you are attacked — including backup strategies that actually work.',
+    href: '/blog/ransomware-protection/',
+    date: '2026-06-28',
+    category: 'Threats',
+    readTime: '9',
+  },
+];
+---
+
+<BaseLayout
+  title="Cybersecurity Guides for Small Business"
+  description="Free, plain-English cybersecurity guides for small business owners. Learn about phishing, ransomware, remote work security, and the best free security tools."
+>
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-3xl text-center">
+      <h1 class="text-4xl font-extrabold tracking-tight text-gray-900">Guides &amp; Articles</h1>
+      <p class="mt-4 text-lg text-gray-600">
+        Step-by-step cybersecurity guides written for small business owners. No jargon, no enterprise tools you cannot afford — just practical advice you can use today.
+      </p>
+    </div>
+
+    <div class="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {articles.map((article) => (
+        <ArticleCard {...article} />
+      ))}
+    </div>
+  </div>
+</BaseLayout>

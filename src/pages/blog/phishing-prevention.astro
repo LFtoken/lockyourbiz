@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="How to Spot a Phishing Email: A Guide for Non-Technical Teams"
+  description="90% of cyberattacks start with phishing. Learn the 7 red flags that help your employees spot fake emails before they click — no technical training required."
+>
+  <article class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-3xl">
+      <div class="flex items-center gap-x-4 text-sm mb-4">
+        <time datetime="2026-07-08" class="text-gray-500">July 8, 2026</time>
+        <span class="rounded-full bg-primary-50 px-3 py-1 font-medium text-primary-700">Email Security</span>
+        <span class="text-gray-500">6 min read</span>
+      </div>
+
+      <h1 class="text-4xl font-extrabold tracking-tight text-gray-900">How to Spot a Phishing Email: A Guide for Non-Technical Teams</h1>
+      <p class="mt-4 text-lg leading-8 text-gray-600">
+        Phishing is how most cyberattacks start. The good news: once you know what to look for, most phishing emails are easy to spot. Here is how to train your team to catch them before they click.
+      </p>
+
+      <div class="mt-10 prose prose-lg prose-gray max-w-none">
+        <div class="rounded-2xl bg-red-50 border border-red-200 p-6 not-prose">
+          <p class="text-sm font-semibold text-red-800">The Numbers</p>
+          <p class="mt-2 text-sm text-red-700">
+            90% of successful cyberattacks start with a phishing email. 1 in 3 employees will click a phishing link without training. With training, that drops below 5%.
+          </p>
+        </div>
+
+        <h2>The 7 Red Flags: A Checklist for Every Email</h2>
+        <p>Train your team to run through this mental checklist before clicking any link or downloading any attachment. It takes 10 seconds once it becomes a habit.</p>
+
+        <h3>1. Check the Sender's Actual Email Address</h3>
+        <p>This is the single most reliable way to catch phishing. The display name might say "Microsoft Support" or "Bank of America," but if you click or hover on the sender name, you see the actual email address. Look for:</p>
+        <ul>
+          <li>Misspelled domains: <code>@micr0soft.com</code> instead of <code>@microsoft.com</code></li>
+          <li>Strange domains: <code>@microsoft-support-help.ru</code></li>
+          <li>Free email accounts for business communications: <code>@gmail.com</code> when it should be from a company domain</li>
+        </ul>
+
+        <h3>2. Urgency That Does Not Make Sense</h3>
+        <p>Phishing emails create artificial urgency to make you act without thinking. Watch for phrases like:</p>
+        <ul>
+          <li>"Your account will be suspended in 24 hours!"</li>
+          <li>"URGENT: Unauthorized login attempt detected"</li>
+          <li>"You must update your payment information immediately"</li>
+        </ul>
+        <p>Legitimate companies do not threaten to close your account via email. If you are concerned, go directly to the website by typing the URL yourself — do not click the link in the email.</p>
+
+        <h3>3. Hover Over Links Before Clicking</h3>
+        <p>On a computer, hover your mouse over any link or button. The actual destination URL appears in the bottom-left corner of your browser. On mobile, press and hold a link to see the URL. Check if the domain matches who the email claims to be from.</p>
+
+        <h3>4. Unexpected Attachments</h3>
+        <p>Be extremely cautious with attachments you were not expecting, especially: .exe, .zip, .scr, .js, .iso, .docm (macro-enabled Word documents), .xlsm (macro-enabled Excel), and password-protected ZIP files. When in doubt, call the sender and ask if they sent it.</p>
+
+        <h3>5. Generic Greetings</h3>
+        <p>Legitimate companies you have accounts with will use your name. Emails that start with "Dear Customer" or "Dear Sir/Madam" are often mass phishing attempts.</p>
+
+        <h3>6. Poor Grammar and Spelling</h3>
+        <p>While AI-generated phishing is getting better, many phishing emails still contain awkward phrasing, grammar errors, and spelling mistakes that a legitimate company would never send. Read it out loud — if it sounds wrong, it probably is.</p>
+
+        <h3>7. Requests for Sensitive Information</h3>
+        <p>No legitimate company will ever email you asking for your password, credit card number, or Social Security number. If an email asks for this information, it is a scam. Full stop.</p>
+
+        <h2>What to Do If You Suspect a Phishing Email</h2>
+        <p>Give your team a simple, clear procedure:</p>
+        <ol>
+          <li><strong>Do not click anything.</strong> Do not click links. Do not open attachments. Do not reply.</li>
+          <li><strong>Verify through a different channel.</strong> If the email claims to be from your bank, call the number on your card — not the number in the email. If it appears to be from a coworker, message them on Slack or call them.</li>
+          <li><strong>Report it to whoever handles IT.</strong> Forward the email as an attachment (not a regular forward — this preserves the email headers for investigation). Then delete it.</li>
+        </ol>
+
+        <h2>What to Do If Someone Already Clicked</h2>
+        <p>Do not panic, but act fast:</p>
+        <ol>
+          <li>Disconnect the computer from the network (turn off Wi-Fi, unplug the Ethernet cable)</li>
+          <li>Change passwords for any accounts that may have been compromised — use a different, clean device to do this</li>
+          <li>Run a full antivirus scan</li>
+          <li>Check for any rules or forwarding set up in your email accounts (attackers often set up forwarding to monitor your communications)</li>
+          <li>Notify your bank and any financial service providers</li>
+        </ol>
+
+        <h2>How to Train Your Team</h2>
+        <p>Reading about phishing is not the same as practicing. Here is how to build real awareness:</p>
+        <ul>
+          <li><strong>Monthly phishing quiz:</strong> Show your team 5 real examples — some legitimate, some phishing — and ask them to identify which are which. Takes 5 minutes in a team meeting.</li>
+          <li><strong>Simulated phishing:</strong> Use free tools from your email provider (Google Workspace and Microsoft 365 both include phishing simulation) or services like KnowBe4 to send harmless fake phishing emails and see who clicks. Use the results for training, not punishment.</li>
+          <li><strong>Create a "security wins" channel:</strong> When someone catches and reports a real phishing attempt, celebrate it. Positive reinforcement works better than shaming people who fall for them.</li>
+        </ul>
+
+        <h2>The Bottom Line</h2>
+        <p>Your employees are not your weakest link — they are your first line of defense. Give them the tools, training, and procedures to spot phishing, and make it safe for them to report mistakes. A team that knows what to look for and is not afraid to speak up is far more secure than one protected by software alone.</p>
+      </div>
+    </div>
+  </article>
+</BaseLayout>

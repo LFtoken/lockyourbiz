@@ -1,0 +1,168 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ToolCard from '../components/ToolCard.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+
+const featuredArticles = [
+  {
+    title: 'Cybersecurity 101 for Small Business Owners',
+    excerpt: 'Everything you need to know to protect your business from the most common cyber threats — explained in plain English, no technical background required.',
+    href: '/blog/cybersecurity-101/',
+    date: '2026-07-10',
+    category: 'Basics',
+    readTime: '8',
+  },
+  {
+    title: 'How to Spot a Phishing Email Before Your Employees Click',
+    excerpt: '90% of cyberattacks start with a phishing email. Learn the red flags and how to train your team to spot them in under 5 seconds.',
+    href: '/blog/phishing-prevention/',
+    date: '2026-07-08',
+    category: 'Email Security',
+    readTime: '6',
+  },
+  {
+    title: 'The 10 Best Free Security Tools for Small Businesses',
+    excerpt: 'You do not need an enterprise budget to protect your business. These free tools cover password management, backups, antivirus, and more.',
+    href: '/blog/free-security-tools/',
+    date: '2026-07-05',
+    category: 'Tools',
+    readTime: '10',
+  },
+];
+---
+
+<BaseLayout
+  title="Free Cybersecurity Tools & Guides for Small Business"
+  description="Practical cybersecurity advice, free tools, and step-by-step guides for small business owners. No jargon. No enterprise budget required. Just actionable steps to protect your business."
+>
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-primary-900 via-primary-800 to-primary-950">
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-30"></div>
+    <div class="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center rounded-full bg-white/10 px-4 py-1.5 mb-6">
+          <span class="text-sm font-medium text-white/90">🛡️ Free tools &amp; guides for small business owners</span>
+        </div>
+        <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
+          Cybersecurity for <span class="text-accent-400">real businesses</span>, not IT departments
+        </h1>
+        <p class="mt-6 text-lg leading-8 text-white/80 max-w-2xl">
+          Most security advice is written for enterprises with dedicated IT teams. We are different. Free tools, plain-English guides, and practical steps for business owners who just want to protect what they have built.
+        </p>
+        <div class="mt-10 flex flex-wrap gap-4">
+          <a href="/tools/security-assessment/" class="btn-primary text-base px-8 py-4 no-underline shadow-lg shadow-primary-900/30">
+            Take Free Security Assessment &rarr;
+          </a>
+          <a href="/blog/cybersecurity-101/" class="inline-flex items-center justify-center rounded-lg border border-white/20 px-8 py-4 text-base font-semibold text-white hover:bg-white/10 transition-colors no-underline">
+            Read the 101 Guide
+          </a>
+        </div>
+      </div>
+      <div class="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-3">
+        <div class="rounded-xl bg-white/10 backdrop-blur-sm p-5 border border-white/10">
+          <div class="text-2xl font-bold text-white">63%</div>
+          <p class="mt-1 text-sm text-white/70">of small businesses experienced a cyber attack in the past year</p>
+        </div>
+        <div class="rounded-xl bg-white/10 backdrop-blur-sm p-5 border border-white/10">
+          <div class="text-2xl font-bold text-white">$25,000</div>
+          <p class="mt-1 text-sm text-white/70">average cost of a data breach for a small business</p>
+        </div>
+        <div class="rounded-xl bg-white/10 backdrop-blur-sm p-5 border border-white/10">
+          <div class="text-2xl font-bold text-white">60%</div>
+          <p class="mt-1 text-sm text-white/70">of small businesses close within 6 months of a cyber attack</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools Section -->
+  <section class="py-20 bg-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="section-title">Free Tools to Secure Your Business</h2>
+        <p class="section-subtitle max-w-2xl mx-auto">No sign-up required. No email collection. Just practical tools that work.</p>
+      </div>
+      <div class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <ToolCard
+          title="Security Assessment"
+          description="Answer 8 questions and get a personalized risk score with actionable recommendations. Takes 3 minutes."
+          icon="📋"
+          href="/tools/security-assessment/"
+        />
+        <ToolCard
+          title="Password Strength Checker"
+          description="Test how strong your passwords are and learn exactly what makes a password resistant to cracking."
+          icon="🔐"
+          href="/tools/password-checker/"
+        />
+        <ToolCard
+          title="Free Tool Comparison"
+          description="Compare the best free security tools side by side. Find the right password manager, antivirus, and backup solution."
+          icon="⚖️"
+          href="/tools/tool-comparison/"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Articles Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between">
+        <div>
+          <h2 class="section-title">Latest Guides</h2>
+          <p class="section-subtitle">Step-by-step, no jargon, written for business owners.</p>
+        </div>
+        <a href="/blog/" class="btn-secondary hidden sm:inline-flex no-underline">
+          View All Guides &rarr;
+        </a>
+      </div>
+      <div class="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        {featuredArticles.map((article) => (
+          <ArticleCard {...article} />
+        ))}
+      </div>
+      <div class="mt-8 text-center sm:hidden">
+        <a href="/blog/" class="btn-secondary no-underline">View All Guides &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="py-20 bg-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="section-title">Protect Your Business in 3 Steps</h2>
+        <p class="section-subtitle max-w-2xl mx-auto">You do not need an IT degree. You just need a plan.</p>
+      </div>
+      <div class="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-3">
+        <div class="text-center">
+          <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary-100 text-2xl font-bold text-primary-700">1</div>
+          <h3 class="mt-5 text-lg font-semibold text-gray-900">Take the Assessment</h3>
+          <p class="mt-2 text-sm text-gray-600">Find out where your business is vulnerable in 3 minutes with our free security quiz.</p>
+        </div>
+        <div class="text-center">
+          <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary-100 text-2xl font-bold text-primary-700">2</div>
+          <h3 class="mt-5 text-lg font-semibold text-gray-900">Pick Your Tools</h3>
+          <p class="mt-2 text-sm text-gray-600">Use our comparison tool to find the right free security software for your needs and budget.</p>
+        </div>
+        <div class="text-center">
+          <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary-100 text-2xl font-bold text-primary-700">3</div>
+          <h3 class="mt-5 text-lg font-semibold text-gray-900">Follow the Guides</h3>
+          <p class="mt-2 text-sm text-gray-600">Step-by-step instructions to set everything up, written for people who are not IT professionals.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-primary-700">
+    <div class="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-white">Ready to stop being an easy target?</h2>
+      <p class="mt-3 text-lg text-primary-100">Take our free 3-minute security assessment and get a personalized action plan.</p>
+      <a href="/tools/security-assessment/" class="mt-8 inline-flex items-center rounded-lg bg-white px-8 py-4 text-base font-semibold text-primary-700 shadow-sm hover:bg-primary-50 transition-colors no-underline">
+        Start Free Assessment &rarr;
+      </a>
+    </div>
+  </section>
+</BaseLayout>
