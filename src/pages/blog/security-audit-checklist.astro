@@ -1,0 +1,393 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Small Business Security Audit: A DIY Checklist for 2026"
+  description="A complete DIY security audit checklist for small businesses. Check your passwords, network, backups, devices, and employee practices — no consultants required."
+>
+  <article class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-3xl">
+      <div class="flex items-center gap-x-4 text-sm mb-4">
+        <time datetime="2026-07-13" class="text-gray-500">July 13, 2026</time>
+        <span class="rounded-full bg-primary-50 px-3 py-1 font-medium text-primary-700">Assessment</span>
+        <span class="text-gray-500">12 min read</span>
+      </div>
+
+      <h1 class="text-4xl font-extrabold tracking-tight text-gray-900">Small Business Security Audit: A Complete DIY Checklist for 2026</h1>
+      <p class="mt-4 text-lg leading-8 text-gray-600">
+        Hiring a security consultant for an audit can cost $5,000–$20,000. Here is a comprehensive DIY checklist that covers the same ground — passwords, network, backups, devices, cloud accounts, and employee practices — that you can do yourself in an afternoon.
+      </p>
+
+      <div class="mt-10 prose prose-lg prose-gray max-w-none">
+
+        <div class="rounded-2xl bg-blue-50 border border-blue-200 p-6 not-prose">
+          <p class="text-sm font-semibold text-blue-800">How to Use This Checklist</p>
+          <p class="mt-2 text-sm text-blue-700">
+            Work through each section in order. For each item, mark it <strong>Pass ✅</strong>, <strong>Fail ❌</strong>, or <strong>Not Applicable ➖</strong>. At the end, count your fails — each one is a vulnerability an attacker could exploit. Aim to fix every Fail within 30 days.
+          </p>
+        </div>
+
+        <h2>Section 1: Passwords & Authentication (10 Checks)</h2>
+        <p>Weak and reused passwords are the most common way small businesses get breached. This section alone fixes the majority of your exposure.</p>
+
+        <div class="overflow-x-auto not-prose my-6">
+          <table class="w-full text-sm border-collapse">
+            <thead>
+              <tr class="bg-gray-50 border-b border-gray-200">
+                <th class="text-left p-3 font-semibold text-gray-900 w-12">#</th>
+                <th class="text-left p-3 font-semibold text-gray-900">Check</th>
+                <th class="text-left p-3 font-semibold text-gray-900">What to Do If You Fail</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr>
+                <td class="p-3 font-mono text-gray-500">1.1</td>
+                <td class="p-3 text-gray-700">Every employee uses a password manager (Bitwarden, 1Password, or similar)</td>
+                <td class="p-3 text-gray-600">Install Bitwarden for free on everyone's computer and phone. One hour setup for the whole team.</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="p-3 font-mono text-gray-500">1.2</td>
+                <td class="p-3 text-gray-700">No employee reuses passwords across work accounts</td>
+                <td class="p-3 text-gray-600">Run a password audit in your password manager. Bitwarden and 1Password both have built-in reports.</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-mono text-gray-500">1.3</td>
+                <td class="p-3 text-gray-700">Two-factor authentication (2FA) is enabled on all email accounts</td>
+                <td class="p-3 text-gray-600">This is the single most impactful change. Enable 2FA in Gmail/Outlook settings today. Takes 5 minutes per account.</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="p-3 font-mono text-gray-500">1.4</td>
+                <td class="p-3 text-gray-700">2FA is enabled on banking, accounting software, and CRM</td>
+                <td class="p-3 text-gray-600">Check each service's security settings. Prioritize anything with financial data or customer PII.</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-mono text-gray-500">1.5</td>
+                <td class="p-3 text-gray-700">2FA is enabled on your domain registrar and DNS provider</td>
+                <td class="p-3 text-gray-600">If someone hijacks your domain, they own your website and email. Cloudflare, Namecheap, GoDaddy all support 2FA.</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="p-3 font-mono text-gray-500">1.6</td>
+                <td class="p-3 text-gray-700">No passwords are stored in spreadsheets, notes apps, or sticky notes</td>
+                <td class="p-3 text-gray-600">Move everything into a password manager. Delete the spreadsheet after importing.</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-mono text-gray-500">1.7</td>
+                <td class="p-3 text-gray-700">Default passwords on all devices have been changed (router, printer, security cameras, IoT)</td>
+                <td class="p-3 text-gray-600">Make a list of every device on your network. Log into each one and change the default password. Document the new passwords in your password manager.</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="p-3 font-mono text-gray-500">1.8</td>
+                <td class="p-3 text-gray-700">Admin accounts are separate from daily-use accounts</td>
+                <td class="p-3 text-gray-600">Create a separate admin account for each service. Your daily email should not have admin privileges.</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-mono text-gray-500">1.9</td>
+                <td class="p-3 text-gray-700">All passwords are at least 12 characters long</td>
+                <td class="p-3 text-gray-600">Use your password manager's generator. Set the default to 16+ characters.</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="p-3 font-mono text-gray-500">1.10</td>
+                <td class="p-3 text-gray-700">You have a plan for what happens if an employee leaves (account revocation process)</td>
+                <td class="p-3 text-gray-600">Write a 5-step offboarding checklist: revoke email access, change shared passwords, revoke app access, collect devices, confirm backup of work files.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Section 2: Network Security (8 Checks)</h2>
+        <p>Your network is the highway between your devices and the internet. These checks ensure the highway has guardrails.</p>
+
+        <div class="overflow-x-auto not-prose my-6">
+          <table class="w-full text-sm border-collapse">
+            <thead>
+              <tr class="bg-gray-50 border-b border-gray-200">
+                <th class="text-left p-3 font-semibold text-gray-900 w-12">#</th>
+                <th class="text-left p-3 font-semibold text-gray-900">Check</th>
+                <th class="text-left p-3 font-semibold text-gray-900">What to Do If You Fail</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr>
+                <td class="p-3 font-mono text-gray-500">2.1</td>
+                <td class="p-3 text-gray-700">Office Wi-Fi has a strong, unique password (not the default, not shared publicly)</td>
+                <td class="p-3 text-gray-600">Log into your router admin panel. Change the Wi-Fi password to a random 16+ character string. Share it via password manager.</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="p-3 font-mono text-gray-500">2.2</td>
+                <td class="p-3 text-gray-700">A separate guest Wi-Fi network is configured and isolated from the business network</td>
+                <td class="p-3 text-gray-600">Most routers have a "Guest Network" setting. Enable it, give it a different name, and enable "AP Isolation" or "Client Isolation."</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-mono text-gray-500">2.3</td>
+                <td class="p-3 text-gray-700">The router admin password has been changed from the factory default</td>
+                <td class="p-3 text-gray-600">This is step zero. Find your router model's default password online — if yours is still the factory one, change it now.</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="p-3 font-mono text-gray-500">2.4</td>
+                <td class="p-3 text-gray-700">Router firmware is up to date</td>
+                <td class="p-3 text-gray-600">Log into your router admin panel. Check for updates. If the router is more than 5 years old and not receiving updates, replace it ($100-200).</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-mono text-gray-500">2.5</td>
+                <td class="p-3 text-gray-700">Remote Desktop (RDP, port 3389) is NOT exposed to the internet</td>
+                <td class="p-3 text-gray-600">This is critical. Use a tool like ShieldsUP (grc.com) to scan your ports. If RDP is open, close it immediately and set up a VPN or zero-trust proxy instead.</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="p-3 font-mono text-gray-500">2.6</td>
+                <td class="p-3 text-gray-700">UPnP (Universal Plug and Play) is disabled on the router</td>
+                <td class="p-3 text-gray-600">UPnP allows devices to automatically open ports on your firewall — a major security risk. Disable it in router settings.</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-mono text-gray-500">2.7</td>
+                <td class="p-3 text-gray-700">WPA3 or WPA2 encryption is enabled on Wi-Fi (not WEP, not WPA, not open)</td>
+                <td class="p-3 text-gray-600">Check your router's wireless security settings. Select WPA3 if available, otherwise WPA2-AES.</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="p-3 font-mono text-gray-500">2.8</td>
+                <td class="p-3 text-gray-700">A firewall is active between your network and the internet</td>
+                <td class="p-3 text-gray-600">Most routers include a basic firewall — verify it is enabled. For stronger protection, consider pfSense (free) or a Ubiquiti device.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Section 3: Backups & Disaster Recovery (7 Checks)</h2>
+        <p>Backups are your insurance policy. If everything else fails — ransomware, hardware failure, fire — your backups determine whether your business survives.</p>
+
+        <div class="overflow-x-auto not-prose my-6">
+          <table class="w-full text-sm border-collapse">
+            <thead>
+              <tr class="bg-gray-50 border-b border-gray-200">
+                <th class="text-left p-3 font-semibold text-gray-900 w-12">#</th>
+                <th class="text-left p-3 font-semibold text-gray-900">Check</th>
+                <th class="text-left p-3 font-semibold text-gray-900">What to Do If You Fail</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr>
+                <td class="p-3 font-mono text-gray-500">3.1</td>
+                <td class="p-3 text-gray-700">You have at least 3 copies of all critical business data</td>
+                <td class="p-3 text-gray-600">The 3-2-1 rule: 3 copies, 2 different media types, 1 offsite. This is your minimum acceptable backup posture.</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="p-3 font-mono text-gray-500">3.2</td>
+                <td class="p-3 text-gray-700">At least one backup is immutable (cannot be modified or deleted by ransomware)</td>
+                <td class="p-3 text-gray-600">Use Veeam Community Edition (free) with immutable storage, or cloud storage with object lock enabled (Backblaze B2, Wasabi, AWS S3).</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-mono text-gray-500">3.3</td>
+                <td class="p-3 text-gray-700">Backups run automatically on a schedule (daily minimum for critical data)</td>
+                <td class="p-3 text-gray-600">Configure your backup software to run daily. Do not rely on manual backups — someone will forget.</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="p-3 font-mono text-gray-500">3.4</td>
+                <td class="p-3 text-gray-700">You have tested restoring from backup at least once in the past 6 months</td>
+                <td class="p-3 text-gray-600">A backup you have never restored is a hope, not a backup. Pick a random file, restore it, and verify its contents today.</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-mono text-gray-500">3.5</td>
+                <td class="p-3 text-gray-700">At least one backup is stored offsite (cloud or physical drive at a different location)</td>
+                <td class="p-3 text-gray-600">If all your backups are in the same building, a fire or flood destroys everything. Use cloud backup (Backblaze, iDrive) or keep an external drive at home.</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="p-3 font-mono text-gray-500">3.6</td>
+                <td class="p-3 text-gray-700">You know your Recovery Time Objective (RTO): how long can you be offline?</td>
+                <td class="p-3 text-gray-600">Write it down. If the answer is "4 hours," your backup system must be able to restore everything in under 4 hours. Test it.</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-mono text-gray-500">3.7</td>
+                <td class="p-3 text-gray-700">Cloud data (Google Workspace / M365) is backed up separately</td>
+                <td class="p-3 text-gray-600">Cloud providers do not back up your data by default — they protect against their own failures, not your accidental deletion or ransomware. Use a third-party cloud backup tool.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Section 4: Devices & Endpoints (8 Checks)</h2>
+        <p>Every laptop, phone, and tablet that accesses your business data is a potential entry point for attackers.</p>
+
+        <div class="overflow-x-auto not-prose my-6">
+          <table class="w-full text-sm border-collapse">
+            <thead>
+              <tr class="bg-gray-50 border-b border-gray-200">
+                <th class="text-left p-3 font-semibold text-gray-900 w-12">#</th>
+                <th class="text-left p-3 font-semibold text-gray-900">Check</th>
+                <th class="text-left p-3 font-semibold text-gray-900">What to Do If You Fail</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr>
+                <td class="p-3 font-mono text-gray-500">4.1</td>
+                <td class="p-3 text-gray-700">Full disk encryption is enabled on all laptops (BitLocker on Windows, FileVault on Mac)</td>
+                <td class="p-3 text-gray-600">Both are built in and free. Enable in system settings. A stolen laptop without encryption = all your business data exposed.</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="p-3 font-mono text-gray-500">4.2</td>
+                <td class="p-3 text-gray-700">Screen lock activates after 5 minutes of inactivity on all devices</td>
+                <td class="p-3 text-gray-600">Configure via Group Policy (Windows) or MDM profile (Mac). Require password or biometric to unlock.</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-mono text-gray-500">4.3</td>
+                <td class="p-3 text-gray-700">Operating systems are set to auto-update on all devices</td>
+                <td class="p-3 text-gray-600">Windows: Settings > Windows Update > Advanced. Mac: System Settings > General > Software Update > Automatic Updates.</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="p-3 font-mono text-gray-500">4.4</td>
+                <td class="p-3 text-gray-700">Antivirus/anti-malware is active and up to date on all computers</td>
+                <td class="p-3 text-gray-600">Windows Defender is sufficient for most small businesses. Verify it is enabled and not disabled by another program.</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-mono text-gray-500">4.5</td>
+                <td class="p-3 text-gray-700">No employee is using a personal device for work without explicit approval and minimum security controls</td>
+                <td class="p-3 text-gray-600">BYOD policy: if employees use personal devices, require encryption, screen lock, and updated OS at minimum. Enforce via MDM if possible.</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="p-3 font-mono text-gray-500">4.6</td>
+                <td class="p-3 text-gray-700">All company phones/tablets have remote wipe capability enabled</td>
+                <td class="p-3 text-gray-600">Google Workspace and M365 both support remote wipe. Verify it works by testing on a non-critical device.</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-mono text-gray-500">4.7</td>
+                <td class="p-3 text-gray-700">No unsupported/end-of-life operating systems are in use (Windows 7, macOS 11 or earlier, old Android/iOS)</td>
+                <td class="p-3 text-gray-600">EOL systems receive no security patches. Replace or upgrade them. One old machine can compromise your entire network.</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="p-3 font-mono text-gray-500">4.8</td>
+                <td class="p-3 text-gray-700">You maintain an inventory of all devices that access business data</td>
+                <td class="p-3 text-gray-600">Create a simple spreadsheet: device name, owner, OS version, encryption status, last checked. Update quarterly.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Section 5: Cloud & SaaS Accounts (7 Checks)</h2>
+        <p>Your business runs on cloud services. These checks ensure your cloud accounts are not the weakest link.</p>
+
+        <div class="overflow-x-auto not-prose my-6">
+          <table class="w-full text-sm border-collapse">
+            <thead>
+              <tr class="bg-gray-50 border-b border-gray-200">
+                <th class="text-left p-3 font-semibold text-gray-900 w-12">#</th>
+                <th class="text-left p-3 font-semibold text-gray-900">Check</th>
+                <th class="text-left p-3 font-semibold text-gray-900">What to Do If You Fail</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr>
+                <td class="p-3 font-mono text-gray-500">5.1</td>
+                <td class="p-3 text-gray-700">You have a complete list of every cloud service your business uses</td>
+                <td class="p-3 text-gray-600">Audit your bank statements and browser history. List every SaaS subscription, cloud storage, and tool your employees sign into.</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="p-3 font-mono text-gray-500">5.2</td>
+                <td class="p-3 text-gray-700">Every cloud service has a designated admin and at least one backup admin</td>
+                <td class="p-3 text-gray-600">What happens if your only admin gets hit by a bus? Assign backup admins to every critical service. Document who they are.</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-mono text-gray-500">5.3</td>
+                <td class="p-3 text-gray-700">Third-party app access to your Google Workspace / M365 is reviewed and limited</td>
+                <td class="p-3 text-gray-600">Check which third-party apps have OAuth access to your email and files. Revoke anything you don't actively use.</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="p-3 font-mono text-gray-500">5.4</td>
+                <td class="p-3 text-gray-700">Email authentication records are configured: SPF, DKIM, and DMARC</td>
+                <td class="p-3 text-gray-600">These prevent attackers from spoofing emails that appear to come from your domain. Check via MXToolbox.com. Set up in your DNS provider.</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-mono text-gray-500">5.5</td>
+                <td class="p-3 text-gray-700">File sharing settings in cloud storage are reviewed — no public "anyone with link" shares exposing sensitive data</td>
+                <td class="p-3 text-gray-600">Audit your Google Drive or SharePoint. Look for files shared with "Anyone with the link" and restrict them to specific people.</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="p-3 font-mono text-gray-500">5.6</td>
+                <td class="p-3 text-gray-700">Inactive employee accounts are deactivated within 24 hours of departure</td>
+                <td class="p-3 text-gray-600">Create an offboarding checklist. The most important item: revoke email and cloud access before the exit interview ends.</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-mono text-gray-500">5.7</td>
+                <td class="p-3 text-gray-700">Audit logging is enabled on critical services (email, file storage, financial apps)</td>
+                <td class="p-3 text-gray-600">Enable audit logs in Google Workspace Admin or Microsoft 365 Compliance Center. You need to know who did what, when.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Section 6: People & Processes (6 Checks)</h2>
+        <p>Technology alone cannot secure your business. Your people and procedures are equally important.</p>
+
+        <div class="overflow-x-auto not-prose my-6">
+          <table class="w-full text-sm border-collapse">
+            <thead>
+              <tr class="bg-gray-50 border-b border-gray-200">
+                <th class="text-left p-3 font-semibold text-gray-900 w-12">#</th>
+                <th class="text-left p-3 font-semibold text-gray-900">Check</th>
+                <th class="text-left p-3 font-semibold text-gray-900">What to Do If You Fail</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr>
+                <td class="p-3 font-mono text-gray-500">6.1</td>
+                <td class="p-3 text-gray-700">All employees have completed phishing awareness training in the past 12 months</td>
+                <td class="p-3 text-gray-600">Run a 15-minute phishing training session at your next team meeting. Use our Phishing Prevention Guide as the material.</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="p-3 font-mono text-gray-500">6.2</td>
+                <td class="p-3 text-gray-700">Your business has a written Incident Response Plan (who does what when things go wrong)</td>
+                <td class="p-3 text-gray-600">Write a one-page plan: who to call, how to disconnect infected machines, where backups are, when to notify customers. Print it. Keep it offline.</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-mono text-gray-500">6.3</td>
+                <td class="p-3 text-gray-700">You have a clear policy on what data can and cannot be stored on personal devices</td>
+                <td class="p-3 text-gray-600">Write a one-paragraph policy: "Work data stays in work cloud storage. Do not download customer data to personal devices. Do not email work files to yourself."</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="p-3 font-mono text-gray-500">6.4</td>
+                <td class="p-3 text-gray-700">You know which regulations apply to your business (GDPR, CCPA, HIPAA, PCI-DSS, etc.)</td>
+                <td class="p-3 text-gray-600">If you handle customer data from the EU (GDPR), California (CCPA), healthcare (HIPAA), or payments (PCI-DSS), research your obligations. Non-compliance fines dwarf security costs.</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-mono text-gray-500">6.5</td>
+                <td class="p-3 text-gray-700">You have considered cyber insurance</td>
+                <td class="p-3 text-gray-600">Cyber insurance typically costs $500–$2,000/year for small businesses. It covers breach response, legal fees, and sometimes ransom payments. Ask your business insurance broker.</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="p-3 font-mono text-gray-500">6.6</td>
+                <td class="p-3 text-gray-700">Security is on the agenda at least quarterly (not "set and forget")</td>
+                <td class="p-3 text-gray-600">Schedule a 30-minute security review every quarter. Run through this checklist, review any incidents, update your plan. Put it in the calendar now.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>What to Do With Your Results</h2>
+
+        <div class="rounded-2xl bg-accent-50 border border-accent-200 p-6 not-prose my-6">
+          <h3 class="text-lg font-semibold text-accent-800">Scoring Your Audit</h3>
+          <p class="mt-2 text-sm text-accent-700">Count your ❌ Fails across all six sections:</p>
+          <ul class="mt-2 text-sm text-accent-700 space-y-1">
+            <li><strong>0–5 Fails:</strong> Excellent. Your business is well-protected. Fix the remaining items this month.</li>
+            <li><strong>6–15 Fails:</strong> Moderate risk. There are gaps attackers can exploit. Prioritize Section 1 (Passwords) and Section 3 (Backups) first — those fix the most common attack paths.</li>
+            <li><strong>16–25 Fails:</strong> High risk. Your business is an easy target. Do not try to fix everything at once. Week 1: password manager + 2FA on email. Week 2: backups. Week 3: updates and encryption. Week 4: everything else.</li>
+            <li><strong>26+ Fails:</strong> Critical risk. Act immediately on passwords and backups. Consider bringing in a security consultant for a day to help you get the fundamentals in place. This is not a drill.</li>
+          </ul>
+        </div>
+
+        <h2>How Often Should You Audit?</h2>
+        <p>
+          Run this full checklist <strong>once a year</strong> at minimum. Run the password and backup sections <strong>quarterly</strong>. Run a quick spot-check on sections 1 and 3 <strong>monthly</strong> — those two cover the majority of real-world attacks.
+        </p>
+        <p>
+          Set a recurring calendar event for the first Friday of every quarter. Call it "Security Checkup." Takes an hour. Could save your business.
+        </p>
+
+        <div class="rounded-2xl bg-primary-50 border border-primary-200 p-6 not-prose mt-10">
+          <p class="text-sm font-semibold text-primary-800">Want a Quick Automated Check First?</p>
+          <p class="mt-2 text-sm text-primary-700">
+            <a href="/tools/security-assessment/" class="font-semibold">Take our free 3-minute security assessment</a> to get an instant risk score. Then use this checklist to dive deeper into the areas where you scored low.
+          </p>
+        </div>
+      </div>
+    </div>
+  </article>
+</BaseLayout>

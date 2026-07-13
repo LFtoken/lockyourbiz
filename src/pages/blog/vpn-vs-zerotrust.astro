@@ -1,0 +1,125 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="VPN vs Zero Trust: What Small Businesses Should Use in 2026"
+  description="Traditional VPNs are no longer the best way to secure remote access. Learn why zero trust is replacing VPNs and how to set it up for free."
+>
+  <article class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-3xl">
+      <div class="flex items-center gap-x-4 text-sm mb-4">
+        <time datetime="2026-07-11" class="text-gray-500">July 11, 2026</time>
+        <span class="rounded-full bg-primary-50 px-3 py-1 font-medium text-primary-700">Network Security</span>
+        <span class="text-gray-500">7 min read</span>
+      </div>
+
+      <h1 class="text-4xl font-extrabold tracking-tight text-gray-900">VPN vs Zero Trust: What Small Businesses Should Use in 2026</h1>
+      <p class="mt-4 text-lg leading-8 text-gray-600">
+        VPNs used to be the default answer for remote access. They are not anymore. Here is why zero trust is replacing VPNs, which one is right for your business, and how to set either one up.
+      </p>
+
+      <div class="mt-10 prose prose-lg prose-gray max-w-none">
+
+        <div class="rounded-2xl bg-red-50 border border-red-200 p-6 not-prose">
+          <p class="text-sm font-semibold text-red-800">The Problem with VPNs</p>
+          <p class="mt-2 text-sm text-red-700">
+            A VPN creates a tunnel from a remote device into your entire corporate network. That means if an attacker compromises a single laptop connected via VPN, they get a free pass into everything — your file server, your CRM, your financial system. This is not a theoretical risk. It is the attack path behind some of the largest breaches in recent years.
+          </p>
+        </div>
+
+        <h2>VPN: The Old Way</h2>
+        <p><strong>How it works:</strong> Employee connects to VPN → gets an IP address on the company network → can access everything (or at least everything the network allows).</p>
+
+        <h3>VPN Pros</h3>
+        <ul>
+          <li>Familiar technology — most IT people know how to set it up</li>
+          <li>Encrypts all traffic between the remote device and the office</li>
+          <li>Works with legacy applications that assume you are on the local network</li>
+        </ul>
+
+        <h3>VPN Cons</h3>
+        <ul>
+          <li><strong>Single point of failure:</strong> VPN server goes down, nobody can work</li>
+          <li><strong>Network-wide access:</strong> A compromised device gets access to everything</li>
+          <li><strong>Performance issues:</strong> All traffic routes through the VPN server, creating a bottleneck</li>
+          <li><strong>Management overhead:</strong> VPN servers need patching, certificate renewal, and user management</li>
+          <li><strong>Does not work well with cloud apps:</strong> VPN is designed for on-premise servers, not SaaS tools</li>
+        </ul>
+
+        <h2>Zero Trust: The New Way</h2>
+        <p><strong>How it works:</strong> Employee authenticates to each application individually through a proxy. They get access to the CRM, the file share, and their email — but not the network itself. Every access request is verified every time.</p>
+
+        <p>Core principle: <strong>"Never trust, always verify."</strong> Being on the corporate network does not automatically make you trustworthy. Every access request must be authenticated, authorized, and encrypted.</p>
+
+        <h3>Zero Trust Pros</h3>
+        <ul>
+          <li><strong>Minimal blast radius:</strong> Even if a device is compromised, the attacker only gets access to the specific apps that device had permission for — not the entire network</li>
+          <li><strong>No VPN server to maintain:</strong> The proxy runs in the cloud</li>
+          <li><strong>Better performance:</strong> Traffic goes directly to apps, not through a central bottleneck</li>
+          <li><strong>Works natively with cloud apps:</strong> Designed for the SaaS world</li>
+          <li><strong>Free for small teams:</strong> Cloudflare Zero Trust is free for up to 50 users</li>
+        </ul>
+
+        <h3>Zero Trust Cons</h3>
+        <ul>
+          <li>Newer technology — fewer IT people have experience with it</li>
+          <li>Some legacy applications that require actual network access may not work</li>
+          <li>Initial setup requires more thought about who needs access to what</li>
+        </ul>
+
+        <h2>Head-to-Head Comparison</h2>
+
+        <div class="overflow-x-auto not-prose my-6">
+          <table class="w-full text-sm border-collapse">
+            <thead>
+              <tr class="bg-gray-50 border-b border-gray-200">
+                <th class="text-left p-3 font-semibold text-gray-900">Feature</th>
+                <th class="text-left p-3 font-semibold text-gray-900">Traditional VPN</th>
+                <th class="text-left p-3 font-semibold text-gray-900">Zero Trust</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr><td class="p-3 text-gray-900 font-medium">Access scope</td><td class="p-3 text-red-700">Entire network</td><td class="p-3 text-green-700">Per-application</td></tr>
+              <tr class="bg-gray-50"><td class="p-3 text-gray-900 font-medium">Security if device is hacked</td><td class="p-3 text-red-700">Attacker gets network access</td><td class="p-3 text-green-700">Attacker gets one app at most</td></tr>
+              <tr><td class="p-3 text-gray-900 font-medium">Performance</td><td class="p-3 text-yellow-700">Central bottleneck</td><td class="p-3 text-green-700">Direct app connections</td></tr>
+              <tr class="bg-gray-50"><td class="p-3 text-gray-900 font-medium">Management effort</td><td class="p-3 text-red-700">Server to maintain</td><td class="p-3 text-green-700">Cloud-managed</td></tr>
+              <tr><td class="p-3 text-gray-900 font-medium">Works with cloud apps</td><td class="p-3 text-red-700">Poorly</td><td class="p-3 text-green-700">Natively</td></tr>
+              <tr class="bg-gray-50"><td class="p-3 text-gray-900 font-medium">Works with legacy on-prem apps</td><td class="p-3 text-green-700">Yes</td><td class="p-3 text-yellow-700">May need connector</td></tr>
+              <tr><td class="p-3 text-gray-900 font-medium">Cost for 10 users</td><td class="p-3 text-yellow-700">~$0–50/month + hardware</td><td class="p-3 text-green-700">Free (Cloudflare)</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Our Recommendation for Small Businesses</h2>
+        <p>
+          <strong>Use Zero Trust if:</strong> Your business primarily uses cloud-based tools (Google Workspace, M365, Slack, cloud CRM, cloud accounting). Your team works remotely. You do not have dedicated IT staff to maintain a VPN server. You have fewer than 50 employees (to get Cloudflare's free tier).
+        </p>
+        <p>
+          <strong>Use a VPN if:</strong> You have critical legacy applications that only run on a local server and require actual network-level access. You have a full-time IT person who can manage and patch a VPN server. You have already invested in VPN hardware and it is working well.
+        </p>
+        <p>
+          For most small businesses in 2026, <strong>zero trust is the better answer.</strong> It is more secure, easier to manage, and free for small teams.
+        </p>
+
+        <h2>How to Set Up Zero Trust in 30 Minutes (Free)</h2>
+        <ol>
+          <li><strong>Sign up at Cloudflare</strong> (cloudflare.com) — free account</li>
+          <li><strong>Go to Zero Trust</strong> in the left sidebar</li>
+          <li><strong>Add your first application:</strong> Pick an internal tool (e.g., your CRM). Cloudflare creates a secure tunnel to it — no ports to open, no firewall rules to configure.</li>
+          <li><strong>Set up identity verification:</strong> Connect your identity provider (Google Workspace, Microsoft 365, or GitHub). Now employees must log in before accessing anything.</li>
+          <li><strong>Install the Cloudflare WARP client</strong> on employee devices. This routes traffic through the zero-trust proxy automatically.</li>
+          <li><strong>Repeat</strong> for each internal application. Takes 5 minutes per app.</li>
+        </ol>
+        <p>That is it. No server to maintain. No VPN configuration. No network-wide access. Your employees log in once, and from then on they get seamless, secure access to exactly the apps they need — and nothing else.</p>
+
+        <div class="rounded-2xl bg-primary-50 border border-primary-200 p-6 not-prose mt-10">
+          <p class="text-sm font-semibold text-primary-800">Related</p>
+          <p class="mt-2 text-sm text-primary-700">
+            After setting up secure access, make sure your remote team is following best practices. Read our <a href="/blog/remote-work-security/" class="font-semibold">Remote Work Security Guide</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </article>
+</BaseLayout>
