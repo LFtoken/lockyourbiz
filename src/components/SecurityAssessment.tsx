@@ -387,9 +387,9 @@ export default function SecurityAssessment() {
             <button
               key={opt.label}
               onClick={() => handleAnswer(opt.score)}
-              className="w-full text-left rounded-xl border border-gray-200 p-4 hover:border-primary-400 hover:bg-primary-50 transition-all duration-150 cursor-pointer group"
+              className="w-full text-left rounded-xl border-2 border-gray-300 bg-white p-4 hover:border-primary-500 hover:bg-primary-50 hover:shadow-sm transition-all duration-150 cursor-pointer group"
             >
-              <span className="text-gray-700 group-hover:text-gray-900">{opt.label}</span>
+              <span className="text-gray-800 font-medium group-hover:text-primary-700">{opt.label}</span>
             </button>
           ))}
         </div>
