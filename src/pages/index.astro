@@ -5,28 +5,28 @@ import ArticleCard from '../components/ArticleCard.astro';
 
 const featuredArticles = [
   {
-    title: 'Small Business Security Audit: The Complete DIY Checklist',
+    title: 'Essential Security Hardware: The 2026 Buying Guide',
+    excerpt: 'From hardware security keys to firewalls to backup NAS — exactly what to buy, with specific models and three budget tiers from $130 to $1,900.',
+    href: '/blog/essential-security-hardware/',
+    date: '2026-07-14',
+    category: 'Hardware',
+    readTime: '10',
+  },
+  {
+    title: 'Security Services: What to Outsource',
+    excerpt: 'MDR, vulnerability scanning, email gateways, security training — a clear breakdown of which services are worth paying for and when to buy them.',
+    href: '/blog/essential-security-services/',
+    date: '2026-07-14',
+    category: 'Services',
+    readTime: '11',
+  },
+  {
+    title: 'Small Business Security Audit: Complete DIY Checklist',
     excerpt: 'A comprehensive 46-point DIY security audit. Check your passwords, network, backups, devices, and employee practices — no consultants required.',
     href: '/blog/security-audit-checklist/',
     date: '2026-07-13',
     category: 'Assessment',
     readTime: '12',
-  },
-  {
-    title: 'AI-Powered Security Tools for Small Business',
-    excerpt: 'AI is making enterprise-grade protection affordable. From AI phishing detection to automated threat response — the best tools for every budget.',
-    href: '/blog/ai-security-tools/',
-    date: '2026-07-12',
-    category: 'AI & Tools',
-    readTime: '10',
-  },
-  {
-    title: 'VPN vs Zero Trust: What Should You Use?',
-    excerpt: 'VPNs are being replaced by zero trust architecture. Learn the difference and how to set up free zero-trust access for your team in 30 minutes.',
-    href: '/blog/vpn-vs-zerotrust/',
-    date: '2026-07-11',
-    category: 'Network Security',
-    readTime: '7',
   },
 ];
 ---
@@ -35,7 +35,6 @@ const featuredArticles = [
   title="Free Cybersecurity Tools & Guides for Small Business"
   description="Practical cybersecurity advice, free tools, and step-by-step guides for small business owners. No jargon. No enterprise budget required. Just actionable steps to protect your business."
 >
-  <!-- Hero -->
   <section class="relative overflow-hidden bg-gradient-to-br from-primary-900 via-primary-800 to-primary-950">
     <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-30"></div>
     <div class="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
@@ -75,7 +74,6 @@ const featuredArticles = [
     </div>
   </section>
 
-  <!-- Tools Section -->
   <section class="py-20 bg-white">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="text-center">
@@ -83,29 +81,13 @@ const featuredArticles = [
         <p class="section-subtitle max-w-2xl mx-auto">No sign-up required. No email collection. Just practical tools that work.</p>
       </div>
       <div class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <ToolCard
-          title="Security Assessment"
-          description="Answer 8 questions and get a personalized risk score with actionable recommendations. Takes 3 minutes."
-          icon="📋"
-          href="/tools/security-assessment/"
-        />
-        <ToolCard
-          title="Password Strength Checker"
-          description="Test how strong your passwords are and learn exactly what makes a password resistant to cracking."
-          icon="🔐"
-          href="/tools/password-checker/"
-        />
-        <ToolCard
-          title="Free Tool Comparison"
-          description="Compare the best free security tools side by side. Find the right password manager, antivirus, and backup solution."
-          icon="⚖️"
-          href="/tools/tool-comparison/"
-        />
+        <ToolCard title="Security Assessment" description="Answer 8 questions and get a personalized risk score with actionable recommendations. Takes 3 minutes." icon="📋" href="/tools/security-assessment/" />
+        <ToolCard title="Password Strength Checker" description="Test how strong your passwords are and learn exactly what makes a password resistant to cracking." icon="🔐" href="/tools/password-checker/" />
+        <ToolCard title="Free Tool Comparison" description="Compare the best free security tools side by side. Find the right password manager, antivirus, and backup solution." icon="⚖️" href="/tools/tool-comparison/" />
       </div>
     </div>
   </section>
 
-  <!-- Articles Section -->
   <section class="py-20 bg-gray-50">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between">
@@ -113,14 +95,10 @@ const featuredArticles = [
           <h2 class="section-title">Latest Guides</h2>
           <p class="section-subtitle">Step-by-step, no jargon, written for business owners.</p>
         </div>
-        <a href="/blog/" class="btn-secondary hidden sm:inline-flex no-underline">
-          View All Guides &rarr;
-        </a>
+        <a href="/blog/" class="btn-secondary hidden sm:inline-flex no-underline">View All Guides &rarr;</a>
       </div>
       <div class="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {featuredArticles.map((article) => (
-          <ArticleCard {...article} />
-        ))}
+        {featuredArticles.map((article) => (<ArticleCard {...article} />))}
       </div>
       <div class="mt-8 text-center sm:hidden">
         <a href="/blog/" class="btn-secondary no-underline">View All Guides &rarr;</a>
@@ -128,7 +106,6 @@ const featuredArticles = [
     </div>
   </section>
 
-  <!-- How It Works -->
   <section class="py-20 bg-white">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="text-center">
@@ -155,14 +132,11 @@ const featuredArticles = [
     </div>
   </section>
 
-  <!-- CTA -->
   <section class="py-16 bg-primary-700">
     <div class="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
       <h2 class="text-3xl font-bold text-white">Ready to stop being an easy target?</h2>
       <p class="mt-3 text-lg text-primary-100">Take our free 3-minute security assessment and get a personalized action plan.</p>
-      <a href="/tools/security-assessment/" class="mt-8 inline-flex items-center rounded-lg bg-white px-8 py-4 text-base font-semibold text-primary-700 shadow-sm hover:bg-primary-50 transition-colors no-underline">
-        Start Free Assessment &rarr;
-      </a>
+      <a href="/tools/security-assessment/" class="mt-8 inline-flex items-center rounded-lg bg-white px-8 py-4 text-base font-semibold text-primary-700 shadow-sm hover:bg-primary-50 transition-colors no-underline">Start Free Assessment &rarr;</a>
     </div>
   </section>
 </BaseLayout>
