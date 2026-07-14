@@ -465,10 +465,10 @@ export default function SecurityAssessment() {
       <div className="flex flex-wrap gap-2 mb-6">
         <button
           onClick={() => setSelectedCategory(null)}
-          className={`rounded-full px-4 py-1.5 text-sm font-medium transition-all cursor-pointer ${
+          className={`rounded-full px-4 py-1.5 text-sm font-semibold transition-all cursor-pointer border-2 ${
             selectedCategory === null
-              ? 'bg-primary-600 text-white shadow-sm'
-              : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+              ? 'bg-primary-600 border-primary-600 text-white shadow-sm'
+              : 'bg-white border-gray-300 text-gray-600 hover:border-gray-400'
           }`}
         >
           All Categories
@@ -477,13 +477,13 @@ export default function SecurityAssessment() {
           <button
             key={cat.name}
             onClick={() => setSelectedCategory(cat.name)}
-            className={`rounded-full px-4 py-1.5 text-sm font-medium transition-all cursor-pointer ${
+            className={`rounded-full px-4 py-1.5 text-sm font-semibold transition-all cursor-pointer border-2 ${
               selectedCategory === cat.name
-                ? 'bg-primary-600 text-white shadow-sm'
-                : cat.status === 'critical' ? 'bg-red-100 text-red-700 hover:bg-red-200'
-                : cat.status === 'poor' ? 'bg-orange-100 text-orange-700 hover:bg-orange-200'
-                : cat.status === 'ok' ? 'bg-yellow-100 text-yellow-700 hover:bg-yellow-200'
-                : 'bg-green-100 text-green-700 hover:bg-green-200'
+                ? 'bg-primary-600 border-primary-600 text-white shadow-sm'
+                : cat.status === 'critical' ? 'bg-white border-red-400 text-red-600 hover:bg-red-50'
+                : cat.status === 'poor' ? 'bg-white border-orange-400 text-orange-600 hover:bg-orange-50'
+                : cat.status === 'ok' ? 'bg-white border-yellow-400 text-yellow-600 hover:bg-yellow-50'
+                : 'bg-white border-green-400 text-green-600 hover:bg-green-50'
             }`}
           >
             {cat.name} {cat.percentage}%
