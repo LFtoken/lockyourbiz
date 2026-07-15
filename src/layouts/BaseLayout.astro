@@ -1,4 +1,6 @@
 ---
+import CookieConsent from '../components/CookieConsent';
+
 export interface Props {
   title: string;
   description: string;
@@ -9,7 +11,7 @@ export interface Props {
 const {
   title,
   description,
-  ogImage = '/og-default.png',
+  ogImage = '/og-default.svg',
   canonicalURL,
 } = Astro.props;
 ---
@@ -59,14 +61,43 @@ const {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6H1KM8RNXP"></script>
+    <!-- Google Consent Mode v2 — sets defaults BEFORE gtag loads -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-6H1KM8RNXP');
+      (function() {
+        // Check for saved consent preference
+        var saved = localStorage.getItem('cookie-consent');
+        var consent = { analytics: false, advertising: false };
+        if (saved) {
+          try {
+            var parsed = JSON.parse(saved);
+            consent = parsed;
+          } catch(e) {}
+        }
+
+        // Expose consent state for CookieConsent component
+        window.__cookieConsent = consent;
+
+        // Define dataLayer and gtag early so consent defaults work
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+
+        // Set default consent BEFORE any tags fire
+        gtag('consent', 'default', {
+          analytics_storage: consent.analytics ? 'granted' : 'denied',
+          ad_storage: consent.advertising ? 'granted' : 'denied',
+          ad_user_data: consent.advertising ? 'granted' : 'denied',
+          ad_personalization: consent.advertising ? 'granted' : 'denied',
+          wait_for_update: 2000, // ms to wait for consent update
+        });
+
+        // Track pageview only if analytics consent is already granted
+        if (consent.analytics) {
+          gtag('js', new Date());
+          gtag('config', 'G-6H1KM8RNXP');
+        }
+      })();
     </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6H1KM8RNXP"></script>
   </head>
   <body class="flex min-h-screen flex-col">
     <header class="sticky top-0 z-50 border-b border-gray-100 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
@@ -123,6 +154,8 @@ const {
               <li><a href="/about/" class="text-sm text-gray-600 hover:text-primary-700">About</a></li>
               <li><a href="/contact/" class="text-sm text-gray-600 hover:text-primary-700">Contact</a></li>
               <li><a href="/privacy/" class="text-sm text-gray-600 hover:text-primary-700">Privacy Policy</a></li>
+              <li><a href="/privacy/#cookie-settings" class="text-sm text-gray-600 hover:text-primary-700">Cookie Settings</a></li>
+              <li><a href="/privacy/#ccpa" class="text-sm text-gray-600 hover:text-primary-700">Do Not Sell My Info</a></li>
             </ul>
           </div>
         </div>
@@ -137,5 +170,8 @@ const {
         document.getElementById('mobile-menu')?.classList.toggle('hidden');
       });
     </script>
+
+    <!-- Cookie Consent Banner -->
+    <CookieConsent client:load />
   </body>
 </html>

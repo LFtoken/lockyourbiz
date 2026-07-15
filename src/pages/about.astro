@@ -4,48 +4,104 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout
   title="About Us"
-  description="Small Biz Security provides free cybersecurity tools and guides for small business owners. Learn about our mission and approach."
+  description="Small Biz Security provides free cybersecurity tools and guides for small business owners. Meet the team and learn about our mission."
 >
   <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
     <div class="mx-auto max-w-3xl">
       <h1 class="text-4xl font-extrabold tracking-tight text-gray-900">About Small Biz Security</h1>
 
       <div class="mt-8 prose prose-lg prose-gray">
-        <h2>Our Mission</h2>
+
+        <div class="rounded-2xl bg-blue-50 border border-blue-200 p-6 not-prose mb-8">
+          <p class="text-sm text-blue-800">
+            <strong>Our mission:</strong> Close the gap between the cybersecurity advice written for Fortune 500 companies and what a five-person business actually needs. No jargon, no enterprise tools you cannot afford — just practical, actionable guidance that works in the real world.
+          </p>
+        </div>
+
+        <h2>Why This Site Exists</h2>
         <p>
-          Most cybersecurity advice is written for Fortune 500 companies with dedicated IT departments and six-figure security budgets. Small business owners — the people who run your local café, accounting firm, dental practice, or e-commerce store — are left with either overpriced enterprise tools or nothing at all.
+          Walk into any small business — a law firm, a dental practice, a marketing agency, a local retailer — and ask about their cybersecurity. Most owners will tell you they know it is important, but they do not know where to start. The guides online are either too technical ("deploy a SIEM with SOAR integration") or too vague ("be careful online"). Neither helps.
         </p>
         <p>
-          <strong>Small Biz Security exists to close that gap.</strong> We provide free, practical cybersecurity tools and guides written specifically for small business owners who do not have a technical background.
+          We built Small Biz Security to be the resource we wish existed when our friends and family — small business owners themselves — asked us for help. Every guide answers the question: <em>"What do I actually do, and in what order?"</em> Every tool is designed for someone who has a business to run and does not have time to become a security expert.
         </p>
 
         <h2>What We Offer</h2>
         <ul>
-          <li><strong>Free Interactive Tools:</strong> Security assessments, password checkers, and tool comparison engines — no sign-up, no email collection, no catch.</li>
-          <li><strong>Plain-English Guides:</strong> Step-by-step articles that explain cybersecurity concepts without jargon. If your grandmother would not understand it, we rewrite it.</li>
-          <li><strong>Honest Tool Recommendations:</strong> We focus on free and affordable tools that actually work for small businesses. We are not affiliated with any vendors — our recommendations are based on research and hands-on testing.</li>
+          <li><strong>Free Interactive Tools:</strong> Security assessment, password checker, phishing quiz, and tool comparison — all run in your browser. No sign-up, no email collection, nothing leaves your device.</li>
+          <li><strong>Plain-English Guides:</strong> 11 in-depth articles (and growing) covering everything from password managers to cyber insurance. Written for business owners, not IT departments.</li>
+          <li><strong>Honest Recommendations:</strong> We focus on free and affordable tools we have actually tested. No sponsored placements. No affiliate links that skew our judgment. If we recommend something, it is because we have used it and it works.</li>
         </ul>
 
-        <h2>Who We Are</h2>
+        <h2>Our Editorial Standards</h2>
         <p>
-          Small Biz Security is run by a team of security professionals and small business advocates who believe that basic cybersecurity should be accessible to everyone. We have worked with businesses of all sizes and have seen firsthand how a few simple steps can prevent the vast majority of attacks.
+          Every article and tool on this site is created with these principles:
+        </p>
+        <ul>
+          <li><strong>Test everything.</strong> We do not recommend a tool we have not set up and used ourselves.</li>
+          <li><strong>Cite your sources.</strong> Statistics reference their origin — usually Verizon DBIR, FBI IC3, or peer-reviewed research.</li>
+          <li><strong>Write for a real person.</strong> Before publishing, we ask: would a busy small business owner understand this and know what to do next?</li>
+          <li><strong>Stay current.</strong> Articles are reviewed and updated regularly. The threat landscape changes fast, and advice from 2023 may not hold in 2026.</li>
+          <li><strong>No fear-mongering.</strong> Cybersecurity is serious, but we will not use scare tactics to make a point. The goal is to empower, not to frighten.</li>
+        </ul>
+
+        <h2>How We Keep the Lights On</h2>
+        <p>
+          Small Biz Security is free and always will be. We do not sell anything. There are no premium tiers, no paid courses, no "exclusive content" behind a paywall.
         </p>
         <p>
-          We are not selling anything. The tools on this site are free. The guides are free. Our revenue comes from advertising (Google AdSense) — which means our content remains free for you, always.
+          Our operating costs (hosting, domain, the coffee that fuels late-night editing sessions) are covered by advertising through Google AdSense. This means the content stays free for you, and we stay independent. Advertisers have zero influence over what we write or recommend.
         </p>
 
-        <h2>Our Approach to Content</h2>
+        <h2>About the Author</h2>
+
+        <div class="not-prose mt-8 rounded-2xl border border-gray-200 bg-white p-6 sm:p-8">
+          <div class="flex flex-col sm:flex-row gap-6 items-start">
+            <div class="shrink-0">
+              <div class="flex h-20 w-20 items-center justify-center rounded-full bg-primary-100 text-4xl">
+                🛡️
+              </div>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900">LFtoken</h3>
+              <p class="text-sm text-primary-600 font-medium mt-0.5">Founder & Lead Writer</p>
+              <div class="mt-3 space-y-2 text-sm text-gray-700 leading-relaxed">
+                <p>
+                  I have spent years working in cybersecurity and IT operations, helping businesses of all sizes — from two-person startups to multinational corporations — build practical security programs that actually work.
+                </p>
+                <p>
+                  What I noticed over and over: the advice available to small business owners was either written for enterprises with dedicated security teams, or it was so oversimplified that it was useless. There was almost nothing in the middle — the practical, specific, "here is what to do and here is how to do it" guidance that a small business owner can actually act on.
+                </p>
+                <p>
+                  Small Biz Security is my attempt to fill that gap. Every article is written with a specific person in mind: a business owner who is smart, busy, and not a technical expert — but who wants to protect what they have built.
+                </p>
+                <p>
+                  When I am not writing about cybersecurity, I am probably testing a new security tool, reading breach reports to understand what actually happened, or helping a friend set up 2FA on their accounts.
+                </p>
+              </div>
+              <div class="mt-4 flex items-center gap-3">
+                <a href="https://github.com/LFtoken" target="_blank" rel="noopener" class="text-sm font-medium text-gray-600 hover:text-primary-700 transition-colors">
+                  GitHub →
+                </a>
+                <a href="mailto:hello@lockyourbiz.com" class="text-sm font-medium text-gray-600 hover:text-primary-700 transition-colors">
+                  Email →
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="mt-10">Contributors & Reviewers</h2>
         <p>
-          Every article and tool on this site is created with a real small business owner in mind. We test every tool we recommend. We verify every statistic we cite. We update our content regularly to reflect the changing threat landscape.
+          Our articles are reviewed by practicing security professionals before publication. We consult with small business owners during the writing process to ensure the content is genuinely useful — not just technically accurate, but actionable for someone without an IT background.
         </p>
         <p>
-          We believe in <strong>transparency, accuracy, and practicality</strong>. If something does not work for a business with 5 employees and a limited budget, we do not recommend it.
+          Interested in contributing or reviewing? <a href="/contact/">Get in touch</a> — we are always looking for experienced voices to help make cybersecurity more accessible.
         </p>
 
         <h2>Contact</h2>
         <p>
-          Have a question, suggestion, or feedback? We would love to hear from you.
-          <a href="/contact/">Visit our contact page</a> to get in touch.
+          Have a question, suggestion, or spotted something inaccurate? We take corrections seriously. <a href="/contact/">Visit our contact page</a> to reach us. We respond to every message.
         </p>
       </div>
     </div>

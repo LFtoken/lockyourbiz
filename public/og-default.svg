@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e3a5f"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Subtle grid pattern -->
+  <g opacity="0.03" stroke="#fff" stroke-width="1">
+    <line x1="0" y1="100" x2="1200" y2="100"/>
+    <line x1="0" y1="200" x2="1200" y2="200"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/>
+    <line x1="0" y1="400" x2="1200" y2="400"/>
+    <line x1="0" y1="500" x2="1200" y2="500"/>
+    <line x1="300" y1="0" x2="300" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="900" y1="0" x2="900" y2="630"/>
+  </g>
+
+  <!-- Accent bar -->
+  <rect x="0" y="605" width="1200" height="25" fill="url(#accent)"/>
+
+  <!-- Shield icon -->
+  <g transform="translate(600, 210)">
+    <path d="M0,-140 L120,-40 L90,20 L0,80 L-90,20 L-120,-40 Z" fill="url(#accent)" opacity="0.9"/>
+    <path d="M0,-105 L85,-30 L65,15 L0,65 L-65,15 L-85,-30 Z" fill="#0f172a" opacity="0.7"/>
+    <text x="0" y="12" text-anchor="middle" font-size="60" fill="#fff" font-family="sans-serif">🛡️</text>
+  </g>
+
+  <!-- Site name -->
+  <text x="600" y="380" text-anchor="middle" font-family="'Inter', 'Segoe UI', Arial, sans-serif" font-size="64" font-weight="800" fill="#ffffff" letter-spacing="-1">
+    Small Biz Security
+  </text>
+
+  <!-- Tagline -->
+  <text x="600" y="440" text-anchor="middle" font-family="'Inter', 'Segoe UI', Arial, sans-serif" font-size="28" fill="#94a3b8" font-weight="400">
+    Free Cybersecurity Tools &amp; Guides for Small Business Owners
+  </text>
+
+  <!-- URL -->
+  <text x="600" y="560" text-anchor="middle" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="22" fill="#64748b" font-weight="500">
+    lockyourbiz.com
+  </text>
+</svg>

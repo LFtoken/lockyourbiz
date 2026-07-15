@@ -3,112 +3,244 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="Privacy Policy"
-  description="Privacy Policy for Small Biz Security. Learn how we handle your data, cookies, and advertising on our site."
+  title="Privacy Policy & Cookie Information"
+  description="Privacy Policy for Small Biz Security. Learn how we handle your data, cookies, advertising, and your rights under GDPR and CCPA."
 >
   <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
     <div class="mx-auto max-w-3xl">
       <h1 class="text-4xl font-extrabold tracking-tight text-gray-900">Privacy Policy</h1>
-      <p class="mt-4 text-sm text-gray-500">Last updated: July 13, 2026</p>
+      <p class="mt-4 text-sm text-gray-500">Last updated: July 15, 2026</p>
 
       <div class="mt-8 prose prose-lg prose-gray">
-        <h2>1. Introduction</h2>
+
+        <div class="rounded-2xl bg-blue-50 border border-blue-200 p-6 not-prose mb-8">
+          <p class="text-sm text-blue-800">
+            <strong>TL;DR:</strong> We do not sell your data. We do not require accounts. Our tools run in your browser — nothing you type is sent to our servers. We use Google Analytics (anonymized) to understand what content is useful, and Google AdSense to show ads that keep this site free. You control cookies through the banner on our site or your browser settings.
+          </p>
+        </div>
+
+        <h2>1. Who We Are</h2>
         <p>
-          Small Biz Security ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website.
+          Small Biz Security ("we," "our," or "us") operates <strong>lockyourbiz.com</strong>, a free educational website providing cybersecurity guides, articles, and interactive tools for small business owners. We are committed to transparency about how we handle your information.
         </p>
         <p>
-          By using our website, you consent to the practices described in this policy.
+          If you have questions about this policy, please <a href="/contact/">contact us</a>.
         </p>
 
         <h2>2. Information We Collect</h2>
 
-        <h3>2.1 Information You Provide</h3>
+        <h3>2.1 Information You Voluntarily Provide</h3>
         <p>
-          We do not require users to create accounts or provide personal information to use our tools or read our content. If you contact us through our contact form, we collect your name and email address solely to respond to your inquiry.
+          <strong>We do not require accounts, logins, or personal information to access any content or tool on this site.</strong> The only personal data we receive is what you choose to give us — for example, if you use our contact form, we collect your name and email address solely to respond to your message. That information is never shared, sold, or used for marketing.
         </p>
 
-        <h3>2.2 Automatically Collected Information</h3>
-        <p>
-          Like most websites, we automatically collect certain information when you visit, including:
-        </p>
+        <h3>2.2 Information Collected Automatically</h3>
+        <p>When you visit our website, our servers and analytics tools automatically log standard technical data:</p>
         <ul>
-          <li>IP address</li>
-          <li>Browser type and version</li>
-          <li>Pages visited and time spent on pages</li>
-          <li>Referring URL</li>
-          <li>Device type and operating system</li>
+          <li><strong>IP address</strong> (anonymized where possible)</li>
+          <li><strong>Browser type and version</strong></li>
+          <li><strong>Pages visited</strong> and time spent on each page</li>
+          <li><strong>Referring website</strong> (how you found us)</li>
+          <li><strong>Device type</strong> (desktop, tablet, mobile) and operating system</li>
+          <li><strong>Approximate geographic region</strong> (country/city level — we do not track precise location)</li>
         </ul>
         <p>
-          This information is collected through standard server logs and analytics tools. It is aggregated and does not personally identify you.
+          This data is aggregated and does not personally identify you. We use it to understand which articles and tools visitors find most useful, so we can create more of what helps you.
         </p>
 
-        <h2>3. Cookies and Tracking Technologies</h2>
+        <h3>2.3 Our Interactive Tools</h3>
         <p>
-          We use cookies and similar technologies for the following purposes:
+          Our security assessment, password checker, phishing quiz, and tool comparison all run entirely in your browser using client-side JavaScript. <strong>Nothing you type into these tools is ever transmitted to our servers.</strong> Your assessment answers, passwords you test, and quiz responses never leave your device. You can verify this by opening your browser's developer tools (F12 → Network tab) while using any tool — you will see zero data sent to us.
+        </p>
+
+        <h2 id="cookie-settings">3. Cookies and Tracking Technologies</h2>
+        <p>
+          Cookies are small text files stored on your device by websites you visit. We use cookies for three purposes:
+        </p>
+
+        <div class="overflow-x-auto not-prose my-6">
+          <table class="w-full text-sm border-collapse">
+            <thead>
+              <tr class="bg-gray-50 border-b border-gray-200">
+                <th class="text-left p-3 font-semibold text-gray-900">Category</th>
+                <th class="text-left p-3 font-semibold text-gray-900">Purpose</th>
+                <th class="text-left p-3 font-semibold text-gray-900">Examples</th>
+                <th class="text-left p-3 font-semibold text-gray-900">Required?</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr>
+                <td class="p-3 font-medium text-gray-900">Essential</td>
+                <td class="p-3 text-gray-700">Site functionality — your cookie consent preference, form security tokens</td>
+                <td class="p-3 text-gray-600 text-xs">cookie-consent (localStorage)</td>
+                <td class="p-3"><span class="rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-700">Always On</span></td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="p-3 font-medium text-gray-900">Analytics</td>
+                <td class="p-3 text-gray-700">Measure which content is most useful so we can improve it</td>
+                <td class="p-3 text-gray-600 text-xs">Google Analytics (_ga, _gid, _gat)</td>
+                <td class="p-3"><span class="rounded-full bg-yellow-100 px-2.5 py-0.5 text-xs font-medium text-yellow-700">Opt-in</span></td>
+              </tr>
+              <tr>
+                <td class="p-3 font-medium text-gray-900">Advertising</td>
+                <td class="p-3 text-gray-700">Show relevant ads through Google AdSense to keep this site free</td>
+                <td class="p-3 text-gray-600 text-xs">Google AdSense (DSID, IDE, _gcl_au)</td>
+                <td class="p-3"><span class="rounded-full bg-yellow-100 px-2.5 py-0.5 text-xs font-medium text-yellow-700">Opt-in</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>3.1 Managing Your Cookie Preferences</h3>
+        <p>
+          When you first visit our site, a cookie consent banner appears at the bottom of the page. You can:
         </p>
         <ul>
-          <li><strong>Essential Cookies:</strong> Required for the website to function properly.</li>
-          <li><strong>Analytics Cookies:</strong> Help us understand how visitors use our site so we can improve it.</li>
-          <li><strong>Advertising Cookies:</strong> Used by Google AdSense to serve relevant advertisements.</li>
+          <li><strong>Accept All</strong> — enable both analytics and advertising cookies</li>
+          <li><strong>Reject All</strong> — only essential cookies; no analytics or advertising</li>
+          <li><strong>Customize</strong> — choose which categories to allow, with individual toggles for analytics and advertising</li>
         </ul>
-
-        <h3>3.1 Google AdSense</h3>
         <p>
-          We use Google AdSense to display advertisements on our website. Google uses cookies to serve ads based on your prior visits to our website and other websites. You may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads">Google Ads Settings</a>.
+          Your choice is saved in your browser for 12 months. You can change it at any time by clearing your browser's localStorage for our domain, which will cause the consent banner to reappear on your next visit.
         </p>
         <p>
-          Google's use of advertising cookies enables it and its partners to serve ads based on your visit to our site and/or other sites on the Internet. For more information, see Google's <a href="https://policies.google.com/technologies/ads">Advertising Privacy & Terms</a>.
+          You can also control cookies through your browser settings. Most browsers let you block all cookies, delete existing cookies, or alert you when cookies are set. Note that blocking essential cookies may affect how our site functions.
         </p>
 
-        <h3>3.2 Your Cookie Choices</h3>
+        <h3>3.2 Google AdSense & Advertising Cookies</h3>
         <p>
-          You can control cookies through your browser settings. Most browsers allow you to refuse cookies, delete cookies, or alert you when cookies are being sent. Note that disabling cookies may affect the functionality of some websites.
+          We use <strong>Google AdSense</strong> to display advertisements. Google and its advertising partners use cookies to serve ads based on your prior visits to our website and other websites on the internet. This is called interest-based advertising.
+        </p>
+        <p>Specifically, when advertising cookies are enabled:</p>
+        <ul>
+          <li>Google acts as a <strong>third-party vendor</strong> and uses cookies (such as the DART cookie) to serve ads on our site.</li>
+          <li>Google's use of the DART cookie enables it to serve ads based on your visit to our site and other sites.</li>
+          <li>You may opt out of the DART cookie by visiting Google's <a href="https://policies.google.com/technologies/ads">Advertising Privacy & Terms</a> page.</li>
+          <li>You may also opt out of interest-based advertising from many third-party ad networks at <a href="https://www.aboutads.info/choices/">aboutads.info</a> (US) or <a href="https://www.youronlinechoices.eu/">youronlinechoices.eu</a> (EU).</li>
+        </ul>
+        <p>
+          <strong>Our ad serving is consent-based:</strong> no advertising cookies are placed until you explicitly accept them through our cookie banner. If you reject or do not interact with the banner, only essential cookies are used and you will not receive personalized ads.
         </p>
 
         <h2>4. How We Use Your Information</h2>
-        <p>We use the collected information to:</p>
+        <p>We use the limited information we collect to:</p>
         <ul>
-          <li>Operate and improve our website and tools</li>
-          <li>Understand how visitors use our content so we can make it better</li>
-          <li>Respond to your inquiries and support requests</li>
-          <li>Detect and prevent fraud or abuse</li>
-          <li>Comply with legal obligations</li>
+          <li>Operate, maintain, and improve our website, articles, and tools</li>
+          <li>Understand which content and tools are most useful to our visitors</li>
+          <li>Respond to your inquiries submitted through our contact form</li>
+          <li>Detect and prevent fraud, abuse, or security incidents</li>
+          <li>Comply with applicable laws and regulations</li>
+        </ul>
+        <p>We do <strong>not</strong> use your information for automated decision-making or profiling.</p>
+
+        <h2>5. Data Sharing</h2>
+        <p>
+          <strong>We do not sell, rent, or trade your personal information to anyone.</strong> We may share anonymized, aggregated data with:
+        </p>
+        <ul>
+          <li><strong>Service providers</strong> who help us operate our website — specifically Google (analytics and advertising) and Cloudflare (hosting and DNS).</li>
+          <li><strong>Legal authorities</strong> if required by law, court order, or to protect our legal rights.</li>
+          <li><strong>Successor entity</strong> in the event of a merger, acquisition, or sale of assets (you will be notified).</li>
         </ul>
 
-        <h2>5. Data Sharing and Disclosure</h2>
+        <h2>6. Your Rights Under GDPR (EU/EEA Visitors)</h2>
         <p>
-          We do not sell, trade, or rent your personal information to third parties. We may share information:
+          If you are located in the European Union or European Economic Area, you have the following rights under the General Data Protection Regulation (GDPR):
         </p>
         <ul>
-          <li>With service providers who help us operate our website (e.g., analytics, hosting)</li>
-          <li>If required by law or to protect our rights</li>
-          <li>In connection with a business transfer (e.g., merger or acquisition)</li>
+          <li><strong>Right to Access</strong> — request a copy of any personal data we hold about you.</li>
+          <li><strong>Right to Rectification</strong> — correct any inaccurate or incomplete personal data.</li>
+          <li><strong>Right to Erasure</strong> ("Right to be Forgotten") — request deletion of your personal data.</li>
+          <li><strong>Right to Restrict Processing</strong> — limit how we use your data.</li>
+          <li><strong>Right to Data Portability</strong> — receive your data in a structured, machine-readable format.</li>
+          <li><strong>Right to Object</strong> — object to processing of your data, including for direct marketing.</li>
+          <li><strong>Right to Withdraw Consent</strong> — withdraw cookie consent at any time by clearing your browser's localStorage for our domain.</li>
+        </ul>
+        <p>
+          To exercise any of these rights, <a href="/contact/">contact us</a>. We will respond within 30 days as required by GDPR. You also have the right to lodge a complaint with your local data protection authority.
+        </p>
+        <p>
+          Our legal basis for processing data: <strong>consent</strong> (for analytics and advertising cookies, obtained through our cookie banner) and <strong>legitimate interest</strong> (for essential site functionality and security).
+        </p>
+
+        <h2 id="ccpa">7. Your Rights Under CCPA/CPRA (California Residents)</h2>
+        <p>
+          If you are a California resident, you have the following rights under the California Consumer Privacy Act (CCPA) and California Privacy Rights Act (CPRA):
+        </p>
+        <ul>
+          <li><strong>Right to Know</strong> — request disclosure of categories and specific pieces of personal information we have collected about you in the past 12 months.</li>
+          <li><strong>Right to Delete</strong> — request deletion of personal information we have collected from you.</li>
+          <li><strong>Right to Correct</strong> — correct inaccurate personal information.</li>
+          <li><strong>Right to Opt Out of Sale or Sharing</strong> — we do not sell or share personal information for cross-context behavioral advertising without your consent. Our cookie banner provides granular opt-in control before any advertising cookies are set.</li>
+          <li><strong>Right to Limit Use of Sensitive Personal Information</strong> — we do not collect sensitive personal information as defined by CPRA.</li>
+          <li><strong>Right to Non-Discrimination</strong> — we will not discriminate against you for exercising your CCPA/CPRA rights.</li>
+        </ul>
+        <p>
+          To exercise your CCPA rights, <a href="/contact/">contact us</a>. We will verify your identity before processing your request. You may also designate an authorized agent to make a request on your behalf.
+        </p>
+
+        <h3>7.1 Do Not Sell or Share My Personal Information</h3>
+        <p>
+          <strong>We do not sell personal information</strong> as defined under CCPA. We also do not "share" personal information for cross-context behavioral advertising without your prior opt-in consent through our cookie banner. If you have already accepted advertising cookies and wish to revoke that consent, clear your browser's localStorage for our domain (lockyourbiz.com) and the cookie consent banner will reappear, allowing you to change your preferences.
+        </p>
+
+        <h2>8. Data Retention</h2>
+        <p>
+          We retain data only as long as necessary for the purposes described in this policy:
+        </p>
+        <ul>
+          <li><strong>Contact form submissions:</strong> Retained for 12 months after your inquiry is resolved, then deleted.</li>
+          <li><strong>Analytics data:</strong> Google Analytics data is automatically deleted after 26 months per our GA4 settings.</li>
+          <li><strong>Cookie consent preferences:</strong> Stored in your browser's localStorage for 12 months.</li>
+          <li><strong>Server logs:</strong> Retained for 30 days (standard Cloudflare hosting practice).</li>
         </ul>
 
-        <h2>6. Data Security</h2>
+        <h2>9. Data Security</h2>
         <p>
-          We implement reasonable security measures to protect your information. However, no method of transmission over the Internet is 100% secure. We cannot guarantee absolute security.
+          We implement reasonable technical and organizational measures to protect your information:
+        </p>
+        <ul>
+          <li><strong>HTTPS everywhere</strong> — all traffic to and from our site is encrypted via TLS.</li>
+          <li><strong>Client-side tools</strong> — our interactive tools process data in your browser; no sensitive input is transmitted to our servers.</li>
+          <li><strong>Minimal data collection</strong> — we collect only what is necessary and nothing more.</li>
+          <li><strong>Secure hosting</strong> — our site is hosted on Cloudflare Pages with enterprise-grade infrastructure security.</li>
+        </ul>
+        <p>
+          No method of transmission over the Internet or electronic storage is 100% secure. We cannot guarantee absolute security, but we take reasonable precautions to minimize risk.
         </p>
 
-        <h2>7. Third-Party Links</h2>
+        <h2>10. Third-Party Links</h2>
         <p>
-          Our website contains links to third-party websites and tools. We are not responsible for the privacy practices of these third parties. We encourage you to read their privacy policies.
+          Our articles and tools link to external websites, tools, and resources that we believe are useful. We are not responsible for the privacy practices, content, or security of these third parties. We encourage you to read the privacy policies of any external sites you visit.
         </p>
 
-        <h2>8. Children's Privacy</h2>
+        <h2>11. Children's Privacy</h2>
         <p>
-          Our website is not directed to children under 13. We do not knowingly collect personal information from children under 13.
+          Our website is directed at adult small business owners and is not intended for children under 16. We do not knowingly collect personal information from children under 16. If you believe a child has provided us with personal information, please contact us and we will delete it promptly.
         </p>
 
-        <h2>9. Changes to This Policy</h2>
+        <h2>12. International Data Transfers</h2>
         <p>
-          We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated revision date. Continued use of our website after changes constitutes acceptance of the updated policy.
+          Our website is hosted in the United States by Cloudflare. If you access our site from outside the US, your data may be transferred to and processed in the US. We rely on standard contractual clauses and adequacy decisions where applicable to ensure lawful data transfers. By using our site, you consent to this transfer.
         </p>
 
-        <h2>10. Contact Us</h2>
+        <h2>13. Changes to This Policy</h2>
         <p>
-          If you have questions about this Privacy Policy, please <a href="/contact/">contact us</a>.
+          We may update this Privacy Policy to reflect changes in our practices, legal requirements, or the services we use. When we do, we will revise the "Last updated" date at the top of this page. We encourage you to review this policy periodically. Material changes will be noted more prominently.
         </p>
+
+        <h2>14. Contact</h2>
+        <p>
+          If you have questions, concerns, or wish to exercise your data rights:
+        </p>
+        <ul>
+          <li>Use our <a href="/contact/">contact form</a></li>
+          <li>Email us at the address listed on our contact page</li>
+        </ul>
+        <p>
+          We aim to respond to all privacy-related inquiries within 48 hours.
+        </p>
+
       </div>
     </div>
   </div>

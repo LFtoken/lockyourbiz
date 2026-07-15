@@ -10,7 +10,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <div class="mx-auto max-w-3xl">
       <div class="flex items-center gap-x-4 text-sm mb-4">
         <time datetime="2026-07-05" class="text-gray-500">July 5, 2026</time>
-        <span class="rounded-full bg-primary-50 px-3 py-1 font-medium text-primary-700">Tools</span>
+        <span class="rounded-full bg-primary-50 px-3 py-1 font-medium text-primary-700">Tools & Tech</span>
         <span class="text-gray-500">10 min read</span>
       </div>
 
@@ -20,73 +20,165 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       </p>
 
       <div class="mt-10 prose prose-lg prose-gray max-w-none">
+
+        <p>
+          A couple of years ago, I helped a friend set up security for his ten-person consulting firm. The budget was zero — not "tight," not "we will find room for it next quarter." Zero. No room for CrowdStrike, no managed detection service, nothing with a monthly bill. Just whatever we could find for free and a few hours of setup work on a Saturday.
+        </p>
+        <p>
+          That stack is still protecting his business today. It is not flashy. But it covers the fundamentals — passwords, backups, network protection, breach monitoring — and that is what actually prevents breaches. Here is every tool in that stack, plus a few I have found since.
+        </p>
+
         <div class="rounded-2xl bg-yellow-50 border border-yellow-200 p-6 not-prose">
-          <p class="text-sm font-semibold text-yellow-800">How We Chose These Tools</p>
+          <p class="text-sm font-semibold text-yellow-800">A Note on "Free"</p>
           <p class="mt-2 text-sm text-yellow-700">
-            Every tool on this list is either completely free or has a generous free tier that works for a small business (2–50 employees). We prioritized tools that are actively maintained, well-reviewed by security professionals, and do not require advanced technical skills to set up.
+            Every tool here has a genuinely free tier — no 14-day trials, no credit card required, no bait-and-switch. I will point out the limits so you know when you might need to upgrade. For most small businesses with 2–20 employees, the free tiers cover everything you need.
           </p>
         </div>
 
-        <h2>1. Bitwarden — Password Manager 🏆</h2>
-        <p><strong>Price:</strong> Free for individuals, $4/user/month for Teams</p>
-        <p>Bitwarden is our top overall recommendation. It generates, stores, and auto-fills strong unique passwords for every account. The free plan includes unlimited passwords, unlimited devices, and secure password sharing with one other person. It is open source and independently audited — which means security researchers have verified there are no backdoors.</p>
-        <p><strong>Why you need it:</strong> Password reuse is the number one security vulnerability in small businesses. A password manager fixes this completely. Set it up for yourself and every employee.</p>
+        <h2>Bitwarden — Password Manager</h2>
+        <p><strong>Free for:</strong> Unlimited personal use across unlimited devices. Team plan at $4/user/month.</p>
+        <p>
+          I have installed Bitwarden for about a dozen small businesses, and it is always the first thing I set up. The free individual plan gives you unlimited passwords on unlimited devices — phone, laptop, browser extension, everything syncs. You can share passwords securely with one other person on the free plan, which handles the two-person shop. Beyond that, Bitwarden Teams is still cheap.
+        </p>
+        <p>
+          Why Bitwarden and not one of the other options? It is open source, which means independent researchers have actually audited the code — not just taken a company's word for it. LastPass has been breached multiple times. 1Password is great but is not free. Bitwarden is the one I trust, and it is the one I use personally.
+        </p>
+        <p>
+          One practical tip: install both the browser extension and the phone app. The extension handles 90% of day-to-day logins, but the phone app saves you when you need to look up a password away from your desk — like logging into the bank from your phone, or pulling a credential during a client meeting.
+        </p>
 
-        <h2>2. Cloudflare Zero Trust — Network Security & VPN Replacement</h2>
-        <p><strong>Price:</strong> Free for up to 50 users</p>
-        <p>Cloudflare Zero Trust (formerly Cloudflare for Teams) replaces traditional VPNs with a modern zero-trust approach. Instead of giving employees access to your entire network, it gives them access to specific applications after verifying their identity. It also includes DDoS protection and a web application firewall.</p>
-        <p><strong>Why you need it:</strong> If you have remote employees accessing internal tools, a traditional VPN is a major security risk. Cloudflare Zero Trust is more secure and free for small teams.</p>
+        <h2>Cloudflare Zero Trust — VPN Replacement & Network Security</h2>
+        <p><strong>Free for:</strong> Up to 50 users. This is genuinely the most generous free tier in the security industry.</p>
+        <p>
+          This one still feels like cheating. Cloudflare Zero Trust replaces your VPN with something better — instead of giving remote employees a tunnel into your whole internal network (risky), it gives them access to each application one at a time through an encrypted proxy. No hardware to buy, no server to patch, no ports to open on your firewall.
+        </p>
+        <p>
+          Setup takes about 30 minutes. The only annoying part is Cloudflare asks for a credit card to verify your domain — they do not charge, but they want to confirm you own it. After that: add each internal app, connect Google Workspace or M365 as your identity provider (so employees log in with their existing accounts), install the WARP client on everyone's devices, and you are done.
+        </p>
+        <p>
+          Even if you skip the full zero trust setup, turn on <strong>Cloudflare Area 1</strong> — it is an AI-powered email security filter included in the free plan. It catches business email compromise attempts (fake CEO emails asking for wire transfers) that Gmail and Outlook's built-in spam filters routinely miss. Takes five minutes to enable and might be the highest-value free security feature available right now.
+        </p>
 
-        <h2>3. Veeam Community Edition — Backup & Recovery</h2>
-        <p><strong>Price:</strong> Free (Community Edition)</p>
-        <p>Veeam is the industry standard for business backups. The free Community Edition backs up to 10 workloads (servers, VMs, or workstations). It supports immutable backups — backups that cannot be modified or encrypted by ransomware — which is the key feature you need.</p>
-        <p><strong>Why you need it:</strong> Ransomware that encrypts your files is powerless if you have clean, immutable backups. Veeam is the best free tool for this.</p>
+        <h2>Veeam Community Edition — Backup & Recovery</h2>
+        <p><strong>Free for:</strong> Up to 10 workloads (servers, VMs, or workstations).</p>
+        <p>
+          Backup software is not something you should pay for unless you have to — the money is better spent on storage. Veeam Community Edition is the free version of the enterprise backup tool, capped at 10 machines, which covers most small businesses. It handles scheduling, compression, and — critically — immutable backups: backup files that ransomware cannot encrypt or delete, even if the ransomware infects the machine running Veeam.
+        </p>
+        <p>
+          Pair Veeam with a couple of cheap external hard drives (swap them weekly, keep one offsite) or with Backblaze B2 cloud storage (~$6/TB/month — the one thing here that costs money, but it is cheap). Set up email alerts so you know when a backup fails — two minutes of configuration, and it is the difference between catching a problem early and discovering your backups are broken on the day you actually need them.
+        </p>
 
-        <h2>4. Google Workspace / Microsoft 365 Built-in Security</h2>
-        <p><strong>Price:</strong> Included with your existing subscription</p>
-        <p>If you use Google Workspace or Microsoft 365 for email, you already have powerful security features — but you probably are not using them. Both include spam/phishing filtering, 2FA enforcement, device management, and audit logs. Microsoft 365 Defender (free tier) includes basic endpoint protection.</p>
-        <p><strong>Why you need it:</strong> Enable these features before buying additional tools. Most small businesses are only using 20% of the security features they already pay for.</p>
+        <h2>Built-In Google Workspace / Microsoft 365 Security</h2>
+        <p><strong>Already included</strong> in your existing subscription.</p>
+        <p>
+          Before installing anything new, spend an hour in your email admin console. Most small businesses use maybe 20% of the security features they already pay for:
+        </p>
+        <ul>
+          <li><strong>Google Workspace:</strong> Advanced phishing protection, endpoint management (enforce encryption and screen locks on employee phones and laptops), security health dashboard that flags misconfigurations.</li>
+          <li><strong>Microsoft 365 Business Premium:</strong> Defender for Business (enterprise-grade endpoint protection with AI detection), Intune device management, Azure AD conditional access rules.</li>
+        </ul>
+        <p>
+          Turn on what is already there. The features you enable in an afternoon might save you from buying three separate tools later.
+        </p>
 
-        <h2>5. ClamAV — Antivirus</h2>
-        <p><strong>Price:</strong> Free and open source</p>
-        <p>ClamAV is a free, open-source antivirus engine. On its own it is command-line only, but you can pair it with ClamWin (Windows GUI) or ClamTk (Linux GUI) for a graphical interface. Detection rates are lower than paid alternatives, but it is lightweight and completely free.</p>
-        <p><strong>Alternative:</strong> Windows Defender, which is built into Windows 10/11 and is actually excellent — many security professionals consider it sufficient for most small businesses.</p>
+        <h2>ClamAV — Antivirus (with an Honest Caveat)</h2>
+        <p><strong>Free for:</strong> Unlimited, open source.</p>
+        <p>
+          ClamAV is the free, open-source antivirus engine that powers a lot of commercial email gateways. It reliably catches known malware. That said, if your computers run Windows 10 or 11, the built-in Windows Defender is actually better for everyday endpoint protection — it is already installed, already running, and Microsoft's cloud-based detection has become genuinely good.
+        </p>
+        <p>
+          Where ClamAV earns its place: Linux servers and NAS devices that do not have Defender. If you run a Linux web server or a Synology, install ClamAV there. For employee laptops, just make sure Windows Defender is actually turned on and has not been quietly disabled by some other program you installed (this happens more often than you would think).
+        </p>
 
-        <h2>6. Have I Been Pwned — Breach Monitoring</h2>
-        <p><strong>Price:</strong> Free</p>
-        <p>This site lets you check whether your email address or domain has appeared in any known data breaches. You can also sign up for domain monitoring — it will notify you if any email address on your company domain appears in a future breach.</p>
-        <p><strong>Why you need it:</strong> Knowing your accounts have been compromised in a breach lets you change passwords before attackers use the leaked credentials.</p>
+        <h2>Have I Been Pwned — Breach Monitoring</h2>
+        <p><strong>Free for:</strong> Individual email lookups and domain-wide monitoring.</p>
+        <p>
+          HIBP is run by Troy Hunt, an Australian security researcher who has become the de facto authority on data breach tracking. Whenever a company gets hacked and passwords leak online, HIBP adds those credentials to its searchable database. You can check individual email addresses, or — this is the useful one — register your company domain and get an alert whenever any email on your domain shows up in a new breach.
+        </p>
+        <p>
+          Set up domain monitoring now. It takes two minutes. The email you get when an employee's work password shows up in a breach is infinitely better than finding out when that password gets used to log into your systems.
+        </p>
 
-        <h2>7. pfSense — Firewall</h2>
-        <p><strong>Price:</strong> Free (requires dedicated hardware, an old PC works)</p>
-        <p>pfSense is a free, enterprise-grade firewall and router operating system. It gives you VLAN support (network segmentation), VPN server, intrusion detection, traffic shaping, and more. It requires some technical know-how to set up, but once running it is extremely reliable.</p>
-        <p><strong>Why you need it:</strong> Network segmentation — keeping your business devices, guest Wi-Fi, and IoT devices on separate networks — is one of the most effective security controls, and pfSense makes it free.</p>
+        <h2>pfSense — Firewall & Network Segmentation</h2>
+        <p><strong>Free for:</strong> Unlimited, open source (Community Edition).</p>
+        <p>
+          pfSense turns a cheap computer into an enterprise-grade firewall. I run it on a $150 fanless mini-PC (a Protectli Vault) that has been in a closet for three years without a reboot. It handles VLANs for network segmentation — separate networks for business devices, guest Wi-Fi, and IoT gadgets like printers and smart TVs. It also includes intrusion detection via Snort or Suricata (both free plugins), a VPN server, and detailed traffic monitoring.
+        </p>
+        <p>
+          The catch: pfSense has a learning curve. You need to be comfortable with networking basics — IP addresses, subnets, NAT — or willing to watch YouTube tutorials for a weekend. If that sounds like more than you want to take on, skip pfSense and buy a UniFi Dream Router ($199) instead — it does 80% of what pfSense does with a clean phone-app interface. But if you have someone technical on your team, pfSense is a firewall that competes with $2,000 appliances for the cost of an old PC.
+        </p>
 
-        <h2>8. Proton Mail — Encrypted Email</h2>
-        <p><strong>Price:</strong> Free for basic, $6.99/user/month for Business</p>
-        <p>Proton Mail provides end-to-end encrypted email. Unlike Gmail or Outlook, Proton cannot read your emails — they are encrypted with keys that only you control. Based in Switzerland, it is protected by some of the strongest privacy laws in the world.</p>
-        <p><strong>Why you need it:</strong> If your business handles sensitive client data (legal, healthcare, financial), encrypted email adds an important layer of protection against data leaks.</p>
+        <h2>Proton Mail — Encrypted Recovery Email</h2>
+        <p><strong>Free for:</strong> 1 GB storage, 150 messages/day, 1 email address.</p>
+        <p>
+          Your business runs on Google Workspace or M365 for day-to-day email. That is fine. But your most sensitive accounts — domain registrar, DNS provider, cloud admin console, bank — need a recovery email that lives outside your main email system. If your Google Workspace gets compromised, the attacker should not be able to use your email to reset every other account you own.
+        </p>
+        <p>
+          Proton Mail's free tier gives you one encrypted email address. Use it as the recovery address for your crown-jewel accounts. The encryption is nice, but the real value is isolation — it is a completely separate system with a separate password. Compromise your main email, and your admin accounts stay protected.
+        </p>
 
-        <h2>9. Squid — Web Proxy & Content Filtering</h2>
-        <p><strong>Price:</strong> Free and open source</p>
-        <p>Squid is a caching proxy that can also filter web traffic. Use it to block known malicious websites, restrict access to high-risk categories (like file-sharing sites), and monitor bandwidth usage.</p>
-        <p><strong>Why you need it:</strong> Blocking known malicious domains at the network level prevents employees from accidentally visiting phishing sites or malware-infected pages.</p>
+        <h2>Cloudflare Gateway — DNS Filtering</h2>
+        <p><strong>Free for:</strong> Up to 50 users (included with Cloudflare Zero Trust).</p>
+        <p>
+          DNS filtering blocks connections to known malicious websites before the page even loads. If an employee clicks a phishing link, the DNS filter stops the connection at the network level — the fake login page never appears. It also blocks malware from phoning home to its command-and-control servers, so even if malware sneaks onto a device, it cannot receive instructions.
+        </p>
+        <p>
+          Configure it once in the Cloudflare dashboard (set policies to block malware, phishing, and optionally adult content), then point your office router's DNS to Cloudflare's servers. Every device on the network gets protected automatically — no software to install on individual computers.
+        </p>
 
-        <h2>10. KeePass — Offline Password Manager</h2>
-        <p><strong>Price:</strong> Free and open source</p>
-        <p>If you prefer to keep your passwords offline, KeePass stores them in an encrypted file on your computer rather than in the cloud. It is less convenient than cloud-based managers for teams but offers maximum control.</p>
-        <p><strong>Why you need it:</strong> For businesses that cannot or will not store passwords in the cloud due to regulatory requirements, KeePass is the gold standard for offline password management.</p>
+        <h2>KeePass — Offline Password Backup</h2>
+        <p><strong>Free for:</strong> Unlimited, open source.</p>
+        <p>
+          I recommend Bitwarden as your daily password manager. But I also keep a KeePass database as a cold backup of every truly critical credential — domain registrar, DNS, cloud admin, bank, insurance policy login. KeePass stores everything in a single encrypted file that lives on a USB drive in a locked drawer. No cloud sync, no internet connection, no dependency on a service being up when you need it.
+        </p>
+        <p>
+          The scenario this protects against: your Bitwarden account gets compromised, or Bitwarden's servers go down during an incident (unlikely but not impossible), or you lose access to your primary email and cannot recover your password manager. KeePass is your offline safety net. Update the backup file once a month — five minutes of work.
+        </p>
 
-        <h2>How to Prioritize</h2>
-        <p>If you are starting from zero, here is the order:</p>
-        <ol>
-          <li><strong>Today:</strong> Set up Bitwarden for everyone. Enable 2FA on email and banking.</li>
-          <li><strong>This week:</strong> Configure Veeam backups. Turn on all the security features in Google Workspace/M365.</li>
-          <li><strong>This month:</strong> Set up Cloudflare Zero Trust if you have remote workers. Check Have I Been Pwned for all company emails.</li>
-          <li><strong>This quarter:</strong> Deploy pfSense for network segmentation. Train your team on phishing (see our guide).</li>
-        </ol>
+        <h2>How to Put It All Together</h2>
+        <p>
+          You do not need all ten tools on day one. Here is the order I would go in, based on what gives you the most protection for the least effort:
+        </p>
 
-        <p>Want to compare these tools side by side? <a href="/tools/tool-comparison/">Use our free tool comparison engine</a>.</p>
+        <div class="rounded-xl border border-gray-200 p-6 not-prose bg-gray-50">
+          <p class="text-sm font-semibold text-gray-800 mb-3">Weekend 1 — Start Here</p>
+          <ul class="text-sm text-gray-700 space-y-2">
+            <li>Install <strong>Bitwarden</strong> on every device. Generate new passwords for email, bank, and domain accounts.</li>
+            <li>Register your domain on <strong>Have I Been Pwned</strong> for breach monitoring.</li>
+          </ul>
+          <p class="text-sm font-semibold text-gray-800 mb-3 mt-4">Weekend 2</p>
+          <ul class="text-sm text-gray-700 space-y-2">
+            <li>Set up <strong>Cloudflare Zero Trust + Gateway</strong> — DNS filtering on your office router, Area 1 email security enabled.</li>
+            <li>Go through your Google Workspace or M365 admin console and <strong>turn on all built-in security features</strong>.</li>
+          </ul>
+          <p class="text-sm font-semibold text-gray-800 mb-3 mt-4">Weekend 3</p>
+          <ul class="text-sm text-gray-700 space-y-2">
+            <li>Install <strong>Veeam Community Edition</strong> and configure automatic daily backups to an external drive + cloud.</li>
+            <li>Create a <strong>Proton Mail</strong> account as the recovery email for admin accounts.</li>
+          </ul>
+          <p class="text-sm font-semibold text-gray-800 mb-3 mt-4">Weekend 4</p>
+          <ul class="text-sm text-gray-700 space-y-2">
+            <li>Set up <strong>pfSense</strong> (or buy a UniFi Dream Router if DIY networking is not your thing).</li>
+            <li>Create a <strong>KeePass</strong> cold backup of critical credentials on a USB drive.</li>
+          </ul>
+        </div>
+
+        <h2>When Free Tools Are Not Enough</h2>
+        <p>
+          The free stack handles the fundamentals. But there are a few points where it makes sense to start paying:
+        </p>
+        <ul>
+          <li><strong>You hit the user caps.</strong> Cloudflare Zero Trust maxes out at 50 users. Veeam Community Edition caps at 10 workloads. When you outgrow these, the paid tiers are worth it.</li>
+          <li><strong>You need a human watching the alerts.</strong> Free tools tell you when something is wrong. A service like Huntress MDR ($5/device/month) investigates and responds for you — a 24/7 security operations center on retainer.</li>
+          <li><strong>Compliance requires it.</strong> Some regulations (PCI-DSS, HIPAA, SOC 2) demand specific audit trails or certifications that free tools cannot provide.</li>
+        </ul>
+        <p>
+          But for most small businesses — the five-person law firm, the ten-person agency, the solo consultant who does everything — this free stack covers what matters. I have seen it work.
+        </p>
+
+        <p class="mt-8">
+          Want to compare these tools side-by-side with paid alternatives? We built a <a href="/tools/tool-comparison/">tool comparison page</a> that lays everything out — no affiliate links, no sponsored placements.
+        </p>
       </div>
     </div>
   </article>

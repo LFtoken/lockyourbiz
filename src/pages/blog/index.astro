@@ -4,11 +4,27 @@ import ArticleCard from '../../components/ArticleCard.astro';
 
 const articles = [
   {
+    title: 'Small Business Backup Strategy: A Step-by-Step Setup Guide for 2026',
+    excerpt: 'Stop worrying about ransomware and data loss. Exactly what to back up, which tools to use, how to set it all up — and most importantly, how to make sure your backups actually work.',
+    href: '/blog/small-business-backup-strategy/',
+    date: '2026-07-15',
+    category: 'Getting Started',
+    readTime: '9',
+  },
+  {
+    title: 'Employee Security Training: A 30-Minute Program That Actually Works',
+    excerpt: 'Most security training puts people to sleep. Here is a ready-to-use training session — complete with script, real examples, and a follow-up plan — that your team will actually remember.',
+    href: '/blog/employee-security-training/',
+    date: '2026-07-15',
+    category: 'Policies & Planning',
+    readTime: '8',
+  },
+  {
     title: 'Essential Security Hardware for Small Business: The 2026 Buying Guide',
     excerpt: 'From YubiKeys to firewalls to backup NAS — exactly what security hardware your small business needs, with specific product recommendations and three budget tiers.',
     href: '/blog/essential-security-hardware/',
     date: '2026-07-14',
-    category: 'Hardware',
+    category: 'Hardware & Services',
     readTime: '10',
   },
   {
@@ -16,7 +32,7 @@ const articles = [
     excerpt: 'MDR, security training, vulnerability scanning, email gateways, pentesting — a practical guide to which services are worth paying for and what to skip.',
     href: '/blog/essential-security-services/',
     date: '2026-07-14',
-    category: 'Services',
+    category: 'Hardware & Services',
     readTime: '11',
   },
   {
@@ -24,7 +40,7 @@ const articles = [
     excerpt: 'A comprehensive 46-point checklist covering passwords, network, backups, devices, cloud accounts, and employee practices. Do your own security audit — no consultants required.',
     href: '/blog/security-audit-checklist/',
     date: '2026-07-13',
-    category: 'Assessment',
+    category: 'Getting Started',
     readTime: '12',
   },
   {
@@ -32,7 +48,7 @@ const articles = [
     excerpt: 'AI is making enterprise-grade security accessible and affordable for small businesses. Discover the best AI tools for threat detection, email filtering, and automated response.',
     href: '/blog/ai-security-tools/',
     date: '2026-07-12',
-    category: 'AI & Tools',
+    category: 'Tools & Tech',
     readTime: '10',
   },
   {
@@ -40,7 +56,7 @@ const articles = [
     excerpt: 'Traditional VPNs are no longer the best answer for remote access. Learn why zero trust is replacing VPNs and how to set it up for free with Cloudflare.',
     href: '/blog/vpn-vs-zerotrust/',
     date: '2026-07-11',
-    category: 'Network Security',
+    category: 'Tools & Tech',
     readTime: '7',
   },
   {
@@ -48,7 +64,7 @@ const articles = [
     excerpt: 'Everything you need to know to protect your small business from cyber threats. Explained in plain English — no technical background required. Covers passwords, 2FA, backups, phishing, and more.',
     href: '/blog/cybersecurity-101/',
     date: '2026-07-10',
-    category: 'Basics',
+    category: 'Getting Started',
     readTime: '8',
   },
   {
@@ -56,7 +72,7 @@ const articles = [
     excerpt: 'What cyber insurance actually covers, how much it costs for small businesses, and how to qualify for coverage. A straightforward guide with no insurance jargon.',
     href: '/blog/cyber-insurance-guide/',
     date: '2026-07-09',
-    category: 'Planning',
+    category: 'Policies & Planning',
     readTime: '8',
   },
   {
@@ -64,7 +80,7 @@ const articles = [
     excerpt: '90% of cyberattacks begin with a phishing email. Learn the 7 red flags your employees need to check before clicking any link or opening an attachment.',
     href: '/blog/phishing-prevention/',
     date: '2026-07-08',
-    category: 'Email Security',
+    category: 'Threats',
     readTime: '6',
   },
   {
@@ -72,7 +88,7 @@ const articles = [
     excerpt: 'You do not need an enterprise budget to protect your business. From password managers to antivirus and backup — these free tools cover all the essentials.',
     href: '/blog/free-security-tools/',
     date: '2026-07-05',
-    category: 'Tools',
+    category: 'Tools & Tech',
     readTime: '10',
   },
   {
@@ -80,7 +96,7 @@ const articles = [
     excerpt: 'Remote work does not have to mean security gaps. VPN alternatives, device policies, and simple steps to protect your data when your team works from home.',
     href: '/blog/remote-work-security/',
     date: '2026-07-03',
-    category: 'Remote Work',
+    category: 'Policies & Planning',
     readTime: '7',
   },
   {
@@ -92,6 +108,8 @@ const articles = [
     readTime: '9',
   },
 ];
+
+const categories = ['All', 'Getting Started', 'Threats', 'Tools & Tech', 'Hardware & Services', 'Policies & Planning'];
 ---
 
 <BaseLayout
@@ -106,10 +124,54 @@ const articles = [
       </p>
     </div>
 
-    <div class="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+    <!-- Category Filter -->
+    <div class="mt-10 flex flex-wrap justify-center gap-2" id="category-filters">
+      {categories.map((cat) => (
+        <button
+          class="filter-btn rounded-full px-4 py-2 text-sm font-medium transition-colors border border-gray-300 bg-white text-gray-700 hover:border-primary-400 hover:text-primary-700 data-[active=true]:bg-primary-600 data-[active=true]:text-white data-[active=true]:border-primary-600"
+          data-category={cat}
+        >
+          {cat}
+        </button>
+      ))}
+    </div>
+
+    <div class="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3" id="articles-grid">
       {articles.map((article) => (
-        <ArticleCard {...article} />
+        <div class="article-card-wrapper" data-category={article.category}>
+          <ArticleCard {...article} />
+        </div>
       ))}
     </div>
   </div>
 </BaseLayout>
+
+<script>
+  // Category filter logic
+  const buttons = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.article-card-wrapper');
+
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const category = btn.getAttribute('data-category');
+
+      // Update active button style
+      buttons.forEach((b) => { b.removeAttribute('data-active'); });
+      btn.setAttribute('data-active', 'true');
+
+      // Show/hide cards
+      cards.forEach((card) => {
+        const cardCat = card.getAttribute('data-category');
+        if (category === 'All' || cardCat === category) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Set "All" as active by default
+  const allBtn = document.querySelector('[data-category="All"]');
+  if (allBtn) allBtn.setAttribute('data-active', 'true');
+</script>

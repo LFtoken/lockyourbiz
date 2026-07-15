@@ -1,0 +1,176 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Small Business Backup Strategy: A Practical Setup Guide for 2026"
+  description="Stop worrying about ransomware and data loss. A step-by-step guide to setting up automatic, tested backups for your small business — with specific tools and configurations."
+>
+  <article class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-3xl">
+      <div class="flex items-center gap-x-4 text-sm mb-4">
+        <time datetime="2026-07-15" class="text-gray-500">July 15, 2026</time>
+        <span class="rounded-full bg-primary-50 px-3 py-1 font-medium text-primary-700">Getting Started</span>
+        <span class="text-gray-500">9 min read</span>
+      </div>
+
+      <h1 class="text-4xl font-extrabold tracking-tight text-gray-900">Small Business Backup Strategy: A Practical Setup Guide for 2026</h1>
+      <p class="mt-4 text-lg leading-8 text-gray-600">
+        You have heard "back up your data" a hundred times. Here is exactly what to back up, which tools to use, how to set it all up, and — most importantly — how to make sure your backups actually work when you need them.
+      </p>
+
+      <div class="mt-10 prose prose-lg prose-gray max-w-none">
+
+        <p>
+          A friend of mine runs a small architecture firm. Six employees, about 15 years of project files — AutoCAD drawings, client contracts, thousands of emails. One Tuesday morning, their office manager opened an invoice attachment from what looked like a known vendor. By lunchtime, every file on their server and every connected computer had a .locked extension. The ransom demand was $18,000.
+        </p>
+        <p>
+          They did not pay. By 4 PM that same day, they had restored everything from backup and were back at work. The ransomware cost them about six hours of downtime and a few hundred dollars in IT support. Why? Because their backups were set up correctly — and they had tested them.
+        </p>
+        <p>
+          This guide is about making sure you have that same outcome if it happens to you. No theory, no enterprise-speak — just what to do and how to do it.
+        </p>
+
+        <h2>What to Back Up: The Three Buckets</h2>
+        <p>
+          Before buying tools or setting schedules, figure out what actually needs protecting. I think about it in three buckets:
+        </p>
+
+        <h3>Bucket 1: Files You Cannot Recreate</h3>
+        <p>These are the things that would put you out of business if they disappeared:</p>
+        <ul>
+          <li>Customer lists, contracts, proposals, and invoices</li>
+          <li>Financial records, tax documents, payroll data</li>
+          <li>Project files, design documents, source code — anything you created</li>
+          <li>Email archives (yes, emails — people forget these)</li>
+        </ul>
+        <p><strong>Rule:</strong> Back up daily, keep multiple versions, store one copy offsite. This is your highest priority.</p>
+
+        <h3>Bucket 2: Systems You Can Rebuild (But Do Not Want To)</h3>
+        <p>Things you could technically recreate from scratch, but it would take days or weeks:</p>
+        <ul>
+          <li>Computer configurations, installed software lists, license keys</li>
+          <li>Website files and databases</li>
+          <li>CRM and accounting software data (most of this lives in the cloud — verify that)</li>
+        </ul>
+        <p><strong>Rule:</strong> Back up weekly at minimum. Document your software licenses and configurations somewhere that is not on the same computer.</p>
+
+        <h3>Bucket 3: Cloud Data You Assume Is Backed Up (It Is Not)</h3>
+        <p>This one catches people off guard. Google Workspace and Microsoft 365 protect against <em>their</em> infrastructure failing. They do not protect against you accidentally deleting files, an employee going rogue, or ransomware encrypting your synced cloud folders. If you delete a file in Google Drive and do not notice for 30 days, it is gone.</p>
+        <p><strong>Rule:</strong> Use a third-party cloud backup tool. We will cover specific options below.</p>
+
+        <div class="rounded-2xl bg-yellow-50 border border-yellow-200 p-6 not-prose">
+          <p class="text-sm font-semibold text-yellow-800">The Lesson from My Architect Friend</p>
+          <p class="mt-2 text-sm text-yellow-700">
+            Their QuickBooks data lived in the cloud (Intuit's servers). Their project files lived on a local server. But their email — 15 years of client communications, approvals, and change orders — lived only in each employee's Outlook. They almost lost all of it because nobody thought to include email in the backup plan. <strong>Do not forget email.</strong>
+          </p>
+        </div>
+
+        <h2>Tools: What to Use at Each Budget Level</h2>
+        <p>
+          I have set up backup systems ranging from "zero dollars, using what you already have" to "fully automated with monitoring." Here is what I recommend at each level:
+        </p>
+
+        <h3>Zero-Budget Setup (Solo or 2–3 People)</h3>
+        <div class="rounded-xl border border-gray-200 p-5 not-prose bg-gray-50 mb-4">
+          <ul class="text-sm text-gray-700 space-y-2">
+            <li><strong>Veeam Community Edition</strong> (free) — backs up up to 10 computers or servers to an external drive. Handles scheduling, compression, and immutable backups.</li>
+            <li><strong>One external USB hard drive</strong> ($50–80 for 2TB) — connected once a week for the backup, then unplugged and stored in a drawer. This physical disconnection is what makes it immune to ransomware.</li>
+            <li><strong>Google Drive or OneDrive</strong> — you are already paying for it. Move all active work files into the synced folder. This gives you offsite copies automatically.</li>
+          </ul>
+        </div>
+        <p><strong>The catch:</strong> Someone has to remember to plug in the drive and run the backup. Set a recurring calendar reminder for every Friday at 4 PM. If you miss two weeks in a row, something is wrong.</p>
+
+        <h3>Standard Setup (3–20 People)</h3>
+        <div class="rounded-xl border border-gray-200 p-5 not-prose bg-gray-50 mb-4">
+          <ul class="text-sm text-gray-700 space-y-2">
+            <li><strong>Veeam Community Edition</strong> (free) — same tool, configured to back up all computers to a NAS automatically every night.</li>
+            <li><strong>Synology DS224+ NAS</strong> ($299 + ~$200 for two drives) — sits on your office network. Configured with two identical drives in RAID 1 (mirroring), so one drive failure does not lose anything. Veeam backs up to the NAS. The NAS then syncs nightly to cloud storage.</li>
+            <li><strong>Backblaze B2</strong> (~$6/TB/month) — cloud storage that the NAS automatically syncs to. This is your offsite copy. Configure object lock on the B2 bucket (takes two clicks in the Backblaze dashboard), and your cloud backups become immutable — ransomware cannot touch them.</li>
+          </ul>
+        </div>
+        <p><strong>Bonus:</strong> Set up Veeam's email notifications. If a backup fails, you get an email within minutes. This is the single most important configuration — a backup that silently fails is not a backup.</p>
+
+        <h3>Hands-Off Setup (If You Never Want to Think About It)</h3>
+        <div class="rounded-xl border border-gray-200 p-5 not-prose bg-gray-50 mb-4">
+          <ul class="text-sm text-gray-700 space-y-2">
+            <li><strong>Datto Endpoint Backup</strong> (~$10/device/month) — continuous backup every 5 minutes. Ransomware detection built in. Backs up to Datto's cloud automatically. If your computer dies, you can boot from the backup in Datto's cloud and keep working while you get new hardware.</li>
+            <li><strong>Backblaze Business Backup</strong> ($5/device/month) — simpler and cheaper than Datto. Unlimited storage. Continuous backup. Does not have the instant-boot-from-cloud feature, but it is solid and hands-off.</li>
+          </ul>
+        </div>
+        <p>Is it worth paying $5–10/device/month? If you are reading this guide and feeling overwhelmed, yes. The peace of mind of knowing someone else is making sure your backups run is worth the cost.</p>
+
+        <h2>How to Set It Up: The Saturday Afternoon Plan</h2>
+        <p>Here is exactly what to do, in order. Block off 3–4 hours on a Saturday.</p>
+
+        <h3>Hour 1: Inventory</h3>
+        <ol>
+          <li>Make a list of every computer, server, and cloud service your business uses.</li>
+          <li>For each one, write down what data lives there and which bucket it falls into.</li>
+          <li>Identify anything that is <em>only</em> stored on one person's computer. Move it to a shared location or add that computer to the backup list.</li>
+        </ol>
+
+        <h3>Hour 2: Set Up Local Backup</h3>
+        <ol>
+          <li>Download and install Veeam Community Edition on one computer (this will be your "backup manager").</li>
+          <li>Plug in your external drive or connect to your NAS.</li>
+          <li>Create a backup job: select which folders on which computers to back up, set the schedule (daily at 2 AM for servers, daily at noon for employee laptops), and point the destination to your drive or NAS.</li>
+          <li>Enable "immutable backups" in Veeam's settings. This creates a "compliance lock" period during which even an administrator cannot delete the backup files.</li>
+        </ol>
+
+        <h3>Hour 3: Set Up Offsite Backup</h3>
+        <ol>
+          <li>If using a NAS: install the NAS's cloud sync app (Synology has Cloud Sync built in). Connect it to Backblaze B2 or Wasabi. Set it to sync every night at 3 AM.</li>
+          <li>If using an external drive: buy a second drive, back up to it on Fridays, and take it home. Swap the two drives each week. This is old-school but extremely effective.</li>
+        </ol>
+
+        <h3>Hour 4: Test It</h3>
+        <ol>
+          <li>Pick a random file — ideally something you have not touched in months. Restore it from backup to a different location. Open it. Verify the contents are correct.</li>
+          <li>If it does not work, fix the issue now — not when you are in the middle of a ransomware recovery.</li>
+          <li>Write down the restore procedure. Be specific enough that someone else could follow it. Store this document somewhere that is not on the computer you are backing up.</li>
+        </ol>
+
+        <h2>The Testing Schedule Nobody Actually Does (But Should)</h2>
+        <p>
+          I am going to be honest: most people never test their backups. They set them up, they assume they are working, and they find out the truth on the worst day of their business. Here is the minimum testing schedule I recommend:
+        </p>
+        <ul>
+          <li><strong>Monthly:</strong> Open your backup software and verify the last backup shows "Success." Check that the file count looks reasonable (if your backup normally covers 50,000 files and this month it says 500, something is wrong).</li>
+          <li><strong>Quarterly:</strong> Actually restore a file. Pick something random — last year's tax return, a client contract from six months ago, anything. Restore it to your desktop, open it, and verify it works.</li>
+          <li><strong>Annually:</strong> Do a full disaster recovery drill. Pretend your main computer or server is completely dead. Can you restore everything to a different machine? How long does it take? This tells you your real Recovery Time Objective.</li>
+        </ul>
+        <p>Put these on your calendar. Right now. I will wait.</p>
+
+        <h2>Common Backup Mistakes I See All the Time</h2>
+        <ol>
+          <li><strong>The "always plugged in" external drive.</strong> If your backup drive is permanently connected, ransomware will encrypt it along with everything else. The drive must be physically disconnected between backups, or you must use immutable cloud storage.</li>
+          <li><strong>Backing up to the same computer.</strong> If your backup lives on the same hard drive or same computer as your working files, a hard drive failure destroys both. This sounds obvious, but you would be surprised.</li>
+          <li><strong>Only backing up files, not systems.</strong> If your accounting software's database is on your computer but your backup only covers the Documents folder, you are not actually protected. Think in terms of "what do I need to get back to work," not "what files do I have."</li>
+          <li><strong>Thinking cloud sync is backup.</strong> Dropbox, Google Drive, and OneDrive sync changes in real time. If ransomware encrypts a file on your computer, the encrypted version syncs to the cloud. Most cloud storage keeps deleted/changed files for 30 days, which gives you a window — but 30 days goes by fast. A real backup keeps multiple historical versions.</li>
+          <li><strong>Never testing the restore.</strong> I cannot emphasize this enough. The backup is not the goal. The restore is the goal.</li>
+        </ol>
+
+        <h2>Keep Going</h2>
+        <p>
+          A good backup strategy is not complicated, but it does require consistency. Set it up once, test it once, and then the only ongoing work is a five-minute check each month to make sure it is still running. The alternative — losing years of business data and having no way to get it back — is infinitely worse.
+        </p>
+        <p>
+          The architect friend I mentioned at the beginning? He still emails me every few months to say thanks. His words: "I did not realize how close we came to losing everything until I saw the look on the IT guy's face when he said 'your backups are clean.'"
+        </p>
+        <p>
+          Do not wait until you need the backup to find out if it works. Set it up this weekend.
+        </p>
+
+        <div class="rounded-2xl bg-primary-50 border border-primary-200 p-6 not-prose mt-10">
+          <p class="text-sm font-semibold text-primary-800">Related Tools & Guides</p>
+          <p class="mt-2 text-sm text-primary-700">
+            <a href="/blog/free-security-tools/" class="font-semibold">Free Security Tools Guide</a> — covers Veeam and other free backup tools in more detail.<br/>
+            <a href="/blog/ransomware-protection/" class="font-semibold">Ransomware Protection Guide</a> — how backups fit into your overall ransomware defense.<br/>
+            <a href="/tools/security-assessment/" class="font-semibold">Security Assessment</a> — check if your backup strategy meets the minimum standard.
+          </p>
+        </div>
+      </div>
+    </div>
+  </article>
+</BaseLayout>

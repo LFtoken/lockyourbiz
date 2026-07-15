@@ -10,7 +10,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <div class="mx-auto max-w-3xl">
       <div class="flex items-center gap-x-4 text-sm mb-4">
         <time datetime="2026-07-10" class="text-gray-500">July 10, 2026</time>
-        <span class="rounded-full bg-primary-50 px-3 py-1 font-medium text-primary-700">Basics</span>
+        <span class="rounded-full bg-primary-50 px-3 py-1 font-medium text-primary-700">Getting Started</span>
         <span class="text-gray-500">8 min read</span>
       </div>
 
@@ -20,108 +20,117 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       </p>
 
       <div class="mt-10 prose prose-lg prose-gray max-w-none">
-        <div class="rounded-2xl bg-red-50 border border-red-200 p-6 not-prose">
-          <p class="text-sm font-semibold text-red-800">Why This Matters</p>
-          <p class="mt-2 text-sm text-red-700">
-            A cyber attack is not a hypothetical risk. 63% of small and medium businesses experienced at least one cyber incident in the past year (Verizon 2026 Data Breach Investigations Report). The average breach costs $25,000. But here is the important part: <strong>the vast majority of these attacks could have been prevented with basic security measures that cost little to nothing.</strong>
+
+        <p>
+          I spent over a decade working in cybersecurity before realizing something: the industry does a terrible job of talking to small business owners. Every guide assumes you have an IT department. Every checklist demands tools that cost more than your monthly rent. Every recommendation is written in jargon that requires a computer science degree to decode.
+        </p>
+        <p>
+          This guide is different. It assumes you are running a small business — maybe a law firm, a dental practice, an online store, or a consulting shop. You do not have a dedicated IT person. Your "server room" is a closet with a router in it. And you just want to know: <em>what do I actually need to do to protect my business?</em>
+        </p>
+
+        <div class="rounded-2xl bg-yellow-50 border border-yellow-200 p-6 not-prose">
+          <p class="text-sm font-semibold text-yellow-800">A Quick Reality Check</p>
+          <p class="mt-2 text-sm text-yellow-700">
+            Here is the number that stuck with me: 63% of small and medium businesses dealt with at least one cyber incident last year, according to Verizon's 2026 breach report. The average cost? Around $25,000. But here is what the report does not tell you: the majority of those incidents began with something dumb — a reused password, an unpatched router, a backup that nobody tested. These are not sophisticated attacks. They are attacks that work because the basics were skipped.
           </p>
         </div>
 
-        <h2>1. Use a Password Manager (Seriously, This Is Step One)</h2>
+        <h2>Start Here: Get a Password Manager</h2>
         <p>
-          If you only do one thing after reading this guide, make it this: get a password manager for yourself and every employee. The single biggest security vulnerability in most small businesses is password reuse. People use the same password for their email, their bank, their CRM, and 50 other services. When one of those services gets breached — and services get breached all the time — attackers now have the key to everything.
+          I know, I know — everyone says this. But there is a reason it is always step one. A few years ago, a friend who runs a small architecture firm called me in a panic. Someone had logged into their QuickBooks and initiated a $15,000 wire transfer. How? The office manager used the same password for everything — email, QuickBooks, Dropbox, even her personal Netflix account. Netflix got breached, the password leaked, and the attackers simply tried it on every business service they could find.
         </p>
-        <p>A password manager solves this problem by:</p>
+        <p>
+          The fix took 30 minutes: I installed Bitwarden on everyone's computer, spent 20 minutes showing them how it works, and told the office manager to change every password (the password manager does the hard part — generating and remembering them). That was two years ago. No incidents since.
+        </p>
+        <p>Here is what a password manager actually does for you:</p>
         <ul>
-          <li>Generating a unique, strong password for every single account</li>
-          <li>Storing all passwords securely so you do not need to remember them</li>
-          <li>Auto-filling passwords on websites (so you do not fall for fake login pages)</li>
-          <li>Allowing secure password sharing with employees without emailing or texting passwords</li>
+          <li>Creates a unique, random password for every account — you never need to think one up again</li>
+          <li>Fills passwords automatically on legitimate websites — and <em>won't</em> fill them on fake ones, which stops phishing cold</li>
+          <li>Lets you share passwords with employees without anyone seeing the actual password (no more sticky notes or text messages)</li>
         </ul>
-        <p><strong>Recommendation:</strong> Start with Bitwarden. It is free for individuals, open source, and audited by security researchers. For teams, Bitwarden Teams costs $4/user/month. 1Password is the premium option at $19.95/month for up to 10 users — it has a more polished interface and advanced features like Travel Mode.</p>
-        <p>Set it up today. It takes 30 minutes and it is the single highest-impact security move you can make.</p>
+        <p><strong>What to use:</strong> Bitwarden is free for individuals and open source. For teams, it is $4 per person per month. If you want something fancier, 1Password is $19.95/month for up to 10 people. Either one works. Pick one today — this is the highest-impact thing you can do, period.</p>
 
-        <h2>2. Turn On Two-Factor Authentication (2FA) Everywhere</h2>
+        <h2>Lock Your Accounts With Two-Factor Authentication</h2>
         <p>
-          A password alone is not enough. If someone steals or guesses your password — and they will, eventually — two-factor authentication stops them from accessing your account. 2FA requires a second verification step, usually a code from your phone or a hardware key.
+          A password is something you know. Two-factor authentication adds something you have — usually your phone. Even if someone steals your password, they cannot log in without also having your phone in their hand. It is the difference between a locked door and a locked door with a deadbolt.
         </p>
-        <p>Prioritize enabling 2FA on these accounts first:</p>
+        <p>Enable 2FA on these accounts first, in this order:</p>
         <ol>
-          <li><strong>Email</strong> — If someone gets into your email, they can reset the password on every other account you own.</li>
-          <li><strong>Banking and financial accounts</strong> — Obvious reasons.</li>
-          <li><strong>Domain registrar and DNS</strong> — If someone hijacks your domain, they control your website and email.</li>
-          <li><strong>Cloud storage</strong> — Google Drive, Dropbox, OneDrive — all your business files.</li>
-          <li><strong>Social media and business apps</strong> — CRM, accounting software, Slack.</li>
+          <li><strong>Email</strong> — your email is the master key. If someone gets in, they can reset passwords on every other account you own.</li>
+          <li><strong>Banking and accounting</strong> — obvious, but you would be surprised how many small businesses skip this.</li>
+          <li><strong>Domain registrar and DNS</strong> — lose control of your domain, and you lose your website, email, and credibility in one shot.</li>
+          <li><strong>Cloud storage</strong> — Google Drive, OneDrive, Dropbox. All your business files in one place.</li>
+          <li><strong>Everything else</strong> — CRM, payroll, Slack, social media.</li>
         </ol>
-        <p><strong>Which type of 2FA to use:</strong> Authenticator apps (Google Authenticator, Authy, or the one built into your password manager) are more secure than SMS codes. If you want the highest level of protection, get hardware security keys like YubiKeys for your most critical accounts.</p>
+        <p>Use an authenticator app (Google Authenticator, Authy, or the one built into your password manager). Avoid SMS codes when you can — they are better than nothing, but SIM-swap attacks make them the weakest form of 2FA. If you want the strongest protection for your most critical accounts, get a couple of YubiKeys ($25–55 each) — they are physical keys you plug into your computer and they cannot be phished.</p>
 
-        <h2>3. Set Up Automatic Backups (The 3-2-1 Rule)</h2>
+        <h2>Backups: The Thing Everyone Skips Until It Is Too Late</h2>
         <p>
-          Ransomware encrypts your files and demands payment to unlock them. The only reliable defense is having good backups. If you have backups, you can restore your data without paying. If you do not have backups, your choices are pay the ransom or lose everything.
+          Ransomware works by encrypting your files and demanding money to unlock them. The only way to tell a ransomware attacker "no thanks" is to have your own copies of everything. No backups? You are negotiating with criminals. Good backups? You wipe the computer, restore from backup, and get back to work.
         </p>
-        <p>Follow the <strong>3-2-1 backup rule</strong>:</p>
+        <p>The 3-2-1 rule has been around forever and it still works:</p>
         <ul>
-          <li><strong>3 copies</strong> of your data (the original + two backups)</li>
-          <li><strong>2 different types</strong> of storage media (e.g., cloud + external hard drive)</li>
-          <li><strong>1 copy offsite</strong> (cloud storage or a hard drive stored at a different location)</li>
+          <li><strong>3 copies</strong> of your data — your working copy, plus two backups</li>
+          <li><strong>2 different storage types</strong> — cloud backup (Backblaze, iDrive) plus a local external hard drive</li>
+          <li><strong>1 offsite copy</strong> — if your office burns down, the backup in the closet burns with it. Cloud storage solves this.</li>
         </ul>
-        <p>For most small businesses, this means: your working files on your computer, an automatic cloud backup (Backblaze, iDrive, or Veeam Community Edition), and a local backup to an external hard drive. Set it all to run automatically so you never have to think about it.</p>
+        <p>One thing most guides forget to mention: <strong>test your backups.</strong> At least once a quarter, pick a random file and actually restore it. A backup you have never tested is a wish, not a backup. I have seen too many businesses discover their backups were silently failing — on the day they needed them.</p>
 
-        <h2>4. Keep Everything Updated</h2>
+        <h2>Keep Your Software Updated</h2>
         <p>
-          Software updates are annoying. But they exist primarily to patch security vulnerabilities that attackers are actively exploiting. When you click "Remind me later," you are leaving a known hole open.
+          I get it — update prompts are annoying. They always pop up when you are in the middle of something. But here is the uncomfortable truth: most security updates fix vulnerabilities that attackers are already exploiting. When Microsoft or Apple releases an emergency patch, it means criminals have been using that hole for weeks or months. Every day you delay updating is a day they can walk through it.
         </p>
-        <p>Enable automatic updates on:</p>
+        <p>Turn on automatic updates for: your operating system, web browser, all business software, and — this one gets overlooked — your website (especially if it runs WordPress with plugins). And if your office router is more than five years old and the manufacturer stopped releasing firmware updates, replace it. A $150 router is cheaper than a breach.</p>
+
+        <h2>Teach Your Team to Spot Phishing (Without Boring Them to Death)</h2>
+        <p>
+          I have sat through corporate security training sessions that put people to sleep. That is not what you need. What you need is a 15-minute conversation with your team where you show them a few real phishing emails and point out the tells.
+        </p>
+        <p>Here is the short version you can teach at your next team meeting:</p>
         <ul>
-          <li>Operating systems (Windows, macOS, iOS, Android)</li>
-          <li>Web browsers (Chrome, Firefox, Edge)</li>
-          <li>All business software (accounting, CRM, email clients)</li>
-          <li>Website CMS and plugins (especially WordPress)</li>
-          <li>Router firmware</li>
+          <li>Look at the <strong>actual sender address</strong>, not just the name. "Amazon Support" from amazon-support8372@gmail.com is not Amazon.</li>
+          <li>Hover over links before clicking. If the URL looks weird or does not match where it claims to go, do not click.</li>
+          <li>Be suspicious of <strong>urgency</strong>. "Your account will be deleted in 24 hours!" is designed to make you panic and click without thinking.</li>
+          <li>Unexpected attachments from unknown senders? Delete the email. If it was important, they will follow up.</li>
+          <li>When in doubt, <strong>verify through another channel</strong>. Got a weird invoice email from your boss? Call them or Slack them. Do not reply to the email.</li>
         </ul>
+        <p>We have a <a href="/blog/phishing-prevention/">more detailed guide on phishing</a> if you want to go deeper, but honestly, those five rules cover 90% of real-world phishing attempts.</p>
 
-        <h2>5. Train Your Team to Spot Phishing</h2>
+        <h2>Separate Your Wi-Fi Networks</h2>
         <p>
-          Your security is only as strong as your least cautious employee. Every person with access to your business email or systems needs to know the basics of spotting a phishing attempt. We have a <a href="/blog/phishing-prevention/">detailed guide on phishing prevention</a>, but the fundamentals are:
+          Your office Wi-Fi should have at least two networks: one for business devices (your computers, printer, file server) and one for everything else — guests, personal phones, the smart TV in the break room. The reason is simple: if a visitor's phone has malware, you do not want it scanning your business network for things to attack.
         </p>
+        <p>Almost every router made in the last decade supports a guest network. Log into your router's admin panel, find "Guest Network" or "Multiple SSIDs," and enable it. Name the guest network something different and give it a different password. Five minutes, done.</p>
+
+        <h2>Write Down What to Do When Things Go Wrong</h2>
+        <p>
+          When ransomware hits, you are not thinking clearly. Your files are locked, your heart is racing, and some screen is demanding Bitcoin. This is not the time to figure out who to call. Write down your incident response plan now, print it out, and keep it somewhere you can find it when your computer is a brick.
+        </p>
+        <p>A good plan answers five questions:</p>
         <ul>
-          <li>Check the sender's actual email address, not just the display name</li>
-          <li>Hover over links before clicking to see where they really go</li>
-          <li>Be suspicious of urgency ("ACT NOW or your account will be closed")</li>
-          <li>Do not open unexpected attachments, especially from unknown senders</li>
-          <li>If something feels off, verify through a different channel (phone call, Slack)</li>
+          <li>Who handles this? Name someone specific. If it is you, name a backup person.</li>
+          <li>How do you disconnect infected machines? "Pull the network cable" or "turn off Wi-Fi" is a fine answer.</li>
+          <li>Where are the backups and how do you restore them? Be specific enough that someone else could do it.</li>
+          <li>Who do you call for help? Write down actual phone numbers — IT support, your insurance agent, your lawyer.</li>
+          <li>Do you need to notify customers? Know your obligations ahead of time.</li>
         </ul>
+        <p>Review this plan once a quarter. It takes 10 minutes and it means you are not starting from zero when something bad happens.</p>
 
-        <h2>6. Separate Work and Guest Wi-Fi</h2>
+        <h2>Keep Going</h2>
         <p>
-          Your business Wi-Fi should have at least two networks: one for your business devices (computers, servers, printers) and one for guests and personal devices. If a customer's infected phone connects to your main business network, it can scan for and attack your business devices. A separate guest network isolates that risk.
+          I am not going to end this with "The Bottom Line" in bold. Instead, here is what I actually want you to take away: cybersecurity for a small business is not about buying the most expensive tools or becoming a technical expert. It is about doing a handful of simple things consistently. Password manager. Two-factor authentication. Backups. Updates. Teach your team a few things. Separate your Wi-Fi. Have a plan.
         </p>
-        <p>This is a setting on your router that takes 5 minutes to configure. Look for "Guest Network" or "VLAN" in your router settings.</p>
-
-        <h2>7. Have an Incident Response Plan</h2>
         <p>
-          What do you do if ransomware locks all your files? Who do you call if your email gets hacked? What if your bank accounts show suspicious transactions? If you are figuring this out in the moment, you will make expensive mistakes.
+          Most attackers are looking for easy targets. If your business has these basics in place, they will move on to someone who does not. You do not need to be the most secure business on the internet — you just need to not be the easiest one to break into.
         </p>
-        <p>A basic incident response plan does not need to be complicated. It just needs to answer these questions:</p>
-        <ul>
-          <li>Who is responsible for handling a security incident? (Name a specific person)</li>
-          <li>How do you disconnect infected computers from the network?</li>
-          <li>Where are your backups and how do you restore from them?</li>
-          <li>Who do you call for help? (IT support, cyber insurance provider, legal counsel)</li>
-          <li>When and how do you notify customers if their data was affected?</li>
-        </ul>
-        <p>Write this down. Put it somewhere accessible. Review it quarterly.</p>
-
-        <h2>The Bottom Line</h2>
         <p>
-          Cybersecurity is not about being perfect. It is about not being the easiest target. Most attackers are opportunistic — they go after the low-hanging fruit. If your business has a password manager, 2FA, automatic backups, updated software, and a team that knows how to spot phishing, you have eliminated the vulnerabilities that most attacks exploit.
+          Start today. Install a password manager before you close this tab. The rest can happen over the next few weeks. But start.
         </p>
-        <p>Start with step one today. Get a password manager. The rest you can do over the next few weeks.</p>
 
         <div class="rounded-2xl bg-primary-50 border border-primary-200 p-6 not-prose mt-10">
-          <p class="text-sm font-semibold text-primary-800">Next Steps</p>
+          <p class="text-sm font-semibold text-primary-800">Want a Quick Health Check First?</p>
           <p class="mt-2 text-sm text-primary-700">
-            Not sure where your business stands? <a href="/tools/security-assessment/" class="font-semibold">Take our free 3-minute security assessment</a> to get a personalized risk score and action plan.
+            <a href="/tools/security-assessment/" class="font-semibold">Take our free 3-minute security assessment</a> — it scores your current setup and tells you exactly where to focus. No signup, no sales pitch, just a clear list of what needs fixing.
           </p>
         </div>
       </div>
