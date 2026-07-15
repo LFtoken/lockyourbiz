@@ -16,7 +16,7 @@ const { title, excerpt, href, date, category, readTime } = Astro.props;
     <span class="relative z-10 rounded-full bg-primary-50 px-3 py-1.5 font-medium text-primary-700">{category}</span>
   </div>
   <h3 class="mt-4 text-lg font-semibold text-gray-900">
-    <a href={href} class="group-hover:text-primary-700 transition-colors no-underline">
+    <a href={href} class="block py-1 group-hover:text-primary-700 transition-colors no-underline">
       {title}
     </a>
   </h3>

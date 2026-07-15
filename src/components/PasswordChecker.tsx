@@ -75,7 +75,7 @@ export default function PasswordChecker() {
         />
         <button
           onClick={() => setShowPassword(!showPassword)}
-          className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 cursor-pointer"
+          className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 cursor-pointer p-2 min-h-[44px] min-w-[44px] flex items-center justify-center"
           aria-label={showPassword ? 'Hide password' : 'Show password'}
         >
           {showPassword ? (

@@ -137,7 +137,7 @@ export default function ToolComparison() {
           <button
             key={cat}
             onClick={() => setFilter(cat)}
-            className={`rounded-full px-4 py-1.5 text-sm font-medium transition-all cursor-pointer ${
+            className={`rounded-full px-4 py-2.5 text-sm font-medium transition-all cursor-pointer min-h-[44px] ${
               filter === cat
                 ? 'bg-primary-600 text-white shadow-sm'
                 : 'bg-gray-100 text-gray-600 hover:bg-gray-200'

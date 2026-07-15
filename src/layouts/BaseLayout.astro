@@ -107,25 +107,33 @@ const {
           <span>Small Biz Security</span>
         </a>
         <div class="hidden items-center gap-8 sm:flex">
-          <a href="/tools/" class="text-sm font-medium text-gray-600 hover:text-primary-700 transition-colors">Tools</a>
-          <a href="/blog/" class="text-sm font-medium text-gray-600 hover:text-primary-700 transition-colors">Guides</a>
-          <a href="/about/" class="text-sm font-medium text-gray-600 hover:text-primary-700 transition-colors">About</a>
-          <a href="/contact/" class="text-sm font-medium text-gray-600 hover:text-primary-700 transition-colors">Contact</a>
+          <a href="/tools/" class="text-sm font-medium text-gray-600 hover:text-primary-700 transition-colors py-2">Tools</a>
+          <a href="/blog/" class="text-sm font-medium text-gray-600 hover:text-primary-700 transition-colors py-2">Guides</a>
+          <a href="/about/" class="text-sm font-medium text-gray-600 hover:text-primary-700 transition-colors py-2">About</a>
+          <a href="/contact/" class="text-sm font-medium text-gray-600 hover:text-primary-700 transition-colors py-2">Contact</a>
         </div>
-        <button class="sm:hidden rounded-lg p-2 text-gray-600 hover:bg-gray-100" id="mobile-menu-btn" aria-label="Open menu">
+        <button class="sm:hidden rounded-lg p-3 text-gray-600 hover:bg-gray-100 min-h-[44px] min-w-[44px]" id="mobile-menu-btn" aria-label="Open menu">
           <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /></svg>
         </button>
       </nav>
-      <!-- Mobile menu -->
-      <div class="hidden sm:hidden border-t border-gray-100 bg-white px-4 py-3" id="mobile-menu">
-        <div class="flex flex-col gap-3">
-          <a href="/tools/" class="text-sm font-medium text-gray-600 hover:text-primary-700">Tools</a>
-          <a href="/blog/" class="text-sm font-medium text-gray-600 hover:text-primary-700">Guides</a>
-          <a href="/about/" class="text-sm font-medium text-gray-600 hover:text-primary-700">About</a>
-          <a href="/contact/" class="text-sm font-medium text-gray-600 hover:text-primary-700">Contact</a>
-        </div>
-      </div>
     </header>
+
+    <!-- Mobile menu overlay — positioned outside the header -->
+    <div class="fixed inset-0 z-40 hidden bg-black/30" id="mobile-menu-overlay"></div>
+    <div class="fixed top-0 right-0 bottom-0 z-40 hidden w-72 max-w-[85vw] bg-white shadow-2xl overflow-y-auto" id="mobile-menu">
+      <div class="flex items-center justify-between px-4 py-4 border-b border-gray-100">
+        <span class="text-lg font-bold text-primary-700">Menu</span>
+        <button class="rounded-lg p-3 text-gray-600 hover:bg-gray-100 min-h-[44px] min-w-[44px]" id="mobile-menu-close" aria-label="Close menu">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+        </button>
+      </div>
+      <nav class="flex flex-col px-4 py-3" aria-label="Mobile navigation">
+        <a href="/tools/" class="block rounded-lg px-4 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary-700 transition-colors">Tools</a>
+        <a href="/blog/" class="block rounded-lg px-4 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary-700 transition-colors">Guides</a>
+        <a href="/about/" class="block rounded-lg px-4 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary-700 transition-colors">About</a>
+        <a href="/contact/" class="block rounded-lg px-4 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary-700 transition-colors">Contact</a>
+      </nav>
+    </div>
 
     <main class="flex-1">
       <slot />
@@ -142,20 +150,20 @@ const {
           </div>
           <div>
             <h3 class="text-sm font-semibold text-gray-900">Resources</h3>
-            <ul class="mt-3 space-y-2">
-              <li><a href="/tools/" class="text-sm text-gray-600 hover:text-primary-700">Free Tools</a></li>
-              <li><a href="/blog/" class="text-sm text-gray-600 hover:text-primary-700">Guides & Articles</a></li>
-              <li><a href="/blog/cybersecurity-101/" class="text-sm text-gray-600 hover:text-primary-700">Cybersecurity 101</a></li>
+            <ul class="mt-3 space-y-1">
+              <li><a href="/tools/" class="block py-2 text-sm text-gray-600 hover:text-primary-700 transition-colors">Free Tools</a></li>
+              <li><a href="/blog/" class="block py-2 text-sm text-gray-600 hover:text-primary-700 transition-colors">Guides & Articles</a></li>
+              <li><a href="/blog/cybersecurity-101/" class="block py-2 text-sm text-gray-600 hover:text-primary-700 transition-colors">Cybersecurity 101</a></li>
             </ul>
           </div>
           <div>
             <h3 class="text-sm font-semibold text-gray-900">Company</h3>
-            <ul class="mt-3 space-y-2">
-              <li><a href="/about/" class="text-sm text-gray-600 hover:text-primary-700">About</a></li>
-              <li><a href="/contact/" class="text-sm text-gray-600 hover:text-primary-700">Contact</a></li>
-              <li><a href="/privacy/" class="text-sm text-gray-600 hover:text-primary-700">Privacy Policy</a></li>
-              <li><a href="/privacy/#cookie-settings" class="text-sm text-gray-600 hover:text-primary-700">Cookie Settings</a></li>
-              <li><a href="/privacy/#ccpa" class="text-sm text-gray-600 hover:text-primary-700">Do Not Sell My Info</a></li>
+            <ul class="mt-3 space-y-1">
+              <li><a href="/about/" class="block py-2 text-sm text-gray-600 hover:text-primary-700 transition-colors">About</a></li>
+              <li><a href="/contact/" class="block py-2 text-sm text-gray-600 hover:text-primary-700 transition-colors">Contact</a></li>
+              <li><a href="/privacy/" class="block py-2 text-sm text-gray-600 hover:text-primary-700 transition-colors">Privacy Policy</a></li>
+              <li><a href="/privacy/#cookie-settings" class="block py-2 text-sm text-gray-600 hover:text-primary-700 transition-colors">Cookie Settings</a></li>
+              <li><a href="/privacy/#ccpa" class="block py-2 text-sm text-gray-600 hover:text-primary-700 transition-colors">Do Not Sell My Info</a></li>
             </ul>
           </div>
         </div>
@@ -166,8 +174,30 @@ const {
     </footer>
 
     <script>
-      document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
-        document.getElementById('mobile-menu')?.classList.toggle('hidden');
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const closeBtn = document.getElementById('mobile-menu-close');
+      const menu = document.getElementById('mobile-menu');
+      const overlay = document.getElementById('mobile-menu-overlay');
+
+      function openMenu() {
+        menu?.classList.remove('hidden');
+        overlay?.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeMenu() {
+        menu?.classList.add('hidden');
+        overlay?.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+
+      menuBtn?.addEventListener('click', openMenu);
+      closeBtn?.addEventListener('click', closeMenu);
+      overlay?.addEventListener('click', closeMenu);
+
+      // Close menu when a link inside it is clicked
+      menu?.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMenu);
       });
     </script>
 

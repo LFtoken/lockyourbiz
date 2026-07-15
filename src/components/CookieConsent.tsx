@@ -99,19 +99,19 @@ export default function CookieConsent() {
                 <div className="flex flex-wrap items-center gap-2 sm:shrink-0">
                   <button
                     onClick={() => setStage('customize')}
-                    className="rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors cursor-pointer"
+                    className="rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors cursor-pointer min-h-[44px]"
                   >
                     Customize
                   </button>
                   <button
                     onClick={rejectAll}
-                    className="rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors cursor-pointer"
+                    className="rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors cursor-pointer min-h-[44px]"
                   >
                     Reject All
                   </button>
                   <button
                     onClick={acceptAll}
-                    className="rounded-lg bg-primary-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-primary-700 shadow-sm transition-colors cursor-pointer"
+                    className="rounded-lg bg-primary-600 px-5 py-3 text-sm font-semibold text-white hover:bg-primary-700 shadow-sm transition-colors cursor-pointer min-h-[44px]"
                   >
                     Accept All
                   </button>
@@ -197,20 +197,20 @@ export default function CookieConsent() {
               <div className="flex items-center justify-between">
                 <button
                   onClick={rejectAll}
-                  className="text-sm text-gray-500 hover:text-gray-700 transition-colors cursor-pointer"
+                  className="text-sm text-gray-500 hover:text-gray-700 transition-colors cursor-pointer py-2 px-1"
                 >
                   Reject All
                 </button>
                 <div className="flex items-center gap-2">
                   <button
                     onClick={() => setStage('banner')}
-                    className="rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors cursor-pointer"
+                    className="rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors cursor-pointer min-h-[44px]"
                   >
                     Cancel
                   </button>
                   <button
                     onClick={saveCustom}
-                    className="rounded-lg bg-primary-600 px-5 py-2 text-sm font-semibold text-white hover:bg-primary-700 shadow-sm transition-colors cursor-pointer"
+                    className="rounded-lg bg-primary-600 px-5 py-3 text-sm font-semibold text-white hover:bg-primary-700 shadow-sm transition-colors cursor-pointer min-h-[44px]"
                   >
                     Save Preferences
                   </button>

@@ -396,7 +396,7 @@ export default function SecurityAssessment() {
 
         {/* Back button */}
         {currentStep > 0 && (
-          <button onClick={goBack} className="mt-4 text-sm text-gray-400 hover:text-gray-600 cursor-pointer">
+          <button onClick={goBack} className="mt-4 text-sm text-gray-400 hover:text-gray-600 cursor-pointer py-2 px-1">
             &larr; Go back
           </button>
         )}
@@ -465,7 +465,7 @@ export default function SecurityAssessment() {
       <div className="flex flex-wrap gap-2 mb-6">
         <button
           onClick={() => setSelectedCategory(null)}
-          className={`rounded-full px-4 py-1.5 text-sm font-semibold transition-all cursor-pointer border-2 ${
+          className={`rounded-full px-4 py-2.5 text-sm font-semibold transition-all cursor-pointer border-2 ${
             selectedCategory === null
               ? 'bg-primary-600 border-primary-600 text-white shadow-sm'
               : 'bg-white border-gray-300 text-gray-600 hover:border-gray-400'
@@ -477,7 +477,7 @@ export default function SecurityAssessment() {
           <button
             key={cat.name}
             onClick={() => setSelectedCategory(cat.name)}
-            className={`rounded-full px-4 py-1.5 text-sm font-semibold transition-all cursor-pointer border-2 ${
+            className={`rounded-full px-4 py-2.5 text-sm font-semibold transition-all cursor-pointer border-2 ${
               selectedCategory === cat.name
                 ? 'bg-primary-600 border-primary-600 text-white shadow-sm'
                 : cat.status === 'critical' ? 'bg-white border-red-400 text-red-600 hover:bg-red-50'

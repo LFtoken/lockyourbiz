@@ -675,13 +675,13 @@ export default function PhishingQuiz() {
         <div className="flex items-center justify-between">
           <button
             onClick={handleBack}
-            className="text-sm text-gray-400 hover:text-gray-600 transition-colors cursor-pointer"
+            className="text-sm text-gray-400 hover:text-gray-600 transition-colors cursor-pointer py-2 px-1"
           >
             &larr; Change answer
           </button>
           <button
             onClick={handleNext}
-            className="inline-flex items-center gap-2 rounded-xl bg-primary-600 px-6 py-3 text-base font-semibold text-white shadow-md hover:bg-primary-700 transition-all duration-200 cursor-pointer"
+            className="inline-flex items-center gap-2 rounded-xl bg-primary-600 px-6 py-3.5 text-base font-semibold text-white shadow-md hover:bg-primary-700 transition-all duration-200 cursor-pointer min-h-[44px]"
           >
             {currentQuestion < totalQuestions - 1 ? (
               <>
