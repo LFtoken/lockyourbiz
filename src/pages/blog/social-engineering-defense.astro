@@ -1,0 +1,165 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Social Engineering: How Attackers Trick Your Team (Beyond Email)"
+  description="Phishing gets all the attention, but phone scams, fake invoices, tailgating, and impersonation calls are how many small businesses actually get breached. Learn the tactics and how to defend against them."
+>
+  <article class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-3xl">
+      <div class="flex items-center gap-x-4 text-sm mb-4">
+        <time datetime="2026-07-16" class="text-gray-500">July 16, 2026</time>
+        <span class="rounded-full bg-primary-50 px-3 py-1 font-medium text-primary-700">Threats</span>
+        <span class="text-gray-500">8 min read</span>
+      </div>
+
+      <h1 class="text-4xl font-extrabold tracking-tight text-gray-900">Social Engineering: How Attackers Trick Your Team (Beyond Email)</h1>
+      <p class="mt-4 text-lg leading-8 text-gray-600">
+        Everyone talks about phishing emails. But some of the most damaging attacks on small businesses start with a phone call, a visitor at the front desk, or a fake invoice that arrives in the actual mail. Here are the social engineering tactics your team needs to know about.
+      </p>
+
+      <div class="mt-10 prose prose-lg prose-gray max-w-none">
+
+        <p>
+          A client of mine — a small manufacturing company with about 25 employees — got hit last year. Not through a phishing email. Not through ransomware. Someone called their front desk claiming to be from "the phone company," said they were doing a routine line test, and asked the receptionist to read back the verification code that had just been texted to her phone.
+        </p>
+        <p>
+          That code was a two-factor authentication reset for the company's domain registrar account. By the time anyone realized what had happened, the attacker had transferred their domain to a different registrar and pointed their website to a fake page. It took three days and several thousand dollars to get the domain back. All because one phone call worked.
+        </p>
+        <p>
+          This is social engineering — the art of manipulating people instead of hacking systems. And while phishing emails get most of the attention, attackers have a whole toolbox of non-email tricks that work just as well. Here are the ones that actually hit small businesses, and what to do about them.
+        </p>
+
+        <h2>Phone Impersonation (Vishing)</h2>
+        <p>
+          Voice phishing — "vishing" — is when someone calls your business impersonating a trusted person or organization. The most common variants I have seen:
+        </p>
+
+        <div class="rounded-xl border-l-4 border-red-400 bg-red-50 p-4 not-prose my-4">
+          <p class="text-sm font-semibold text-red-800">The IT Support Call</p>
+          <p class="text-sm text-red-700 mt-1">
+            "Hi, this is Mark from Microsoft support. We are seeing unusual activity from your computer and need to run a diagnostic. Can you go to this website and download the remote support tool?"
+          </p>
+          <p class="text-sm text-red-600 mt-1 text-xs">
+            Microsoft does not make unsolicited support calls. Nobody legitimate calls you to tell you your computer has a virus. The tool they want you to install gives them full remote control of your machine.
+          </p>
+        </div>
+
+        <div class="rounded-xl border-l-4 border-red-400 bg-red-50 p-4 not-prose my-4">
+          <p class="text-sm font-semibold text-red-800">The Bank Call</p>
+          <p class="text-sm text-red-700 mt-1">
+            "This is Chase fraud prevention. We have detected a suspicious wire transfer of $4,200 from your account. I need to verify your identity — can you confirm your account number and the security code I am about to text you?"
+          </p>
+          <p class="text-sm text-red-600 mt-1 text-xs">
+            The caller is triggering a real password reset or login attempt, which causes your bank to text you a legitimate 2FA code. Once you read it back to them, they own your account. Banks never call and ask for authentication codes.
+          </p>
+        </div>
+
+        <div class="rounded-xl border-l-4 border-red-400 bg-red-50 p-4 not-prose my-4">
+          <p class="text-sm font-semibold text-red-800">The Boss Call</p>
+          <p class="text-sm text-red-700 mt-1">
+            "Hey, it is [Owner's Name]. I am stuck in a meeting with a client and need you to do me a quick favor. Can you log into the bank and send a wire to this account? I will explain later — I am about to walk back in."
+          </p>
+          <p class="text-sm text-red-600 mt-1 text-xs">
+            The caller knows the owner's name, probably found it on LinkedIn. They might even have researched who reports to whom. AI voice cloning is making these calls increasingly convincing.
+          </p>
+        </div>
+
+        <p><strong>The defense:</strong></p>
+        <ul>
+          <li>Every employee who might receive an external call needs to know: <strong>never give out codes, passwords, or account information over the phone to someone who called you.</strong> Hang up. Call back using a number you look up independently — not one the caller gives you.</li>
+          <li>For internal "boss" calls — verify through a different channel. Text them. Slack them. Walk over to their office. A real boss who genuinely needs a wire transfer will not mind you taking 30 seconds to confirm.</li>
+          <li>Create a simple verification phrase or process for financial requests. Something like: "Before I process any wire transfer, I will call you on your cell phone to confirm. Every time. No exceptions."</li>
+        </ul>
+
+        <h2>Pretexting: The Fake Invoice and the Fake Survey</h2>
+        <p>
+          Pretexting is when an attacker creates a fabricated scenario to get information or money from you. Unlike a simple impersonation call, pretexting involves a whole backstory. Two versions hit small businesses constantly:
+        </p>
+
+        <h3>The Fake Invoice</h3>
+        <p>
+          Your accounts payable person receives an invoice for $850 — toner cartridges, office supplies, "domain renewal," SEO services, or a listing in some business directory. It looks legitimate. It has your company name, a realistic invoice number, and a payment address. The amounts are usually small enough that nobody questions them. If you pay it, they send another one next month.
+        </p>
+        <p>
+          A landscaping client of mine paid a fake "annual domain listing fee" for two years before someone noticed. The total loss was only about $400, but the fact that nobody caught it for two years was the real wake-up call.
+        </p>
+
+        <h3>The Tech Support Renewal Scam</h3>
+        <p>
+          "Hi, this is [Company] calling about your copier/printer/security system service contract. Your annual renewal was due last month and we need to update your payment information. Can you confirm your billing details?"
+        </p>
+        <p>
+          They know you have a copier because every office has a copier. They know the brand because they looked up your business on Google Maps and called to ask. The call sounds routine, and it lands on someone who handles routine administrative tasks.
+        </p>
+
+        <p><strong>The defense:</strong></p>
+        <ul>
+          <li>Anyone who handles invoices or payments needs to know: <strong>verify new vendors before paying.</strong> Check that you actually ordered from them. Google the company name. If the invoice is for under $500 and from an unknown vendor, that is exactly the pattern to watch for.</li>
+          <li>Keep a list of actual vendors and service contracts. If a "renewal" call comes in and the company is not on your list, it is a scam until proven otherwise.</li>
+        </ul>
+
+        <h2>Tailgating and Physical Intrusion</h2>
+        <p>
+          Tailgating is when someone follows an authorized person through a secured door. It is the physical equivalent of phishing — instead of tricking a computer, you trick a human holding a door.
+        </p>
+        <p>
+          The classic scenario: someone in a delivery uniform, arms full of boxes, approaches your office door right behind an employee who just badged in. The employee, not wanting to be rude, holds the door. The "delivery person" thanks them, walks inside, and now has physical access to your office.
+        </p>
+        <p>
+          For most small businesses without badge readers or security guards, physical security comes down to one thing: <strong>do not hold the door for people you do not recognize.</strong> If someone says they have a meeting with so-and-so, walk them to the front desk or call the person they claim to be visiting. If they are legitimate, they will appreciate the security. If they are not, they will leave.
+        </p>
+        <p>
+          This is uncomfortable. Nobody wants to be rude. But the alternative — letting a stranger walk unchallenged into your office — is worse. Make it an explicit policy so employees feel supported: "We do not hold doors for people we do not know. This is a company rule, not a personal choice, and nobody will get in trouble for enforcing it."
+        </p>
+
+        <h2>USB Drops and Baiting</h2>
+        <p>
+          This sounds like something out of a spy movie, but it happens. Someone drops a few USB drives in your parking lot, near the entrance, or in a common area. Each one has a label: "Confidential — Payroll Data," "Employee Bonuses 2026," or "Layoff List." Curiosity gets the better of someone. They plug it in to see what is on it.
+        </p>
+        <p>
+          The USB drive is not a storage device — it registers as a keyboard and types commands at lightning speed, downloading malware or opening a remote access tunnel. Or it simply contains a file that, when opened, runs ransomware. Either way, plugging in an unknown USB drive is like handing your computer to a stranger.
+        </p>
+        <p><strong>The defense:</strong> tell your team explicitly: never plug in a USB drive you found. If you find one, bring it to whoever handles IT. Let them examine it on an isolated machine. In 99% of cases it is just someone's lost homework — but that 1% can destroy your business.</p>
+
+        <h2>Why Small Businesses Are Targeted</h2>
+        <p>
+          Attackers go after small businesses for the same reason burglars target houses without alarm systems: it is easier. A large corporation has mandatory security training, badge readers at every entrance, a dedicated accounts payable team with verification procedures, and an IT department that has seen every scam in the book.
+        </p>
+        <p>
+          A 15-person business has none of that. The receptionist handles calls, invoices, visitors, and deliveries — often all at once. The owner is the person who approves wire transfers, and nobody questions their "urgent" requests. Everyone is too busy to be suspicious. That is exactly the environment social engineers exploit.
+        </p>
+
+        <h2>The 10-Minute Team Discussion That Prevents Most of This</h2>
+        <p>
+          You do not need a formal training program. At your next team meeting, take 10 minutes and cover these four rules:
+        </p>
+        <ol>
+          <li><strong>"If someone calls you asking for information, do not give it to them. Hang up and call back on a number you find yourself."</strong> — This one rule stops every phone impersonation attack. It works for banks, IT support, vendors, and "the boss."</li>
+          <li><strong>"If someone you do not know wants to come inside, walk them to the front desk. Do not hold the door."</strong> — Make this a stated policy so people feel supported when they enforce it.</li>
+          <li><strong>"Never pay an invoice from a vendor you do not recognize without verifying it."</strong> — If the amount is under $500, from an unknown company, and nobody remembers ordering anything — that is the pattern. Pick up the phone and call them.</li>
+          <li><strong>"Never plug in a USB drive you found. Bring it to me."</strong> — Simple, clear, memorable.</li>
+        </ol>
+        <p>
+          Print these four rules on a single page. Post them in the break room. Put them in your employee handbook. The goal is not to create a culture of paranoia — it is to create a culture of verification. Checking is cheap. Getting tricked is expensive.
+        </p>
+
+        <div class="rounded-2xl bg-yellow-50 border border-yellow-200 p-6 not-prose mt-8">
+          <p class="text-sm font-semibold text-yellow-800">The Difference Between Paranoia and Verification</p>
+          <p class="mt-2 text-sm text-yellow-700">
+            A paranoid person never answers the phone. A prepared person answers the phone, listens, and says: "Let me call you back on the number I have on file." The caller's reaction tells you everything. A legitimate person says "of course." A social engineer gets pushy, creates urgency, or hangs up. The verification itself is the test.
+          </p>
+        </div>
+
+        <div class="rounded-2xl bg-primary-50 border border-primary-200 p-6 not-prose mt-10">
+          <p class="text-sm font-semibold text-primary-800">Related Guides</p>
+          <p class="mt-2 text-sm text-primary-700">
+            <a href="/blog/phishing-prevention/" class="font-semibold">Phishing Prevention Guide</a> — email is still the #1 attack vector.<br/>
+            <a href="/blog/employee-security-training/" class="font-semibold">Employee Security Training Script</a> — a ready-to-use 30-minute training session.
+          </p>
+        </div>
+      </div>
+    </div>
+  </article>
+</BaseLayout>

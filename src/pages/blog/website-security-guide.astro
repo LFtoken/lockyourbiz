@@ -1,0 +1,175 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Small Business Website Security: A Practical Guide for 2026"
+  description="Your website is your digital storefront. Here is how to secure it — SSL, WordPress hardening, form protection, backups, and monitoring — without needing a developer."
+>
+  <article class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-3xl">
+      <div class="flex items-center gap-x-4 text-sm mb-4">
+        <time datetime="2026-07-16" class="text-gray-500">July 16, 2026</time>
+        <span class="rounded-full bg-primary-50 px-3 py-1 font-medium text-primary-700">Tools & Tech</span>
+        <span class="text-gray-500">9 min read</span>
+      </div>
+
+      <h1 class="text-4xl font-extrabold tracking-tight text-gray-900">Small Business Website Security: A Practical Guide for 2026</h1>
+      <p class="mt-4 text-lg leading-8 text-gray-600">
+        Your website gets thousands of visitors — and hundreds of automated attacks. Here is how to lock it down without hiring a developer or spending a fortune.
+      </p>
+
+      <div class="mt-10 prose prose-lg prose-gray max-w-none">
+
+        <p>
+          Every website on the internet is under constant, automated attack. Bots scan for vulnerable WordPress plugins. Scripts probe for open admin panels. Password-spraying tools try common username and password combinations against login pages. This is not targeted — it is industrial-scale. Your website is getting scanned right now, whether you know it or not.
+        </p>
+        <p>
+          But here is the thing: most of these attacks only work if you have left a door open. And closing those doors is not complicated — it is mostly a matter of knowing which ones exist and checking that they are locked. This guide walks through exactly what to check and what to fix, in order of importance.
+        </p>
+
+        <div class="rounded-2xl bg-yellow-50 border border-yellow-200 p-6 not-prose">
+          <p class="text-sm font-semibold text-yellow-800">Who This Guide Is For</p>
+          <p class="mt-2 text-sm text-yellow-700">
+            Small business owners whose website is important to their business (it brings in leads, sells products, or represents your brand) but who are not technical. Every recommendation here is something you can either do yourself in an afternoon, or ask your web developer to implement in under an hour.
+          </p>
+        </div>
+
+        <h2>1. SSL/TLS: The Green Lock in Your Address Bar</h2>
+        <p>
+          SSL (the thing that puts "https://" and a lock icon in your browser's address bar) encrypts the connection between your visitors and your website. Without it, anyone on the same Wi-Fi network — at a coffee shop, in a hotel, at an airport — can see what pages your visitors are viewing and any information they submit through forms.
+        </p>
+        <p>
+          In 2026, there is no excuse for not having SSL. It is free. Let me say that again: <strong>SSL is free.</strong> If your website does not have it, fix this today.
+        </p>
+
+        <h3>What to check:</h3>
+        <ul>
+          <li>Visit your website. Does the address bar show "https://" and a lock icon? If you see "Not Secure" or "http://" — you have a problem.</li>
+          <li>Test your SSL configuration at <a href="https://www.ssllabs.com/ssltest/" target="_blank" rel="noopener noreferrer">SSL Labs</a>. It takes 2 minutes and gives you a letter grade. Aim for an A or A+.</li>
+        </ul>
+
+        <h3>How to fix it:</h3>
+        <ul>
+          <li><strong>Cloudflare (this site uses it):</strong> Add your site to Cloudflare (free). Flip the "Always Use HTTPS" toggle in the SSL/TLS settings. Done. Cloudflare handles the certificate automatically and renews it forever. This is the easiest option and also gives you DDoS protection for free.</li>
+          <li><strong>Let's Encrypt:</strong> If your site is hosted somewhere that does not provide free SSL, Let's Encrypt provides free certificates. Most hosting control panels (cPanel, Plesk) have a one-click Let's Encrypt option.</li>
+        </ul>
+
+        <h2>2. Keep Everything Updated</h2>
+        <p>
+          I know this sounds obvious. But the single most common way small business websites get hacked is through outdated software with known vulnerabilities. The WPScans and WPScanners of the world make it trivial for attackers to find sites running vulnerable versions of WordPress, plugins, or themes.
+        </p>
+
+        <h3>If You Run WordPress:</h3>
+        <ul>
+          <li><strong>Enable automatic updates</strong> for WordPress core, plugins, and themes. This is a single setting in the WordPress dashboard. Turn it on today.</li>
+          <li><strong>Delete unused plugins and themes.</strong> Every inactive plugin is still code on your server that could have a vulnerability. If you are not using it, remove it entirely — not just deactivate it, but delete it.</li>
+          <li><strong>Only install plugins from the official WordPress repository</strong> or from developers with a track record and regular updates. A plugin that has not been updated in 2 years is a risk, even if it works fine right now.</li>
+          <li><strong>Check your PHP version.</strong> Your hosting control panel should show this. WordPress recommends PHP 8.0 or higher. If your host is running PHP 7.x, it reached end-of-life years ago and is no longer receiving security patches. Switch hosts if they will not upgrade you.</li>
+        </ul>
+
+        <h3>If You Use a Website Builder (Squarespace, Wix, Shopify):</h3>
+        <p>
+          You are mostly covered — these platforms handle updates automatically. Your job is to: keep your account password strong and unique (use a password manager), enable 2FA on your account, and be suspicious of any email claiming to be from the platform asking you to log in.
+        </p>
+
+        <h3>If You Have a Custom-Built Site:</h3>
+        <p>
+          Ask your developer: "What needs to be updated, and how do we make sure it stays updated?" If they cannot answer this question clearly, find a new developer. At minimum, the server operating system, web server software, any CMS or framework, and all third-party libraries need regular updates.
+        </p>
+
+        <h2>3. Lock Down the Login Page</h2>
+        <p>
+          Your website's login page is the most attacked URL on your domain. Bots hit `/wp-admin`, `/admin`, `/login`, and similar paths thousands of times per day trying common passwords. Protecting this single page eliminates a huge portion of your attack surface.
+        </p>
+
+        <h3>What to do:</h3>
+        <ul>
+          <li><strong>Change the default admin username.</strong> If your WordPress admin account is literally named "admin," change it. Most brute-force attacks try "admin" as the username first.</li>
+          <li><strong>Use a strong, unique password.</strong> Generated by your password manager, at least 16 characters. This alone stops automated password guessing.</li>
+          <li><strong>Enable two-factor authentication on your admin account.</strong> WordPress has free 2FA plugins (Wordfence includes this). If your site uses a different platform, check if 2FA is available — most modern platforms support it.</li>
+          <li><strong>Limit login attempts.</strong> A free plugin like Wordfence or Limit Login Attempts Reloaded blocks IP addresses after a set number of failed logins. This stops brute-force attacks cold.</li>
+          <li><strong>Consider changing the login URL.</strong> If your login page is at `/wp-admin`, bots know exactly where to find it. A plugin like WPS Hide Login lets you move it to something only you know. This is security through obscurity — not a substitute for strong passwords and 2FA, but it eliminates the automated noise.</li>
+        </ul>
+
+        <h2>4. Back Up Your Website</h2>
+        <p>
+          Your website should be part of your broader backup strategy. If your site gets hacked, defaced, or accidentally broken by an update, the fastest recovery is restoring from a clean backup. Without one, you are rebuilding from scratch.
+        </p>
+        <p>
+          For WordPress, plugins like UpdraftPlus (free) can automatically back up your entire site — files and database — to Google Drive, Dropbox, or cloud storage on a schedule. Set it to daily backups, keep at least the last 30 days of history, and store the backups somewhere other than your web server.
+        </p>
+        <p>
+          For static sites (like this one), your site files live in a Git repository and your content is version-controlled. Back up any external database separately.
+        </p>
+        <p>
+          We have a <a href="/blog/small-business-backup-strategy/">complete guide to backup strategy</a> — the same principles apply to your website.
+        </p>
+
+        <h2>5. Use a Web Application Firewall (It Is Easier Than It Sounds)</h2>
+        <p>
+          A Web Application Firewall (WAF) sits between your website and the internet, filtering out malicious traffic before it reaches your server. Think of it as a security guard at the door who checks IDs — legitimate visitors walk through, attackers are turned away.
+        </p>
+        <p>
+          <strong>Cloudflare's free plan includes a WAF.</strong> If you put your site behind Cloudflare (which you should, for SSL anyway), you get automatic protection against SQL injection, cross-site scripting, comment spam, and known attack patterns. You do not need to configure anything — the default rules cover the most common threats. For most small business websites, this is sufficient.
+        </p>
+        <p>
+          For WordPress sites, <strong>Wordfence</strong> (free) provides a WAF that runs on your server. It includes a firewall, malware scanner, login security, and real-time threat intelligence. Install it, run the setup wizard, and leave the default settings. It is the most installed WordPress security plugin for a reason.
+        </p>
+
+        <h2>6. Secure Your Forms</h2>
+        <p>
+          If your website has a contact form, newsletter signup, or any input where visitors type information, bots will find it and try to submit spam, malicious links, or injection attacks through it.
+        </p>
+        <ul>
+          <li><strong>Add a CAPTCHA.</strong> Google reCAPTCHA v3 is free and invisible to real users — it runs in the background and scores each visitor. Only suspicious submissions get challenged. Most form plugins have a reCAPTCHA integration built in.</li>
+          <li><strong>Validate input on the server side.</strong> Your developer should ensure that whatever someone types into a form is checked and sanitized before it is stored or emailed. If you are using a form service (like Formspree), they handle this for you.</li>
+          <li><strong>Do not collect sensitive information through forms.</strong> If a form asks for credit card numbers, Social Security numbers, or health information, you have compliance requirements (PCI-DSS, HIPAA) that go far beyond this guide. Use a dedicated payment processor instead.</li>
+        </ul>
+
+        <h2>7. Monitor for Problems</h2>
+        <p>
+          You cannot fix a problem you do not know about. Set up basic monitoring so you find out about issues before your customers do:
+        </p>
+        <ul>
+          <li><strong>Google Search Console</strong> (free) — Google will email you if it detects malware on your site, if your site gets hacked, or if there are security issues. Set this up. It is the most important free monitoring you can get.</li>
+          <li><strong>Uptime monitoring</strong> — a free service like UptimeRobot checks your site every 5 minutes and emails you if it goes down. Not strictly a security tool, but a site that is suddenly down is often a site that got hacked.</li>
+          <li><strong>WordPress: Wordfence scan alerts</strong> — Wordfence will email you if its scanner finds modified files, suspicious code, or known malware. Read these emails. They are not false alarms.</li>
+        </ul>
+
+        <h2>The 90-Minute Security Audit for Your Website</h2>
+        <p>Block off an hour and a half. Work through this list:</p>
+
+        <div class="rounded-xl border border-gray-200 p-6 not-prose bg-gray-50">
+          <ol class="text-sm text-gray-700 space-y-3">
+            <li><strong>SSL check (5 min):</strong> Visit your site. Look for the lock icon. Run the SSL Labs test. If the grade is below A, make a note.</li>
+            <li><strong>Update everything (20 min):</strong> Log into your website admin. Check for available updates. Install them. Enable automatic updates for the future. Delete unused plugins and themes.</li>
+            <li><strong>Login security (10 min):</strong> Change your admin password to a random 16+ character string. Enable 2FA. Install a login limiter if you are on WordPress.</li>
+            <li><strong>Backup check (15 min):</strong> Do you have a backup plugin installed and configured? If yes, check the last backup date. Download a backup and verify it opens. If no backup system exists, install one now.</li>
+            <li><strong>WAF setup (15 min):</strong> Sign up for Cloudflare (free). Add your site. Enable HTTPS. Turn on the WAF. Or install Wordfence on WordPress and run the setup wizard.</li>
+            <li><strong>Form check (5 min):</strong> Do your contact forms have a CAPTCHA? Are you using a secure form service? If not, note it for your developer.</li>
+            <li><strong>Monitoring setup (15 min):</strong> Set up Google Search Console. Add UptimeRobot. Enable Wordfence email alerts if on WordPress.</li>
+            <li><strong>Document (5 min):</strong> Write down who has admin access to your website, who hosts it, where the domain is registered, and how to restore from backup. Store this somewhere that is not on the website itself.</li>
+          </ol>
+        </div>
+
+        <h2>Keep Going</h2>
+        <p>
+          Website security is not a one-time project. It is a set of habits. Update your software when updates are available. Check your backups are running once a month. Read the alert emails. If something looks wrong, investigate immediately — not next week.
+        </p>
+        <p>
+          Most small business websites get compromised not through sophisticated attacks, but through one of three things: an outdated plugin with a known vulnerability, a weak admin password, or no backups when something goes wrong. If you fix those three things, you have eliminated the vast majority of your risk. Everything else in this guide is optimization.
+        </p>
+
+        <div class="rounded-2xl bg-primary-50 border border-primary-200 p-6 not-prose mt-10">
+          <p class="text-sm font-semibold text-primary-800">Related Guides & Tools</p>
+          <p class="mt-2 text-sm text-primary-700">
+            <a href="/blog/small-business-backup-strategy/" class="font-semibold">Backup Strategy Guide</a> — how to set up backups that actually work.<br/>
+            <a href="/blog/free-security-tools/" class="font-semibold">Free Security Tools</a> — Cloudflare, Wordfence, and other free website security tools.<br/>
+            <a href="/tools/security-assessment/" class="font-semibold">Security Assessment</a> — check your overall security posture in 3 minutes.
+          </p>
+        </div>
+      </div>
+    </div>
+  </article>
+</BaseLayout>
