@@ -65,29 +65,29 @@ function daysAgo(dateStr: string): string {
   return `${Math.floor(diff / 30)} months ago`;
 }
 
+// Read build-time data injected by Astro — available before first render
+function getInitialData(): { data: CisaResponse | null; buildTime: string } {
+  if (typeof window !== 'undefined' && (window as any).__THREAT_DATA__) {
+    const d = (window as any).__THREAT_DATA__;
+    return { data: d.data || null, buildTime: d.buildTime || '' };
+  }
+  return { data: null, buildTime: '' };
+}
+
+const init = getInitialData();
+
 export default function ThreatFeed(_props: any) {
-  const [data, setData] = useState<CisaResponse | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState<CisaResponse | null>(init.data);
+  const [loading, setLoading] = useState(!init.data);
   const [error, setError] = useState<string | null>(null);
   const [filter, setFilter] = useState<'all' | 'ransomware' | 'smb' | 'recent'>('smb');
   const [search, setSearch] = useState('');
-  const [lastUpdated, setLastUpdated] = useState<string>('');
+  const [lastUpdated, setLastUpdated] = useState<string>(
+    init.buildTime ? new Date(init.buildTime).toLocaleString() : ''
+  );
 
   useEffect(() => {
-    // Read build-time embedded data from script tag (no CORS, always works)
-    const el = document.getElementById('threat-data');
-    if (el && el.textContent) {
-      try {
-        const parsed = JSON.parse(el.textContent);
-        if (parsed.data?.vulnerabilities) {
-          setData(parsed.data);
-          setLastUpdated(parsed.buildTime ? new Date(parsed.buildTime).toLocaleString() : '');
-          setLoading(false);
-          return;
-        }
-      } catch {}
-    }
-    // Fallback: live client-side fetch (may hit CORS)
+    if (init.data) return; // Already have build-time data
     fetchLive();
   }, []);
 
