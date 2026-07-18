@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionHero from '../../components/SectionHero.astro';
 import ContentCTA from '../../components/ContentCTA.astro';
-import AdNativeCard from '../../components/AdNativeCard.astro';
 ---
 
 <BaseLayout
@@ -86,14 +85,6 @@ import AdNativeCard from '../../components/AdNativeCard.astro';
         <li><strong>6. Have an offboarding process.</strong> When a vendor relationship ends, ensure they delete your data and provide written confirmation of deletion.</li>
       </ol>
 
-      <AdNativeCard
-        title="Vendor Risk Management Resources"
-        resources={[
-          { title: 'Compliance Toolkit', description: 'DPA templates, vendor security questionnaires, and contract checklists.', href: '/compliance/compliance-toolkit/', icon: '🧰', badge: 'Toolkit' },
-          { title: 'Data Breach Response', description: 'Full guide to customer notification and regulatory reporting.', href: '/incident-response/data-breach/', icon: '📊', badge: 'Emergency' },
-          { title: 'Cyber Insurance Guide', description: 'Ensure your policy covers third-party vendor breaches.', href: '/blog/cyber-insurance-guide/', icon: '🛡️', badge: 'Guide' },
-        ]}
-      />
     </article>
   </div>
 </BaseLayout>

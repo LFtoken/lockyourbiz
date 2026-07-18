@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionHero from '../../components/SectionHero.astro';
 import ContentCTA from '../../components/ContentCTA.astro';
-import AdNativeCard from '../../components/AdNativeCard.astro';
 ---
 
 <BaseLayout
@@ -152,14 +151,6 @@ import AdNativeCard from '../../components/AdNativeCard.astro';
         </a>
       </div>
 
-      <AdNativeCard
-        title="Recommended Resources for Store Owners"
-        resources={[
-          { title: 'Website Firewall Review', description: 'Compare Cloudflare, Sucuri, Wordfence, and more for your store.', href: '/tool-reviews/website-firewall/', icon: '🌐', badge: 'Review' },
-          { title: 'Free Tool Comparison', description: 'Find the best free security tools for your e-commerce business.', href: '/tools/tool-comparison/', icon: '⚖️', badge: 'Tool' },
-          { title: 'Ransomware Protection Guide', description: 'What to do if your store gets hit — and how to prevent it.', href: '/blog/ransomware-protection/', icon: '🔒', badge: 'Guide' },
-        ]}
-      />
     </article>
   </div>
 </BaseLayout>

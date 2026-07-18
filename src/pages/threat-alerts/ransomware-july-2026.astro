@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionHero from '../../components/SectionHero.astro';
 import ContentCTA from '../../components/ContentCTA.astro';
-import AdNativeCard from '../../components/AdNativeCard.astro';
 ---
 
 <BaseLayout
@@ -113,14 +112,6 @@ import AdNativeCard from '../../components/AdNativeCard.astro';
         ctaText="Start Free Assessment →"
       />
 
-      <AdNativeCard
-        title="Recommended Protection for This Month's Threats"
-        resources={[
-          { title: 'Ransomware Protection Guide', description: 'Prevention, detection, and recovery — everything you need to stop ransomware.', href: '/blog/ransomware-protection/', icon: '🔒', badge: 'Guide' },
-          { title: 'Phishing Prevention Guide', description: '7 red flags every team member must check before clicking any link.', href: '/blog/phishing-prevention/', icon: '📧', badge: 'Guide' },
-          { title: 'Website Security Guide', description: 'Keep your e-commerce site patched and protected with WAF and monitoring.', href: '/blog/website-security-guide/', icon: '🌐', badge: 'Guide' },
-        ]}
-      />
     </article>
   </div>
 </BaseLayout>

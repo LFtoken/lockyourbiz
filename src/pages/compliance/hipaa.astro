@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionHero from '../../components/SectionHero.astro';
 import ContentCTA from '../../components/ContentCTA.astro';
-import AdNativeCard from '../../components/AdNativeCard.astro';
 ---
 
 <BaseLayout
@@ -139,14 +138,6 @@ import AdNativeCard from '../../components/AdNativeCard.astro';
         </ul>
       </div>
 
-      <AdNativeCard
-        title="HIPAA Compliance Resources"
-        resources={[
-          { title: 'Compliance Toolkit', description: 'Templates: BAA, Notice of Privacy Practices, breach notification letter.', href: '/compliance/compliance-toolkit/', icon: '🧰', badge: 'Toolkit' },
-          { title: 'Small Business Backup Strategy', description: 'HIPAA-required backup and disaster recovery setup guide.', href: '/blog/small-business-backup-strategy/', icon: '💾', badge: 'Guide' },
-          { title: 'Data Breach Response Guide', description: 'What to do when PHI is exposed: patient notification and OCR reporting.', href: '/incident-response/data-breach/', icon: '🆘', badge: 'Emergency' },
-        ]}
-      />
     </article>
   </div>
 </BaseLayout>

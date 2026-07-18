@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionHero from '../../components/SectionHero.astro';
 import ContentCTA from '../../components/ContentCTA.astro';
-import AdNativeCard from '../../components/AdNativeCard.astro';
 ---
 
 <BaseLayout
@@ -133,14 +132,6 @@ import AdNativeCard from '../../components/AdNativeCard.astro';
         </div>
       </div>
 
-      <AdNativeCard
-        title="CCPA Compliance Resources"
-        resources={[
-          { title: 'Compliance Toolkit', description: 'Privacy policy template, opt-out page setup, and consumer request workflow.', href: '/compliance/compliance-toolkit/', icon: '🧰', badge: 'Toolkit' },
-          { title: 'Website Security Guide', description: 'Reasonable security is a CCPA requirement. Lock down your site.', href: '/blog/website-security-guide/', icon: '🌐', badge: 'Guide' },
-          { title: 'Data Breach Response', description: 'CCPA private right of action applies to breaches — respond fast.', href: '/incident-response/data-breach/', icon: '🆘', badge: 'Emergency' },
-        ]}
-      />
     </article>
   </div>
 </BaseLayout>

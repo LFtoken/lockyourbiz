@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionHero from '../../components/SectionHero.astro';
 import ContentCTA from '../../components/ContentCTA.astro';
-import AdNativeCard from '../../components/AdNativeCard.astro';
 ---
 
 <BaseLayout
@@ -125,14 +124,6 @@ import AdNativeCard from '../../components/AdNativeCard.astro';
         </p>
       </div>
 
-      <AdNativeCard
-        title="Resources for FTC Safeguards Compliance"
-        resources={[
-          { title: 'Compliance Toolkit', description: 'Templates, checklists, and a WISP outline to jump-start your compliance.', href: '/compliance/compliance-toolkit/', icon: '🧰', badge: 'Toolkit' },
-          { title: 'Security Assessment', description: 'Identify your gaps against the 9 Safeguards Rule requirements.', href: '/tools/security-assessment/', icon: '📋', badge: 'Free Tool' },
-          { title: 'Cyber Insurance Guide', description: 'Insurance is NOT a substitute for compliance, but it helps.', href: '/blog/cyber-insurance-guide/', icon: '🛡️', badge: 'Guide' },
-        ]}
-      />
     </article>
   </div>
 </BaseLayout>

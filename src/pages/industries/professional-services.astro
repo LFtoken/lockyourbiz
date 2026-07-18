@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionHero from '../../components/SectionHero.astro';
 import ContentCTA from '../../components/ContentCTA.astro';
-import AdNativeCard from '../../components/AdNativeCard.astro';
 ---
 
 <BaseLayout
@@ -144,14 +143,6 @@ import AdNativeCard from '../../components/AdNativeCard.astro';
         </a>
       </div>
 
-      <AdNativeCard
-        title="Recommended Resources for Professional Services"
-        resources={[
-          { title: 'Cyber Insurance Guide', description: 'What coverage your firm needs and how to qualify for the best rates.', href: '/blog/cyber-insurance-guide/', icon: '🛡️', badge: 'Guide' },
-          { title: 'Employee Security Training', description: '30-minute training script for professional staff handling client data.', href: '/blog/employee-security-training/', icon: '👥', badge: 'Template' },
-          { title: 'Data Breach Response', description: 'Step-by-step guide for notifying clients and regulators after a breach.', href: '/incident-response/data-breach/', icon: '🆘', badge: 'Emergency' },
-        ]}
-      />
     </article>
   </div>
 </BaseLayout>

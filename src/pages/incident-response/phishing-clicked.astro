@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionHero from '../../components/SectionHero.astro';
 import ContentCTA from '../../components/ContentCTA.astro';
-import AdNativeCard from '../../components/AdNativeCard.astro';
 ---
 
 <BaseLayout
@@ -76,14 +75,6 @@ import AdNativeCard from '../../components/AdNativeCard.astro';
         <li><strong>4. Create a "report phishing" button.</strong> Make it trivially easy for employees to report suspicious emails — one click in their email client.</li>
       </ol>
 
-      <AdNativeCard
-        title="Build Your Phishing Defense"
-        resources={[
-          { title: 'Phishing Quiz', description: '10 real-world email scenarios — test your team\'s detection skills.', href: '/tools/phishing-quiz/', icon: '🎣', badge: 'Free Tool' },
-          { title: 'Email Security Review', description: 'Compare email security gateways that block phishing before it arrives.', href: '/tool-reviews/email-security/', icon: '📧', badge: 'Review' },
-          { title: 'Employee Security Training', description: '30-minute ready-to-use training script for your team.', href: '/blog/employee-security-training/', icon: '👥', badge: 'Template' },
-        ]}
-      />
     </article>
   </div>
 </BaseLayout>

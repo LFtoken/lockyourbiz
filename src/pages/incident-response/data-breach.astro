@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionHero from '../../components/SectionHero.astro';
 import ContentCTA from '../../components/ContentCTA.astro';
-import AdNativeCard from '../../components/AdNativeCard.astro';
 ---
 
 <BaseLayout
@@ -90,14 +89,6 @@ import AdNativeCard from '../../components/AdNativeCard.astro';
         <li><strong>5. Engage legal counsel.</strong> Data breach class-action lawsuits are increasingly common. Have a lawyer review your response.</li>
       </ol>
 
-      <AdNativeCard
-        title="Breach Prevention & Compliance Resources"
-        resources={[
-          { title: 'Compliance Toolkit', description: 'Breach notification templates, privacy policy generator, and gap analysis.', href: '/compliance/compliance-toolkit/', icon: '🧰', badge: 'Toolkit' },
-          { title: 'FTC Safeguards Guide', description: 'The 9 requirements — including incident response planning.', href: '/compliance/ftc-safeguards/', icon: '🇺🇸', badge: 'Guide' },
-          { title: 'Cyber Insurance Guide', description: 'How cyber insurance covers breach notification costs and legal defense.', href: '/blog/cyber-insurance-guide/', icon: '🛡️', badge: 'Guide' },
-        ]}
-      />
     </article>
   </div>
 </BaseLayout>

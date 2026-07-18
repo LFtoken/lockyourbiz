@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionHero from '../../components/SectionHero.astro';
 import ContentCTA from '../../components/ContentCTA.astro';
-import AdNativeCard from '../../components/AdNativeCard.astro';
 ---
 
 <BaseLayout
@@ -141,14 +140,6 @@ import AdNativeCard from '../../components/AdNativeCard.astro';
         </div>
       </div>
 
-      <AdNativeCard
-        title="Recommended Resources for Remote Teams"
-        resources={[
-          { title: 'Phishing Prevention Guide', description: '7 red flags your remote team must check before clicking any link.', href: '/blog/phishing-prevention/', icon: '📧', badge: 'Guide' },
-          { title: 'Social Engineering Defense', description: 'Beyond email — phone scams, fake invoices, USB drops, and tailgating.', href: '/blog/social-engineering-defense/', icon: '🕵️', badge: 'Guide' },
-          { title: 'Employee Security Training', description: '30-minute training script designed for distributed teams.', href: '/blog/employee-security-training/', icon: '👥', badge: 'Template' },
-        ]}
-      />
     </article>
   </div>
 </BaseLayout>

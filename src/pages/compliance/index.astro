@@ -1,8 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionHero from '../../components/SectionHero.astro';
-import AdSlot from '../../components/AdSlot.astro';
-import AdNativeCard from '../../components/AdNativeCard.astro';
 
 const regulations = [
   {
@@ -69,8 +67,6 @@ const toolkitItems = [
   />
 
   <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-    <AdSlot variant="banner" />
-
     <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
       {regulations.map((reg) => (
         <a href={reg.href} class="group card no-underline hover:border-primary-300">
@@ -104,13 +100,5 @@ const toolkitItems = [
       ))}
     </div>
 
-    <AdNativeCard
-      title="Start With These Free Resources"
-      resources={[
-        { title: 'Security Assessment', description: '20 questions to identify your compliance gaps in 3 minutes.', href: '/tools/security-assessment/', icon: '📋', badge: 'Free Tool' },
-        { title: 'Small Business Backup Strategy', description: 'Data backup is required by nearly every regulation. Here is your plan.', href: '/blog/small-business-backup-strategy/', icon: '💾', badge: 'Guide' },
-        { title: 'Privacy Policy Template', description: 'Part of our compliance toolkit — a customizable privacy policy for your site.', href: '/compliance/compliance-toolkit/', icon: '📝', badge: 'Template' },
-      ]}
-    />
   </div>
 </BaseLayout>

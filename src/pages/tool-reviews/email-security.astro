@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionHero from '../../components/SectionHero.astro';
 import ContentCTA from '../../components/ContentCTA.astro';
-import AdNativeCard from '../../components/AdNativeCard.astro';
 ---
 
 <BaseLayout
@@ -78,14 +77,6 @@ import AdNativeCard from '../../components/AdNativeCard.astro';
         </ul>
       </div>
 
-      <AdNativeCard
-        title="Complete Your Email Defense"
-        resources={[
-          { title: 'Phishing Prevention Guide', description: '7 red flags every employee must check before clicking any link.', href: '/blog/phishing-prevention/', icon: '📧', badge: 'Guide' },
-          { title: 'Employee Security Training', description: '30-minute training script — teach your team to spot phishing.', href: '/blog/employee-security-training/', icon: '👥', badge: 'Template' },
-          { title: 'Phishing Quiz', description: 'Interactive 10-scenario quiz to test your phishing detection skills.', href: '/tools/phishing-quiz/', icon: '🎣', badge: 'Free Tool' },
-        ]}
-      />
     </article>
   </div>
 </BaseLayout>

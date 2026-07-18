@@ -1,8 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionHero from '../../components/SectionHero.astro';
-import AdSlot from '../../components/AdSlot.astro';
-import AdNativeCard from '../../components/AdNativeCard.astro';
 
 const industries = [
   {
@@ -62,8 +60,6 @@ const industries = [
   />
 
   <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-    <AdSlot variant="banner" />
-
     <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
       {industries.map((ind) => (
         <a href={ind.href} class="group card no-underline hover:border-primary-300">
@@ -85,13 +81,5 @@ const industries = [
       ))}
     </div>
 
-    <AdNativeCard
-      title="Essential Resources for Any Industry"
-      resources={[
-        { title: 'Free Security Assessment', description: 'Find your weak spots in 3 minutes with our 20-question assessment.', href: '/tools/security-assessment/', icon: '📋', badge: 'Free Tool' },
-        { title: 'Cybersecurity 101 Guide', description: 'The complete beginner guide — everything you need to know to get started.', href: '/blog/cybersecurity-101/', icon: '📖', badge: 'Guide' },
-        { title: 'Employee Security Training', description: '30-minute training script your team will actually remember.', href: '/blog/employee-security-training/', icon: '👥', badge: 'Template' },
-      ]}
-    />
   </div>
 </BaseLayout>

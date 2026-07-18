@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionHero from '../../components/SectionHero.astro';
 import ContentCTA from '../../components/ContentCTA.astro';
-import AdNativeCard from '../../components/AdNativeCard.astro';
 ---
 
 <BaseLayout
@@ -141,14 +140,6 @@ import AdNativeCard from '../../components/AdNativeCard.astro';
         </div>
       </div>
 
-      <AdNativeCard
-        title="Recommended Resources for Manufacturers"
-        resources={[
-          { title: 'Ransomware Protection Guide', description: 'Prevention, detection, and recovery strategies for production environments.', href: '/blog/ransomware-protection/', icon: '🔒', badge: 'Guide' },
-          { title: 'Essential Security Hardware', description: 'Industrial firewalls, secure routers, and network segmentation hardware.', href: '/blog/essential-security-hardware/', icon: '🖥️', badge: 'Guide' },
-          { title: 'Ransomware Incident Response', description: 'Step-by-step: disconnect, assess, restore, and harden after an attack.', href: '/incident-response/ransomware-response/', icon: '🆘', badge: 'Emergency' },
-        ]}
-      />
     </article>
   </div>
 </BaseLayout>

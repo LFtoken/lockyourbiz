@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionHero from '../../components/SectionHero.astro';
 import ContentCTA from '../../components/ContentCTA.astro';
-import AdNativeCard from '../../components/AdNativeCard.astro';
 ---
 
 <BaseLayout
@@ -178,14 +177,6 @@ Sincerely,
         </table>
       </div>
 
-      <AdNativeCard
-        title="Next Steps for Your Compliance Journey"
-        resources={[
-          { title: 'Security Assessment', description: 'Identify your specific compliance gaps with our 20-question tool.', href: '/tools/security-assessment/', icon: '📋', badge: 'Free Tool' },
-          { title: 'Cyber Insurance Guide', description: 'Insurance can protect you when compliance fails. Find the right policy.', href: '/blog/cyber-insurance-guide/', icon: '🛡️', badge: 'Guide' },
-          { title: 'Small Business Backup Strategy', description: 'Data backup is required by nearly every privacy regulation.', href: '/blog/small-business-backup-strategy/', icon: '💾', badge: 'Guide' },
-        ]}
-      />
     </article>
   </div>
 </BaseLayout>

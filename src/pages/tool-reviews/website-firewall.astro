@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionHero from '../../components/SectionHero.astro';
 import ContentCTA from '../../components/ContentCTA.astro';
-import AdNativeCard from '../../components/AdNativeCard.astro';
 ---
 
 <BaseLayout
@@ -79,14 +78,6 @@ import AdNativeCard from '../../components/AdNativeCard.astro';
         </ul>
       </div>
 
-      <AdNativeCard
-        title="Complete Your Website Protection"
-        resources={[
-          { title: 'Website Security Guide', description: 'SSL, WAF, backups, and monitoring — the complete guide.', href: '/blog/website-security-guide/', icon: '🌐', badge: 'Guide' },
-          { title: 'Cloud Backup Review', description: 'Back up your website and database automatically off-site.', href: '/tool-reviews/cloud-backup/', icon: '☁️', badge: 'Review' },
-          { title: 'Website Hacked Response', description: 'Step-by-step recovery guide when your site gets compromised.', href: '/incident-response/website-hacked/', icon: '🆘', badge: 'Emergency' },
-        ]}
-      />
     </article>
   </div>
 </BaseLayout>

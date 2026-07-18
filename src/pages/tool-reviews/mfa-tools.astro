@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionHero from '../../components/SectionHero.astro';
 import ContentCTA from '../../components/ContentCTA.astro';
-import AdNativeCard from '../../components/AdNativeCard.astro';
 ---
 
 <BaseLayout
@@ -94,14 +93,6 @@ import AdNativeCard from '../../components/AdNativeCard.astro';
         </ul>
       </div>
 
-      <AdNativeCard
-        title="Complete Your Access Security"
-        resources={[
-          { title: 'Password Manager Review', description: 'MFA + password manager = your most powerful security combo.', href: '/tool-reviews/password-managers/', icon: '🔑', badge: 'Review' },
-          { title: 'VPN vs Zero Trust Guide', description: 'Beyond MFA: how zero-trust access replaces VPNs for remote teams.', href: '/blog/vpn-vs-zerotrust/', icon: '🔐', badge: 'Guide' },
-          { title: 'Cybersecurity 101', description: 'The complete beginner guide to protecting your small business.', href: '/blog/cybersecurity-101/', icon: '📖', badge: 'Guide' },
-        ]}
-      />
     </article>
   </div>
 </BaseLayout>

@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionHero from '../../components/SectionHero.astro';
 import ContentCTA from '../../components/ContentCTA.astro';
-import AdNativeCard from '../../components/AdNativeCard.astro';
 ---
 
 <BaseLayout
@@ -147,14 +146,6 @@ import AdNativeCard from '../../components/AdNativeCard.astro';
         </li>
       </ol>
 
-      <AdNativeCard
-        title="PDPA/PDP Compliance Resources"
-        resources={[
-          { title: 'Compliance Toolkit', description: 'Privacy policy templates, consent banners, and DPO appointment templates.', href: '/compliance/compliance-toolkit/', icon: '🧰', badge: 'Toolkit' },
-          { title: 'GDPR Guide', description: 'Thailand PDPA follows GDPR closely — understanding one helps with the other.', href: '/compliance/gdpr/', icon: '🇪🇺', badge: 'Guide' },
-          { title: 'Website Security Guide', description: 'Data protection laws require security — SSL, WAF, and monitoring.', href: '/blog/website-security-guide/', icon: '🌐', badge: 'Guide' },
-        ]}
-      />
     </article>
   </div>
 </BaseLayout>

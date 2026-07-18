@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionHero from '../../components/SectionHero.astro';
 import ContentCTA from '../../components/ContentCTA.astro';
-import AdNativeCard from '../../components/AdNativeCard.astro';
 ---
 
 <BaseLayout
@@ -138,14 +137,6 @@ import AdNativeCard from '../../components/AdNativeCard.astro';
         </p>
       </div>
 
-      <AdNativeCard
-        title="GDPR Compliance Resources"
-        resources={[
-          { title: 'Compliance Toolkit', description: 'Privacy policy template, cookie consent setup, DSAR response template.', href: '/compliance/compliance-toolkit/', icon: '🧰', badge: 'Toolkit' },
-          { title: 'Website Security Guide', description: 'Protect customer data with SSL, WAF, and monitoring — required by GDPR.', href: '/blog/website-security-guide/', icon: '🌐', badge: 'Guide' },
-          { title: 'Data Breach Response', description: '72-hour notification: what to do when customer data is exposed.', href: '/incident-response/data-breach/', icon: '🆘', badge: 'Emergency' },
-        ]}
-      />
     </article>
   </div>
 </BaseLayout>

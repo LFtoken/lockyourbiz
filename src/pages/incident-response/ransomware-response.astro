@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionHero from '../../components/SectionHero.astro';
 import ContentCTA from '../../components/ContentCTA.astro';
-import AdNativeCard from '../../components/AdNativeCard.astro';
 ---
 
 <BaseLayout
@@ -81,14 +80,6 @@ import AdNativeCard from '../../components/AdNativeCard.astro';
         <li><strong>6. Segment your network.</strong> The office network should not be able to reach backup systems directly.</li>
       </ol>
 
-      <AdNativeCard
-        title="Protect Your Business from Ransomware"
-        resources={[
-          { title: 'Ransomware Protection Guide', description: 'Prevention strategies, detection tools, and recovery planning.', href: '/blog/ransomware-protection/', icon: '🔒', badge: 'Guide' },
-          { title: 'Cloud Backup Review', description: 'Find the right automated cloud backup for your business.', href: '/tool-reviews/cloud-backup/', icon: '☁️', badge: 'Review' },
-          { title: 'Antivirus & EDR Review', description: 'Compare endpoint protection with anti-ransomware capabilities.', href: '/tool-reviews/smb-antivirus/', icon: '🛡️', badge: 'Review' },
-        ]}
-      />
     </article>
   </div>
 </BaseLayout>

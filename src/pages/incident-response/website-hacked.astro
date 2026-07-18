@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionHero from '../../components/SectionHero.astro';
 import ContentCTA from '../../components/ContentCTA.astro';
-import AdNativeCard from '../../components/AdNativeCard.astro';
 ---
 
 <BaseLayout
@@ -67,14 +66,6 @@ import AdNativeCard from '../../components/AdNativeCard.astro';
       <h2 class="text-2xl font-bold text-gray-900 mt-10">Step 6: Get Off Google's Blacklist</h2>
       <p class="mt-4 text-gray-700 leading-relaxed">Once your site is clean, go to Google Search Console → Security Issues → Request Review. Google typically reviews within 24-72 hours. Be specific about what you found and how you fixed it. If your site was distributing malware, the review may take longer. While waiting, your site will show a warning in search results — this is normal and will clear once Google confirms the site is clean.</p>
 
-      <AdNativeCard
-        title="Prevent Future Website Hacks"
-        resources={[
-          { title: 'Website Firewall Review', description: 'Compare Cloudflare, Sucuri, Wordfence — protect your site from attacks.', href: '/tool-reviews/website-firewall/', icon: '🌐', badge: 'Review' },
-          { title: 'Cloud Backup Review', description: 'Automated daily backups so you can restore in minutes, not days.', href: '/tool-reviews/cloud-backup/', icon: '☁️', badge: 'Review' },
-          { title: 'Website Security Guide', description: 'Complete guide to locking down your business website.', href: '/blog/website-security-guide/', icon: '🛡️', badge: 'Guide' },
-        ]}
-      />
     </article>
   </div>
 </BaseLayout>

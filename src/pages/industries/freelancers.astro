@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionHero from '../../components/SectionHero.astro';
 import ContentCTA from '../../components/ContentCTA.astro';
-import AdNativeCard from '../../components/AdNativeCard.astro';
 ---
 
 <BaseLayout
@@ -138,14 +137,6 @@ import AdNativeCard from '../../components/AdNativeCard.astro';
         </p>
       </div>
 
-      <AdNativeCard
-        title="Recommended Resources for Freelancers"
-        resources={[
-          { title: 'Password Manager Review', description: 'Compare Bitwarden, 1Password, and other free/affordable options.', href: '/tool-reviews/password-managers/', icon: '🔑', badge: 'Review' },
-          { title: 'Cloud Backup Review', description: 'Find the best backup solution for your budget and device setup.', href: '/tool-reviews/cloud-backup/', icon: '☁️', badge: 'Review' },
-          { title: 'Small Business Backup Strategy', description: 'Step-by-step guide to setting up automated, tested backups.', href: '/blog/small-business-backup-strategy/', icon: '💾', badge: 'Guide' },
-        ]}
-      />
     </article>
   </div>
 </BaseLayout>

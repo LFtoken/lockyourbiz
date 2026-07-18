@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionHero from '../../components/SectionHero.astro';
 import ContentCTA from '../../components/ContentCTA.astro';
-import AdNativeCard from '../../components/AdNativeCard.astro';
 ---
 
 <BaseLayout
@@ -141,14 +140,6 @@ import AdNativeCard from '../../components/AdNativeCard.astro';
         </div>
       </div>
 
-      <AdNativeCard
-        title="Recommended Resources for Retail Shops"
-        resources={[
-          { title: 'Ransomware Protection Guide', description: 'What to do when your POS systems get locked by ransomware.', href: '/blog/ransomware-protection/', icon: '🔒', badge: 'Guide' },
-          { title: 'Essential Security Hardware', description: 'Firewalls, secure routers, and hardware recommendations for physical stores.', href: '/blog/essential-security-hardware/', icon: '🖥️', badge: 'Guide' },
-          { title: 'Incident Response: Ransomware', description: 'Step-by-step emergency guide when your store gets hit.', href: '/incident-response/ransomware-response/', icon: '🆘', badge: 'Emergency' },
-        ]}
-      />
     </article>
   </div>
 </BaseLayout>
