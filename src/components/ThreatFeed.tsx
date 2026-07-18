@@ -21,7 +21,8 @@ interface CisaResponse {
   vulnerabilities: CisaVuln[];
 }
 
-const CISA_KEV_URL = 'https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json';
+const THREATS_API = '/api/threats';
+const CISA_FALLBACK = 'https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json';
 
 // Small-business-relevant vendor keywords to highlight
 const SMB_VENDORS = [
@@ -79,7 +80,9 @@ export default function ThreatFeed() {
   const fetchData = async () => {
     try {
       setLoading(true);
-      const resp = await fetch(CISA_KEV_URL);
+      // Try Cloudflare Pages Function proxy first, fallback to direct CISA
+      let resp = await fetch(THREATS_API);
+      if (!resp.ok) resp = await fetch(CISA_FALLBACK);
       if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
       const json: CisaResponse = await resp.json();
       // Sort newest first
