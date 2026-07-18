@@ -1,78 +1,109 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionHero from '../../components/SectionHero.astro';
-import ResourceCard from '../../components/ResourceCard.astro';
-
-const alerts = [
-  {
-    title: 'July 2026 Threat Alert — Ransomware Variants, Phishing Campaigns & WordPress Vulnerabilities',
-    date: '2026-07-18',
-    href: '/threat-alerts/ransomware-july-2026/',
-    description: 'New LockBit variant targeting small business NAS devices; spike in fake Shopify invoice phishing; critical WooCommerce plugin patch.',
-    severity: 'High',
-  },
-];
-
-const upcomingTopics = [
-  'August 2026 — Back-to-school season phishing campaigns targeting small business payroll systems',
-  'September 2026 — Q3 ransomware trends and end-of-fiscal-year financial data risks',
-  'October 2026 — Pre-Black Friday eCommerce attack surge preparation',
-  'November 2026 — Holiday season credential stuffing and gift card fraud alert',
-  'December 2026 — Year-end data breach report and 2027 threat forecast',
-];
+import ThreatFeed from '../../components/ThreatFeed';
 ---
 
 <BaseLayout
-  title="Monthly Cyber Threat Alerts for Small Business — July 2026"
-  description="Monthly threat intelligence for small business owners. Current ransomware variants, phishing campaigns, and software vulnerabilities — plain English, actionable guidance."
+  title="Live Cyber Threat Intelligence for Small Business | Auto-Updated"
+  description="Real-time cyber threat intelligence for small business owners. Auto-updated from CISA's Known Exploited Vulnerabilities catalog. Filter by ransomware, SMB-relevant, and recent threats."
 >
   <SectionHero
     icon="🚨"
-    title="Threat Alerts"
-    description="Every month, we track the threats that actually matter to small businesses — not enterprise zero-days, but real ransomware variants, phishing campaigns, and vulnerabilities hitting Main Street right now."
-    badge="🚨 Monthly Threat Intelligence"
+    title="Live Threat Intelligence"
+    description="This page automatically fetches the latest known exploited vulnerabilities from the CISA KEV catalog — the same threat data used by government agencies and Fortune 500 security teams. Filter by ransomware, SMB-relevant products, or search your specific tools."
+    badge="🚨 Auto-Updated · CISA Official Feed"
     gradient="from-red-950 via-primary-950 to-primary-900"
   />
 
-  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-    <div class="max-w-3xl mx-auto">
-      <h2 class="text-2xl font-bold text-gray-900 mb-6">Latest Alerts</h2>
+  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <!-- How it works -->
+    <div class="mb-10 rounded-xl bg-primary-50 border border-primary-200 p-5 text-sm text-primary-800">
+      <div class="flex items-start gap-3">
+        <span class="text-2xl">ℹ️</span>
+        <div>
+          <h3 class="font-bold text-primary-900">About This Feed</h3>
+          <p class="mt-1">
+            The <strong>CISA Known Exploited Vulnerabilities (KEV) Catalog</strong> is maintained by the U.S. Cybersecurity and Infrastructure Security Agency.
+            It lists vulnerabilities that are actively being exploited by attackers <em>right now</em> — not theoretical threats, but real attacks happening in the wild.
+            Each entry includes the required action you should take to protect your systems.
+            This feed updates automatically every time you visit or refresh this page.
+          </p>
+          <p class="mt-2">
+            <strong>🔴 Ransomware tags:</strong> Marked threats are actively used in ransomware campaigns — prioritize these first.
+            <strong class="ml-3">🏢 SMB-Relevant:</strong> Filter shows threats affecting tools commonly used by small businesses.
+          </p>
+        </div>
+      </div>
+    </div>
 
-      {alerts.map((alert) => (
-        <a href={alert.href} class="block card no-underline hover:border-primary-300 mb-8">
+    <!-- Live Feed -->
+    <div class="rounded-2xl border border-gray-200 bg-white p-4 sm:p-6 shadow-sm">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-lg font-bold text-gray-900 flex items-center gap-2">
+          <span class="relative flex h-3 w-3">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-accent-500"></span>
+          </span>
+          Live Vulnerability Feed
+        </h2>
+        <span class="text-xs text-gray-400">Auto-refreshes on page load</span>
+      </div>
+      <ThreatFeed client:load />
+    </div>
+
+    <!-- Curated Monthly Alerts -->
+    <div class="mt-16">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl font-bold text-gray-900">📋 Curated Monthly Threat Briefs</h2>
+      </div>
+      <p class="text-gray-600 mb-6">
+        In addition to the live feed above, we publish curated monthly threat briefs with plain-English analysis and specific guidance for small businesses.
+      </p>
+
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+        <a href="/threat-alerts/ransomware-july-2026/" class="group card no-underline hover:border-primary-300">
           <div class="flex flex-wrap items-center gap-3 mb-3">
-            <span class="inline-flex items-center rounded-full bg-red-100 px-3 py-1 text-xs font-semibold text-red-700">
-              {alert.severity} Severity
-            </span>
-            <time datetime={alert.date} class="text-sm text-gray-500">{alert.date}</time>
+            <span class="inline-flex items-center rounded-full bg-red-100 px-3 py-1 text-xs font-semibold text-red-700">High Severity</span>
+            <time datetime="2026-07-18" class="text-sm text-gray-500">July 18, 2026</time>
           </div>
-          <h2 class="text-xl font-bold text-gray-900 group-hover:text-primary-700 transition-colors">
-            {alert.title}
-          </h2>
-          <p class="mt-2 text-sm text-gray-600 leading-relaxed">
-            {alert.description}
+          <h3 class="text-lg font-bold text-gray-900 group-hover:text-primary-700 transition-colors">
+            Ransomware Variants, Phishing Campaigns & WordPress Vulnerabilities
+          </h3>
+          <p class="mt-2 text-sm text-gray-600">
+            New LockBit variant targeting small business NAS devices; spike in fake Shopify invoice phishing; critical WooCommerce plugin patches.
           </p>
         </a>
-      ))}
 
-      <div class="rounded-2xl bg-gray-50 border border-gray-200 p-6 sm:p-8 mt-10">
-        <h3 class="text-lg font-bold text-gray-900 mb-3">Upcoming Monthly Topics</h3>
-        <ul class="space-y-3">
-          {upcomingTopics.map((t) => (
-            <li class="flex items-start gap-3 text-sm text-gray-600">
-              <span class="mt-0.5 text-primary-500 font-bold">→</span>
-              {t}
-            </li>
-          ))}
-        </ul>
+        <div class="card border-dashed border-2 border-gray-300 bg-gray-50 flex items-center justify-center p-8">
+          <div class="text-center">
+            <div class="text-3xl mb-2">📅</div>
+            <p class="text-sm font-medium text-gray-500">Next Monthly Brief: August 2026</p>
+            <p class="text-xs text-gray-400 mt-1">Check back next month for the latest curated threat analysis</p>
+          </div>
+        </div>
       </div>
+    </div>
 
-      <div class="mt-10 rounded-2xl bg-primary-700 p-6 sm:p-8 text-center">
-        <h3 class="text-xl font-bold text-white">Get Threat Alerts by Email</h3>
-        <p class="mt-2 text-sm text-primary-100">Know about new threats before they hit your business. No spam — one alert per month.</p>
-        <a href="/contact/" class="mt-4 inline-flex items-center rounded-lg bg-white px-6 py-3 text-sm font-semibold text-primary-700 hover:bg-primary-50 transition-colors no-underline">
-          Subscribe to Alerts →
-        </a>
+    <!-- Bottom CTA -->
+    <div class="mt-16 rounded-2xl bg-primary-700 p-8 text-center">
+      <h2 class="text-2xl font-bold text-white">How to Use This Page</h2>
+      <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-6 text-left">
+        <div class="rounded-xl bg-white/10 p-5">
+          <div class="text-2xl mb-2">1️⃣</div>
+          <h3 class="font-semibold text-white">Filter for Your Stack</h3>
+          <p class="mt-2 text-sm text-white/70">Search for your vendors — Microsoft, Google, Cisco, WordPress, etc. See immediately if any of your tools have actively exploited vulnerabilities.</p>
+        </div>
+        <div class="rounded-xl bg-white/10 p-5">
+          <div class="text-2xl mb-2">2️⃣</div>
+          <h3 class="font-semibold text-white">Prioritize Ransomware Tags</h3>
+          <p class="mt-2 text-sm text-white/70">Threats marked "Known Ransomware Use" should be patched first. These are actively used to encrypt and extort businesses like yours.</p>
+        </div>
+        <div class="rounded-xl bg-white/10 p-5">
+          <div class="text-2xl mb-2">3️⃣</div>
+          <h3 class="font-semibold text-white">Apply Required Actions</h3>
+          <p class="mt-2 text-sm text-white/70">Each entry includes a "Required Action" from CISA with a due date. Follow these instructions to close the vulnerability.</p>
+        </div>
       </div>
     </div>
   </div>
