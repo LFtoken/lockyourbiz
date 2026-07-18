@@ -1,24 +1,81 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionHero from '../../components/SectionHero.astro';
-import ThreatFeed from '../../components/ThreatFeed';
 
-// Fetch CISA KEV data at build time — avoids CORS, always works
-let initialData = null;
-let buildTime = '';
+interface CisaVuln {
+  cveID: string;
+  vendorProject: string;
+  product: string;
+  vulnerabilityName: string;
+  dateAdded: string;
+  shortDescription: string;
+  requiredAction: string;
+  dueDate: string;
+  knownRansomwareCampaignUse: string;
+  notes: string;
+}
+
+interface CisaResponse {
+  title: string;
+  catalogVersion: string;
+  dateReleased: string;
+  count: number;
+  vulnerabilities: CisaVuln[];
+}
+
+// Fetch at build time — always works, no CORS
+let allVulns: CisaVuln[] = [];
+let catalogVersion = '';
+let totalCount = 0;
+let fetchError = '';
+
 try {
   const resp = await fetch('https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json', {
     headers: { 'User-Agent': 'LockYourBiz/1.0', 'Accept': 'application/json' }
   });
   if (resp.ok) {
-    const json = await resp.json();
-    json.vulnerabilities.sort((a: any, b: any) => new Date(b.dateAdded).getTime() - new Date(a.dateAdded).getTime());
-    initialData = json;
-    buildTime = new Date().toISOString();
+    const json: CisaResponse = await resp.json();
+    allVulns = json.vulnerabilities.sort((a, b) => new Date(b.dateAdded).getTime() - new Date(a.dateAdded).getTime());
+    catalogVersion = json.catalogVersion;
+    totalCount = json.count;
+  } else {
+    fetchError = `API returned ${resp.status}`;
   }
-} catch (e) {
-  // Build-time fetch failed — component will try client-side
+} catch (e: any) {
+  fetchError = e.message;
 }
+
+// Compute stats
+const ransomwareCount = allVulns.filter(v => v.knownRansomwareCampaignUse === 'Known').length;
+const smbVendors = ['Microsoft','Google','Apple','Adobe','Cisco','Fortinet','Palo Alto','WordPress','Drupal','Apache','Zoom','Slack','Citrix','VMware','Atlassian','GitLab','Zoho','Salesforce','Oracle','Ivanti','SonicWall','QNAP','Synology','Sophos'];
+const smbCount = allVulns.filter(v => smbVendors.some(vn => v.vendorProject.toLowerCase().includes(vn.toLowerCase()))).length;
+const now = new Date();
+const weekAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+const recentCount = allVulns.filter(v => new Date(v.dateAdded) >= weekAgo).length;
+
+function daysAgo(d: string) {
+  const diff = Math.floor((now.getTime() - new Date(d).getTime()) / (1000 * 60 * 60 * 24));
+  if (diff === 0) return 'Today';
+  if (diff === 1) return 'Yesterday';
+  if (diff < 7) return `${diff} days ago`;
+  if (diff < 30) return `${Math.floor(diff / 7)}w ago`;
+  return `${Math.floor(diff / 30)}mo ago`;
+}
+
+function sevClass(v: CisaVuln) {
+  if (v.knownRansomwareCampaignUse === 'Known') return 'bg-red-100 text-red-800';
+  return 'bg-orange-100 text-orange-800';
+}
+function sevLabel(v: CisaVuln) {
+  if (v.knownRansomwareCampaignUse === 'Known') return '🔴 Ransomware';
+  return '🟠 High';
+}
+function isSmb(v: CisaVuln) {
+  return smbVendors.some(vn => v.vendorProject.toLowerCase().includes(vn.toLowerCase()));
+}
+
+// Show most recent 200 for page size, rest available via search
+const displayVulns = allVulns.slice(0, 200);
 ---
 
 <BaseLayout
@@ -28,103 +85,157 @@ try {
   <SectionHero
     icon="🚨"
     title="Live Threat Intelligence"
-    description="This page automatically fetches the latest known exploited vulnerabilities from the CISA KEV catalog — the same threat data used by government agencies and Fortune 500 security teams. Filter by ransomware, SMB-relevant products, or search your specific tools."
-    badge="🚨 Auto-Updated · CISA Official Feed"
+    description="Automatically updated from the CISA Known Exploited Vulnerabilities catalog — the same data used by government security teams. Filter by ransomware, SMB-relevant products, or search your specific tools."
+    badge="🚨 Auto-Updated Every Build · CISA Official Feed"
     gradient="from-red-950 via-primary-950 to-primary-900"
   />
 
   <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-    <!-- How it works -->
+    <!-- Info banner -->
     <div class="mb-10 rounded-xl bg-primary-50 border border-primary-200 p-5 text-sm text-primary-800">
       <div class="flex items-start gap-3">
         <span class="text-2xl">ℹ️</span>
         <div>
           <h3 class="font-bold text-primary-900">About This Feed</h3>
-          <p class="mt-1">
-            The <strong>CISA Known Exploited Vulnerabilities (KEV) Catalog</strong> is maintained by the U.S. Cybersecurity and Infrastructure Security Agency.
-            It lists vulnerabilities that are actively being exploited by attackers <em>right now</em> — not theoretical threats, but real attacks happening in the wild.
-            Each entry includes the required action you should take to protect your systems.
-            This feed updates automatically every time you visit or refresh this page.
-          </p>
-          <p class="mt-2">
-            <strong>🔴 Ransomware tags:</strong> Marked threats are actively used in ransomware campaigns — prioritize these first.
-            <strong class="ml-3">🏢 SMB-Relevant:</strong> Filter shows threats affecting tools commonly used by small businesses.
-          </p>
+          <p class="mt-1">The <strong>CISA Known Exploited Vulnerabilities (KEV) Catalog</strong> lists vulnerabilities actively exploited in the wild — real attacks happening right now. Each entry includes required actions. Data updates automatically every time we rebuild the site.</p>
+          <p class="mt-2"><strong>🔴 Ransomware</strong> tags = actively used in ransomware campaigns. <strong>🏢 SMB</strong> filter = affects tools commonly used by small businesses.</p>
         </div>
       </div>
     </div>
 
-    <!-- Live Feed -->
-    <div class="rounded-2xl border border-gray-200 bg-white p-4 sm:p-6 shadow-sm">
-      <div class="flex items-center justify-between mb-4">
-        <h2 class="text-lg font-bold text-gray-900 flex items-center gap-2">
-          <span class="relative flex h-3 w-3">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-400 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-3 w-3 bg-accent-500"></span>
-          </span>
-          Live Vulnerability Feed
-        </h2>
-        <span class="text-xs text-gray-400">Auto-refreshes on page load</span>
+    {fetchError && (
+      <div class="rounded-xl bg-red-50 border border-red-200 p-4 mb-6 text-sm text-red-700">
+        ⚠️ Build-time fetch failed: {fetchError}. Showing cached data if available.
       </div>
-      {initialData && (
-        <script set:html={`window.__THREAT_DATA__ = ${JSON.stringify({ data: initialData, buildTime })};`}></script>
-      )}
-      <ThreatFeed client:load />
+    )}
+
+    <!-- Stats -->
+    <div class="grid grid-cols-1 sm:grid-cols-4 gap-3 mb-6">
+      <div class="rounded-xl bg-gray-50 border border-gray-200 p-4 text-center">
+        <div class="text-3xl font-extrabold text-primary-700">{totalCount}</div>
+        <div class="text-xs text-gray-600 mt-1">Total KEV Entries</div>
+      </div>
+      <div class="rounded-xl bg-red-50 border border-red-200 p-4 text-center">
+        <div class="text-3xl font-extrabold text-red-700">{ransomwareCount}</div>
+        <div class="text-xs text-red-600 mt-1">Ransomware Used</div>
+      </div>
+      <div class="rounded-xl bg-orange-50 border border-orange-200 p-4 text-center">
+        <div class="text-3xl font-extrabold text-orange-700">{smbCount}</div>
+        <div class="text-xs text-orange-600 mt-1">SMB-Relevant</div>
+      </div>
+      <div class="rounded-xl bg-blue-50 border border-blue-200 p-4 text-center">
+        <div class="text-3xl font-extrabold text-blue-700">{recentCount}</div>
+        <div class="text-xs text-blue-600 mt-1">Added This Week</div>
+      </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="flex flex-wrap items-center gap-2 mb-6">
+      <button class="filter-btn rounded-full px-4 py-2 text-sm font-medium bg-primary-600 text-white cursor-pointer min-h-[44px]" data-filter="all">All</button>
+      <button class="filter-btn rounded-full px-4 py-2 text-sm font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 cursor-pointer min-h-[44px]" data-filter="ransomware">🔴 Ransomware</button>
+      <button class="filter-btn rounded-full px-4 py-2 text-sm font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 cursor-pointer min-h-[44px]" data-filter="smb">🏢 SMB</button>
+      <button class="filter-btn rounded-full px-4 py-2 text-sm font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 cursor-pointer min-h-[44px]" data-filter="recent">🆕 This Week</button>
+      <input type="text" id="threat-search" placeholder="Search vendor, product, CVE..." class="ml-auto rounded-lg border border-gray-300 px-3 py-2.5 text-sm min-h-[44px] w-full sm:w-64" />
+    </div>
+
+    <!-- Threat List -->
+    <div class="space-y-3" id="threat-list">
+      {displayVulns.map(v => (
+        <details class={`threat-item group rounded-xl border border-gray-200 bg-white hover:border-gray-300 transition-colors ${v.knownRansomwareCampaignUse === 'Known' ? 'border-l-4 border-l-red-400' : ''}`} data-ransomware={v.knownRansomwareCampaignUse === 'Known' ? '1' : '0'} data-smb={isSmb(v) ? '1' : '0'} data-date={v.dateAdded} data-search={`${v.cveID} ${v.vendorProject} ${v.product} ${v.vulnerabilityName}`.toLowerCase()}>
+          <summary class="flex flex-wrap items-center gap-2 px-5 py-4 cursor-pointer min-h-[44px]">
+            <span class={`text-xs font-bold px-2 py-0.5 rounded-full whitespace-nowrap ${sevClass(v)}`}>{sevLabel(v)}</span>
+            <a href={`https://nvd.nist.gov/vuln/detail/${v.cveID}`} target="_blank" rel="noopener" class="text-sm font-bold text-primary-700 hover:underline" onclick="event.stopPropagation()">{v.cveID}</a>
+            <span class="text-sm text-gray-700">{v.vendorProject} — {v.product}</span>
+            <span class="text-xs text-gray-400 ml-auto whitespace-nowrap">{daysAgo(v.dateAdded)}</span>
+          </summary>
+          <div class="px-5 pb-4 space-y-2 text-sm border-t border-gray-100 pt-3">
+            <p class="text-gray-700"><strong>Vulnerability:</strong> {v.vulnerabilityName}</p>
+            {v.shortDescription && <p class="text-gray-600">{v.shortDescription}</p>}
+            <div class="rounded-lg bg-red-50 border border-red-100 p-3">
+              <strong class="text-red-800">🛡️ Required Action{v.dueDate ? ` (by ${v.dueDate})` : ''}:</strong>
+              <p class="text-red-700 mt-1">{v.requiredAction}</p>
+            </div>
+            {v.notes && <p class="text-gray-500 text-xs">📝 {v.notes}</p>}
+            <div class="flex gap-3 text-xs pt-1">
+              <a href={`https://nvd.nist.gov/vuln/detail/${v.cveID}`} target="_blank" rel="noopener" class="text-primary-600 hover:underline">NVD Details →</a>
+              {v.knownRansomwareCampaignUse === 'Known' && <span class="text-red-600 font-semibold">⚠️ Actively used in ransomware campaigns</span>}
+            </div>
+          </div>
+        </details>
+      ))}
+    </div>
+
+    <div class="mt-4 text-center text-xs text-gray-400">
+      Showing {displayVulns.length} of {totalCount} entries · Catalog: {catalogVersion} · Updated every site deployment
     </div>
 
     <!-- Curated Monthly Alerts -->
     <div class="mt-16">
-      <div class="flex items-center justify-between mb-6">
-        <h2 class="text-2xl font-bold text-gray-900">📋 Curated Monthly Threat Briefs</h2>
-      </div>
-      <p class="text-gray-600 mb-6">
-        In addition to the live feed above, we publish curated monthly threat briefs with plain-English analysis and specific guidance for small businesses.
-      </p>
-
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">📋 Curated Monthly Threat Briefs</h2>
       <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
         <a href="/threat-alerts/ransomware-july-2026/" class="group card no-underline hover:border-primary-300">
           <div class="flex flex-wrap items-center gap-3 mb-3">
             <span class="inline-flex items-center rounded-full bg-red-100 px-3 py-1 text-xs font-semibold text-red-700">High Severity</span>
             <time datetime="2026-07-18" class="text-sm text-gray-500">July 18, 2026</time>
           </div>
-          <h3 class="text-lg font-bold text-gray-900 group-hover:text-primary-700 transition-colors">
-            Ransomware Variants, Phishing Campaigns & WordPress Vulnerabilities
-          </h3>
-          <p class="mt-2 text-sm text-gray-600">
-            New LockBit variant targeting small business NAS devices; spike in fake Shopify invoice phishing; critical WooCommerce plugin patches.
-          </p>
+          <h3 class="text-lg font-bold text-gray-900 group-hover:text-primary-700 transition-colors">Ransomware Variants, Phishing & WordPress Vulns</h3>
+          <p class="mt-2 text-sm text-gray-600">New LockBit variant targeting NAS devices; fake Shopify invoice phishing; critical WooCommerce plugin patches.</p>
         </a>
-
         <div class="card border-dashed border-2 border-gray-300 bg-gray-50 flex items-center justify-center p-8">
-          <div class="text-center">
-            <div class="text-3xl mb-2">📅</div>
-            <p class="text-sm font-medium text-gray-500">Next Monthly Brief: August 2026</p>
-            <p class="text-xs text-gray-400 mt-1">Check back next month for the latest curated threat analysis</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bottom CTA -->
-    <div class="mt-16 rounded-2xl bg-primary-700 p-8 text-center">
-      <h2 class="text-2xl font-bold text-white">How to Use This Page</h2>
-      <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-6 text-left">
-        <div class="rounded-xl bg-white/10 p-5">
-          <div class="text-2xl mb-2">1️⃣</div>
-          <h3 class="font-semibold text-white">Filter for Your Stack</h3>
-          <p class="mt-2 text-sm text-white/70">Search for your vendors — Microsoft, Google, Cisco, WordPress, etc. See immediately if any of your tools have actively exploited vulnerabilities.</p>
-        </div>
-        <div class="rounded-xl bg-white/10 p-5">
-          <div class="text-2xl mb-2">2️⃣</div>
-          <h3 class="font-semibold text-white">Prioritize Ransomware Tags</h3>
-          <p class="mt-2 text-sm text-white/70">Threats marked "Known Ransomware Use" should be patched first. These are actively used to encrypt and extort businesses like yours.</p>
-        </div>
-        <div class="rounded-xl bg-white/10 p-5">
-          <div class="text-2xl mb-2">3️⃣</div>
-          <h3 class="font-semibold text-white">Apply Required Actions</h3>
-          <p class="mt-2 text-sm text-white/70">Each entry includes a "Required Action" from CISA with a due date. Follow these instructions to close the vulnerability.</p>
+          <div class="text-center"><div class="text-3xl mb-2">📅</div><p class="text-sm font-medium text-gray-500">Next Monthly Brief: August 2026</p></div>
         </div>
       </div>
     </div>
   </div>
 </BaseLayout>
+
+<script>
+  // Client-side filtering — same pattern as blog category filter
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const searchInput = document.getElementById('threat-search') as HTMLInputElement;
+  const items = document.querySelectorAll('.threat-item');
+
+  let activeFilter = 'all';
+
+  function applyFilters() {
+    const searchTerm = searchInput?.value.toLowerCase() || '';
+    const weekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
+
+    items.forEach((item) => {
+      const el = item as HTMLElement;
+      const isRansomware = el.dataset.ransomware === '1';
+      const isSmb = el.dataset.smb === '1';
+      const dateAdded = new Date(el.dataset.date || '');
+      const searchText = el.dataset.search || '';
+      const isRecent = dateAdded >= weekAgo;
+
+      let show = true;
+
+      // Filter
+      if (activeFilter === 'ransomware') show = isRansomware;
+      else if (activeFilter === 'smb') show = isSmb;
+      else if (activeFilter === 'recent') show = isRecent;
+
+      // Search
+      if (show && searchTerm) {
+        show = searchText.includes(searchTerm);
+      }
+
+      el.style.display = show ? '' : 'none';
+    });
+  }
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      activeFilter = (btn as HTMLElement).dataset.filter || 'all';
+      filterBtns.forEach(b => {
+        b.className = b === btn
+          ? 'filter-btn rounded-full px-4 py-2 text-sm font-medium bg-primary-600 text-white cursor-pointer min-h-[44px]'
+          : 'filter-btn rounded-full px-4 py-2 text-sm font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 cursor-pointer min-h-[44px]';
+      });
+      applyFilters();
+    });
+  });
+
+  searchInput?.addEventListener('input', applyFilters);
+</script>
