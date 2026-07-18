@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import MfaEligibilityChecker from '../../components/MfaEligibilityChecker';
+---
+
+<BaseLayout
+  title="MFA Eligibility Checker | Which Services Support Two-Factor?"
+  description="Check which of your business services support multi-factor authentication. Select your services and get step-by-step MFA setup instructions for each one."
+>
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-3xl text-center mb-12">
+      <h1 class="text-4xl font-extrabold tracking-tight text-gray-900">MFA Eligibility Checker</h1>
+      <p class="mt-4 text-lg text-gray-600">
+        Which of your business tools support multi-factor authentication? Select the services you use and get exact step-by-step instructions to enable MFA on each one. MFA blocks 99% of credential attacks — enable it everywhere.
+      </p>
+      <div class="mt-4 inline-flex items-center gap-2 rounded-full bg-accent-50 px-4 py-1.5 text-sm font-medium text-accent-700">
+        🔐 Free tool — find and fix your MFA gaps in 5 minutes
+      </div>
+    </div>
+
+    <div class="rounded-2xl border border-gray-200 bg-white p-6 sm:p-10 shadow-sm">
+      <MfaEligibilityChecker client:load />
+    </div>
+  </div>
+</BaseLayout>
