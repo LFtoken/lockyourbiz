@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHero from '../../components/SectionHero.astro';
+import ContentCTA from '../../components/ContentCTA.astro';
+import AdNativeCard from '../../components/AdNativeCard.astro';
+---
+
+<BaseLayout
+  title="Best MFA Tools for Small Business 2026 — YubiKey, Duo, Authenticator Compared"
+  description="Compare YubiKey, Duo, Microsoft Authenticator, Google Titan & Authy for small business MFA. Hardware keys vs authenticator apps — what to use and when."
+>
+  <SectionHero
+    icon="📱"
+    title="Multi-Factor Authentication Tools"
+    description="MFA is the single most effective security measure you can implement — it blocks 99% of credential-based attacks. But not all MFA is equal. Here is how to choose between hardware keys, authenticator apps, and SSO."
+    badge="⭐ Honest Review · FTC Affiliate Disclosure"
+    gradient="from-primary-950 via-primary-800 to-accent-900"
+  />
+
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <article class="mx-auto max-w-3xl">
+      <div class="rounded-xl bg-yellow-50 border border-yellow-200 p-4 text-sm text-yellow-800 mb-10">
+        <strong>⚖️ Affiliate Disclosure:</strong> Some links may be affiliate links. We only recommend tools we have tested.
+      </div>
+
+      <h2 class="text-2xl font-bold text-gray-900">MFA Methods: Strongest to Weakest</h2>
+      <div class="mt-4 space-y-3">
+        <div class="rounded-lg bg-accent-50 border border-accent-200 p-4">
+          <strong class="text-accent-900">🟢 Strongest: Hardware Security Keys (FIDO2/U2F)</strong>
+          <p class="mt-1 text-sm text-accent-800">Physical keys (YubiKey, Google Titan) that require a physical tap. Phishing-resistant — they will not authenticate on a fake website. Best for admin accounts and sensitive roles.</p>
+        </div>
+        <div class="rounded-lg bg-primary-50 border border-primary-200 p-4">
+          <strong class="text-primary-900">🟡 Good: Authenticator Apps (TOTP)</strong>
+          <p class="mt-1 text-sm text-primary-800">Time-based one-time passwords from apps (Microsoft Authenticator, Google Authenticator, Authy). Better than SMS but still phishable — an attacker can trick you into entering the code on a fake site.</p>
+        </div>
+        <div class="rounded-lg bg-orange-50 border border-orange-200 p-4">
+          <strong class="text-orange-900">🟠 Better Than Nothing: Push Notifications</strong>
+          <p class="mt-1 text-sm text-orange-800">Apps like Duo send a push to your phone. Convenient, but vulnerable to "MFA fatigue" attacks — attackers spam push requests until the user accepts one.</p>
+        </div>
+        <div class="rounded-lg bg-red-50 border border-red-200 p-4">
+          <strong class="text-red-900">🔴 Weakest: SMS/Phone Call</strong>
+          <p class="mt-1 text-sm text-red-800">SMS-based MFA is vulnerable to SIM-swap attacks and interception. Use only if no other option is available. Better than no MFA, but not by much.</p>
+        </div>
+      </div>
+
+      <div class="mt-8 overflow-x-auto">
+        <table class="min-w-full text-sm">
+          <thead class="bg-gray-50">
+            <tr><th class="px-4 py-3 text-left font-semibold">Product</th><th class="px-4 py-3 text-center font-semibold">Price</th><th class="px-4 py-3 text-center font-semibold">Type</th><th class="px-4 py-3 text-center font-semibold">Best For</th></tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr><td class="px-4 py-3 font-semibold">YubiKey 5</td><td class="text-center">$25-55 (one-time)</td><td class="text-center">Hardware Key</td><td class="text-center">Admin/high-value accounts</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">Duo</td><td class="text-center">$3-9/user/month</td><td class="text-center">Platform</td><td class="text-center">Teams needing managed MFA</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">Microsoft Authenticator</td><td class="text-center">Free</td><td class="text-center">App</td><td class="text-center">Microsoft 365 users</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">Google Titan Key</td><td class="text-center">$30-35 (one-time)</td><td class="text-center">Hardware Key</td><td class="text-center">Google Workspace users</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">Authy</td><td class="text-center">Free</td><td class="text-center">App</td><td class="text-center">Multi-device TOTP backup</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">Detailed Reviews</h2>
+
+      <h3 class="text-xl font-bold text-gray-900 mt-8">1. YubiKey — The Gold Standard</h3>
+      <p class="mt-3 text-gray-700 leading-relaxed">YubiKey is a physical USB/NFC key that implements the FIDO2 standard — the most phishing-resistant form of MFA available. The key will only authenticate on the legitimate website, making it impossible for an attacker to intercept. YubiKey 5 ($55) supports FIDO2, U2F, smart card, and OTP — covering every major service. For admin accounts, finance personnel, and anyone with access to sensitive systems, YubiKeys are the strongest defense. Yubico also offers a $25 Security Key version with just FIDO2/U2F if you do not need the other protocols. One-time cost, no subscription.</p>
+
+      <h3 class="text-xl font-bold text-gray-900 mt-8">2. Duo Security — Best Managed MFA Platform</h3>
+      <p class="mt-3 text-gray-700 leading-relaxed">Duo (acquired by Cisco) provides a managed MFA platform with push notifications, TOTP, hardware key support, and single sign-on. The admin dashboard lets you enforce MFA policies across your organization — require hardware keys for admins, push notifications for employees, etc. Device health checks ensure connecting devices have encryption enabled and OS up to date. Duo Essentials starts at $3/user/month, with more advanced features at higher tiers. Best for businesses that want policy-managed MFA across all their applications.</p>
+
+      <h3 class="text-xl font-bold text-gray-900 mt-8">3. Microsoft Authenticator — Best for M365 Shops</h3>
+      <p class="mt-3 text-gray-700 leading-relaxed">If your business uses Microsoft 365, Microsoft Authenticator is the natural choice — it integrates natively with Azure AD and supports passwordless sign-in (approve a number shown on screen). It is free, supports TOTP codes for non-Microsoft services, and backs up to your Microsoft account. For M365 shops that do not need a dedicated MFA management platform, Microsoft Authenticator + Windows Hello for Business covers the majority of MFA needs at zero additional cost.</p>
+
+      <h3 class="text-xl font-bold text-gray-900 mt-8">4. Google Titan Key — Google's Hardware Key</h3>
+      <p class="mt-3 text-gray-700 leading-relaxed">Google's answer to YubiKey. Supports FIDO2/U2F and works seamlessly with Google Workspace and Google's Advanced Protection Program. At $30-35, it is slightly cheaper than YubiKey 5 but supports fewer protocols (no OTP, smart card, or OpenPGP). If your business runs on Google Workspace, Titan Keys are a solid, cost-effective choice. For mixed environments, YubiKey's broader protocol support is worth the extra $20.</p>
+
+      <h3 class="text-xl font-bold text-gray-900 mt-8">5. Authy — Best Free TOTP App with Backup</h3>
+      <p class="mt-3 text-gray-700 leading-relaxed">Authy (by Twilio) is a free TOTP authenticator app with one killer feature: encrypted cloud backup. If you lose your phone, you can restore all your 2FA tokens — unlike Google Authenticator which traditionally lost everything. Authy syncs across multiple devices and is protected by a backup password. It is not as secure as a hardware key, but for general-use MFA across dozens of services, Authy's backup capability prevents the nightmare of being locked out of everything because you dropped your phone.</p>
+
+      <ContentCTA
+        icon="🔑"
+        title="Pair MFA with a Password Manager"
+        description="MFA + unique strong passwords = 99% of attacks blocked. See our password manager comparison to complete your setup."
+        href="/tool-reviews/password-managers/"
+        ctaText="Compare Password Managers →"
+      />
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">Our Recommendation</h2>
+      <div class="mt-4 rounded-2xl bg-primary-50 border border-primary-200 p-6">
+        <ul class="space-y-3 text-sm">
+          <li><strong>🟢 Every business (minimum):</strong> Enable TOTP-based MFA via Microsoft Authenticator or Authy — free, 5 minutes to set up</li>
+          <li><strong>🟢 Admin/finance/HR accounts:</strong> YubiKey 5 hardware keys — $55 one-time, phishing-proof</li>
+          <li><strong>🟡 Need managed MFA with policies:</strong> Duo Essentials at $3/user/month</li>
+          <li><strong>🟢 Already on M365:</strong> Microsoft Authenticator + Windows Hello — well-integrated, free</li>
+          <li><strong>🟢 Already on Google Workspace:</strong> Titan Key + Google prompt — integrated, affordable</li>
+        </ul>
+      </div>
+
+      <AdNativeCard
+        title="Complete Your Access Security"
+        resources={[
+          { title: 'Password Manager Review', description: 'MFA + password manager = your most powerful security combo.', href: '/tool-reviews/password-managers/', icon: '🔑', badge: 'Review' },
+          { title: 'VPN vs Zero Trust Guide', description: 'Beyond MFA: how zero-trust access replaces VPNs for remote teams.', href: '/blog/vpn-vs-zerotrust/', icon: '🔐', badge: 'Guide' },
+          { title: 'Cybersecurity 101', description: 'The complete beginner guide to protecting your small business.', href: '/blog/cybersecurity-101/', icon: '📖', badge: 'Guide' },
+        ]}
+      />
+    </article>
+  </div>
+</BaseLayout>

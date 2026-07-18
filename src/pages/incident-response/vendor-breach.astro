@@ -1,0 +1,99 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHero from '../../components/SectionHero.astro';
+import ContentCTA from '../../components/ContentCTA.astro';
+import AdNativeCard from '../../components/AdNativeCard.astro';
+---
+
+<BaseLayout
+  title="Third-Party Vendor Data Breach — Response Guide for Small Business"
+  description="A vendor or supplier you share data with was breached. How to assess your exposure, activate contractual protections, notify your customers, and prevent the next one."
+>
+  <SectionHero
+    icon="🔗"
+    title="Vendor Data Breach Response"
+    description="A supplier, SaaS vendor, or contractor that handles your data has been breached. You did not cause it — but you may still be responsible for notifying your customers. Here is what to do."
+    badge="🆘 Emergency Guide · 🟡 Medium Urgency"
+    gradient="from-orange-900 via-primary-950 to-primary-900"
+  />
+
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <article class="mx-auto max-w-3xl">
+      <div class="rounded-2xl bg-yellow-100 border-2 border-yellow-400 p-6 mb-10">
+        <h2 class="text-xl font-bold text-yellow-900">⚠️ YOU MAY BE RESPONSIBLE FOR NOTIFICATION</h2>
+        <p class="mt-2 text-sm text-yellow-800">Even though the breach happened at your vendor, <strong>you</strong> may be legally required to notify YOUR customers if their data was exposed. Many data protection laws place the notification obligation on the data controller (you), not the data processor (your vendor).</p>
+      </div>
+
+      <h2 class="text-2xl font-bold text-gray-900">Step 1: Confirm the Breach and Get Details</h2>
+      <p class="mt-4 text-gray-700 leading-relaxed">When a vendor notifies you of a breach, do not accept a vague statement. Demand specific answers:</p>
+      <ul class="mt-3 space-y-2 text-sm text-gray-700">
+        <li>• <strong>What exactly happened?</strong> Unauthorized access? Data exfiltration? Ransomware? Insider threat?</li>
+        <li>• <strong>What data of yours was affected?</strong> Which customers? What data types (names, emails, SSNs, payment info, PHI)?</li>
+        <li>• <strong>When did it happen and when was it discovered?</strong> These dates determine your notification deadlines.</li>
+        <li>• <strong>What have they done to contain it?</strong> Has the vulnerability been closed? Can it happen again?</li>
+        <li>• <strong>Are they notifying affected individuals?</strong> If not, you need to — and the clock is already running.</li>
+      </ul>
+      <p class="mt-3 text-gray-700 leading-relaxed">Review your contract/Data Processing Agreement (DPA) with this vendor. Most DPAs require the vendor to notify you "without undue delay" after discovering a breach. If weeks passed between their discovery and their notification to you, they may be in breach of contract.</p>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">Step 2: Determine Your Exposure</h2>
+      <div class="mt-4 space-y-3 text-sm text-gray-700">
+        <p>Map the breached data to your regulatory obligations. The same breach may trigger multiple laws:</p>
+        <ul class="space-y-1">
+          <li>• <strong>PII (names, emails, phone numbers):</strong> State breach notification laws in every state where affected customers reside</li>
+          <li>• <strong>Financial data / SSNs:</strong> State laws + possible FTC Safeguards Rule implications + credit monitoring requirements</li>
+          <li>• <strong>EU customer data:</strong> GDPR (72-hour notification to DPA)</li>
+          <li>• <strong>California residents' data:</strong> CCPA/CPRA</li>
+          <li>• <strong>Health information:</strong> HIPAA Breach Notification Rule</li>
+        </ul>
+        <p>If you are unsure which laws apply, consult with your legal counsel or cyber insurance provider's breach coach. Getting this wrong can multiply your liability.</p>
+      </div>
+
+      <ContentCTA
+        icon="📊"
+        title="Data Breach Response Guide"
+        description="Complete guide to notifying customers, reporting to regulators, and managing the aftermath of a data breach."
+        href="/incident-response/data-breach/"
+        ctaText="Read Data Breach Response →"
+      />
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">Step 3: Notify YOUR Customers (If Required)</h2>
+      <p class="mt-4 text-gray-700 leading-relaxed">In many jurisdictions, the data controller (you) — not the data processor (vendor) — is responsible for notifying affected individuals. Even if your vendor offers to handle notification, you remain legally responsible for ensuring it happens correctly and on time. Send your own notification to affected customers. Be transparent that the breach occurred at a vendor, but take responsibility for the impact on your customers. Blaming the vendor damages your credibility.</p>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">Step 4: Activate Contractual Protections</h2>
+      <ul class="mt-4 space-y-2 text-sm text-gray-700">
+        <li><strong>Request indemnification:</strong> Your contract or DPA may require the vendor to cover breach-related costs — notification expenses, credit monitoring, legal fees, regulatory fines. Request these in writing.</li>
+        <li><strong>Request a forensic report:</strong> You need the vendor's incident investigation findings for your own compliance documentation and possible regulatory inquiries.</li>
+        <li><strong>Request a remediation plan:</strong> What has the vendor changed to prevent recurrence? You need to document this for your own risk assessment.</li>
+        <li><strong>Review your cyber insurance:</strong> Your policy may cover vendor-caused breaches. Contact your insurer to open a claim and access breach coach services.</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">Step 5: Decide — Continue or Terminate the Vendor Relationship</h2>
+      <p class="mt-4 text-gray-700 leading-relaxed">Not every breach requires firing the vendor — but some do. Evaluate:</p>
+      <ul class="mt-3 space-y-2 text-sm text-gray-700">
+        <li>• <strong>Was this negligence or an advanced attack?</strong> A vendor that left an AWS bucket open for 6 months is different from one hit by a sophisticated nation-state actor.</li>
+        <li>• <strong>How did they respond?</strong> Transparent, fast, and accountable? Or evasive, slow, and dismissive? The response tells you everything about their security culture.</li>
+        <li>• <strong>What have they changed?</strong> Concrete remediation (enabled MFA, encrypted data, hired a CISO) or vague promises ("we take security seriously")?</li>
+        <li>• <strong>Is there a viable alternative?</strong> Some vendors are hard to replace. If you stay, increase your monitoring and consider contractual audit rights.</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">Step 6: Prevent the Next Vendor Breach</h2>
+      <ol class="mt-4 space-y-2 text-sm text-gray-700">
+        <li><strong>1. Inventory your vendors.</strong> List every company that stores, processes, or transmits your customer data. You cannot manage what you do not track.</li>
+        <li><strong>2. Require DPAs with all data processors.</strong> A signed Data Processing Agreement should be mandatory before sharing any customer data with a vendor.</li>
+        <li><strong>3. Add security requirements to vendor contracts.</strong> Require MFA, encryption, breach notification within 24-72 hours, and annual security assessments.</li>
+        <li><strong>4. Audit critical vendors annually.</strong> Send a security questionnaire. Follow up on gaps. Document their responses.</li>
+        <li><strong>5. Limit data sharing to what is necessary.</strong> Do not send vendors more customer data than they actually need. Every extra field is extra exposure.</li>
+        <li><strong>6. Have an offboarding process.</strong> When a vendor relationship ends, ensure they delete your data and provide written confirmation of deletion.</li>
+      </ol>
+
+      <AdNativeCard
+        title="Vendor Risk Management Resources"
+        resources={[
+          { title: 'Compliance Toolkit', description: 'DPA templates, vendor security questionnaires, and contract checklists.', href: '/compliance/compliance-toolkit/', icon: '🧰', badge: 'Toolkit' },
+          { title: 'Data Breach Response', description: 'Full guide to customer notification and regulatory reporting.', href: '/incident-response/data-breach/', icon: '📊', badge: 'Emergency' },
+          { title: 'Cyber Insurance Guide', description: 'Ensure your policy covers third-party vendor breaches.', href: '/blog/cyber-insurance-guide/', icon: '🛡️', badge: 'Guide' },
+        ]}
+      />
+    </article>
+  </div>
+</BaseLayout>

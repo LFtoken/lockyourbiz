@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHero from '../../components/SectionHero.astro';
+import ContentCTA from '../../components/ContentCTA.astro';
+import AdNativeCard from '../../components/AdNativeCard.astro';
+---
+
+<BaseLayout
+  title="Employee Clicked a Phishing Link — What to Do in the First 15 Minutes"
+  description="A team member clicked a suspicious link or opened an attachment. The clock is ticking. Step-by-step: disconnect, reset passwords, scan for malware, and check for data exfiltration."
+>
+  <SectionHero
+    icon="🎣"
+    title="Phishing Link Clicked — Now What?"
+    description="Someone on your team clicked a suspicious link, opened an attachment, or entered credentials on a fake login page. The first 15 minutes determine whether this is a close call or a full breach."
+    badge="🆘 Emergency Guide · 🟡 Medium-High Urgency"
+    gradient="from-orange-950 via-primary-950 to-primary-900"
+  />
+
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <article class="mx-auto max-w-3xl">
+      <div class="rounded-2xl bg-orange-100 border-2 border-orange-400 p-6 mb-10">
+        <h2 class="text-xl font-bold text-orange-900">⚠️ DON'T PANIC — BUT ACT FAST</h2>
+        <p class="mt-2 text-sm text-orange-800">Create a culture where employees report mistakes immediately — without fear of blame. The worst response is silence. A 5-minute delay in reporting can be the difference between a contained incident and a full compromise.</p>
+      </div>
+
+      <h2 class="text-2xl font-bold text-gray-900">Scenario 1: They Clicked a Link (but Did Not Enter Anything)</h2>
+      <p class="mt-4 text-gray-700 leading-relaxed">The link may have loaded a page that attempted a drive-by download or browser exploit. These are less common than credential harvesting but more dangerous.</p>
+      <ol class="mt-3 space-y-3">
+        <li class="flex gap-3"><span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-red-600 text-xs font-bold text-white">1</span><div><strong class="text-gray-900">Disconnect the device from the network immediately.</strong> WiFi off, Ethernet unplugged. This prevents any malware from communicating with its command server or spreading laterally.</div></li>
+        <li class="flex gap-3"><span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-red-600 text-xs font-bold text-white">2</span><div><strong class="text-gray-900">Do NOT shut down the device.</strong> Keep it powered on but disconnected. IT/forensics may need to examine browser history and memory.</div></li>
+        <li class="flex gap-3"><span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-red-600 text-xs font-bold text-white">3</span><div><strong class="text-gray-900">Run a full antivirus scan.</strong> Windows Defender (built-in, free) or your EDR tool. Run the deepest scan available, not the quick scan.</div></li>
+        <li class="flex gap-3"><span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-red-600 text-xs font-bold text-white">4</span><div><strong class="text-gray-900">Check for unauthorized software.</strong> Look for recently installed programs, new browser extensions, or unfamiliar processes in Task Manager.</div></li>
+      </ol>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">Scenario 2: They Entered Credentials on a Fake Login Page</h2>
+      <p class="mt-4 text-gray-700 leading-relaxed">This is the most common phishing outcome. The attacker now has a working username and password. They will use it immediately.</p>
+      <ol class="mt-3 space-y-3">
+        <li class="flex gap-3"><span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-red-600 text-xs font-bold text-white">1</span><div><strong class="text-gray-900">Change the compromised password IMMEDIATELY — from a different, clean device.</strong> Do not use the potentially compromised computer to change passwords. Use your phone or another computer.</div></li>
+        <li class="flex gap-3"><span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-red-600 text-xs font-bold text-white">2</span><div><strong class="text-gray-900">Change that password everywhere it was reused.</strong> This is why password reuse is dangerous — if they used the same password on other services, change those too. Now. Use a password manager to generate unique passwords going forward.</div></li>
+        <li class="flex gap-3"><span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-red-600 text-xs font-bold text-white">3</span><div><strong class="text-gray-900">Check for forwarding rules and filters.</strong> Attackers often set up email forwarding rules to silently monitor communications. Check Email Settings → Forwarding and any filter rules.</div></li>
+        <li class="flex gap-3"><span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-red-600 text-xs font-bold text-white">4</span><div><strong class="text-gray-900">Check login history and active sessions.</strong> Most services show recent login locations and active sessions. Look for logins from unfamiliar locations or devices. Force-sign-out all sessions.</div></li>
+        <li class="flex gap-3"><span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-red-600 text-xs font-bold text-white">5</span><div><strong class="text-gray-900">Enable MFA on the account.</strong> If it was not already enabled, enable it now. MFA would have stopped the attacker even with the stolen password.</div></li>
+      </ol>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">Scenario 3: They Opened an Attachment</h2>
+      <p class="mt-4 text-gray-700 leading-relaxed">Attachments can contain malware, ransomware, or macro viruses. Treat this as potentially severe.</p>
+      <ol class="mt-3 space-y-3">
+        <li class="flex gap-3"><span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-red-600 text-xs font-bold text-white">1</span><div><strong class="text-gray-900">Disconnect immediately.</strong> Network off. Do not pass go.</div></li>
+        <li class="flex gap-3"><span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-red-600 text-xs font-bold text-white">2</span><div><strong class="text-gray-900">If it was a macro-enabled Office document (.docm, .xlsm, .pptm) and they enabled macros:</strong> Assume the device is compromised. Begin incident response for potential ransomware or data exfiltration.</div></li>
+        <li class="flex gap-3"><span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-red-600 text-xs font-bold text-white">3</span><div><strong class="text-gray-900">Run the deepest antivirus scan available.</strong> Consider engaging a professional incident response firm if the attachment contained ransomware or a remote access trojan (RAT).</div></li>
+      </ol>
+
+      <ContentCTA
+        icon="📧"
+        title="Phishing Prevention Guide: 7 Red Flags"
+        description="Teach your team what to check before clicking any link or opening any attachment. Printable one-pager included."
+        href="/blog/phishing-prevention/"
+        ctaText="Read Phishing Prevention Guide →"
+      />
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">After the Incident: Report & Document</h2>
+      <ul class="mt-4 space-y-2 text-sm text-gray-700">
+        <li><strong>Document the incident:</strong> What was clicked, when, by whom, what happened, what steps were taken. This is required for cyber insurance claims and may be needed for breach notification.</li>
+        <li><strong>Notify your IT provider or security contact.</strong> They may need to investigate broader network impact.</li>
+        <li><strong>Forward the phishing email</strong> to your email provider's abuse team and to the Anti-Phishing Working Group at reportphishing@apwg.org.</li>
+        <li><strong>Report to the FBI IC3</strong> at ic3.gov if financial information was exposed.</li>
+        <li><strong>Do NOT punish the employee who clicked.</strong> Blame creates a culture of hiding mistakes. The employee who reports immediately just saved your business. Thank them publicly and use this as a training opportunity for the whole team.</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">Prevention for Next Time</h2>
+      <ol class="mt-4 space-y-2 text-sm text-gray-700">
+        <li><strong>1. MFA on everything.</strong> Stolen credentials are useless if MFA is required.</li>
+        <li><strong>2. Email security gateway.</strong> Block phishing emails before they reach inboxes. See our <a href="/tool-reviews/email-security/" class="text-primary-600">email security comparison</a>.</li>
+        <li><strong>3. Regular phishing simulations.</strong> Test your team monthly. Free tools like KnowBe4's free phishing test exist.</li>
+        <li><strong>4. Create a "report phishing" button.</strong> Make it trivially easy for employees to report suspicious emails — one click in their email client.</li>
+      </ol>
+
+      <AdNativeCard
+        title="Build Your Phishing Defense"
+        resources={[
+          { title: 'Phishing Quiz', description: '10 real-world email scenarios — test your team\'s detection skills.', href: '/tools/phishing-quiz/', icon: '🎣', badge: 'Free Tool' },
+          { title: 'Email Security Review', description: 'Compare email security gateways that block phishing before it arrives.', href: '/tool-reviews/email-security/', icon: '📧', badge: 'Review' },
+          { title: 'Employee Security Training', description: '30-minute ready-to-use training script for your team.', href: '/blog/employee-security-training/', icon: '👥', badge: 'Template' },
+        ]}
+      />
+    </article>
+  </div>
+</BaseLayout>

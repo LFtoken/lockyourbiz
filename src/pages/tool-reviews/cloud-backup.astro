@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHero from '../../components/SectionHero.astro';
+import ContentCTA from '../../components/ContentCTA.astro';
+import AdNativeCard from '../../components/AdNativeCard.astro';
+---
+
+<BaseLayout
+  title="Best Cloud Backup for Small Business 2026 — Backblaze, Acronis, IDrive Compared"
+  description="Compare Backblaze, Acronis, IDrive, CrashPlan & MSP360 for small business cloud backup. Pricing, ransomware protection, restore speed, and ease of use."
+>
+  <SectionHero
+    icon="☁️"
+    title="Cloud Backup Comparison"
+    description="If you are not backing up automatically to an off-site location, you are not backed up at all. We compared the top cloud backup solutions for small business — here is who wins at each price point."
+    badge="⭐ Honest Review · FTC Affiliate Disclosure"
+    gradient="from-primary-950 via-sky-900 to-primary-900"
+  />
+
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <article class="mx-auto max-w-3xl">
+      <div class="rounded-xl bg-yellow-50 border border-yellow-200 p-4 text-sm text-yellow-800 mb-10">
+        <strong>⚖️ Affiliate Disclosure:</strong> Some links may be affiliate links. Ratings are independent and based on our testing.
+      </div>
+
+      <h2 class="text-2xl font-bold text-gray-900">The 3-2-1 Backup Rule</h2>
+      <p class="mt-4 text-gray-700 leading-relaxed">
+        Before comparing tools, understand the rule: <strong>3 copies</strong> of your data, on <strong>2 different types of media</strong>, with <strong>1 copy off-site</strong>. A NAS in your office is not off-site. An external hard drive next to your computer is not off-site. Cloud backup satisfies the "1 off-site" requirement and — crucially — does it automatically. If backup requires manual action, it will not happen consistently.
+      </p>
+
+      <div class="mt-4 overflow-x-auto">
+        <table class="min-w-full text-sm">
+          <thead class="bg-gray-50">
+            <tr><th class="px-4 py-3 text-left font-semibold">Product</th><th class="px-4 py-3 text-center font-semibold">Starting Price</th><th class="px-4 py-3 text-center font-semibold">Unlimited Storage</th><th class="px-4 py-3 text-center font-semibold">Ransomware Protection</th><th class="px-4 py-3 text-center font-semibold">Best For</th></tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr><td class="px-4 py-3 font-semibold">Backblaze</td><td class="text-center">$7/month/device</td><td class="text-center text-accent-700">✅</td><td class="text-center">30-day version history</td><td class="text-center">Simplest setup, unlimited backup</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">Acronis Cyber Protect</td><td class="text-center">$85/year/device</td><td class="text-center text-gray-400">250GB-1TB</td><td class="text-center text-accent-700">✅ Active Protection</td><td class="text-center">Backup + antivirus in one</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">IDrive Business</td><td class="text-center">$99.50/year</td><td class="text-center">250GB-12.5TB</td><td class="text-center">30-day snapshot history</td><td class="text-center">Multiple device backup</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">CrashPlan</td><td class="text-center">$10/month/device</td><td class="text-center text-accent-700">✅ Unlimited</td><td class="text-center">Unlimited version history</td><td class="text-center">Unlimited file version retention</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">MSP360</td><td class="text-center">$6/month + storage</td><td class="text-center text-gray-400">Varies (BYO storage)</td><td class="text-center">Via storage provider</td><td class="text-center">IT-savvy, flexible storage</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">Detailed Reviews</h2>
+
+      <h3 class="text-xl font-bold text-gray-900 mt-8">1. Backblaze — Simplest Setup, Best Value</h3>
+      <p class="mt-3 text-gray-700 leading-relaxed">Backblaze is the "set it and forget it" champion. Install it, and it silently backs up everything continuously. At $7/month per device with <strong>unlimited storage</strong>, it is the simplest and most affordable option for backing up individual computers. The 30-day version history means if ransomware encrypts your files and the encrypted versions get backed up, you have 30 days to restore the clean versions. The main limitation: Backblaze backs up individual computers, not servers or NAS devices. For those, use Backblaze B2 ($6/TB/month) with a separate backup tool.</p>
+
+      <h3 class="text-xl font-bold text-gray-900 mt-8">2. Acronis Cyber Protect — Backup + Security Combined</h3>
+      <p class="mt-3 text-gray-700 leading-relaxed">Acronis uniquely combines backup with built-in anti-malware and ransomware protection. Its Active Protection technology monitors for ransomware behavior and can automatically restore affected files from backup if an attack is detected. This integration means you get two critical services (backup + endpoint protection) in one console. The downside: storage is capped (250GB-1TB depending on plan), and overage fees apply. If your total backup data exceeds a few hundred GB, Backblaze's unlimited model is cheaper.</p>
+
+      <h3 class="text-xl font-bold text-gray-900 mt-8">3. IDrive — Best for Multiple Devices</h3>
+      <p class="mt-3 text-gray-700 leading-relaxed">IDrive Business supports unlimited users, servers, and computers under one account, with pooled storage from 250GB to 12.5TB. It also offers IDrive Express — they physically ship you a drive for fast initial backup seeding or full restore (much faster than downloading terabytes). This is valuable if you have a large initial dataset. Snapshots and 30-day version history protect against ransomware. Good middle-ground for businesses with moderate storage needs and multiple devices to protect.</p>
+
+      <h3 class="text-xl font-bold text-gray-900 mt-8">4. CrashPlan — Unlimited Version History</h3>
+      <p class="mt-3 text-gray-700 leading-relaxed">CrashPlan's killer feature is <strong>unlimited file version history</strong> — it keeps every version of every file forever by default. If you discover that a critical spreadsheet was corrupted 6 months ago, you can restore the version from 6 months and 1 day ago. Most other backup services delete old versions after 30 days. At $10/month/device with unlimited storage, it is pricier than Backblaze, but the infinite version history may be worth it for businesses where file integrity over long periods matters (legal, accounting, engineering).</p>
+
+      <h3 class="text-xl font-bold text-gray-900 mt-8">5. MSP360 — Maximum Flexibility, Requires IT Skills</h3>
+      <p class="mt-3 text-gray-700 leading-relaxed">MSP360 (formerly CloudBerry) is different: the software costs $6/month, and you bring your own cloud storage (AWS S3, Backblaze B2, Wasabi, etc.). This means you control where your data lives and what it costs. The flexibility is unmatched — you can set granular backup schedules, retention policies, and encryption settings. The trade-off: you need more technical skill to set it up properly. MSP360 is best for businesses with someone IT-savvy on staff who wants full control over their backup architecture.</p>
+
+      <ContentCTA
+        icon="💾"
+        title="Small Business Backup Strategy: Step-by-Step Guide"
+        description="Exactly what to back up, how often, which tools to use for each data type, and how to test that your backups actually work."
+        href="/blog/small-business-backup-strategy/"
+        ctaText="Read Backup Strategy Guide →"
+      />
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">Our Recommendation</h2>
+      <div class="mt-4 rounded-2xl bg-primary-50 border border-primary-200 p-6">
+        <ul class="space-y-3 text-sm">
+          <li><strong>🟢 Solo or 1-3 computers, simplest setup:</strong> Backblaze — $7/device/month, unlimited, install and forget</li>
+          <li><strong>🟢 Multiple devices, moderate storage:</strong> IDrive Business — pooled storage, good value</li>
+          <li><strong>🟡 Need backup + antivirus in one:</strong> Acronis Cyber Protect — two products, one console</li>
+          <li><strong>🟡 Legal/accounting/engineering (long retention):</strong> CrashPlan — unlimited version history</li>
+          <li><strong>🔴 IT-savvy, want full control:</strong> MSP360 + Backblaze B2 or Wasabi — flexible and cheap</li>
+        </ul>
+      </div>
+
+      <AdNativeCard
+        title="Complete Your Backup Strategy"
+        resources={[
+          { title: 'Antivirus & EDR Review', description: 'Stop ransomware before it encrypts files. Compare endpoint protection.', href: '/tool-reviews/smb-antivirus/', icon: '🛡️', badge: 'Review' },
+          { title: 'Ransomware Protection Guide', description: 'Prevention, detection, recovery — the complete strategy.', href: '/blog/ransomware-protection/', icon: '🔒', badge: 'Guide' },
+          { title: 'Security Assessment', description: 'Check if your backup and recovery plan is complete.', href: '/tools/security-assessment/', icon: '📋', badge: 'Free Tool' },
+        ]}
+      />
+    </article>
+  </div>
+</BaseLayout>

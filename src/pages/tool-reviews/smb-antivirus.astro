@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHero from '../../components/SectionHero.astro';
+import ContentCTA from '../../components/ContentCTA.astro';
+import AdNativeCard from '../../components/AdNativeCard.astro';
+---
+
+<BaseLayout
+  title="Best Antivirus & EDR for Small Business 2026 — Beyond Basic AV"
+  description="Compare CrowdStrike, Bitdefender, Sophos, Malwarebytes & Microsoft Defender for small business. EDR vs traditional antivirus — what you actually need."
+>
+  <SectionHero
+    icon="🛡️"
+    title="SMB Antivirus & EDR"
+    description="Traditional antivirus is no longer enough. Modern threats require endpoint detection and response (EDR) — but enterprise EDR prices are brutal. Here are the options that small businesses can actually afford."
+    badge="⭐ Honest Review · FTC Affiliate Disclosure"
+    gradient="from-red-950 via-primary-950 to-primary-900"
+  />
+
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <article class="mx-auto max-w-3xl">
+      <div class="rounded-xl bg-yellow-50 border border-yellow-200 p-4 text-sm text-yellow-800 mb-10">
+        <strong>⚖️ Affiliate Disclosure:</strong> Some links may be affiliate links. Ratings are independent and based on our testing.
+      </div>
+
+      <h2 class="text-2xl font-bold text-gray-900">AV vs EDR: What Is the Difference?</h2>
+      <p class="mt-4 text-gray-700 leading-relaxed">
+        Traditional antivirus (AV) works by matching files against a database of known malware signatures. If the malware is new or customized, AV misses it. EDR (Endpoint Detection and Response) goes further: it monitors for suspicious <em>behavior</em> — a process suddenly encrypting hundreds of files, a PowerShell script downloading from an unknown server, an application trying to read your password database. For small businesses, the sweet spot is what analysts call "SMB EDR" — EDR capabilities at non-enterprise pricing.
+      </p>
+
+      <div class="mt-4 overflow-x-auto">
+        <table class="min-w-full text-sm">
+          <thead class="bg-gray-50">
+            <tr><th class="px-4 py-3 text-left font-semibold">Product</th><th class="px-4 py-3 text-center font-semibold">Starting Price</th><th class="px-4 py-3 text-center font-semibold">EDR Included</th><th class="px-4 py-3 text-center font-semibold">Managed Option</th><th class="px-4 py-3 text-center font-semibold">Best For</th></tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr><td class="px-4 py-3 font-semibold">Microsoft Defender for Business</td><td class="text-center">$3/user/month</td><td class="text-center text-accent-700">✅</td><td class="text-center">Optional add-on</td><td class="text-center">Microsoft 365 users</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">Bitdefender GravityZone</td><td class="text-center">$3.50/device/month</td><td class="text-center text-accent-700">✅</td><td class="text-center">Add-on available</td><td class="text-center">Best value for features</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">Sophos Intercept X</td><td class="text-center">~$5/device/month</td><td class="text-center text-accent-700">✅</td><td class="text-center">MTR available</td><td class="text-center">Anti-ransomware focus</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">CrowdStrike Falcon Go</td><td class="text-center">$4.99/device/month</td><td class="text-center text-accent-700">✅</td><td class="text-center">Falcon Complete add-on</td><td class="text-center">Best detection engine</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">Malwarebytes Business</td><td class="text-center">$3.33/device/month</td><td class="text-center text-gray-400">Basic</td><td class="text-center">No</td><td class="text-center">Lightweight protection</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">Detailed Reviews</h2>
+
+      <h3 class="text-xl font-bold text-gray-900 mt-8">1. Microsoft Defender for Business — Best for M365 Shops</h3>
+      <p class="mt-3 text-gray-700 leading-relaxed">If your team already uses Microsoft 365 Business Premium ($22/user/month), Defender for Business is included at no extra cost. It brings enterprise-grade EDR with automated investigation, threat hunting, and vulnerability management — all managed through the same Microsoft 365 admin console you already use. For non-M365 shops, it is available standalone at $3/user/month. The main downside: it is Windows-only for the full EDR features (Mac and mobile get lighter coverage).</p>
+
+      <h3 class="text-xl font-bold text-gray-900 mt-8">2. Bitdefender GravityZone — Best Value Feature Set</h3>
+      <p class="mt-3 text-gray-700 leading-relaxed">Bitdefender consistently ranks at or near the top in independent AV lab tests (AV-Test, AV-Comparatives, SE Labs). GravityZone Business Security includes EDR, ransomware protection, web filtering, and device control at $3.50/device/month — the most features per dollar of any option. The web console is powerful but has a learning curve. If your business handles sensitive data and you want maximum protection for minimum cost, Bitdefender is the pick.</p>
+
+      <h3 class="text-xl font-bold text-gray-900 mt-8">3. Sophos Intercept X — Best Anti-Ransomware</h3>
+      <p class="mt-3 text-gray-700 leading-relaxed">Sophos built its reputation on ransomware protection, and Intercept X includes CryptoGuard — technology that detects and blocks ransomware encryption in real time, rolling back any files that were encrypted before detection kicked in. Sophos also offers MTR (Managed Threat Response) as an add-on — meaning Sophos analysts actively monitor your endpoints and respond to threats. This is essentially outsourcing your SOC. Pricing is higher (~$5/device/month + MTR add-on), but for businesses that cannot afford a security analyst, it is a good option.</p>
+
+      <h3 class="text-xl font-bold text-gray-900 mt-8">4. CrowdStrike Falcon Go — Best Detection Engine</h3>
+      <p class="mt-3 text-gray-700 leading-relaxed">CrowdStrike is the gold standard in enterprise EDR — they are the company called in to investigate Fortune 500 breaches. Falcon Go ($4.99/device/month) brings CrowdStrike's AI-powered detection engine to small businesses in a simplified package. You get the same threat intelligence that protects the world's largest companies, minus the enterprise complexity. The 10-device minimum means you need 10+ endpoints to qualify. If you meet that threshold and want the best detection money can buy, CrowdStrike is the answer.</p>
+
+      <h3 class="text-xl font-bold text-gray-900 mt-8">5. Malwarebytes Business — Best Lightweight Option</h3>
+      <p class="mt-3 text-gray-700 leading-relaxed">Malwarebytes is known for being lightweight and unobtrusive — it will not slow down older computers. The Business plan covers Windows, Mac, Android, and ChromeOS. However, its EDR capabilities are more limited than the other options here — it is closer to "advanced AV" than full EDR. Best for businesses that want basic protection without complexity, or as a second layer alongside Windows Defender.</p>
+
+      <ContentCTA
+        icon="📋"
+        title="Security Assessment: Check Your Endpoint Protection"
+        description="20 questions — including endpoint security, patch management, and backup readiness. Get your risk score in 3 minutes."
+        href="/tools/security-assessment/"
+        ctaText="Start Free Assessment →"
+      />
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">Our Recommendation</h2>
+      <div class="mt-4 rounded-2xl bg-primary-50 border border-primary-200 p-6">
+        <ul class="space-y-3 text-sm">
+          <li><strong>🟢 Already on Microsoft 365 Business Premium:</strong> Use Defender for Business — it is already paid for</li>
+          <li><strong>🟢 Best value for 5-50 devices:</strong> Bitdefender GravityZone at $3.50/device/month</li>
+          <li><strong>🟡 Strongest ransomware protection:</strong> Sophos Intercept X with CryptoGuard</li>
+          <li><strong>🟡 10+ devices, want the best:</strong> CrowdStrike Falcon Go</li>
+          <li><strong>🟢 Lightweight, low-maintenance:</strong> Malwarebytes or Windows Defender (free, built-in)</li>
+        </ul>
+      </div>
+
+      <AdNativeCard
+        title="Complete Your Endpoint Protection"
+        resources={[
+          { title: 'Cloud Backup Review', description: 'EDR stops attacks. Backups recover what slips through. Compare backup options.', href: '/tool-reviews/cloud-backup/', icon: '☁️', badge: 'Review' },
+          { title: 'Ransomware Protection Guide', description: 'Beyond tools — the complete strategy for preventing ransomware.', href: '/blog/ransomware-protection/', icon: '🔒', badge: 'Guide' },
+          { title: 'Essential Security Hardware', description: 'Hardware firewalls and secure routers for defense in depth.', href: '/blog/essential-security-hardware/', icon: '🖥️', badge: 'Guide' },
+        ]}
+      />
+    </article>
+  </div>
+</BaseLayout>

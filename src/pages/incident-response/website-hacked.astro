@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHero from '../../components/SectionHero.astro';
+import ContentCTA from '../../components/ContentCTA.astro';
+import AdNativeCard from '../../components/AdNativeCard.astro';
+---
+
+<BaseLayout
+  title="Website Hacked? Recovery Guide — Malware Removal & Google Blacklist Fix"
+  description="Your website is defaced, redirecting to spam, or flagged by Google. Step-by-step recovery: take it offline, find and remove malware, restore from backup, and get off Google's blacklist."
+>
+  <SectionHero
+    icon="🌐"
+    title="Website Hacked or Defaced — Recovery Guide"
+    description="Your site shows strange content, redirects to spam, or Google says 'This site may be hacked.' Do not panic. Here is how to clean it, restore it, and get back online — step by step."
+    badge="🆘 Emergency Guide · 🔴 High Urgency"
+    gradient="from-red-950 via-primary-950 to-orange-950"
+  />
+
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <article class="mx-auto max-w-3xl">
+      <div class="rounded-2xl bg-red-100 border-2 border-red-400 p-6 mb-10">
+        <h2 class="text-xl font-bold text-red-900">🚨 IMMEDIATE ACTION</h2>
+        <p class="mt-2 text-sm text-red-800"><strong>Take your site offline first.</strong> A compromised site is actively harming your visitors (malware, phishing pages, spam) and damaging your SEO ranking. Put up a maintenance page while you fix things.</p>
+      </div>
+
+      <h2 class="text-2xl font-bold text-gray-900">Step 1: Take the Site Offline (Immediately)</h2>
+      <ul class="mt-4 space-y-3 text-sm text-gray-700">
+        <li><strong>Option A — Maintenance mode:</strong> Most CMS platforms have built-in maintenance mode. In WordPress: install a maintenance mode plugin or add a maintenance.php file. For Shopify: enable password protection.</li>
+        <li><strong>Option B — Hosting-level block:</strong> Use your hosting control panel to restrict access to your IP address only, showing a generic maintenance page to everyone else.</li>
+        <li><strong>Option C — Cloudflare:</strong> Create a "Always Online" or custom WAF rule that blocks all traffic except your IP.</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">Step 2: Change All Passwords — from a Clean Device</h2>
+      <p class="mt-4 text-gray-700 leading-relaxed">Change passwords for: hosting account, CMS admin, database, FTP/SFTP, and any email accounts associated with the site. <strong>Use a different, known-clean computer or phone for this.</strong> If you change passwords on the infected site's server, the attacker may capture them. Enable MFA on everything — starting with your hosting and domain registrar accounts.</p>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">Step 3: Find the Infection</h2>
+      <ul class="mt-4 space-y-3 text-sm text-gray-700">
+        <li><strong>Check Google Search Console:</strong> Under Security & Manual Actions → Security Issues, Google will tell you exactly what type of malware or hacked content it detected and which URLs are affected.</li>
+        <li><strong>Scan with a malware scanner:</strong> Wordfence, Sucuri SiteCheck (free online scanner), or your host's built-in malware scanner. These tools identify known malware signatures, backdoors, and suspicious file modifications.</li>
+        <li><strong>Check recently modified files:</strong> Via FTP or your hosting file manager, sort files by modification date. Look for recently changed files that should not have been modified — especially in wp-content/uploads, wp-content/themes, and the root directory.</li>
+        <li><strong>Look for suspicious admin accounts:</strong> Check your CMS user list for any accounts you did not create — especially ones named "admin," "support," "test," or with generic names.</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">Step 4: Clean or Restore</h2>
+      <p class="mt-4 text-gray-700 leading-relaxed"><strong>If you have a clean backup (recommended):</strong> Wipe the server completely. Reinstall your CMS from scratch. Restore your database and uploads from your last known-clean backup. Do NOT simply restore over the infected files — many infections hide in files that appear legitimate.</p>
+      <p class="mt-3 text-gray-700 leading-relaxed"><strong>If you do not have a backup (more work):</strong> Manually review every file. Remove all malware. Replace core CMS files from a fresh download. Reinstall all themes and plugins from official sources. Delete any files that should not be there. This is tedious but necessary — one missed backdoor and the attacker returns within hours.</p>
+
+      <ContentCTA
+        icon="🌐"
+        title="Website Security Guide: Prevent This from Happening Again"
+        description="SSL, WAF setup, plugin hardening, automated backups, and ongoing monitoring — the complete guide."
+        href="/blog/website-security-guide/"
+        ctaText="Read Website Security Guide →"
+      />
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">Step 5: Harden Before Going Back Online</h2>
+      <ol class="mt-4 space-y-2 text-sm text-gray-700">
+        <li><strong>1. Update everything:</strong> CMS core, themes, plugins, PHP version. The attacker likely exploited an outdated component — if you do not update it, they will be right back in.</li>
+        <li><strong>2. Remove unused plugins/themes:</strong> Every plugin is an attack surface. Delete any you are not actively using.</li>
+        <li><strong>3. Install a WAF:</strong> Cloudflare (free) + Wordfence (free for WordPress) blocks most attacks before they reach your site.</li>
+        <li><strong>4. Limit login attempts:</strong> Install a login limiter. Change the default admin URL (/wp-admin → /something-else).</li>
+        <li><strong>5. Set up file integrity monitoring:</strong> Plugins like Wordfence alert you immediately if any file changes unexpectedly.</li>
+        <li><strong>6. Set up automated daily backups:</strong> Off-site, automatic, tested. This is your safety net.</li>
+      </ol>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">Step 6: Get Off Google's Blacklist</h2>
+      <p class="mt-4 text-gray-700 leading-relaxed">Once your site is clean, go to Google Search Console → Security Issues → Request Review. Google typically reviews within 24-72 hours. Be specific about what you found and how you fixed it. If your site was distributing malware, the review may take longer. While waiting, your site will show a warning in search results — this is normal and will clear once Google confirms the site is clean.</p>
+
+      <AdNativeCard
+        title="Prevent Future Website Hacks"
+        resources={[
+          { title: 'Website Firewall Review', description: 'Compare Cloudflare, Sucuri, Wordfence — protect your site from attacks.', href: '/tool-reviews/website-firewall/', icon: '🌐', badge: 'Review' },
+          { title: 'Cloud Backup Review', description: 'Automated daily backups so you can restore in minutes, not days.', href: '/tool-reviews/cloud-backup/', icon: '☁️', badge: 'Review' },
+          { title: 'Website Security Guide', description: 'Complete guide to locking down your business website.', href: '/blog/website-security-guide/', icon: '🛡️', badge: 'Guide' },
+        ]}
+      />
+    </article>
+  </div>
+</BaseLayout>

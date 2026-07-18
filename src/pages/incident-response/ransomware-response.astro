@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHero from '../../components/SectionHero.astro';
+import ContentCTA from '../../components/ContentCTA.astro';
+import AdNativeCard from '../../components/AdNativeCard.astro';
+---
+
+<BaseLayout
+  title="Ransomware Attack Response — Step-by-Step Recovery Guide for Small Business"
+  description="Your screens are locked with a ransom note. What to do in the first 15 minutes, who to call, whether to pay, and how to restore from backups. Written for non-technical business owners."
+>
+  <SectionHero
+    icon="🔒"
+    title="Ransomware Attack Response"
+    description="Do not panic. Do not pay — at least not yet. Here is exactly what to do, step by step, when ransomware hits your business. Print this page and keep it somewhere you can find when your computer will not turn on."
+    badge="🆘 Emergency Guide · 🔴 High Urgency"
+    gradient="from-red-950 via-red-900 to-primary-950"
+  />
+
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <article class="mx-auto max-w-3xl">
+      <div class="rounded-2xl bg-red-100 border-2 border-red-400 p-6 mb-10">
+        <h2 class="text-xl font-bold text-red-900">🚨 IMMEDIATE ACTION REQUIRED</h2>
+        <p class="mt-2 text-sm text-red-800"><strong>Time is critical.</strong> Every minute the infected device stays connected, the ransomware can spread to more systems. The first 15 minutes determine whether you lose one computer or your entire network.</p>
+      </div>
+
+      <h2 class="text-2xl font-bold text-gray-900">Step 1: Isolate — Disconnect Immediately (First 5 Minutes)</h2>
+      <ol class="mt-4 space-y-3">
+        <li class="flex gap-3"><span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-red-600 text-xs font-bold text-white">1</span><div><strong class="text-gray-900">Disconnect the infected computer from the network.</strong> Unplug the Ethernet cable. Turn off WiFi. Do NOT shut down the computer yet — memory forensics may recover your encryption key if you decide to investigate.</div></li>
+        <li class="flex gap-3"><span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-red-600 text-xs font-bold text-white">2</span><div><strong class="text-gray-900">Disconnect ALL network-attached storage (NAS) devices and backup drives.</strong> If the ransomware reaches your backups, you lose everything.</div></li>
+        <li class="flex gap-3"><span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-red-600 text-xs font-bold text-white">3</span><div><strong class="text-gray-900">Disconnect cloud storage sync.</strong> Pause Google Drive, Dropbox, OneDrive syncing — ransomware encrypts local files, and the encrypted versions will overwrite your clean cloud copies if syncing continues.</div></li>
+        <li class="flex gap-3"><span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-red-600 text-xs font-bold text-white">4</span><div><strong class="text-gray-900">Check other computers.</strong> Are other machines showing the ransom note? If not, disconnect them from the network anyway until you confirm the ransomware has not spread.</div></li>
+      </ol>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">Step 2: Photograph Everything</h2>
+      <p class="mt-4 text-gray-700 leading-relaxed">Take clear photos of the ransom note with your phone. Capture: the ransom amount, the cryptocurrency wallet address, any deadline/threat, and any "support" email or chat link the attackers provide. This information helps law enforcement track the attackers and may match known ransomware strains with available decryption tools.</p>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">Step 3: Identify the Ransomware Strain</h2>
+      <p class="mt-4 text-gray-700 leading-relaxed">Go to <strong>nomoreransom.org</strong> (a joint project by Europol, law enforcement agencies, and security companies). Use their Crypto Sheriff tool — upload one encrypted file and the ransom note. It will identify the ransomware strain and tell you if a free decryption tool exists. Many older ransomware strains have publicly available decryptors.</p>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">Step 4: Decide — To Pay or Not to Pay</h2>
+      <div class="mt-4 space-y-4">
+        <p class="text-gray-700 leading-relaxed">Law enforcement (FBI, CISA, Europol) uniformly recommends <strong>not paying</strong>. Paying funds criminal enterprises, marks you as a target for future attacks, and there is no guarantee you will get your data back. However, for a small business without backups, the calculation is brutally practical: pay or go out of business.</p>
+        <div class="rounded-xl bg-orange-50 border border-orange-200 p-4">
+          <strong class="text-orange-900">⚠️ Before you pay:</strong> Check nomoreransom.org for a free decryptor. If none exists, contact your cyber insurance provider — paying may violate your policy if not coordinated through them. Engage a professional incident response firm to negotiate and handle the cryptocurrency transaction. Never attempt to negotiate with attackers yourself — you may make things worse.
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">Step 5: Restore from Backups (What You SHOULD Be Doing)</h2>
+      <p class="mt-4 text-gray-700 leading-relaxed">If you have clean, offline backups (and you tested them!), restoring is straightforward:</p>
+      <ol class="mt-3 space-y-2 text-sm text-gray-700">
+        <li><strong>1. Wipe the infected systems completely.</strong> Do not attempt to clean them — reformat the drives and reinstall the operating system from scratch.</li>
+        <li><strong>2. Restore data from your last clean backup.</strong> Verify the backup is not also encrypted before proceeding.</li>
+        <li><strong>3. Scan the restored data with updated antivirus before bringing systems back online.</strong></li>
+        <li><strong>4. Update all software, change all passwords, and enable MFA before reconnecting to the internet.</strong></li>
+      </ol>
+
+      <ContentCTA
+        icon="💾"
+        title="Small Business Backup Strategy Guide"
+        description="Never be in this position again. Exactly what to back up, how to set up automated off-site backups, and how to test they actually work."
+        href="/blog/small-business-backup-strategy/"
+        ctaText="Set Up Proper Backups →"
+      />
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">Step 6: Report to Authorities</h2>
+      <ul class="mt-4 space-y-2 text-sm text-gray-700">
+        <li><strong>FBI IC3:</strong> File a complaint at <a href="https://ic3.gov" class="text-primary-600">ic3.gov</a></li>
+        <li><strong>CISA:</strong> Report at <a href="https://www.cisa.gov/report" class="text-primary-600">cisa.gov/report</a></li>
+        <li><strong>Local FBI field office:</strong> Find yours at fbi.gov/contact-us/field-offices</li>
+        <li><strong>State/local law enforcement:</strong> May be required for breach notification purposes</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">Step 7: Prevent It from Happening Again</h2>
+      <ol class="mt-4 space-y-2 text-sm text-gray-700">
+        <li><strong>1. Implement 3-2-1 backups:</strong> 3 copies, 2 different media, 1 off-site. Test restores quarterly.</li>
+        <li><strong>2. Enable MFA on everything.</strong> Ransomware often enters through compromised credentials.</li>
+        <li><strong>3. Keep all software updated.</strong> Enable automatic updates for your OS, browser, and business applications.</li>
+        <li><strong>4. Deploy endpoint protection with anti-ransomware.</strong> See our <a href="/tool-reviews/smb-antivirus/" class="text-primary-600">antivirus/EDR comparison</a>.</li>
+        <li><strong>5. Train your team.</strong> Most ransomware enters through phishing. Quarterly training is cheap insurance.</li>
+        <li><strong>6. Segment your network.</strong> The office network should not be able to reach backup systems directly.</li>
+      </ol>
+
+      <AdNativeCard
+        title="Protect Your Business from Ransomware"
+        resources={[
+          { title: 'Ransomware Protection Guide', description: 'Prevention strategies, detection tools, and recovery planning.', href: '/blog/ransomware-protection/', icon: '🔒', badge: 'Guide' },
+          { title: 'Cloud Backup Review', description: 'Find the right automated cloud backup for your business.', href: '/tool-reviews/cloud-backup/', icon: '☁️', badge: 'Review' },
+          { title: 'Antivirus & EDR Review', description: 'Compare endpoint protection with anti-ransomware capabilities.', href: '/tool-reviews/smb-antivirus/', icon: '🛡️', badge: 'Review' },
+        ]}
+      />
+    </article>
+  </div>
+</BaseLayout>

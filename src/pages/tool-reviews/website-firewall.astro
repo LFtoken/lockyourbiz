@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHero from '../../components/SectionHero.astro';
+import ContentCTA from '../../components/ContentCTA.astro';
+import AdNativeCard from '../../components/AdNativeCard.astro';
+---
+
+<BaseLayout
+  title="Best Website Firewall (WAF) for Small Business 2026 — Cloudflare, Sucuri, Wordfence"
+  description="Compare Cloudflare, Sucuri, Wordfence, SiteGround & MalCare website firewalls. Protect your WordPress, Shopify, or custom site from attacks."
+>
+  <SectionHero
+    icon="🌐"
+    title="Website Firewall Comparison"
+    description="Your website is under constant automated attack — SQL injection, XSS, DDoS, and brute-force login attempts. A Web Application Firewall (WAF) is your first line of defense. Here are the best options for small business sites."
+    badge="⭐ Honest Review · FTC Affiliate Disclosure"
+    gradient="from-primary-950 via-cyan-900 to-primary-950"
+  />
+
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <article class="mx-auto max-w-3xl">
+      <div class="rounded-xl bg-yellow-50 border border-yellow-200 p-4 text-sm text-yellow-800 mb-10">
+        <strong>⚖️ Affiliate Disclosure:</strong> Some links may be affiliate links. Ratings are based on our testing.
+      </div>
+
+      <h2 class="text-2xl font-bold text-gray-900">What a WAF Does (and Does Not Do)</h2>
+      <p class="mt-4 text-gray-700 leading-relaxed">
+        A Web Application Firewall sits between your website and the internet, inspecting every request for malicious patterns. It blocks SQL injection attempts, cross-site scripting (XSS), bad bots, DDoS attacks, and brute-force login attempts before they reach your server. A WAF does NOT replace: keeping your CMS and plugins updated, using strong passwords, regular backups, or SSL certificates. It is one layer in your defense — but arguably the most important one for websites.
+      </p>
+
+      <div class="mt-4 overflow-x-auto">
+        <table class="min-w-full text-sm">
+          <thead class="bg-gray-50">
+            <tr><th class="px-4 py-3 text-left font-semibold">Product</th><th class="px-4 py-3 text-center font-semibold">Free Tier</th><th class="px-4 py-3 text-center font-semibold">Premium</th><th class="px-4 py-3 text-center font-semibold">Best For</th></tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr><td class="px-4 py-3 font-semibold">Cloudflare</td><td class="text-center text-accent-700">✅ Yes</td><td class="text-center">$20/month (Pro)</td><td class="text-center">Any website, best free WAF</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">Wordfence</td><td class="text-center text-accent-700">✅ Yes</td><td class="text-center">$119/year (Premium)</td><td class="text-center">WordPress-only, endpoint security</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">Sucuri</td><td class="text-center text-gray-400">❌ No</td><td class="text-center">$199/year (Platform)</td><td class="text-center">Managed cleanup + WAF bundle</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">SiteGround Security</td><td class="text-center text-accent-700">✅ Yes</td><td class="text-center">Included with hosting</td><td class="text-center">SiteGround-hosted sites</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">MalCare</td><td class="text-center text-gray-400">❌ No</td><td class="text-center">$99/year (Basic)</td><td class="text-center">WordPress, one-click malware removal</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">Detailed Reviews</h2>
+
+      <h3 class="text-xl font-bold text-gray-900 mt-8">1. Cloudflare — Best Free WAF for Any Website</h3>
+      <p class="mt-3 text-gray-700 leading-relaxed">Cloudflare's free plan includes a basic WAF with managed rulesets that protect against the OWASP Top 10 (SQLi, XSS, command injection, etc.), DDoS protection (unmetered!), SSL, CDN, and bot management. For most small business websites, the free plan provides substantial protection with 5-minute setup (change your DNS nameservers to Cloudflare). The Pro plan ($20/month) adds an advanced WAF with custom rules, image optimization, and prioritized support. If you do one thing for your website security today, put it behind Cloudflare.</p>
+
+      <h3 class="text-xl font-bold text-gray-900 mt-8">2. Wordfence — Best WordPress Endpoint Firewall</h3>
+      <p class="mt-3 text-gray-700 leading-relaxed">Wordfence is a WordPress plugin that provides both a firewall and malware scanner. Unlike Cloudflare (which is a cloud-based WAF), Wordfence runs on your server — meaning it can see requests after they pass through SSL decryption and understand WordPress-specific attack patterns. The free version includes a firewall with a 30-day delayed ruleset; Premium ($119/year) gives real-time rules, country blocking, and premium support. Wordfence + Cloudflare is a powerful combination: Cloudflare blocks attacks at the edge, Wordfence catches what gets through.</p>
+
+      <h3 class="text-xl font-bold text-gray-900 mt-8">3. Sucuri — Best Managed Security Platform</h3>
+      <p class="mt-3 text-gray-700 leading-relaxed">Sucuri offers a cloud-based WAF plus managed malware cleanup and monitoring. If your site gets hacked, Sucuri's team cleans it — included in the $199/year Platform plan. The WAF blocks attacks, the monitoring alerts you to changes, and the cleanup service gives you a safety net. For business owners who want "someone else handles it" and are willing to pay for that peace of mind, Sucuri is the best choice. The main downside: no free tier, and $199/year is significantly more than Cloudflare (free) + Wordfence (free).</p>
+
+      <h3 class="text-xl font-bold text-gray-900 mt-8">4. SiteGround Security — Best for SiteGround Users</h3>
+      <p class="mt-3 text-gray-700 leading-relaxed">If your site is hosted on SiteGround, their free SiteGround Security plugin provides a solid WAF, login protection, and hardening features out of the box. It is not as feature-rich as Wordfence, but it is optimized for SiteGround's infrastructure and causes zero performance overhead. Use it alongside Cloudflare for defense in depth.</p>
+
+      <h3 class="text-xl font-bold text-gray-900 mt-8">5. MalCare — Best One-Click Malware Removal</h3>
+      <p class="mt-3 text-gray-700 leading-relaxed">MalCare differentiates with its one-click malware removal — if malware is detected, you click one button and MalCare's servers clean your site. No manual file editing or developer required. The Basic plan at $99/year covers one site with firewall + scanner + one-click cleanup. The firewall is less sophisticated than Cloudflare or Wordfence, but the cleanup capability makes it worth considering for business owners who want a safety net without the cost of Sucuri.</p>
+
+      <ContentCTA
+        icon="🛒"
+        title="E-Commerce Security Guide"
+        description="WAF is essential for online stores. Learn how to protect your Shopify or WooCommerce store end-to-end."
+        href="/industries/ecommerce/"
+        ctaText="Read E-Commerce Security Guide →"
+      />
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">Our Recommendation</h2>
+      <div class="mt-4 rounded-2xl bg-primary-50 border border-primary-200 p-6">
+        <ul class="space-y-3 text-sm">
+          <li><strong>🟢 Every website (minimum):</strong> Cloudflare Free — 5-minute DNS change, substantial protection at zero cost</li>
+          <li><strong>🟢 WordPress sites:</strong> Cloudflare Free + Wordfence Free — edge + server-side defense</li>
+          <li><strong>🟢 E-commerce, higher traffic:</strong> Cloudflare Pro ($20/month) + Wordfence Premium ($119/year)</li>
+          <li><strong>🟡 Want managed security + cleanup:</strong> Sucuri Platform at $199/year — peace of mind included</li>
+          <li><strong>🟡 Budget-conscious, want cleanup option:</strong> MalCare Basic at $99/year</li>
+        </ul>
+      </div>
+
+      <AdNativeCard
+        title="Complete Your Website Protection"
+        resources={[
+          { title: 'Website Security Guide', description: 'SSL, WAF, backups, and monitoring — the complete guide.', href: '/blog/website-security-guide/', icon: '🌐', badge: 'Guide' },
+          { title: 'Cloud Backup Review', description: 'Back up your website and database automatically off-site.', href: '/tool-reviews/cloud-backup/', icon: '☁️', badge: 'Review' },
+          { title: 'Website Hacked Response', description: 'Step-by-step recovery guide when your site gets compromised.', href: '/incident-response/website-hacked/', icon: '🆘', badge: 'Emergency' },
+        ]}
+      />
+    </article>
+  </div>
+</BaseLayout>

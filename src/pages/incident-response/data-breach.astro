@@ -1,0 +1,103 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHero from '../../components/SectionHero.astro';
+import ContentCTA from '../../components/ContentCTA.astro';
+import AdNativeCard from '../../components/AdNativeCard.astro';
+---
+
+<BaseLayout
+  title="Customer Data Breach Response — Notification & Compliance Guide for Small Business"
+  description="Customer data was exposed. Who to notify, how fast, notification letter template, and regulatory requirements under GDPR, CCPA, HIPAA, and state breach laws."
+>
+  <SectionHero
+    icon="📊"
+    title="Customer Data Breach Response"
+    description="Customer data has been exposed — names, emails, payment information, or worse. Multiple laws require you to notify affected individuals and regulators within specific timeframes. Here is your checklist."
+    badge="🆘 Emergency Guide · 🔴 High Urgency"
+    gradient="from-red-950 via-primary-950 to-red-900"
+  />
+
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <article class="mx-auto max-w-3xl">
+      <div class="rounded-2xl bg-red-100 border-2 border-red-400 p-6 mb-10">
+        <h2 class="text-xl font-bold text-red-900">🚨 THE CLOCK IS TICKING</h2>
+        <p class="mt-2 text-sm text-red-800">GDPR requires notification within <strong>72 hours</strong>. HIPAA gives you <strong>60 days</strong> to notify individuals. Most US state laws require <strong>30-60 days</strong>. Failure to notify multiplies penalties. Start the clock.</p>
+      </div>
+
+      <h2 class="text-2xl font-bold text-gray-900">Step 1: Contain and Stop the Breach</h2>
+      <p class="mt-4 text-gray-700 leading-relaxed">You cannot notify customers while the breach is still happening. Close the vulnerability, reset compromised credentials, isolate affected systems, and stop additional data exfiltration before you move to notification. Document everything you do — regulators will ask for this log.</p>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">Step 2: Determine What Was Exposed and Who Is Affected</h2>
+      <p class="mt-4 text-gray-700 leading-relaxed">This is the most important investigation step. Work with your IT provider or a forensics firm to determine:</p>
+      <ul class="mt-3 space-y-1 text-sm text-gray-700">
+        <li>• <strong>What data types</strong> were exposed (names, emails, SSNs, payment cards, health info, passwords)</li>
+        <li>• <strong>How many individuals</strong> are affected — this determines which regulations are triggered</li>
+        <li>• <strong>When the breach occurred</strong> — notification deadlines are based on discovery date</li>
+        <li>• <strong>How the breach happened</strong> — this determines your remediation steps</li>
+        <li>• <strong>Whether the data was encrypted</strong> — most laws exempt encrypted data from notification requirements</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">Step 3: Determine Which Laws Apply</h2>
+      <div class="mt-4 overflow-x-auto">
+        <table class="min-w-full text-sm">
+          <thead class="bg-gray-50">
+            <tr><th class="px-4 py-3 text-left font-semibold">Law</th><th class="px-4 py-3 text-center font-semibold">Deadline</th><th class="px-4 py-3 text-center font-semibold">Notify Regulator</th><th class="px-4 py-3 text-center font-semibold">Notify Individuals</th><th class="px-4 py-3 text-left font-semibold">Applicable If</th></tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr><td class="px-4 py-3 font-semibold">GDPR</td><td class="text-center text-red-700 font-bold">72 hours</td><td class="text-center">✅ DPA</td><td class="text-center">If high risk</td><td class="text-sm">EU/UK residents' data</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">CCPA</td><td class="text-center">As soon as possible</td><td class="text-center">✅ AG</td><td class="text-center">✅</td><td class="text-sm">California residents</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">HIPAA</td><td class="text-center">60 days</td><td class="text-center">✅ HHS OCR</td><td class="text-center">✅</td><td class="text-sm">PHI exposure</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">State Laws</td><td class="text-center">30-60 days</td><td class="text-center">Varies</td><td class="text-center">✅</td><td class="text-sm">Residents of each state</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">PDPA (SG)</td><td class="text-center">As soon as practicable</td><td class="text-center">✅ PDPC</td><td class="text-center">If significant harm</td><td class="text-sm">Singapore residents</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <ContentCTA
+        icon="📜"
+        title="Compliance Toolkit: Breach Notification Templates"
+        description="Ready-to-use notification letter templates for GDPR, CCPA, HIPAA, and state law breaches. Plus a regulatory gap analysis worksheet."
+        href="/compliance/compliance-toolkit/"
+        ctaText="View Compliance Toolkit →"
+      />
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">Step 4: Notify Affected Individuals</h2>
+      <p class="mt-4 text-gray-700 leading-relaxed">Your notification must include (at minimum):</p>
+      <ul class="mt-3 space-y-1 text-sm text-gray-700">
+        <li>• A clear description of what happened</li>
+        <li>• What types of data were involved</li>
+        <li>• What you are doing about it</li>
+        <li>• What the affected person should do (monitor credit reports, change passwords, enable MFA)</li>
+        <li>• Your contact information for questions</li>
+        <li>• Whether you are offering credit monitoring (required by some state laws for SSN breaches)</li>
+      </ul>
+      <p class="mt-3 text-gray-700 leading-relaxed">Notification method: written notice (letter or email). Substitute notice (website posting + media) is allowed when contact information is unavailable or the number of affected individuals makes individual notice unreasonably expensive.</p>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">Step 5: Notify Regulators</h2>
+      <div class="mt-4 space-y-3 text-sm text-gray-700">
+        <p><strong>GDPR:</strong> Notify your lead EU Data Protection Authority within 72 hours via their online portal. For UK GDPR, notify the ICO. If you miss the 72-hour deadline, explain why — do not skip notification just because you are late.</p>
+        <p><strong>HIPAA:</strong> If 500+ individuals affected, notify HHS OCR immediately and local media. If fewer than 500, log it and report in your annual breach summary.</p>
+        <p><strong>CCPA:</strong> Notify the California AG. No specific deadline stated but "most expedient time possible" is interpreted as within days to weeks.</p>
+        <p><strong>State Laws:</strong> Check requirements in every state where affected individuals reside. Most require AG notification, some require credit reporting agency notification for large breaches.</p>
+      </div>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">Step 6: Post-Incident — Prevent It from Happening Again</h2>
+      <ol class="mt-4 space-y-2 text-sm text-gray-700">
+        <li><strong>1. Root cause analysis.</strong> How did this happen? What control failed? Document thoroughly for regulators and insurance.</li>
+        <li><strong>2. Update your security program.</strong> Close the vulnerability. Strengthen the controls that failed.</li>
+        <li><strong>3. Review your incident response plan.</strong> What worked? What did not? Update the plan based on what you learned.</li>
+        <li><strong>4. Retrain staff.</strong> If human error was involved, train on what went wrong — without blame.</li>
+        <li><strong>5. Engage legal counsel.</strong> Data breach class-action lawsuits are increasingly common. Have a lawyer review your response.</li>
+      </ol>
+
+      <AdNativeCard
+        title="Breach Prevention & Compliance Resources"
+        resources={[
+          { title: 'Compliance Toolkit', description: 'Breach notification templates, privacy policy generator, and gap analysis.', href: '/compliance/compliance-toolkit/', icon: '🧰', badge: 'Toolkit' },
+          { title: 'FTC Safeguards Guide', description: 'The 9 requirements — including incident response planning.', href: '/compliance/ftc-safeguards/', icon: '🇺🇸', badge: 'Guide' },
+          { title: 'Cyber Insurance Guide', description: 'How cyber insurance covers breach notification costs and legal defense.', href: '/blog/cyber-insurance-guide/', icon: '🛡️', badge: 'Guide' },
+        ]}
+      />
+    </article>
+  </div>
+</BaseLayout>
