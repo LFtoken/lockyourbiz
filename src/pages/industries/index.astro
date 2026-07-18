@@ -1,0 +1,97 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHero from '../../components/SectionHero.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import AdNativeCard from '../../components/AdNativeCard.astro';
+
+const industries = [
+  {
+    title: 'E-Commerce Security',
+    icon: '🛒',
+    href: '/industries/ecommerce/',
+    description: 'Protect your Shopify, WooCommerce, or custom storefront. Payment security, PCI compliance, bot protection, and Black Friday surge hardening.',
+    topics: ['Payment gateway security', 'Plugin vulnerability management', 'Customer data compliance', 'DDoS & bot protection'],
+  },
+  {
+    title: 'Local Retail Security',
+    icon: '🏪',
+    href: '/industries/retail/',
+    description: 'Secure your POS systems, customer WiFi, and in-store payment terminals. Practical steps for brick-and-mortar shops.',
+    topics: ['POS system hardening', 'Guest WiFi isolation', 'Customer privacy compliance', 'Physical security integration'],
+  },
+  {
+    title: 'Professional Services Security',
+    icon: '⚖️',
+    href: '/industries/professional-services/',
+    description: 'For law firms, accounting practices, and medical clinics handling sensitive client data. HIPAA, attorney-client privilege, and data encryption.',
+    topics: ['Client data encryption', 'HIPAA compliance basics', 'Device management policies', 'Secure file sharing'],
+  },
+  {
+    title: 'Remote & Hybrid Teams',
+    icon: '🏠',
+    href: '/industries/remote-teams/',
+    description: 'Secure your distributed workforce. VPN alternatives, home office device policies, and cloud collaboration security.',
+    topics: ['Zero-trust remote access', 'Home device security standards', 'Cloud file protection', 'Video conferencing security'],
+  },
+  {
+    title: 'Small Manufacturing',
+    icon: '🏭',
+    href: '/industries/manufacturing/',
+    description: 'Protect industrial control systems, supply chain data, and production networks from ransomware and third-party risks.',
+    topics: ['OT/IT network isolation', 'Supply chain risk assessment', 'Third-party vendor security', 'Production system backups'],
+  },
+  {
+    title: 'Freelancers & Solopreneurs',
+    icon: '💻',
+    href: '/industries/freelancers/',
+    description: 'Low-cost, high-impact security for one-person businesses. Protect client data on a budget with free tools.',
+    topics: ['Free security tools stack', 'Client data protection', 'Secure invoicing & payments', 'Device & account security'],
+  },
+];
+---
+
+<BaseLayout
+  title="Industry-Specific Security Guides for Small Business"
+  description="Security guides tailored to your industry — e-commerce, retail, professional services, remote teams, manufacturing, and freelancers. Practical advice for real businesses."
+>
+  <SectionHero
+    icon="🏢"
+    title="Security by Industry"
+    description="Every industry faces different threats. A retail shop worries about POS malware. A law firm worries about client confidentiality. Pick your industry and get advice that actually applies to your business."
+    badge="🏢 Industry-Specific Security"
+  />
+
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <AdSlot variant="banner" />
+
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {industries.map((ind) => (
+        <a href={ind.href} class="group card no-underline hover:border-primary-300">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="text-3xl" aria-hidden="true">{ind.icon}</span>
+            <h2 class="text-lg font-bold text-gray-900 group-hover:text-primary-700 transition-colors">
+              {ind.title}
+            </h2>
+          </div>
+          <p class="text-sm text-gray-600 leading-relaxed mb-4">
+            {ind.description}
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {ind.topics.map((t) => (
+              <span class="inline-block rounded-full bg-gray-100 px-2.5 py-0.5 text-xs text-gray-600">{t}</span>
+            ))}
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <AdNativeCard
+      title="Essential Resources for Any Industry"
+      resources={[
+        { title: 'Free Security Assessment', description: 'Find your weak spots in 3 minutes with our 20-question assessment.', href: '/tools/security-assessment/', icon: '📋', badge: 'Free Tool' },
+        { title: 'Cybersecurity 101 Guide', description: 'The complete beginner guide — everything you need to know to get started.', href: '/blog/cybersecurity-101/', icon: '📖', badge: 'Guide' },
+        { title: 'Employee Security Training', description: '30-minute training script your team will actually remember.', href: '/blog/employee-security-training/', icon: '👥', badge: 'Template' },
+      ]}
+    />
+  </div>
+</BaseLayout>

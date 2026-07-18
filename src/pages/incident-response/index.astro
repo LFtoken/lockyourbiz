@@ -1,0 +1,129 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHero from '../../components/SectionHero.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import AdNativeCard from '../../components/AdNativeCard.astro';
+
+const guides = [
+  {
+    title: 'Ransomware Attack — Complete Response Guide',
+    icon: '🔒',
+    href: '/incident-response/ransomware-response/',
+    description: 'Your screens just locked and there\'s a ransom note. Step-by-step: isolate infected devices, assess the damage, decide whether to pay, and restore from backups.',
+    urgency: 'High',
+    steps: ['Disconnect from network immediately', 'Identify the ransomware strain', 'Check backup integrity', 'Report to authorities', 'Restore & harden systems'],
+  },
+  {
+    title: 'Website Hacked or Defaced — Recovery Process',
+    icon: '🌐',
+    href: '/incident-response/website-hacked/',
+    description: 'Your website is showing strange content, redirecting to spam, or flagged by Google. How to take it offline, clean the infection, restore, and prevent reinfection.',
+    urgency: 'High',
+    steps: ['Take site offline or enable maintenance mode', 'Scan for malware & backdoors', 'Restore from clean backup', 'Update all plugins/themes/core', 'Request Google review'],
+  },
+  {
+    title: 'Employee Clicked a Phishing Link — Now What?',
+    icon: '🎣',
+    href: '/incident-response/phishing-clicked/',
+    description: 'A team member just clicked a suspicious link or opened an attachment. The clock is ticking. What to do in the first 15 minutes to contain the damage.',
+    urgency: 'Medium-High',
+    steps: ['Disconnect device from network', 'Reset all passwords from a clean device', 'Scan for malware', 'Check for data exfiltration', 'Report & document'],
+  },
+  {
+    title: 'Customer Data Breach — Notification & Compliance',
+    icon: '📊',
+    href: '/incident-response/data-breach/',
+    description: 'Customer data was exposed. Who do you need to tell, how fast, and in what format? Breach notification laws by jurisdiction, plus notification letter templates.',
+    urgency: 'High',
+    steps: ['Contain the breach immediately', 'Document exactly what was exposed', 'Determine legal notification requirements', 'Notify affected customers', 'Report to regulators'],
+  },
+  {
+    title: 'Third-Party Vendor Data Breach',
+    icon: '🔗',
+    href: '/incident-response/vendor-breach/',
+    description: 'A vendor or supplier you share data with was breached. Assess your exposure, activate contractual protections, and protect your customers.',
+    urgency: 'Medium',
+    steps: ['Confirm breach scope with vendor', 'Identify what data of yours was exposed', 'Review vendor contract & SLA', 'Notify your customers if required', 'Reassess vendor security requirements'],
+  },
+];
+---
+
+<BaseLayout
+  title="Incident Response Guides — What to Do When You're Under Attack"
+  description="Step-by-step emergency response guides: ransomware, website hacks, phishing incidents, data breaches, and vendor breaches. Written for small business owners — no IT expertise required."
+>
+  <SectionHero
+    icon="🆘"
+    title="Incident Response Center"
+    description="When something goes wrong, you need clear steps — not panic. These guides walk you through exactly what to do, who to call, and how to recover. Print them. Bookmark them. Hope you never need them."
+    badge="🆘 Emergency Response Guides"
+    gradient="from-red-950 via-primary-950 to-orange-950"
+  />
+
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <AdSlot variant="banner" />
+
+    <!-- Quick Reference -->
+    <div class="mb-12 rounded-2xl bg-red-50 border-2 border-red-200 p-6 sm:p-8">
+      <h2 class="text-xl font-bold text-red-900 flex items-center gap-2">
+        <span aria-hidden="true">🚨</span> Emergency Quick Reference
+      </h2>
+      <div class="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="rounded-lg bg-white p-4">
+          <h3 class="font-semibold text-gray-900 text-sm">Ransomware?</h3>
+          <p class="mt-1 text-xs text-gray-600">Disconnect network cable <strong>immediately</strong>. Do not pay without consulting law enforcement.</p>
+        </div>
+        <div class="rounded-lg bg-white p-4">
+          <h3 class="font-semibold text-gray-900 text-sm">Website hacked?</h3>
+          <p class="mt-1 text-xs text-gray-600">Enable maintenance mode. Change all admin passwords from a clean device.</p>
+        </div>
+        <div class="rounded-lg bg-white p-4">
+          <h3 class="font-semibold text-gray-900 text-sm">Phishing link clicked?</h3>
+          <p class="mt-1 text-xs text-gray-600">Disconnect device. Reset passwords. Scan for malware. 15-minute window.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
+      {guides.map((guide) => (
+        <a href={guide.href} class="group card no-underline hover:border-primary-300">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="text-3xl" aria-hidden="true">{guide.icon}</span>
+            <div>
+              <h2 class="text-lg font-bold text-gray-900 group-hover:text-primary-700 transition-colors">
+                {guide.title}
+              </h2>
+              <span class={`inline-block mt-1 text-xs font-semibold px-2 py-0.5 rounded-full ${
+                guide.urgency === 'High' ? 'bg-red-100 text-red-700' :
+                guide.urgency === 'Medium-High' ? 'bg-orange-100 text-orange-700' :
+                'bg-yellow-100 text-yellow-700'
+              }`}>
+                {guide.urgency} Urgency
+              </span>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600 leading-relaxed mb-3">
+            {guide.description}
+          </p>
+          <div class="flex flex-wrap gap-1.5">
+            {guide.steps.map((step, i) => (
+              <span class="inline-flex items-center gap-1 text-xs text-gray-500">
+                <span class="font-bold text-primary-500">{i + 1}.</span> {step}
+                {i < guide.steps.length - 1 && <span class="text-gray-300 mx-0.5">→</span>}
+              </span>
+            ))}
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <AdNativeCard
+      title="Prevention Is Better Than Recovery"
+      resources={[
+        { title: 'Security Assessment', description: 'Find vulnerabilities before attackers do. 20 questions, 3 minutes.', href: '/tools/security-assessment/', icon: '📋', badge: 'Free Tool' },
+        { title: 'Backup Strategy Guide', description: 'The single most important recovery tool. Set it up properly.', href: '/blog/small-business-backup-strategy/', icon: '💾', badge: 'Guide' },
+        { title: 'Employee Security Training', description: 'Your team is your first line of defense. 30-minute training script.', href: '/blog/employee-security-training/', icon: '👥', badge: 'Template' },
+      ]}
+    />
+  </div>
+</BaseLayout>

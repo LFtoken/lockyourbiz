@@ -1,0 +1,191 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHero from '../../components/SectionHero.astro';
+import ContentCTA from '../../components/ContentCTA.astro';
+import AdNativeCard from '../../components/AdNativeCard.astro';
+---
+
+<BaseLayout
+  title="Compliance Toolkit — Privacy Policy Templates, Cookie Consent & Breach Checklists"
+  description="Free compliance templates and checklists for small businesses. Privacy policy generator, cookie consent setup guide, data breach notification templates, and regulatory gap analysis."
+>
+  <SectionHero
+    icon="🧰"
+    title="Compliance Toolkit"
+    description="Templates, checklists, and step-by-step guides for privacy compliance. From cookie banners to breach notification letters — everything you need to meet FTC, GDPR, CCPA, HIPAA, and PDPA requirements."
+    badge="🧰 Free Templates & Tools"
+    gradient="from-accent-900 via-primary-900 to-primary-800"
+  />
+
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <article class="mx-auto max-w-3xl">
+      <p class="text-lg text-gray-700 leading-relaxed">
+        Building a compliant privacy program does not require a law firm retainer. For most small businesses, the gap analysis, policy creation, consent setup, and response templates can be done with the resources below — at no cost beyond your time.
+      </p>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">1. Privacy Policy Generator</h2>
+      <p class="mt-4 text-gray-700 leading-relaxed">
+        Your privacy policy is the most important compliance document you have. It must be accurate, complete, and written in plain language. Here is a structured template covering the essential sections required by GDPR, CCPA/CPRA, FTC Safeguards Rule, and PDPA:
+      </p>
+      <div class="mt-4 rounded-xl bg-gray-50 border border-gray-200 p-6">
+        <h3 class="font-semibold text-gray-900 text-base">Privacy Policy Structure (Template)</h3>
+        <ol class="mt-3 space-y-2 text-sm text-gray-700">
+          <li><strong>1. Who We Are:</strong> Company name, location, contact information, DPO contact if applicable</li>
+          <li><strong>2. What Data We Collect:</strong> Categories — names, emails, payment info, IP addresses, cookies, analytics data</li>
+          <li><strong>3. How We Collect It:</strong> Direct (forms, checkout), automatic (cookies, analytics), third-party sources</li>
+          <li><strong>4. Why We Collect It (Legal Basis):</strong> For each purpose — consent, contractual necessity, legitimate interest, legal obligation</li>
+          <li><strong>5. Who We Share It With:</strong> Service providers, payment processors, analytics, advertising networks, legal/regulatory</li>
+          <li><strong>6. International Data Transfers:</strong> Where data goes, what safeguards apply (SCCs, adequacy decisions)</li>
+          <li><strong>7. How Long We Keep It:</strong> Retention periods by data category and purpose</li>
+          <li><strong>8. Your Rights:</strong> Access, correction, deletion, portability, opt-out of sale (specify which apply under which laws)</li>
+          <li><strong>9. How to Exercise Your Rights:</strong> Contact email, web form, verification process, response timeline</li>
+          <li><strong>10. Cookie Policy:</strong> What cookies are used, how to control them, link to consent preferences</li>
+          <li><strong>11. Security Measures:</strong> What you do to protect data (encryption, access controls, monitoring)</li>
+          <li><strong>12. Children's Privacy:</strong> COPPA and age-gating if applicable</li>
+          <li><strong>13. Changes to This Policy:</strong> How you will notify users of updates</li>
+          <li><strong>14. Contact / Complaints:</strong> How to reach you and relevant supervisory authorities</li>
+        </ol>
+      </div>
+      <p class="mt-4 text-sm text-gray-500">
+        <strong>Pro tip:</strong> Do not copy-paste someone else's privacy policy. It will be inaccurate for your business — and an inaccurate privacy policy is worse than no privacy policy in the eyes of regulators. Use the template above as a checklist and fill it in honestly.
+      </p>
+
+      <ContentCTA
+        icon="🌐"
+        title="See Our Privacy Policy as an Example"
+        description="We publish our own privacy policy as a real-world example of a small business privacy page covering GDPR, CCPA, and cookie disclosures."
+        href="/privacy/"
+        ctaText="View Privacy Policy Example →"
+      />
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">2. Cookie Consent Banner Setup</h2>
+      <p class="mt-4 text-gray-700 leading-relaxed">
+        Most privacy laws require you to obtain consent before setting non-essential cookies. Your consent banner must:
+      </p>
+      <ul class="mt-3 space-y-2 text-sm text-gray-700">
+        <li>✅ <strong>Block non-essential cookies</strong> until user makes a choice (not just inform)</li>
+        <li>✅ <strong>Offer clear Accept All / Reject All / Customize</strong> options at equal prominence</li>
+        <li>✅ <strong>Never pre-check</strong> consent boxes (invalid under GDPR)</li>
+        <li>✅ <strong>Log consent</strong> with timestamp for audit purposes</li>
+        <li>✅ <strong>Allow users to change</strong> their preferences easily</li>
+        <li>✅ <strong>Renew consent</strong> periodically (typically every 6-12 months)</li>
+      </ul>
+      <div class="mt-4 rounded-xl bg-primary-50 border border-primary-200 p-5">
+        <h3 class="font-semibold text-primary-900">Implementation Options for Small Business</h3>
+        <ul class="mt-2 space-y-2 text-sm text-primary-800">
+          <li><strong>Free:</strong> CookieYes (free tier for &lt; 25,000 pageviews/month), Osano (free tier)</li>
+          <li><strong>Self-hosted:</strong> Build a simple consent banner with Google Consent Mode v2 (what we use on this site)</li>
+          <li><strong>Google-certified CMP:</strong> If you plan to run Google AdSense, use a Google-certified Consent Management Platform (full list at Google's CMP directory)</li>
+        </ul>
+      </div>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">3. Data Breach Notification Checklist</h2>
+      <div class="mt-4 rounded-xl bg-red-50 border border-red-200 p-6">
+        <h3 class="font-semibold text-red-900">When You Discover a Breach — Do This Immediately:</h3>
+        <ol class="mt-3 space-y-3 text-sm">
+          <li class="flex gap-3">
+            <span class="flex-shrink-0 flex h-5 w-5 items-center justify-center rounded-full bg-red-600 text-xs font-bold text-white">1</span>
+            <div><strong>Contain.</strong> Disconnect affected systems. Reset compromised credentials. Stop the bleeding.</div>
+          </li>
+          <li class="flex gap-3">
+            <span class="flex-shrink-0 flex h-5 w-5 items-center justify-center rounded-full bg-red-600 text-xs font-bold text-white">2</span>
+            <div><strong>Document.</strong> What happened, when, what data was affected, how many individuals, what you are doing about it. This will go into every notification.</div>
+          </li>
+          <li class="flex gap-3">
+            <span class="flex-shrink-0 flex h-5 w-5 items-center justify-center rounded-full bg-red-600 text-xs font-bold text-white">3</span>
+            <div><strong>Notify individuals.</strong> GDPR: 72 hours to notify DPA; without undue delay if high risk. CCPA: no specific deadline but "most expedient time possible." HIPAA: 60 days to notify individuals. State breach laws: typically 30-60 days.</div>
+          </li>
+          <li class="flex gap-3">
+            <span class="flex-shrink-0 flex h-5 w-5 items-center justify-center rounded-full bg-red-600 text-xs font-bold text-white">4</span>
+            <div><strong>Notify regulators.</strong> Know which regulators need to be notified and their deadlines. Map this out before a breach happens.</div>
+          </li>
+          <li class="flex gap-3">
+            <span class="flex-shrink-0 flex h-5 w-5 items-center justify-center rounded-full bg-red-600 text-xs font-bold text-white">5</span>
+            <div><strong>Review.</strong> After the immediate crisis, conduct a root cause analysis. Update your security measures. Document lessons learned.</div>
+          </li>
+        </ol>
+      </div>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">4. Data Breach Notification Letter Template</h2>
+      <div class="mt-4 rounded-xl bg-gray-50 border border-gray-200 p-6">
+        <pre class="text-xs text-gray-700 leading-relaxed whitespace-pre-wrap font-mono">
+[Date]
+
+[Recipient Name]
+[Recipient Address]
+
+RE: Notice of Data Breach
+
+Dear [Name],
+
+We are writing to inform you of a data security incident that may have involved your personal information. We take the protection of your data very seriously, and we sincerely apologize for any concern this may cause.
+
+What Happened: On [date], we discovered that [describe incident in plain language — unauthorized access, lost device, vendor breach, etc.].
+
+What Information Was Involved: The following types of your personal data may have been affected: [list specific data types — name, email, address, payment card number, SSN, etc. — be specific, not vague].
+
+What We Are Doing: [List specific remedial actions — reset passwords, engaged cybersecurity forensics firm, reported to law enforcement, enhanced security measures].
+
+What You Can Do: [List specific recommended actions — monitor your credit reports, change your password, enable MFA, place a fraud alert]. We are offering [number] months of complimentary credit monitoring through [provider]. Instructions for enrollment are attached.
+
+For More Information: If you have any questions, please contact us at [phone] or [email], or visit [URL] for updates.
+
+We deeply regret that this incident occurred and are committed to preventing it from happening again.
+
+Sincerely,
+[Name]
+[Title]
+[Company]
+        </pre>
+      </div>
+
+      <ContentCTA
+        icon="🆘"
+        title="Complete Incident Response Guides"
+        description="Detailed step-by-step guides for ransomware, website hacks, phishing incidents, and data breaches."
+        href="/incident-response/"
+        ctaText="View Incident Response Center →"
+      />
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">5. Regulatory Gap Analysis Worksheet</h2>
+      <p class="mt-4 text-gray-700 leading-relaxed">
+        Use this worksheet to quickly assess which regulations apply to your business and where your gaps are:
+      </p>
+      <div class="mt-4 overflow-x-auto">
+        <table class="min-w-full text-sm">
+          <thead class="bg-gray-50">
+            <tr>
+              <th class="px-4 py-3 text-left font-semibold text-gray-900">Requirement</th>
+              <th class="px-4 py-3 text-center font-semibold text-gray-900">FTC</th>
+              <th class="px-4 py-3 text-center font-semibold text-gray-900">GDPR</th>
+              <th class="px-4 py-3 text-center font-semibold text-gray-900">CCPA</th>
+              <th class="px-4 py-3 text-center font-semibold text-gray-900">HIPAA</th>
+              <th class="px-4 py-3 text-center font-semibold text-gray-900">Your Status</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr><td class="px-4 py-2.5">Privacy Policy posted</td><td class="text-center">✓</td><td class="text-center">✓</td><td class="text-center">✓</td><td class="text-center">✓</td><td class="text-center text-gray-400">☐</td></tr>
+            <tr><td class="px-4 py-2.5">Consent management (cookies)</td><td class="text-center">—</td><td class="text-center">✓</td><td class="text-center">✓</td><td class="text-center">—</td><td class="text-center text-gray-400">☐</td></tr>
+            <tr><td class="px-4 py-2.5">Data inventory documented</td><td class="text-center">✓</td><td class="text-center">✓</td><td class="text-center">—</td><td class="text-center">✓</td><td class="text-center text-gray-400">☐</td></tr>
+            <tr><td class="px-4 py-2.5">Written security plan (WISP)</td><td class="text-center">✓</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center text-gray-400">☐</td></tr>
+            <tr><td class="px-4 py-2.5">Risk analysis completed</td><td class="text-center">✓</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center">✓</td><td class="text-center text-gray-400">☐</td></tr>
+            <tr><td class="px-4 py-2.5">MFA on all critical systems</td><td class="text-center">✓</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center">✓</td><td class="text-center text-gray-400">☐</td></tr>
+            <tr><td class="px-4 py-2.5">Encryption at rest and in transit</td><td class="text-center">✓</td><td class="text-center">✓</td><td class="text-center">—</td><td class="text-center">✓</td><td class="text-center text-gray-400">☐</td></tr>
+            <tr><td class="px-4 py-2.5">Data Processing Agreements / BAAs</td><td class="text-center">✓</td><td class="text-center">✓</td><td class="text-center">—</td><td class="text-center">✓</td><td class="text-center text-gray-400">☐</td></tr>
+            <tr><td class="px-4 py-2.5">Breach notification plan</td><td class="text-center">✓</td><td class="text-center">✓</td><td class="text-center">—</td><td class="text-center">✓</td><td class="text-center text-gray-400">☐</td></tr>
+            <tr><td class="px-4 py-2.5">Staff security training</td><td class="text-center">✓</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center">✓</td><td class="text-center text-gray-400">☐</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <AdNativeCard
+        title="Next Steps for Your Compliance Journey"
+        resources={[
+          { title: 'Security Assessment', description: 'Identify your specific compliance gaps with our 20-question tool.', href: '/tools/security-assessment/', icon: '📋', badge: 'Free Tool' },
+          { title: 'Cyber Insurance Guide', description: 'Insurance can protect you when compliance fails. Find the right policy.', href: '/blog/cyber-insurance-guide/', icon: '🛡️', badge: 'Guide' },
+          { title: 'Small Business Backup Strategy', description: 'Data backup is required by nearly every privacy regulation.', href: '/blog/small-business-backup-strategy/', icon: '💾', badge: 'Guide' },
+        ]}
+      />
+    </article>
+  </div>
+</BaseLayout>

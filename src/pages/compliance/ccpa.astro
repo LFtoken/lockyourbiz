@@ -1,0 +1,146 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHero from '../../components/SectionHero.astro';
+import ContentCTA from '../../components/ContentCTA.astro';
+import AdNativeCard from '../../components/AdNativeCard.astro';
+---
+
+<BaseLayout
+  title="CCPA / CPRA Compliance Guide for Small Business — California Privacy Law 2026"
+  description="Does CCPA apply to your business? Plain-English guide to California Consumer Privacy Act and CPRA requirements, consumer rights, opt-out rules, and compliance steps."
+>
+  <SectionHero
+    icon="🇺🇸"
+    title="CCPA / CPRA"
+    description="California's privacy law gives consumers the right to know, delete, and opt out of the sale of their personal information. Even if you are not based in California, the law may apply to your business."
+    badge="🇺🇸 California State Law"
+    gradient="from-orange-900 via-primary-900 to-primary-800"
+  />
+
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <article class="mx-auto max-w-3xl">
+      <div class="rounded-2xl bg-red-50 border border-red-200 p-6 mb-10">
+        <h2 class="text-lg font-bold text-red-900">⚡ Quick Facts</h2>
+        <div class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+          <div><strong>What it is:</strong> California's comprehensive consumer privacy law</div>
+          <div><strong>Enforced by:</strong> California AG + new California Privacy Protection Agency (CPPA)</div>
+          <div><strong>Penalty:</strong> $2,500 per unintentional violation; $7,500 per intentional or minor-related violation</div>
+          <div><strong>Key rights:</strong> Right to know, delete, correct, opt-out of sale/sharing, limit use of sensitive data</div>
+          <div><strong>Thresholds:</strong> $25M+ revenue OR 100K+ consumer records OR 50%+ revenue from data sales</div>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold text-gray-900">Do CCPA and CPRA Apply to Your Business?</h2>
+      <p class="mt-4 text-gray-700 leading-relaxed">
+        CCPA/CPRA applies to for-profit businesses that do business in California AND meet <strong>at least one</strong> of these thresholds:
+      </p>
+      <ul class="mt-3 space-y-2 text-gray-700">
+        <li><strong>Annual gross revenue over $25 million</strong></li>
+        <li><strong>Buy, sell, or share personal information of 100,000+ California consumers or households per year</strong></li>
+        <li><strong>Derive 50% or more of annual revenue from selling or sharing consumers' personal information</strong></li>
+      </ul>
+      <p class="mt-4 text-gray-700 leading-relaxed">
+        "Doing business in California" is broadly interpreted. If you have a website that California residents use, ship products to California, or have any California customers, you likely meet this prong. The 100,000 consumer threshold sounds high — but "consumer" includes website visitors, and personal information includes IP addresses, cookies, and device identifiers tracked through analytics. A moderately trafficked small business website can easily hit 100,000 unique visitors/year if it has strong SEO.
+      </p>
+
+      <ContentCTA
+        icon="📝"
+        title="Privacy Policy Template for CCPA Compliance"
+        description="Our compliance toolkit includes a customizable privacy policy with CCPA-required disclosures and a 'Do Not Sell My Info' page."
+        href="/compliance/compliance-toolkit/"
+        ctaText="View Compliance Toolkit →"
+      />
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">Consumer Rights Under CCPA/CPRA</h2>
+      <p class="mt-4 text-gray-700 leading-relaxed">The CPRA (effective January 2023) amended and expanded the original CCPA. Together, they give California consumers these rights:</p>
+      <div class="mt-6 space-y-4">
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">📋 Right to Know</h3>
+          <p class="mt-1 text-sm text-gray-600">Consumers can request disclosure of: what categories of personal information you collect, the sources, the business purpose, and the categories of third parties you share it with. They can also request the specific pieces of personal information you hold about them.</p>
+        </div>
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">🗑️ Right to Delete</h3>
+          <p class="mt-1 text-sm text-gray-600">Consumers can request deletion of personal information you collected from them. There are exceptions (completing a transaction, legal obligations, security, free speech) but the default is: you must delete when asked.</p>
+        </div>
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">✏️ Right to Correct</h3>
+          <p class="mt-1 text-sm text-gray-600">New under CPRA — consumers can request correction of inaccurate personal information you hold about them.</p>
+        </div>
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">🚫 Right to Opt Out of Sale and Sharing</h3>
+          <p class="mt-1 text-sm text-gray-600">The most well-known CCPA right. You must provide a clear "Do Not Sell or Share My Personal Information" link on your website. "Sale" is broadly defined and includes sharing data with advertising networks and analytics providers in exchange for value — not just money.</p>
+        </div>
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">🔒 Right to Limit Use of Sensitive Personal Information</h3>
+          <p class="mt-1 text-sm text-gray-600">New under CPRA — for sensitive data (SSN, precise geolocation, race/ethnicity, biometric data, health information), consumers can limit your use to what is strictly necessary to provide your service.</p>
+        </div>
+      </div>
+
+      <ContentCTA
+        icon="🍪"
+        title="Cookie Consent & CCPA Opt-Out Setup"
+        description="How to implement a CCPA-compliant opt-out mechanism and cookie consent banner on your website."
+        href="/compliance/compliance-toolkit/"
+        ctaText="View Setup Guide →"
+      />
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">Practical CCPA Compliance Steps</h2>
+      <ol class="mt-4 space-y-4">
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">1</span>
+          <div>
+            <strong class="text-gray-900">Update your privacy policy.</strong>
+            <p class="text-sm text-gray-600">Disclose: categories of personal information collected, sources, business/commercial purposes, categories of third parties receiving the data, and specific CCPA rights. Update at least every 12 months.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">2</span>
+          <div>
+            <strong class="text-gray-900">Add a "Do Not Sell or Share My Personal Information" link.</strong>
+            <p class="text-sm text-gray-600">This must be visible on your homepage and in your privacy policy. It must link to an opt-out mechanism that is easy to use and does not require account creation.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">3</span>
+          <div>
+            <strong class="text-gray-900">Set up processes for consumer requests.</strong>
+            <p class="text-sm text-gray-600">Provide at least two methods for submitting requests (e.g., toll-free number + web form). You have 45 days to respond (with a possible 45-day extension). Verify the identity of the requestor before disclosing or deleting data.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">4</span>
+          <div>
+            <strong class="text-gray-900">Review your data-sharing relationships.</strong>
+            <p class="text-sm text-gray-600">If you use Google Analytics, Facebook Pixel, or any ad network, you are likely "selling" or "sharing" data under CCPA definitions. Configure consent management correctly and honor opt-out requests across all platforms.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">5</span>
+          <div>
+            <strong class="text-gray-900">Train your team.</strong>
+            <p class="text-sm text-gray-600">Anyone handling consumer inquiries must understand CCPA rights and your response procedures. Document your training. The CPPA can request training records during an investigation.</p>
+          </div>
+        </li>
+      </ol>
+
+      <div class="mt-12 rounded-xl bg-orange-50 border border-orange-200 p-6">
+        <h2 class="text-lg font-bold text-orange-900">CCPA vs GDPR: Key Differences for Small Business</h2>
+        <div class="mt-3 space-y-2 text-sm text-orange-800">
+          <p><strong>Thresholds:</strong> CCPA has revenue/data thresholds; GDPR has none. A very small business might be exempt from CCPA but still covered by GDPR if it has EU customers.</p>
+          <p><strong>Opt-out vs Opt-in:</strong> CCPA is largely opt-out (consumers must request to stop sales). GDPR requires opt-in consent before data collection in many cases.</p>
+          <p><strong>Private right of action:</strong> CCPA has a limited private right of action only for data breaches caused by failure to implement reasonable security. GDPR allows private claims more broadly.</p>
+          <p><strong>Fines:</strong> CCPA penalties are per-violation ($2,500/$7,500). GDPR penalties are capped at a percentage of global revenue. For larger companies, GDPR fines are much bigger; for small companies, CCPA per-violation penalties can add up quickly.</p>
+        </div>
+      </div>
+
+      <AdNativeCard
+        title="CCPA Compliance Resources"
+        resources={[
+          { title: 'Compliance Toolkit', description: 'Privacy policy template, opt-out page setup, and consumer request workflow.', href: '/compliance/compliance-toolkit/', icon: '🧰', badge: 'Toolkit' },
+          { title: 'Website Security Guide', description: 'Reasonable security is a CCPA requirement. Lock down your site.', href: '/blog/website-security-guide/', icon: '🌐', badge: 'Guide' },
+          { title: 'Data Breach Response', description: 'CCPA private right of action applies to breaches — respond fast.', href: '/incident-response/data-breach/', icon: '🆘', badge: 'Emergency' },
+        ]}
+      />
+    </article>
+  </div>
+</BaseLayout>

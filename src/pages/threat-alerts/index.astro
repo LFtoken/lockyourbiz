@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHero from '../../components/SectionHero.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import ResourceCard from '../../components/ResourceCard.astro';
+
+const alerts = [
+  {
+    title: 'July 2026 Threat Alert — Ransomware Variants, Phishing Campaigns & WordPress Vulnerabilities',
+    date: '2026-07-18',
+    href: '/threat-alerts/ransomware-july-2026/',
+    description: 'New LockBit variant targeting small business NAS devices; spike in fake Shopify invoice phishing; critical WooCommerce plugin patch.',
+    severity: 'High',
+  },
+];
+
+const upcomingTopics = [
+  'August 2026 — Back-to-school season phishing campaigns targeting small business payroll systems',
+  'September 2026 — Q3 ransomware trends and end-of-fiscal-year financial data risks',
+  'October 2026 — Pre-Black Friday eCommerce attack surge preparation',
+  'November 2026 — Holiday season credential stuffing and gift card fraud alert',
+  'December 2026 — Year-end data breach report and 2027 threat forecast',
+];
+---
+
+<BaseLayout
+  title="Monthly Cyber Threat Alerts for Small Business — July 2026"
+  description="Monthly threat intelligence for small business owners. Current ransomware variants, phishing campaigns, and software vulnerabilities — plain English, actionable guidance."
+>
+  <SectionHero
+    icon="🚨"
+    title="Threat Alerts"
+    description="Every month, we track the threats that actually matter to small businesses — not enterprise zero-days, but real ransomware variants, phishing campaigns, and vulnerabilities hitting Main Street right now."
+    badge="🚨 Monthly Threat Intelligence"
+    gradient="from-red-950 via-primary-950 to-primary-900"
+  />
+
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <AdSlot variant="banner" />
+
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Latest Alerts</h2>
+
+      {alerts.map((alert) => (
+        <a href={alert.href} class="block card no-underline hover:border-primary-300 mb-8">
+          <div class="flex flex-wrap items-center gap-3 mb-3">
+            <span class="inline-flex items-center rounded-full bg-red-100 px-3 py-1 text-xs font-semibold text-red-700">
+              {alert.severity} Severity
+            </span>
+            <time datetime={alert.date} class="text-sm text-gray-500">{alert.date}</time>
+          </div>
+          <h2 class="text-xl font-bold text-gray-900 group-hover:text-primary-700 transition-colors">
+            {alert.title}
+          </h2>
+          <p class="mt-2 text-sm text-gray-600 leading-relaxed">
+            {alert.description}
+          </p>
+        </a>
+      ))}
+
+      <div class="rounded-2xl bg-gray-50 border border-gray-200 p-6 sm:p-8 mt-10">
+        <h3 class="text-lg font-bold text-gray-900 mb-3">Upcoming Monthly Topics</h3>
+        <ul class="space-y-3">
+          {upcomingTopics.map((t) => (
+            <li class="flex items-start gap-3 text-sm text-gray-600">
+              <span class="mt-0.5 text-primary-500 font-bold">→</span>
+              {t}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="mt-10 rounded-2xl bg-primary-700 p-6 sm:p-8 text-center">
+        <h3 class="text-xl font-bold text-white">Get Threat Alerts by Email</h3>
+        <p class="mt-2 text-sm text-primary-100">Know about new threats before they hit your business. No spam — one alert per month.</p>
+        <a href="/contact/" class="mt-4 inline-flex items-center rounded-lg bg-white px-6 py-3 text-sm font-semibold text-primary-700 hover:bg-primary-50 transition-colors no-underline">
+          Subscribe to Alerts →
+        </a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

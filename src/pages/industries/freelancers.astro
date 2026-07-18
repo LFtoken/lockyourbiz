@@ -1,0 +1,151 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHero from '../../components/SectionHero.astro';
+import ContentCTA from '../../components/ContentCTA.astro';
+import AdNativeCard from '../../components/AdNativeCard.astro';
+---
+
+<BaseLayout
+  title="Freelancer Security Guide — Low-Cost Protection for Solo Business Owners"
+  description="Free and low-cost security tools and practices for freelancers and solopreneurs. Protect client data, secure your devices, and build trust without an IT budget."
+>
+  <SectionHero
+    icon="💻"
+    title="Freelancer & Solopreneur Security"
+    description="You do not have an IT department or a security budget. But your clients trust you with their data — and one breach can end your business. Here is how to protect yourself without spending a fortune."
+    badge="💻 Industry Security"
+    gradient="from-primary-950 via-primary-800 to-accent-900"
+  />
+
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <article class="mx-auto max-w-3xl">
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-3 mb-12">
+        <div class="rounded-xl bg-red-50 border border-red-100 p-5 text-center">
+          <div class="text-2xl font-bold text-red-700">47%</div>
+          <p class="mt-1 text-xs text-red-600">of freelancers have experienced a cyber attack or data loss affecting client work</p>
+        </div>
+        <div class="rounded-xl bg-orange-50 border border-orange-100 p-5 text-center">
+          <div class="text-2xl font-bold text-orange-700">82%</div>
+          <p class="mt-1 text-xs text-orange-600">of clients say they would stop working with a freelancer after a data breach</p>
+        </div>
+        <div class="rounded-xl bg-primary-50 border border-primary-100 p-5 text-center">
+          <div class="text-2xl font-bold text-primary-700">$0</div>
+          <p class="mt-1 text-xs text-primary-600">minimum cost to implement basic security — many essential tools are free</p>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">Security on a Solo Budget</h2>
+      <p class="mt-4 text-gray-700 leading-relaxed">
+        As a freelancer, you are the IT department, the security team, and the person who deals with the consequences when something goes wrong. The good news: you are a smaller target than a company with 500 employees. The bad news: automated attacks do not care — they scan everyone, and a single compromised client file can destroy the trust you spent years building. The even better news: basic security does not require expensive tools. Most of what you need is free or costs less than your monthly coffee budget.
+      </p>
+
+      <div class="mt-6 space-y-4">
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">🔓 Account Takeover — Your Email Is Everything</h3>
+          <p class="mt-1 text-sm text-gray-600">Your email account is the master key to your business. Password resets for every service you use go there. Client contracts, invoices, and communications live there. If an attacker takes over your email, they can impersonate you to clients, steal payments, and lock you out of every account.</p>
+        </div>
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">💻 Stolen or Lost Devices</h3>
+          <p class="mt-1 text-sm text-gray-600">You work from cafes, coworking spaces, and client offices. Your laptop bag has your entire business inside it. If your device is not encrypted and gets stolen, every client file, contract, and password is exposed to whoever took it.</p>
+        </div>
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">📂 Client Data Leakage Through File Sharing</h3>
+          <p class="mt-1 text-sm text-gray-600">You send client files through email attachments, personal Dropbox links, and WeTransfer. Those files live forever in sent folders, "public" links, and third-party servers. If any of those services get breached, your client data is exposed.</p>
+        </div>
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">🎣 Phishing Disguised as Client Requests</h3>
+          <p class="mt-1 text-sm text-gray-600">Fake "client inquiry" emails with malicious attachments. Fake payment notifications. Fake "your portfolio site was hacked" alerts. Freelancers receive targeted scams designed to look like new business opportunities — and the urgency of a new lead makes you more likely to click.</p>
+        </div>
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">💾 No Backups — One Accident Away from Disaster</h3>
+          <p class="mt-1 text-sm text-gray-600">Your laptop dies. Ransomware encrypts your files. You accidentally delete a project folder. Without automated backups, you lose client work, portfolios, invoices, and years of professional history. Most freelancers have no backup system at all.</p>
+        </div>
+      </div>
+
+      <ContentCTA
+        icon="🔐"
+        title="Check Your Password Strength"
+        description="Is your email password strong enough to stop an attacker? Test it instantly — we never store or transmit what you type."
+        href="/tools/password-checker/"
+        ctaText="Test Your Password →"
+      />
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">Freelancer Security Checklist</h2>
+      <ol class="mt-4 space-y-4">
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">1</span>
+          <div>
+            <strong class="text-gray-900">Lock down your email with MFA — today. It takes 2 minutes.</strong>
+            <p class="text-sm text-gray-600">If you do only one thing on this list, do this. Turn on multi-factor authentication for your email account (Gmail, Outlook, whatever you use). Use an authenticator app (Google Authenticator, Authy) or a hardware key (YubiKey, $25). This single step blocks 99% of account takeover attacks.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">2</span>
+          <div>
+            <strong class="text-gray-900">Use a free password manager.</strong>
+            <p class="text-sm text-gray-600">Bitwarden is free and excellent. Use it to generate and store unique, strong passwords for every service. Never reuse passwords — when (not if) one service gets breached, attackers try those same credentials on other sites. Your bank login must be different from your freelance platform login.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">3</span>
+          <div>
+            <strong class="text-gray-900">Enable full-disk encryption.</strong>
+            <p class="text-sm text-gray-600">Windows: BitLocker (built-in, free). Mac: FileVault (built-in, free). Turn it on. If your laptop is stolen, the thief cannot access your files without your password. This takes 30 seconds to enable and protects every client file on your device.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">4</span>
+          <div>
+            <strong class="text-gray-900">Set up automated cloud backup.</strong>
+            <p class="text-sm text-gray-600">Backblaze ($7/month, unlimited) or IDrive (first year often free). Install it, configure it to back up continuously, and forget about it. Your client projects, portfolio, invoices, and contracts are automatically protected. Test a restore once — if you cannot restore, you do not have a backup.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">5</span>
+          <div>
+            <strong class="text-gray-900">Use secure client portals instead of email attachments.</strong>
+            <p class="text-sm text-gray-600">Google Drive with "share with specific people" (not "anyone with the link"). Dropbox with password-protected shared links. Or use a client portal tool like Copilot or SuiteDash. Stop sending sensitive files as email attachments that live forever in sent folders.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">6</span>
+          <div>
+            <strong class="text-gray-900">Keep your software updated — automatically.</strong>
+            <p class="text-sm text-gray-600">Turn on automatic updates for your operating system, browser, and any software you use for client work (Adobe, Figma, VS Code, etc.). Most security updates patch vulnerabilities that attackers are already exploiting. Delaying updates is like leaving your front door unlocked because you are too busy to turn the key.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">7</span>
+          <div>
+            <strong class="text-gray-900">Get cyber insurance designed for freelancers.</strong>
+            <p class="text-sm text-gray-600">Policies start at $25-50/month and cover data recovery costs, legal fees if a client sues over a breach, and business interruption if you cannot work. Some freelance platforms now require it. Hiscox and Next Insurance offer policies specifically for solo businesses.</p>
+          </div>
+        </li>
+      </ol>
+
+      <ContentCTA
+        icon="🆓"
+        title="The 10 Best Free Security Tools Every Small Business Should Use"
+        description="From password managers to antivirus and backup — these free tools cover all the essentials for solo business owners."
+        href="/blog/free-security-tools/"
+        ctaText="Read Free Tools Guide →"
+      />
+
+      <div class="mt-12 rounded-xl bg-accent-50 border border-accent-200 p-6">
+        <h2 class="text-lg font-bold text-accent-900">Client Trust = Your Competitive Advantage</h2>
+        <p class="mt-3 text-sm text-accent-800 leading-relaxed">
+          Here is the secret most freelancers miss: security is not a cost — it is a <strong>marketing advantage</strong>. When you tell a prospective client "I use encrypted devices, MFA on all accounts, and automated backups," you immediately differentiate yourself from 95% of freelancers who cannot say any of that. Add a "Security Practices" section to your proposals. Clients with sensitive data (lawyers, healthcare, finance) will choose you over competitors every time.
+        </p>
+      </div>
+
+      <AdNativeCard
+        title="Recommended Resources for Freelancers"
+        resources={[
+          { title: 'Password Manager Review', description: 'Compare Bitwarden, 1Password, and other free/affordable options.', href: '/tool-reviews/password-managers/', icon: '🔑', badge: 'Review' },
+          { title: 'Cloud Backup Review', description: 'Find the best backup solution for your budget and device setup.', href: '/tool-reviews/cloud-backup/', icon: '☁️', badge: 'Review' },
+          { title: 'Small Business Backup Strategy', description: 'Step-by-step guide to setting up automated, tested backups.', href: '/blog/small-business-backup-strategy/', icon: '💾', badge: 'Guide' },
+        ]}
+      />
+    </article>
+  </div>
+</BaseLayout>

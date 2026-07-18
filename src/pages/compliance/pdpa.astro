@@ -1,0 +1,160 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHero from '../../components/SectionHero.astro';
+import ContentCTA from '../../components/ContentCTA.astro';
+import AdNativeCard from '../../components/AdNativeCard.astro';
+---
+
+<BaseLayout
+  title="PDPA & PDP Compliance — Singapore & Thailand Data Protection for Small Business"
+  description="Plain-English guide to Singapore PDPA and Thailand PDP. Who must comply, key requirements, penalties, and practical steps for cross-border e-commerce sellers."
+>
+  <SectionHero
+    icon="🌏"
+    title="PDPA / PDP"
+    description="Singapore's Personal Data Protection Act (PDPA) and Thailand's Personal Data Protection Act (PDP) are two of Asia's most important data privacy laws. If you sell to customers in Southeast Asia, here is what you need to know."
+    badge="🌏 Southeast Asia Regulation"
+    gradient="from-primary-950 via-primary-900 to-teal-950"
+  />
+
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <article class="mx-auto max-w-3xl">
+      <div class="rounded-2xl bg-red-50 border border-red-200 p-6 mb-10">
+        <h2 class="text-lg font-bold text-red-900">⚡ Quick Facts</h2>
+        <div class="mt-3 space-y-3 text-sm">
+          <div class="rounded bg-white p-3">
+            <strong class="text-red-800">Singapore PDPA</strong>
+            <p class="mt-1">Enforced by Personal Data Protection Commission (PDPC). Applies to any organization collecting, using, or disclosing personal data in Singapore — including foreign companies with Singapore customers. Max penalty: S$1 million or 10% of annual turnover in Singapore (whichever is higher).</p>
+          </div>
+          <div class="rounded bg-white p-3">
+            <strong class="text-red-800">Thailand PDPA</strong>
+            <p class="mt-1">Enforced by the PDPC (Thailand). Applies to any organization processing personal data of individuals in Thailand, regardless of where the organization is located. Max penalty: 5 million THB administrative fine + criminal liability (up to 1 year imprisonment for certain violations).</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold text-gray-900">Who These Laws Apply To</h2>
+      <p class="mt-4 text-gray-700 leading-relaxed">
+        Both laws have extraterritorial reach — meaning your business does not need to be based in Singapore or Thailand to be covered. If you:
+      </p>
+      <ul class="mt-3 space-y-1 text-gray-700 text-sm">
+        <li>• Sell products to customers in Singapore or Thailand</li>
+        <li>• Collect email addresses, names, or payment information from Southeast Asian customers</li>
+        <li>• Have a website or app used by people in these countries</li>
+        <li>• Use analytics or tracking that captures data from Southeast Asian visitors</li>
+        <li>• Drop-ship or fulfill orders through a Singapore or Thailand-based partner</li>
+      </ul>
+      <p class="mt-4 text-gray-700 leading-relaxed">
+        ...then you should understand these laws. While enforcement against small foreign businesses is still developing, the trend is clear: Asian privacy regulators are becoming more active, and cross-border e-commerce sellers are increasingly expected to comply.
+      </p>
+
+      <ContentCTA
+        icon="📝"
+        title="Need a Privacy Policy for Southeast Asia?"
+        description="Our compliance toolkit includes privacy policy templates that address PDPA and PDP requirements for cross-border e-commerce."
+        href="/compliance/compliance-toolkit/"
+        ctaText="View Compliance Toolkit →"
+      />
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">Singapore PDPA: Key Requirements</h2>
+      <div class="mt-6 space-y-4">
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">1. Consent Obligation</h3>
+          <p class="mt-1 text-sm text-gray-600">You must obtain consent before collecting, using, or disclosing personal data. Consent can be explicit (opt-in checkbox) or deemed (voluntarily providing data for a reasonable purpose). Individuals can withdraw consent at any time with reasonable notice.</p>
+        </div>
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">2. Purpose Limitation & Notification</h3>
+          <p class="mt-1 text-sm text-gray-600">Inform individuals of the purposes for collection at or before the time of collection. Only use data for those stated purposes.</p>
+        </div>
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">3. Protection Obligation</h3>
+          <p class="mt-1 text-sm text-gray-600">Implement reasonable security measures to protect personal data. This is a "reasonableness" standard — small businesses are not held to the same standard as banks, but you must have basic security (encryption, access controls, MFA).</p>
+        </div>
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">4. Data Breach Notification</h3>
+          <p class="mt-1 text-sm text-gray-600">Mandatory breach notification to PDPC and affected individuals if the breach: (a) results in significant harm, or (b) involves 500+ individuals. Notification must happen as soon as practicable.</p>
+        </div>
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">5. Data Protection Officer (DPO)</h3>
+          <p class="mt-1 text-sm text-gray-600">Every organization must designate a DPO and publish their contact information. For small businesses, this can be the owner — it does not need to be a dedicated hire.</p>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">Thailand PDPA: Key Differences from Singapore PDPA</h2>
+      <div class="mt-6 space-y-4">
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">Closely Modeled on GDPR</h3>
+          <p class="mt-1 text-sm text-gray-600">Thailand's PDPA is structurally similar to GDPR — more so than Singapore's PDPA. It uses GDPR concepts like "data controller," "data processor," and "legitimate interest" as a lawful basis. If you understand GDPR, you are 80% of the way to understanding Thailand's PDPA.</p>
+        </div>
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">Consent Is More Central</h3>
+          <p class="mt-1 text-sm text-gray-600">While both laws require consent, Thailand's PDPA makes consent the default lawful basis for processing, similar to GDPR. Consent must be explicit, freely given, and withdrawable. Pre-checked boxes and implied consent are not valid.</p>
+        </div>
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">Criminal Liability — Unique to Thailand</h3>
+          <p class="mt-1 text-sm text-gray-600">Thailand's PDPA includes criminal penalties rarely seen in other data protection laws. Knowingly using or disclosing personal data in violation of the PDPA can result in up to 1 year imprisonment and/or fines up to 1 million THB.</p>
+        </div>
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">Cross-Border Data Transfer Restrictions</h3>
+          <p class="mt-1 text-sm text-gray-600">Both laws restrict transferring personal data to countries without "adequate" data protection standards. However, both allow transfers based on consent or contractual safeguards — the same mechanisms GDPR uses.</p>
+        </div>
+      </div>
+
+      <ContentCTA
+        icon="📜"
+        title="GDPR Compliance Guide"
+        description="Since Thailand's PDPA closely follows GDPR, understanding GDPR gives you a strong foundation. Check our GDPR guide for detailed implementation steps."
+        href="/compliance/gdpr/"
+        ctaText="Read GDPR Guide →"
+      />
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">Practical Compliance Steps for Cross-Border Sellers</h2>
+      <ol class="mt-4 space-y-4">
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">1</span>
+          <div>
+            <strong class="text-gray-900">Post a privacy policy that covers all applicable jurisdictions.</strong>
+            <p class="text-sm text-gray-600">Your privacy policy should disclose data collection and processing practices and address each relevant law's specific requirements. You do not need separate policies — one comprehensive policy works, as long as each jurisdiction's required disclosures are present.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">2</span>
+          <div>
+            <strong class="text-gray-900">Implement a consent management system.</strong>
+            <p class="text-sm text-gray-600">A cookie consent banner that works for GDPR will also cover PDPA requirements. Ensure you capture and log consent (time, date, what was consented to) and provide an easy way to withdraw consent.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">3</span>
+          <div>
+            <strong class="text-gray-900">Designate a DPO and publish their contact.</strong>
+            <p class="text-sm text-gray-600">Singapore PDPA requires a named Data Protection Officer. This can be you (the business owner). Add a DPO contact to your privacy policy. It costs nothing and satisfies a legal requirement.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">4</span>
+          <div>
+            <strong class="text-gray-900">Have a breach notification plan.</strong>
+            <p class="text-sm text-gray-600">Both PDPA and PDP require breach notification. Know who to contact and in what timeframe. For Thailand PDPA, breach notification must be made within 72 hours to the PDPC.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">5</span>
+          <div>
+            <strong class="text-gray-900">Document your data flows across borders.</strong>
+            <p class="text-sm text-gray-600">If customer data moves from Singapore/Thailand to your servers in the US, you need to document this transfer and ensure adequate protection. Standard Contractual Clauses (SCCs) or data processing agreements with your service providers help satisfy this requirement.</p>
+          </div>
+        </li>
+      </ol>
+
+      <AdNativeCard
+        title="PDPA/PDP Compliance Resources"
+        resources={[
+          { title: 'Compliance Toolkit', description: 'Privacy policy templates, consent banners, and DPO appointment templates.', href: '/compliance/compliance-toolkit/', icon: '🧰', badge: 'Toolkit' },
+          { title: 'GDPR Guide', description: 'Thailand PDPA follows GDPR closely — understanding one helps with the other.', href: '/compliance/gdpr/', icon: '🇪🇺', badge: 'Guide' },
+          { title: 'Website Security Guide', description: 'Data protection laws require security — SSL, WAF, and monitoring.', href: '/blog/website-security-guide/', icon: '🌐', badge: 'Guide' },
+        ]}
+      />
+    </article>
+  </div>
+</BaseLayout>

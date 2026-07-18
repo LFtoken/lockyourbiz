@@ -1,0 +1,152 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHero from '../../components/SectionHero.astro';
+import ContentCTA from '../../components/ContentCTA.astro';
+import AdNativeCard from '../../components/AdNativeCard.astro';
+---
+
+<BaseLayout
+  title="HIPAA Compliance for Small Practices — Medical & Dental Security Guide 2026"
+  description="HIPAA compliance guide for small medical, dental, and therapy practices. PHI protection, Security Rule requirements, Business Associate Agreements, and breach notification."
+>
+  <SectionHero
+    icon="🏥"
+    title="HIPAA Compliance"
+    description="If your small practice handles protected health information (PHI), HIPAA applies — and the penalties are steep. Here is what you need to do, written for practitioners who did not go to IT school."
+    badge="🏥 US Federal Regulation"
+    gradient="from-red-950 via-primary-950 to-primary-900"
+  />
+
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <article class="mx-auto max-w-3xl">
+      <div class="rounded-2xl bg-red-50 border border-red-200 p-6 mb-10">
+        <h2 class="text-lg font-bold text-red-900">⚡ Quick Facts</h2>
+        <div class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+          <div><strong>What it is:</strong> Health Insurance Portability and Accountability Act</div>
+          <div><strong>Key rules:</strong> Privacy Rule, Security Rule, Breach Notification Rule</div>
+          <div><strong>Enforced by:</strong> HHS Office for Civil Rights (OCR)</div>
+          <div><strong>Penalty:</strong> $100 – $50,000 per violation, up to $1.5M/year per violation category</div>
+          <div><strong>Applies to:</strong> Covered entities (providers, plans, clearinghouses) AND business associates</div>
+          <div><strong>Key document:</strong> Risk Analysis (required annually under Security Rule)</div>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold text-gray-900">HIPAA Basics: The Three Rules That Matter for Small Practices</h2>
+      <div class="mt-6 space-y-5">
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">📋 The Privacy Rule — Who Can See PHI and When</h3>
+          <p class="mt-1 text-sm text-gray-600">Governs the use and disclosure of Protected Health Information. Key requirements: provide patients with a Notice of Privacy Practices, obtain written acknowledgment, honor patient requests for access to their records (within 30 days), and limit PHI use/disclosure to the "minimum necessary" to accomplish the intended purpose. Train all staff on these rules.</p>
+        </div>
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">🔒 The Security Rule — How to Protect Electronic PHI (ePHI)</h3>
+          <p class="mt-1 text-sm text-gray-600">Requires administrative, physical, and technical safeguards for electronic PHI. This is where most small practices stumble. You need: a Risk Analysis (updated annually), access controls (unique user IDs + MFA), audit controls (logging who accessed what), integrity controls (ensuring ePHI is not altered), transmission security (encrypted email), and a contingency plan (backup + disaster recovery).</p>
+        </div>
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">🚨 The Breach Notification Rule — When PHI Is Exposed</h3>
+          <p class="mt-1 text-sm text-gray-600">If unsecured PHI is breached, you must: notify affected individuals within 60 days, notify HHS (immediately if >500 individuals; annually if fewer), and in some cases notify local media. Failure to notify can multiply penalties significantly.</p>
+        </div>
+      </div>
+
+      <ContentCTA
+        icon="📋"
+        title="Free Security Assessment for Healthcare Practices"
+        description="20 questions covering HIPAA Security Rule basics — access controls, encryption, backups, and risk analysis readiness."
+        href="/tools/security-assessment/"
+        ctaText="Start Free Assessment →"
+      />
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">Who HIPAA Applies To</h2>
+      <div class="mt-4 space-y-4">
+        <div class="rounded-lg bg-white border border-gray-200 p-5">
+          <h3 class="font-semibold text-gray-900">Covered Entities</h3>
+          <p class="mt-1 text-sm text-gray-600">Healthcare providers who transmit health information electronically (doctors, dentists, therapists, chiropractors, pharmacies, clinics), health plans (insurance companies, HMOs, employer group health plans), and healthcare clearinghouses.</p>
+        </div>
+        <div class="rounded-lg bg-white border border-gray-200 p-5">
+          <h3 class="font-semibold text-gray-900">Business Associates</h3>
+          <p class="mt-1 text-sm text-gray-600">Any person or entity that creates, receives, maintains, or transmits PHI on behalf of a covered entity. This includes: IT support companies, cloud storage providers, billing services, shredding companies, answering services, and email providers (if they store PHI). Business Associates must sign a Business Associate Agreement (BAA) and are directly liable for HIPAA violations under the 2013 Omnibus Rule.</p>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">HIPAA Security Checklist for Small Practices</h2>
+      <ol class="mt-4 space-y-4">
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">1</span>
+          <div>
+            <strong class="text-gray-900">Complete an annual Security Risk Analysis (SRA).</strong>
+            <p class="text-sm text-gray-600">This is requirement #1 and the most commonly missed. An SRA identifies where ePHI lives, what threats exist, and what safeguards are missing. The HHS OCR provides a free SRA Tool (download from HealthIT.gov). Document your findings and your remediation plan. Do this every year.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">2</span>
+          <div>
+            <strong class="text-gray-900">Encrypt ALL devices and communications containing ePHI.</strong>
+            <p class="text-sm text-gray-600">Laptops, desktops, servers, USB drives, backup drives — if ePHI is on it, it must be encrypted. Email containing PHI must be encrypted in transit. Use a HIPAA-compliant email service (many practices use Paubox, Virtru, or MDOfficeMail) that handles encryption automatically.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">3</span>
+          <div>
+            <strong class="text-gray-900">Implement unique user IDs and MFA.</strong>
+            <p class="text-sm text-gray-600">Every staff member must have their own login credentials. Shared logins ("frontdesk / password123") are a common HIPAA violation. Enable MFA on any system accessing ePHI — EHR systems, email, cloud storage.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">4</span>
+          <div>
+            <strong class="text-gray-900">Sign BAAs with ALL vendors handling PHI.</strong>
+            <p class="text-sm text-gray-600">IT support, cloud EHR vendors, billing companies, email providers, remote backup services — each one needs a signed BAA before they touch your PHI. If they won't sign a BAA, do not use them. Keep BAAs in a file; OCR will ask for them in an audit.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">5</span>
+          <div>
+            <strong class="text-gray-900">Create and test your backup and disaster recovery plan.</strong>
+            <p class="text-sm text-gray-600">HIPAA requires you to have a data backup plan, disaster recovery plan, and emergency mode operation plan. Your EHR data must be backed up daily with off-site storage. Test a full EHR restore at least annually. Ransomware hitting an unbacked-up practice is a career-ending event.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">6</span>
+          <div>
+            <strong class="text-gray-900">Train your staff — and document it.</strong>
+            <p class="text-sm text-gray-600">HIPAA training is mandatory for all workforce members. Cover: what is PHI, the minimum necessary rule, phishing awareness, password security, and breach reporting procedures. Keep signed training attendance records.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">7</span>
+          <div>
+            <strong class="text-gray-900">Have a breach response plan — before you need it.</strong>
+            <p class="text-sm text-gray-600">Who is your designated HIPAA Security Officer? What happens if the EHR goes down? How do you notify patients if their PHI is exposed? Write this down and put it somewhere everyone can find it when things go wrong.</p>
+          </div>
+        </li>
+      </ol>
+
+      <ContentCTA
+        icon="👥"
+        title="Employee Security Training — 30-Minute HIPAA-Ready Script"
+        description="A ready-to-use training session covering phishing, passwords, PHI handling, and incident reporting. Designed for medical and dental office staff."
+        href="/blog/employee-security-training/"
+        ctaText="Get the Training Script →"
+      />
+
+      <div class="mt-12 rounded-xl bg-red-50 border border-red-200 p-6">
+        <h2 class="text-lg font-bold text-red-900">Common HIPAA Mistakes Small Practices Make</h2>
+        <ul class="mt-3 space-y-2 text-sm text-red-800">
+          <li>❌ <strong>No Risk Analysis:</strong> This is the #1 finding in OCR investigations. You cannot protect PHI if you do not know where it is and what threatens it.</li>
+          <li>❌ <strong>Shared login credentials:</strong> Every user needs a unique ID. No exceptions. This is auditable.</li>
+          <li>❌ <strong>Texting PHI on personal phones:</strong> Regular SMS is not HIPAA-compliant. Use a secure messaging platform with a BAA (TigerConnect, Spruce, etc.).</li>
+          <li>❌ <strong>No BAA with IT support:</strong> If your IT guy can see PHI while fixing a computer, they need a BAA. Period.</li>
+          <li>❌ <strong>Unencrypted laptops and backup drives:</strong> The single most common breach scenario for small practices — a stolen laptop or lost backup drive with no encryption.</li>
+        </ul>
+      </div>
+
+      <AdNativeCard
+        title="HIPAA Compliance Resources"
+        resources={[
+          { title: 'Compliance Toolkit', description: 'Templates: BAA, Notice of Privacy Practices, breach notification letter.', href: '/compliance/compliance-toolkit/', icon: '🧰', badge: 'Toolkit' },
+          { title: 'Small Business Backup Strategy', description: 'HIPAA-required backup and disaster recovery setup guide.', href: '/blog/small-business-backup-strategy/', icon: '💾', badge: 'Guide' },
+          { title: 'Data Breach Response Guide', description: 'What to do when PHI is exposed: patient notification and OCR reporting.', href: '/incident-response/data-breach/', icon: '🆘', badge: 'Emergency' },
+        ]}
+      />
+    </article>
+  </div>
+</BaseLayout>

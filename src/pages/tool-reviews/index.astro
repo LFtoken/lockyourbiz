@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHero from '../../components/SectionHero.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import AdNativeCard from '../../components/AdNativeCard.astro';
+
+const categories = [
+  {
+    title: 'Password Managers',
+    icon: '🔑',
+    href: '/tool-reviews/password-managers/',
+    description: 'Compare Bitwarden, 1Password, Dashlane, NordPass, and Keeper. Which is best for small teams on a budget?',
+    tools: 'Bitwarden, 1Password, Dashlane, NordPass, Keeper',
+    budget: 'Free — $8/user/month',
+  },
+  {
+    title: 'SMB Antivirus & EDR',
+    icon: '🛡️',
+    href: '/tool-reviews/smb-antivirus/',
+    description: 'Beyond basic antivirus: EDR (Endpoint Detection & Response) options that small businesses can actually afford.',
+    tools: 'CrowdStrike Falcon Go, Bitdefender GravityZone, Sophos Intercept X, Malwarebytes, Microsoft Defender for Business',
+    budget: '$3 — $15/device/month',
+  },
+  {
+    title: 'Cloud Backup Solutions',
+    icon: '☁️',
+    href: '/tool-reviews/cloud-backup/',
+    description: 'Automated cloud backup tools compared: ease of use, ransomware protection, restoration speed, and pricing.',
+    tools: 'Backblaze, Acronis, IDrive, CrashPlan, MSP360',
+    budget: '$6 — $30/month',
+  },
+  {
+    title: 'Email Security Gateways',
+    icon: '📧',
+    href: '/tool-reviews/email-security/',
+    description: 'Block phishing emails, spam, and malware BEFORE they reach your team\'s inboxes.',
+    tools: 'Mimecast, Proofpoint Essentials, Barracuda, SpamTitan, Avanan',
+    budget: '$2 — $5/user/month',
+  },
+  {
+    title: 'Multi-Factor Authentication (MFA) Tools',
+    icon: '📱',
+    href: '/tool-reviews/mfa-tools/',
+    description: 'Hardware security keys, authenticator apps, and SSO solutions for small businesses.',
+    tools: 'YubiKey, Duo, Microsoft Authenticator, Google Titan, Authy',
+    budget: 'Free — $9/user/month',
+  },
+  {
+    title: 'Website Firewall (WAF)',
+    icon: '🌐',
+    href: '/tool-reviews/website-firewall/',
+    description: 'Protect your WordPress, Shopify, or custom site from attacks. Compare leading WAF and security plugin options.',
+    tools: 'Cloudflare, Sucuri, Wordfence, SiteGround Security, MalCare',
+    budget: 'Free — $25/month',
+  },
+];
+---
+
+<BaseLayout
+  title="Security Tool Reviews for Small Business — Honest Comparisons"
+  description="Honest, detailed comparisons of security tools for small businesses. Password managers, antivirus, backup, email security, MFA, and website firewalls. No sponsored placements."
+>
+  <SectionHero
+    icon="⭐"
+    title="Security Tool Reviews"
+    description="We test and compare security tools built for small business budgets. No enterprise-only options. No sponsored reviews. Just honest, detailed comparisons so you can pick the right tool the first time."
+    badge="⭐ Honest Comparisons · FTC Affiliate Disclosure"
+  />
+
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <AdSlot variant="banner" />
+
+    <!-- FTC Disclosure -->
+    <div class="mb-10 rounded-xl bg-yellow-50 border border-yellow-200 p-4 text-sm text-yellow-800">
+      <strong>⚖️ Affiliate Disclosure:</strong> Some links on our review pages are affiliate links. If you purchase through them, we may earn a small commission at no extra cost to you. This does not affect our ratings — we recommend tools based on merit, not commission rates. See our <a href="/about/" class="font-medium underline">editorial standards</a>.
+    </div>
+
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {categories.map((cat) => (
+        <a href={cat.href} class="group card no-underline hover:border-primary-300 flex flex-col">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="text-3xl" aria-hidden="true">{cat.icon}</span>
+            <h2 class="text-lg font-bold text-gray-900 group-hover:text-primary-700 transition-colors">
+              {cat.title}
+            </h2>
+          </div>
+          <p class="text-sm text-gray-600 leading-relaxed mb-3 flex-1">
+            {cat.description}
+          </p>
+          <div class="border-t border-gray-100 pt-3 mt-auto space-y-1.5 text-xs text-gray-500">
+            <p><strong class="text-gray-700">Tools compared:</strong> {cat.tools}</p>
+            <p><strong class="text-gray-700">Price range:</strong> {cat.budget}</p>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <AdNativeCard
+      title="Not Sure Where to Start?"
+      resources={[
+        { title: 'Free Tool Comparison', description: 'Side-by-side comparison of the best free security tools across all categories.', href: '/tools/tool-comparison/', icon: '⚖️', badge: 'Free Tool' },
+        { title: 'Free Security Tools Guide', description: 'The 10 best free security tools every small business should use.', href: '/blog/free-security-tools/', icon: '🆓', badge: 'Guide' },
+        { title: 'AI Security Tools Guide', description: 'AI-powered security tools that are changing the game for small businesses.', href: '/blog/ai-security-tools/', icon: '🤖', badge: '2026 Guide' },
+      ]}
+    />
+  </div>
+</BaseLayout>

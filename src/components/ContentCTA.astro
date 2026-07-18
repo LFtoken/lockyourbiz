@@ -1,0 +1,31 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  href: string;
+  ctaText?: string;
+  icon?: string;
+}
+
+const { title, description, href, ctaText = 'Learn More →', icon = '📋' } = Astro.props;
+---
+
+<div class="not-prose my-10 rounded-2xl bg-primary-50 border border-primary-200 p-6 sm:p-8">
+  <div class="flex items-start gap-4">
+    <span class="flex-shrink-0 text-2xl" aria-hidden="true">{icon}</span>
+    <div class="flex-1 min-w-0">
+      <h3 class="text-lg font-bold text-primary-900">
+        {title}
+      </h3>
+      <p class="mt-2 text-sm text-primary-700 leading-relaxed">
+        {description}
+      </p>
+      <a
+        href={href}
+        class="inline-flex items-center gap-1 mt-3 text-sm font-semibold text-primary-700 hover:text-primary-900 transition-colors no-underline"
+      >
+        {ctaText} <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</div>

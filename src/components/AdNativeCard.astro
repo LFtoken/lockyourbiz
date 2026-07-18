@@ -1,0 +1,32 @@
+---
+import ResourceCard from './ResourceCard.astro';
+
+export interface NativeAdResource {
+  title: string;
+  description: string;
+  href: string;
+  icon?: string;
+  badge?: string;
+}
+
+export interface Props {
+  title?: string;
+  resources: NativeAdResource[];
+}
+
+const { title = 'Recommended Resources', resources } = Astro.props;
+---
+
+<div class="not-prose mt-12 rounded-2xl bg-gray-50 border border-gray-200 p-6 sm:p-8">
+  <div class="flex items-center justify-between mb-5">
+    <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider">
+      {title}
+    </h3>
+    <span class="text-xs text-gray-400">Ad</span>
+  </div>
+  <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    {resources.map((r) => (
+      <ResourceCard {...r} />
+    ))}
+  </div>
+</div>

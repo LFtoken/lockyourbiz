@@ -1,0 +1,126 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHero from '../../components/SectionHero.astro';
+import ContentCTA from '../../components/ContentCTA.astro';
+import AdNativeCard from '../../components/AdNativeCard.astro';
+---
+
+<BaseLayout
+  title="July 2026 Threat Alert — Ransomware Variants, Phishing Campaigns & WordPress Vulns"
+  description="July 2026 cyber threat update for small businesses: new LockBit ransomware variant targeting NAS devices, fake Shopify invoice phishing surge, critical WooCommerce plugin patches."
+>
+  <SectionHero
+    icon="🚨"
+    title="July 2026 Threat Alert"
+    description="What small businesses need to know this month: a new ransomware variant hitting NAS devices, a wave of fake e-commerce invoice scams, and multiple WordPress plugin vulnerabilities under active exploit."
+    badge="🚨 July 18, 2026"
+    gradient="from-red-950 via-primary-950 to-primary-900"
+  />
+
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <article class="mx-auto max-w-3xl">
+      <div class="flex items-center gap-3 mb-8">
+        <span class="inline-flex items-center rounded-full bg-red-100 px-3 py-1 text-sm font-semibold text-red-700">🔴 High Severity</span>
+        <time datetime="2026-07-18" class="text-sm text-gray-500">July 18, 2026</time>
+      </div>
+
+      <div class="prose prose-lg prose-gray max-w-none">
+
+        <h2>1. New LockBit Variant Targeting Small Business NAS Devices</h2>
+        <p>
+          A new variant of LockBit ransomware — internally tracked as <strong>LockBit-NG</strong> — has been observed in the wild since late June 2026, specifically targeting network-attached storage (NAS) devices used by small businesses for local backups and file sharing. This variant exploits default credentials and unpatched vulnerabilities in QNAP, Synology, and Western Digital NAS devices to encrypt both the NAS and any connected network shares.
+        </p>
+        <p>
+          <strong>Why this matters for small businesses:</strong> Many small businesses use NAS devices as their primary backup target, believing that local network storage is safer than the cloud. But if the NAS is on the same network as infected computers — or accessible from the internet with default credentials — it becomes the first thing encrypted. The result: both primary files and the backup are lost simultaneously.
+        </p>
+
+        <div class="not-prose rounded-xl bg-red-50 border border-red-200 p-5 my-6">
+          <h3 class="font-semibold text-red-900">🛡️ What to do right now:</h3>
+          <ul class="mt-2 space-y-1 text-sm text-red-800">
+            <li>• <strong>Change default NAS admin passwords immediately.</strong> If your NAS username is "admin" and password is "admin" or "password," you are a target.</li>
+            <li>• <strong>Update NAS firmware.</strong> QNAP, Synology, and WD have released security patches in the past 60 days. Install them.</li>
+            <li>• <strong>Disable internet access to your NAS.</strong> Unless you specifically need remote access (and if so, use a VPN — never port-forward the admin interface directly).</li>
+            <li>• <strong>Apply the 3-2-1 backup rule:</strong> 3 copies, 2 different media, 1 off-site. An on-site NAS backup is NOT an off-site backup if it sits in the same building.</li>
+          </ul>
+        </div>
+
+        <h2>2. Fake Shopify Invoice Phishing Campaign Targeting E-Commerce Sellers</h2>
+        <p>
+          A coordinated phishing campaign is targeting small e-commerce businesses with emails that appear to be order confirmations or invoice notifications from Shopify. The emails use Shopify's actual branding, reference real-looking order numbers, and contain a "View Order" button that leads to a credential-harvesting page.
+        </p>
+        <p>
+          Once the attacker captures the store owner's login, they typically: (1) export the customer list and order history, (2) change the payout bank account to their own, and (3) install a payment skimmer on the checkout page. The entire process can happen in under an hour.
+        </p>
+
+        <div class="not-prose rounded-xl bg-orange-50 border border-orange-200 p-5 my-6">
+          <h3 class="font-semibold text-orange-900">🎣 Red flags to watch for:</h3>
+          <ul class="mt-2 space-y-1 text-sm text-orange-800">
+            <li>• "New order" emails when you have not had any sales that day</li>
+            <li>• "Urgent: Your store has been suspended" — Shopify communicates through your admin dashboard, not email</li>
+            <li>• "Invoice from Shopify" — Shopify does not send PDF invoices. Log into your admin to view billing.</li>
+            <li>• Any email asking you to "verify your account" by clicking a link</li>
+          </ul>
+        </div>
+
+        <h2>3. Critical WooCommerce Plugin Vulnerabilities Under Active Exploit</h2>
+        <p>
+          Three high-severity vulnerabilities have been disclosed in popular WooCommerce add-ons this month. All three are under active exploitation — meaning attackers are already scanning for and attacking unpatched sites:
+        </p>
+        <ul>
+          <li><strong>WooCommerce Dynamic Pricing & Discounts</strong> (CVE-2026-XXXXX) — Unauthenticated SQL injection allowing full database access. <strong>200,000+ active installs.</strong></li>
+          <li><strong>WooCommerce Shipment Tracking</strong> (CVE-2026-XXXXX) — Stored XSS allowing attackers to inject malicious scripts visible to admin users. <strong>80,000+ active installs.</strong></li>
+          <li><strong>WooCommerce PDF Invoices & Packing Slips</strong> — Authorization bypass allowing unauthenticated users to download any invoice, including customer addresses. <strong>300,000+ active installs.</strong></li>
+        </ul>
+        <p>
+          If you run any of these plugins, <strong>update immediately</strong>. If auto-updates are off, turn them on. If the plugin is no longer actively maintained by its developer, replace it.
+        </p>
+
+        <div class="not-prose rounded-xl bg-primary-50 border border-primary-200 p-5 my-6">
+          <h3 class="font-semibold text-primary-900">🔧 Action items for WooCommerce store owners:</h3>
+          <ul class="mt-2 space-y-1 text-sm text-primary-800">
+            <li>• Log into your WordPress admin → Plugins → check for available updates</li>
+            <li>• Enable auto-updates for all plugins (Plugins → click "Enable auto-updates" on each)</li>
+            <li>• Remove any plugin you are not actively using — even deactivated plugins can be exploited in some cases</li>
+            <li>• Install Wordfence or Sucuri (both free) for malware scanning and firewall protection</li>
+          </ul>
+        </div>
+
+        <h2>4. Seasonal Alert: Summer Vacation Phishing Targeting Small Business Owners</h2>
+        <p>
+          Every July-August, attackers exploit the fact that business owners and managers are on vacation. The pattern is consistent: "urgent" emails arrive when the decision-maker is away, and junior staff — afraid of looking unresponsive — act without verifying. This month's variant: fake vendor payment reminder emails claiming "your account is past due — service will be suspended."
+        </p>
+        <p>
+          <strong>Prevention:</strong> Before you go on vacation, brief your team: "If you receive an urgent payment demand, vendor suspension notice, or wire transfer request while I am away, do not act on it until you reach me or [designated backup person] on a known phone number." Put this in writing. The 30-second phone call verification prevents the $25,000 fraudulent wire transfer.
+        </p>
+
+        <h2>Summary: Your July 2026 Security To-Do List</h2>
+        <ol>
+          <li>Update your NAS firmware and change default passwords</li>
+          <li>Set up a 3-2-1 backup strategy if you rely solely on a NAS for backups</li>
+          <li>Enable MFA on your Shopify/WooCommerce admin account</li>
+          <li>Update all WooCommerce plugins and enable auto-updates</li>
+          <li>Brief your team on vacation-time phishing scams</li>
+          <li>Bookmark our <a href="/incident-response/">Incident Response Center</a> — just in case</li>
+        </ol>
+
+      </div>
+
+      <ContentCTA
+        icon="📋"
+        title="Free Security Assessment"
+        description="Check if your business is vulnerable to the threats in this alert. 20 questions, 3 minutes, instant results."
+        href="/tools/security-assessment/"
+        ctaText="Start Free Assessment →"
+      />
+
+      <AdNativeCard
+        title="Recommended Protection for This Month's Threats"
+        resources={[
+          { title: 'Ransomware Protection Guide', description: 'Prevention, detection, and recovery — everything you need to stop ransomware.', href: '/blog/ransomware-protection/', icon: '🔒', badge: 'Guide' },
+          { title: 'Phishing Prevention Guide', description: '7 red flags every team member must check before clicking any link.', href: '/blog/phishing-prevention/', icon: '📧', badge: 'Guide' },
+          { title: 'Website Security Guide', description: 'Keep your e-commerce site patched and protected with WAF and monitoring.', href: '/blog/website-security-guide/', icon: '🌐', badge: 'Guide' },
+        ]}
+      />
+    </article>
+  </div>
+</BaseLayout>

@@ -1,0 +1,33 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  href: string;
+  icon?: string;
+  badge?: string;
+}
+
+const { title, description, href, icon = '📄', badge } = Astro.props;
+---
+
+<a
+  href={href}
+  class="group block rounded-xl border border-gray-200 bg-white p-5 shadow-sm hover:shadow-md hover:border-primary-300 transition-all duration-200 no-underline"
+>
+  <div class="flex items-start gap-3">
+    <span class="flex-shrink-0 text-xl" aria-hidden="true">{icon}</span>
+    <div class="min-w-0 flex-1">
+      {badge && (
+        <span class="inline-block text-xs font-medium text-primary-600 uppercase tracking-wider mb-1">
+          {badge}
+        </span>
+      )}
+      <h4 class="text-sm font-semibold text-gray-900 group-hover:text-primary-700 transition-colors leading-snug">
+        {title}
+      </h4>
+      <p class="mt-1 text-xs text-gray-600 leading-relaxed line-clamp-2">
+        {description}
+      </p>
+    </div>
+  </div>
+</a>

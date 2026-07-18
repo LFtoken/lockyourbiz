@@ -1,0 +1,151 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHero from '../../components/SectionHero.astro';
+import ContentCTA from '../../components/ContentCTA.astro';
+import AdNativeCard from '../../components/AdNativeCard.astro';
+---
+
+<BaseLayout
+  title="GDPR Compliance for Small Business — EU & UK Data Protection Guide 2026"
+  description="Does GDPR apply to your small business? Plain-English guide to GDPR and UK GDPR requirements, cookie consent, data rights, and how to avoid massive fines."
+>
+  <SectionHero
+    icon="🇪🇺"
+    title="GDPR / UK GDPR"
+    description="The EU's General Data Protection Regulation applies to ANY business handling European personal data — not just European companies. Fines can reach €20 million or 4% of global turnover. Here is what small businesses need to know."
+    badge="🇪🇺 EU & UK Regulation"
+    gradient="from-blue-900 via-primary-900 to-primary-800"
+  />
+
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <article class="mx-auto max-w-3xl">
+      <div class="rounded-2xl bg-red-50 border border-red-200 p-6 mb-10">
+        <h2 class="text-lg font-bold text-red-900">⚡ Quick Facts</h2>
+        <div class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+          <div><strong>What it is:</strong> EU and UK comprehensive data protection law</div>
+          <div><strong>Territory:</strong> EU (GDPR) + UK (UK GDPR, post-Brexit version)</div>
+          <div><strong>Max penalty:</strong> €20M / £17.5M or 4% of global annual turnover</div>
+          <div><strong>Applies to:</strong> Any business with EU/UK customers or website visitors</div>
+          <div><strong>Key rights:</strong> Access, rectification, erasure (right to be forgotten), data portability, objection</div>
+          <div><strong>Key requirement:</strong> Lawful basis for processing, consent management, breach notification within 72 hours</div>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold text-gray-900">"I Am a Small US Business. Does GDPR Apply to Me?"</h2>
+      <p class="mt-4 text-gray-700 leading-relaxed">
+        <strong>Probably yes.</strong> GDPR applies to any organization anywhere in the world if you:
+      </p>
+      <ul class="mt-3 space-y-2 text-gray-700">
+        <li><strong>Sell goods or services to people in the EU/UK</strong> — even if they come to you. If your website accepts orders with a European shipping address, you are covered.</li>
+        <li><strong>Monitor the behavior of people in the EU/UK</strong> — which includes analytics cookies, tracking pixels, and any form of behavioral advertising targeting European visitors.</li>
+        <li><strong>Have a website accessible from Europe</strong> with analytics or cookies enabled — the "monitoring" threshold is very low.</li>
+      </ul>
+      <p class="mt-4 text-gray-700 leading-relaxed">
+        The key distinction: GDPR does NOT apply just because someone in Europe can see your website. It applies when you are <strong>actively targeting or monitoring</strong> European individuals. If you price in euros, ship to Europe, have a .eu domain, or run ads targeting European countries, you are clearly covered. If you are a purely local US business with no European customers and no analytics, GDPR likely does not apply.
+      </p>
+
+      <ContentCTA
+        icon="📝"
+        title="Need a Privacy Policy? Start With Our Toolkit"
+        description="Our compliance toolkit includes a customizable privacy policy template that addresses GDPR requirements for small businesses."
+        href="/compliance/compliance-toolkit/"
+        ctaText="View Compliance Toolkit →"
+      />
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">The 7 Core GDPR Principles</h2>
+      <div class="mt-6 space-y-4">
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">1. Lawfulness, Fairness, and Transparency</h3>
+          <p class="mt-1 text-sm text-gray-600">You must have a legal basis for collecting and processing personal data. The most common for small businesses: consent (cookie banners, email signups), contractual necessity (processing an order), and legitimate interest (fraud prevention). You must be transparent about what you do with data — this is what privacy policies are for.</p>
+        </div>
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">2. Purpose Limitation</h3>
+          <p class="mt-1 text-sm text-gray-600">Collect data for specified, explicit, and legitimate purposes only. If you collect email addresses for order confirmation, you cannot also add them to your marketing newsletter without separate consent.</p>
+        </div>
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">3. Data Minimization</h3>
+          <p class="mt-1 text-sm text-gray-600">Only collect the data you actually need. You do not need someone's date of birth to send them a newsletter. Every extra data field increases your exposure if breached. Ask yourself: "Do I really need this?"</p>
+        </div>
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">4. Accuracy</h3>
+          <p class="mt-1 text-sm text-gray-600">Take reasonable steps to ensure personal data is accurate and up to date. Provide a way for people to correct their information.</p>
+        </div>
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">5. Storage Limitation</h3>
+          <p class="mt-1 text-sm text-gray-600">Do not keep personal data longer than necessary. If someone has not ordered from you in 5 years and is not subscribed to your newsletter, delete their data. This also reduces your exposure in a breach.</p>
+        </div>
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">6. Integrity and Confidentiality (Security)</h3>
+          <p class="mt-1 text-sm text-gray-600">Use appropriate technical and organizational measures to protect personal data. Encryption, access controls, and regular security updates are not optional — they are legal requirements under GDPR.</p>
+        </div>
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">7. Accountability</h3>
+          <p class="mt-1 text-sm text-gray-600">You must be able to demonstrate compliance. Maintain records of your processing activities, consent logs, and data protection impact assessments where required. If the regulator asks, "show me" — you need to be able to.</p>
+        </div>
+      </div>
+
+      <ContentCTA
+        icon="🍪"
+        title="Cookie Consent Setup Guide"
+        description="Learn how to set up a GDPR-compliant cookie banner with Google Consent Mode v2. Part of our compliance toolkit."
+        href="/compliance/compliance-toolkit/"
+        ctaText="View Setup Guide →"
+      />
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">Practical Steps for Small Business GDPR Compliance</h2>
+      <ol class="mt-4 space-y-4">
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">1</span>
+          <div>
+            <strong class="text-gray-900">Post a clear, complete privacy policy.</strong>
+            <p class="text-sm text-gray-600">Your policy must state: what data you collect, why, the legal basis, who you share it with, how long you keep it, and what rights people have. It must be written in plain language. Link it from every page of your website.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">2</span>
+          <div>
+            <strong class="text-gray-900">Implement a cookie consent banner.</strong>
+            <p class="text-sm text-gray-600">If you use any non-essential cookies (analytics, advertising, social media embeds), you need a consent banner that blocks those cookies until the user agrees. Pre-checked boxes are not valid consent.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">3</span>
+          <div>
+            <strong class="text-gray-900">Know what to do in a data breach.</strong>
+            <p class="text-sm text-gray-600">Under GDPR, you must notify the relevant data protection authority within <strong>72 hours</strong> of becoming aware of a breach. If the breach poses a high risk to individuals, you must also notify the affected individuals without undue delay. Have a plan before you need it.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">4</span>
+          <div>
+            <strong class="text-gray-900">Be ready for Data Subject Access Requests (DSARs).</strong>
+            <p class="text-sm text-gray-600">Anyone can ask what data you hold about them, request corrections, or demand deletion ("right to be forgotten"). You must respond within 30 days. Set up a process — even a simple one — before you receive a request.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">5</span>
+          <div>
+            <strong class="text-gray-900">Get consent right.</strong>
+            <p class="text-sm text-gray-600">Consent must be freely given, specific, informed, and unambiguous. That means: no pre-checked boxes, separate consent for separate purposes, clear language, and easy withdrawal (unsubscribe links must work immediately).</p>
+          </div>
+        </li>
+      </ol>
+
+      <div class="mt-12 rounded-xl bg-blue-50 border border-blue-200 p-6">
+        <h2 class="text-lg font-bold text-blue-900">UK GDPR: Same Rules, Different Regulator</h2>
+        <p class="mt-3 text-sm text-blue-800 leading-relaxed">
+          Since Brexit, the UK has its own version of GDPR (the "UK GDPR") enforced by the Information Commissioner's Office (ICO). The requirements are nearly identical. If you deal with both EU and UK customers, you need to comply with both — but a single compliance program covers both frameworks since they are so similar. The main practical difference: you may need a UK representative if you have no UK presence but actively target UK customers.
+        </p>
+      </div>
+
+      <AdNativeCard
+        title="GDPR Compliance Resources"
+        resources={[
+          { title: 'Compliance Toolkit', description: 'Privacy policy template, cookie consent setup, DSAR response template.', href: '/compliance/compliance-toolkit/', icon: '🧰', badge: 'Toolkit' },
+          { title: 'Website Security Guide', description: 'Protect customer data with SSL, WAF, and monitoring — required by GDPR.', href: '/blog/website-security-guide/', icon: '🌐', badge: 'Guide' },
+          { title: 'Data Breach Response', description: '72-hour notification: what to do when customer data is exposed.', href: '/incident-response/data-breach/', icon: '🆘', badge: 'Emergency' },
+        ]}
+      />
+    </article>
+  </div>
+</BaseLayout>

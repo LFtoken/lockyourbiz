@@ -1,0 +1,157 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHero from '../../components/SectionHero.astro';
+import ContentCTA from '../../components/ContentCTA.astro';
+import AdNativeCard from '../../components/AdNativeCard.astro';
+---
+
+<BaseLayout
+  title="Professional Services Security — Law Firms, Accounting & Medical Clinics"
+  description="Security guide for law firms, CPAs, and medical clinics. Protect client confidentiality, meet HIPAA and professional ethics requirements, and prevent data leaks."
+>
+  <SectionHero
+    icon="⚖️"
+    title="Professional Services Security"
+    description="Your clients trust you with their most sensitive information — legal strategies, financial records, medical histories. A single data leak can end your practice. Here is how to protect what matters."
+    badge="⚖️ Industry Security"
+    gradient="from-primary-950 via-slate-900 to-primary-950"
+  />
+
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <article class="mx-auto max-w-3xl">
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-3 mb-12">
+        <div class="rounded-xl bg-red-50 border border-red-100 p-5 text-center">
+          <div class="text-2xl font-bold text-red-700">#1</div>
+          <p class="mt-1 text-xs text-red-600">professional services is the most targeted sector for business email compromise (BEC)</p>
+        </div>
+        <div class="rounded-xl bg-orange-50 border border-orange-100 p-5 text-center">
+          <div class="text-2xl font-bold text-orange-700">$275K</div>
+          <p class="mt-1 text-xs text-orange-600">median loss from a single BEC attack targeting a professional services firm</p>
+        </div>
+        <div class="rounded-xl bg-primary-50 border border-primary-100 p-5 text-center">
+          <div class="text-2xl font-bold text-primary-700">74%</div>
+          <p class="mt-1 text-xs text-primary-600">of law firms experienced a security breach in 2025 (ABA survey)</p>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">Why Professional Services Are Prime Targets</h2>
+      <p class="mt-4 text-gray-700 leading-relaxed">
+        Attackers go where the money and secrets are. Law firms hold merger-and-acquisition details, intellectual property, and embarrassing personal information. Accounting firms have tax returns, Social Security numbers, and bank account details. Medical clinics hold protected health information (PHI) that sells for 10-50× more than credit card numbers on the dark web. And most professional services firms have minimal security — because "it has not happened to us yet."
+      </p>
+
+      <div class="mt-6 space-y-4">
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">📧 Business Email Compromise (BEC)</h3>
+          <p class="mt-1 text-sm text-gray-600">Attackers impersonate a partner, client, or vendor and request a wire transfer, W-2 forms, or confidential case files. These emails are highly targeted — they reference real cases, use the partner's actual signature block, and arrive during busy periods when nobody double-checks.</p>
+        </div>
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">📂 Client File Exfiltration</h3>
+          <p class="mt-1 text-sm text-gray-600">Once inside your network — often via a compromised email account — attackers quietly download case files, tax returns, or patient records over weeks or months. You may not discover the breach until the data appears for sale online or a client reports identity theft.</p>
+        </div>
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">🔓 Ransomware Targeting Professional Practices</h3>
+          <p class="mt-1 text-sm text-gray-600">Attackers encrypt all your files — case management systems, document repositories, email archives — and demand payment. Professional services firms are specifically targeted because they are more likely to pay: the cost of lost billable hours and ethical obligations to clients create enormous pressure.</p>
+        </div>
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">📱 Lost or Stolen Devices</h3>
+          <p class="mt-1 text-sm text-gray-600">Laptops, phones, and USB drives containing client data get left in taxis, stolen from cars, or lost at airports. If those devices are not encrypted, every client file on them is exposed — and in many jurisdictions, you must notify every affected client individually.</p>
+        </div>
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">🏥 HIPAA & Regulatory Compliance Failures</h3>
+          <p class="mt-1 text-sm text-gray-600">For medical practices and their business associates, HIPAA violations carry fines of $100-$50,000 per record. For law firms, a data breach can trigger bar association ethics investigations and malpractice claims. For CPAs, the IRS requires written security plans under the FTC Safeguards Rule.</p>
+        </div>
+      </div>
+
+      <ContentCTA
+        icon="📋"
+        title="Security Assessment for Professional Services"
+        description="Our 20-question assessment covers email security, client data handling, device encryption, access controls, and regulatory compliance readiness."
+        href="/tools/security-assessment/"
+        ctaText="Start Free Assessment →"
+      />
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">Professional Services Security Checklist</h2>
+      <ol class="mt-4 space-y-4">
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">1</span>
+          <div>
+            <strong class="text-gray-900">Encrypt everything — devices, email, and files.</strong>
+            <p class="text-sm text-gray-600">Full-disk encryption (BitLocker on Windows, FileVault on Mac) is mandatory for every device that touches client data. Use encrypted email for sending sensitive documents (many secure portals exist — Citrix ShareFile, iManage, Clio). Encrypt cloud storage folders containing client files.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">2</span>
+          <div>
+            <strong class="text-gray-900">Deploy multi-factor authentication (MFA) everywhere.</strong>
+            <p class="text-sm text-gray-600">Email, case management, cloud storage, accounting software, remote access — every system must require a second factor. Email is the #1 entry point for attackers targeting professional services. MFA blocks 99% of credential-based attacks.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">3</span>
+          <div>
+            <strong class="text-gray-900">Create and enforce a written security policy.</strong>
+            <p class="text-sm text-gray-600">The FTC Safeguards Rule, HIPAA, and many state bar association ethics opinions require a written information security plan. It does not need to be 50 pages — a 5-page document covering access controls, encryption, breach response, and training is sufficient for most small firms.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">4</span>
+          <div>
+            <strong class="text-gray-900">Verify wire transfers and sensitive requests by phone.</strong>
+            <p class="text-sm text-gray-600">Create a firm policy: any wire transfer, W-2 request, or confidential file sharing request received by email MUST be verified by a phone call to a known number — not a number in the email. This one rule stops 90%+ of BEC attacks.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">5</span>
+          <div>
+            <strong class="text-gray-900">Control and audit third-party access.</strong>
+            <p class="text-sm text-gray-600">IT consultants, bookkeepers, e-discovery vendors, and cloud providers all access your systems. Maintain a list. Review it quarterly. Revoke access immediately when a vendor relationship ends. Require vendors to carry cyber insurance that covers your data.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">6</span>
+          <div>
+            <strong class="text-gray-900">Get cyber insurance — with appropriate coverage.</strong>
+            <p class="text-sm text-gray-600">General liability insurance typically excludes cyber incidents. A standalone cyber policy covers breach notification costs, legal defense, forensics investigation, and ransomware negotiation. For professional services firms, this is as essential as malpractice/E&O coverage.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">7</span>
+          <div>
+            <strong class="text-gray-900">Train every employee on phishing and BEC.</strong>
+            <p class="text-sm text-gray-600">Your smartest partner can fall for a well-crafted phishing email. Run quarterly training sessions. Send simulated phishing emails to test awareness. Make it safe to report mistakes — the faster someone tells IT they clicked a bad link, the less damage it causes.</p>
+          </div>
+        </li>
+      </ol>
+
+      <ContentCTA
+        icon="📜"
+        title="FTC Safeguards Rule: Is Your Firm Compliant?"
+        description="If you offer financing, process tax returns, or handle financial data for clients, the FTC Safeguards Rule likely applies. Learn the 9 requirements and how to meet them."
+        href="/compliance/ftc-safeguards/"
+        ctaText="Read FTC Safeguards Guide →"
+      />
+
+      <div class="mt-12 rounded-xl bg-slate-50 border border-slate-200 p-6">
+        <h2 class="text-lg font-bold text-slate-900">Compliance Quick Reference for Professional Services</h2>
+        <div class="mt-4 space-y-2 text-sm">
+          <div><strong>FTC Safeguards Rule:</strong> Applies to CPAs, tax preparers, and firms offering financial services. Requires a written security plan, designated security coordinator, and annual risk assessments.</div>
+          <div><strong>HIPAA:</strong> Applies to medical practices, dental offices, and their business associates. Requires PHI encryption, access controls, and breach notification.</div>
+          <div><strong>State Bar Ethics Rules:</strong> Most states now require "reasonable" cybersecurity measures. Check your state bar's formal ethics opinions.</div>
+          <div><strong>GDPR:</strong> Applies if you have clients based in the EU. Client data must be protected and deletable on request.</div>
+        </div>
+        <a href="/compliance/" class="inline-flex items-center gap-1 mt-4 text-sm font-semibold text-slate-700 hover:text-slate-900 transition-colors">
+          Explore All Compliance Guides →
+        </a>
+      </div>
+
+      <AdNativeCard
+        title="Recommended Resources for Professional Services"
+        resources={[
+          { title: 'Cyber Insurance Guide', description: 'What coverage your firm needs and how to qualify for the best rates.', href: '/blog/cyber-insurance-guide/', icon: '🛡️', badge: 'Guide' },
+          { title: 'Employee Security Training', description: '30-minute training script for professional staff handling client data.', href: '/blog/employee-security-training/', icon: '👥', badge: 'Template' },
+          { title: 'Data Breach Response', description: 'Step-by-step guide for notifying clients and regulators after a breach.', href: '/incident-response/data-breach/', icon: '🆘', badge: 'Emergency' },
+        ]}
+      />
+    </article>
+  </div>
+</BaseLayout>

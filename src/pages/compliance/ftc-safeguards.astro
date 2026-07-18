@@ -1,0 +1,138 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHero from '../../components/SectionHero.astro';
+import ContentCTA from '../../components/ContentCTA.astro';
+import AdNativeCard from '../../components/AdNativeCard.astro';
+---
+
+<BaseLayout
+  title="FTC Safeguards Rule — Small Business Compliance Guide 2026"
+  description="Plain-English guide to the FTC Safeguards Rule. Who it applies to, the 9 requirements, and how small businesses can comply without breaking the bank."
+>
+  <SectionHero
+    icon="🇺🇸"
+    title="FTC Safeguards Rule"
+    description="A federal regulation requiring financial institutions — including many small businesses you wouldn't think of — to protect customer data. Fines up to $100,000 per violation. Here is exactly what you need to do."
+    badge="🇺🇸 US Federal Regulation"
+    gradient="from-blue-950 via-primary-950 to-primary-900"
+  />
+
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <article class="mx-auto max-w-3xl">
+      <!-- Quick Facts Box -->
+      <div class="rounded-2xl bg-red-50 border border-red-200 p-6 mb-10">
+        <h2 class="text-lg font-bold text-red-900">⚡ Quick Facts</h2>
+        <div class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+          <div><strong>What it is:</strong> Federal data security regulation for "financial institutions"</div>
+          <div><strong>Who enforces it:</strong> Federal Trade Commission (FTC)</div>
+          <div><strong>Penalty:</strong> Up to $100,000 per violation</div>
+          <div><strong>Deadline:</strong> Already in effect — compliance is mandatory now</div>
+          <div><strong>Applies to:</strong> ~250,000+ US businesses, far beyond banks</div>
+          <div><strong>Key document:</strong> Written Information Security Plan (WISP)</div>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold text-gray-900">Does the FTC Safeguards Rule Apply to Your Business?</h2>
+      <p class="mt-4 text-gray-700 leading-relaxed">
+        The rule applies to "financial institutions" — but the FTC defines this term <strong>much more broadly</strong> than you expect. It is not just banks and credit unions. If your business is "significantly engaged" in financial activities, you are covered. This includes:
+      </p>
+      <ul class="mt-4 space-y-2 text-gray-700">
+        <li><strong>Auto dealers</strong> that arrange financing or leasing</li>
+        <li><strong>Mortgage brokers</strong> and real estate settlement agents</li>
+        <li><strong>Payday lenders</strong> and check-cashing businesses</li>
+        <li><strong>Tax preparers</strong> and accounting firms</li>
+        <li><strong>Investment advisors</strong> and wealth managers</li>
+        <li><strong>Debt collectors</strong> and credit counselors</li>
+        <li><strong>Retailers</strong> that offer store credit or financing plans</li>
+        <li><strong>Fintech companies</strong> handling payments, lending, or digital wallets</li>
+      </ul>
+      <p class="mt-4 text-gray-700 leading-relaxed">
+        The rule uses a "significantly engaged" test — if more than a small fraction of your business involves financial activities, you are likely covered. When in doubt, assume it applies. The cost of compliance is far less than the cost of a violation.
+      </p>
+
+      <ContentCTA
+        icon="📋"
+        title="Security Assessment: Are You FTC-Ready?"
+        description="Our 20-question assessment checks your security posture against the Safeguards Rule requirements. Takes 3 minutes."
+        href="/tools/security-assessment/"
+        ctaText="Start Free Assessment →"
+      />
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">The 9 Requirements of the FTC Safeguards Rule</h2>
+      <p class="mt-4 text-gray-700 leading-relaxed">
+        The updated Safeguards Rule (effective June 2023, with some provisions extended to 2024 for smaller businesses) requires financial institutions to develop, implement, and maintain a comprehensive information security program. Here are the 9 specific requirements:
+      </p>
+
+      <div class="mt-6 space-y-5">
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">1. Designate a Qualified Individual (QI)</h3>
+          <p class="mt-1 text-sm text-gray-600">One person must be responsible for your information security program. This can be an employee or a managed service provider. The QI must report to your board or senior management at least annually.</p>
+        </div>
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">2. Conduct a Risk Assessment</h3>
+          <p class="mt-1 text-sm text-gray-600">Identify foreseeable internal and external risks to customer information. Assess the sufficiency of existing safeguards. This must be documented in writing and updated periodically as your business or threat landscape changes.</p>
+        </div>
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">3. Implement Access Controls</h3>
+          <p class="mt-1 text-sm text-gray-600">Limit access to customer information to employees who need it. Require unique user IDs and strong passwords. Implement MFA for anyone accessing customer information systems — this is mandatory, not optional.</p>
+        </div>
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">4. Inventory Data, Personnel, Devices, and Systems</h3>
+          <p class="mt-1 text-sm text-gray-600">Know where customer data lives, who can access it, and what devices and systems process it. You cannot protect what you do not know exists.</p>
+        </div>
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">5. Encrypt Customer Information</h3>
+          <p class="mt-1 text-sm text-gray-600">Encrypt data at rest and in transit. If encryption is not feasible, you must document why and use alternative compensating controls — but "it would be inconvenient" is not a valid reason.</p>
+        </div>
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">6. Secure Application Development and Testing</h3>
+          <p class="mt-1 text-sm text-gray-600">Follow secure development practices for any in-house software. Conduct penetration testing and vulnerability scanning at least annually. Remediate findings promptly.</p>
+        </div>
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">7. Monitor and Log Activity</h3>
+          <p class="mt-1 text-sm text-gray-600">Log authorized user activity and monitor for unauthorized access. Review logs regularly. Retain logs for a defined period to support forensic analysis if a breach occurs.</p>
+        </div>
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">8. Assess Service Provider Security</h3>
+          <p class="mt-1 text-sm text-gray-600">Select service providers (IT vendors, cloud services, data processors) that can maintain appropriate safeguards. Contractually require them to implement and maintain security measures. Reassess periodically.</p>
+        </div>
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">9. Create an Incident Response Plan</h3>
+          <p class="mt-1 text-sm text-gray-600">Document what you will do when (not if) a security event occurs. Include: goals, decision-making authority, internal and external communications, remediation steps, legal and regulatory reporting obligations, and post-incident review.</p>
+        </div>
+      </div>
+
+      <ContentCTA
+        icon="🆘"
+        title="Data Breach Response Guide"
+        description="Step-by-step guide: contain the breach, notify customers, report to regulators. Includes notification letter templates."
+        href="/incident-response/data-breach/"
+        ctaText="Read Breach Response Guide →"
+      />
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">The Written Information Security Plan (WISP)</h2>
+      <p class="mt-4 text-gray-700 leading-relaxed">
+        The WISP is the cornerstone document of Safeguards Rule compliance. It describes your security program and must address all 9 requirements above. For most small businesses, a WISP is 5-10 pages. It should be reviewed and updated at least annually. The FTC will ask for this document first in any investigation.
+      </p>
+      <p class="mt-3 text-gray-700 leading-relaxed">
+        Your WISP should cover: the QI designation, risk assessment findings, access controls, data inventory, encryption practices, secure development standards, monitoring and logging, service provider oversight, and your incident response plan. It does not need to be written by a lawyer, but having one review it is advisable.
+      </p>
+
+      <div class="mt-12 rounded-xl bg-blue-50 border border-blue-200 p-6">
+        <h2 class="text-lg font-bold text-blue-900">Key Takeaway for Small Business Owners</h2>
+        <p class="mt-3 text-sm text-blue-800 leading-relaxed">
+          The FTC Safeguards Rule is not going away — enforcement is increasing. In 2025, the FTC brought multiple actions against small and mid-sized businesses for Safeguards violations. The good news: the requirements are essentially good security practices you should be doing anyway. MFA, encryption, risk assessments, and incident response planning are not regulatory overhead — they are what protect your business from real threats. <strong>Start with MFA and a risk assessment. Those two alone address the majority of your exposure.</strong>
+        </p>
+      </div>
+
+      <AdNativeCard
+        title="Resources for FTC Safeguards Compliance"
+        resources={[
+          { title: 'Compliance Toolkit', description: 'Templates, checklists, and a WISP outline to jump-start your compliance.', href: '/compliance/compliance-toolkit/', icon: '🧰', badge: 'Toolkit' },
+          { title: 'Security Assessment', description: 'Identify your gaps against the 9 Safeguards Rule requirements.', href: '/tools/security-assessment/', icon: '📋', badge: 'Free Tool' },
+          { title: 'Cyber Insurance Guide', description: 'Insurance is NOT a substitute for compliance, but it helps.', href: '/blog/cyber-insurance-guide/', icon: '🛡️', badge: 'Guide' },
+        ]}
+      />
+    </article>
+  </div>
+</BaseLayout>

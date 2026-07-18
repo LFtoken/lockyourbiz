@@ -1,0 +1,154 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHero from '../../components/SectionHero.astro';
+import ContentCTA from '../../components/ContentCTA.astro';
+import AdNativeCard from '../../components/AdNativeCard.astro';
+---
+
+<BaseLayout
+  title="Remote Team Security Guide — VPN, Device Policies & Cloud Protection"
+  description="Secure your distributed team. Zero-trust access, home device standards, cloud file protection, and video conferencing security for remote and hybrid small businesses."
+>
+  <SectionHero
+    icon="🏠"
+    title="Remote & Hybrid Team Security"
+    description="Your team works from coffee shops, home offices, and coworking spaces. Traditional office network security does not apply. Here is how to protect your data when there is no office perimeter."
+    badge="🏠 Industry Security"
+    gradient="from-primary-950 via-indigo-950 to-purple-950"
+  />
+
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <article class="mx-auto max-w-3xl">
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-3 mb-12">
+        <div class="rounded-xl bg-red-50 border border-red-100 p-5 text-center">
+          <div class="text-2xl font-bold text-red-700">3×</div>
+          <p class="mt-1 text-xs text-red-600">remote workers are more likely to click phishing links than office-based staff</p>
+        </div>
+        <div class="rounded-xl bg-orange-50 border border-orange-100 p-5 text-center">
+          <div class="text-2xl font-bold text-orange-700">73%</div>
+          <p class="mt-1 text-xs text-orange-600">of remote workers use personal devices for work without IT oversight</p>
+        </div>
+        <div class="rounded-xl bg-primary-50 border border-primary-100 p-5 text-center">
+          <div class="text-2xl font-bold text-primary-700">62%</div>
+          <p class="mt-1 text-xs text-primary-600">of data breaches involve remote access or home-network vulnerabilities</p>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">The Remote Work Security Challenge</h2>
+      <p class="mt-4 text-gray-700 leading-relaxed">
+        When your team left the office, they left behind the firewall, the secure WiFi, and the IT person who set it all up. Now each employee's home network is your company network — with shared family devices, default router passwords, and no segmentation between work and personal traffic. The biggest challenge is not technology; it is that security must now work for people who are not in the same room, on devices you do not own, on networks you cannot control.
+      </p>
+
+      <div class="mt-6 space-y-4">
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">🔓 Unsecured Home Networks</h3>
+          <p class="mt-1 text-sm text-gray-600">Most home routers run outdated firmware with known vulnerabilities. Default admin passwords are never changed. IoT devices (smart TVs, cameras, thermostats) share the same network as work laptops, creating dozens of unprotected entry points.</p>
+        </div>
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">📱 Personal Devices with Work Data</h3>
+          <p class="mt-1 text-sm text-gray-600">Employees check work email on personal phones. They download client files to unencrypted home desktops. They share passwords with family members "just to print something." The boundary between work and personal has completely dissolved.</p>
+        </div>
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">☁️ Cloud File Sharing Without Guardrails</h3>
+          <p class="mt-1 text-sm text-gray-600">Teams use a mix of Google Drive, Dropbox, OneDrive, and personal accounts — often creating "public" links for convenience without realizing anyone with the link can access sensitive files. No one knows where the master copies live.</p>
+        </div>
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">🎥 Video Conferencing Vulnerabilities</h3>
+          <p class="mt-1 text-sm text-gray-600">Zoom-bombing, unrecorded meeting recordings stored in the cloud indefinitely, screen sharing that accidentally exposes confidential documents — video meetings create security risks the old conference room never did.</p>
+        </div>
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">📧 Social Engineering Is 3× More Effective Remotely</h3>
+          <p class="mt-1 text-sm text-gray-600">In an office, you can turn to a colleague and ask "did you really send this?" Remotely, that quick verification does not happen. Attackers exploit this — sending fake IT password reset requests, fake CEO wire transfer instructions, and fake HR benefits enrollment links.</p>
+        </div>
+      </div>
+
+      <ContentCTA
+        icon="🎣"
+        title="Test Your Team's Phishing Awareness"
+        description="Our free phishing quiz presents 10 real-world email scenarios. See how well your remote team can spot the fakes. Takes 5 minutes, no sign-up required."
+        href="/tools/phishing-quiz/"
+        ctaText="Take the Phishing Quiz →"
+      />
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">Remote Team Security Checklist</h2>
+      <ol class="mt-4 space-y-4">
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">1</span>
+          <div>
+            <strong class="text-gray-900">Ditch the VPN. Use Zero Trust.</strong>
+            <p class="text-sm text-gray-600">Traditional VPNs assume everyone inside the tunnel is trustworthy — a terrible assumption for remote work. Instead, use Cloudflare Zero Trust (free for up to 50 users) or Tailscale. Each app and service requires its own authentication; being on the "corporate network" grants nothing by default.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">2</span>
+          <div>
+            <strong class="text-gray-900">Require MFA on everything. No exceptions.</strong>
+            <p class="text-sm text-gray-600">Email, cloud storage, project management tools, payroll — every service your team accesses must require a second factor. Hardware security keys (YubiKey) are ideal; authenticator apps are the minimum. SMS-based 2FA is better than nothing but vulnerable to SIM-swap attacks.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">3</span>
+          <div>
+            <strong class="text-gray-900">Create a home office device standard.</strong>
+            <p class="text-sm text-gray-600">Document minimum requirements: full-disk encryption enabled, automatic OS updates turned on, company-managed antivirus installed, screen lock set to 5 minutes or less. For personal devices used for work (BYOD), use application-level containerization (Microsoft Intune, Workspace ONE) to separate work data from personal.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">4</span>
+          <div>
+            <strong class="text-gray-900">Standardize on one cloud storage platform.</strong>
+            <p class="text-sm text-gray-600">Pick one: Google Workspace, Microsoft 365, or Dropbox Business. Disable the ability to create "anyone with the link" shares — require specific people to be invited. Set files to auto-delete from trash after 30 days. Enable audit logging to see who accessed what and when.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">5</span>
+          <div>
+            <strong class="text-gray-900">Secure video meetings.</strong>
+            <p class="text-sm text-gray-600">Require meeting passwords or waiting rooms. Disable "join before host." Set recordings to auto-expire. Remind staff to check what is on their screen before sharing — close email, Slack, and any client files before presenting.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">6</span>
+          <div>
+            <strong class="text-gray-900">Ship a secure router to remote employees.</strong>
+            <p class="text-sm text-gray-600">For employees handling sensitive data, provide a pre-configured router that creates a separate VLAN for work devices. A Ubiquiti UniFi Express ($149) can be configured with work/home network separation and automatic security updates. It is cheaper than one breach.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">7</span>
+          <div>
+            <strong class="text-gray-900">Write a remote work security policy.</strong>
+            <p class="text-sm text-gray-600">Keep it to one page. Cover: approved devices, mandatory MFA, prohibited practices (no sharing work devices with family, no public WiFi without VPN), incident reporting procedure (who to contact immediately if something seems wrong). Have everyone sign it.</p>
+          </div>
+        </li>
+      </ol>
+
+      <ContentCTA
+        icon="🔐"
+        title="VPN vs Zero Trust: What Remote Teams Should Use in 2026"
+        description="Traditional VPNs are no longer the right answer for remote access. Learn how zero trust works and how to set it up for free with Cloudflare."
+        href="/blog/vpn-vs-zerotrust/"
+        ctaText="Read VPN vs Zero Trust →"
+      />
+
+      <div class="mt-12 rounded-xl bg-indigo-50 border border-indigo-200 p-6">
+        <h2 class="text-lg font-bold text-indigo-900">Remote Work Compliance Considerations</h2>
+        <div class="mt-4 space-y-2 text-sm">
+          <div><strong>GDPR:</strong> Remote workers accessing EU customer data from home must maintain the same protection level as in-office. This means encrypted devices, secure connections, and no local storage of PII on personal devices.</div>
+          <div><strong>HIPAA:</strong> Remote healthcare workers must use encrypted devices, secure messaging, and private locations for patient conversations.</div>
+          <div><strong>PCI-DSS:</strong> Remote access to payment systems requires MFA and cannot use shared credentials.</div>
+          <div><strong>State Data Breach Laws:</strong> A stolen laptop from a home burglary counts as a breach — encrypt everything.</div>
+        </div>
+      </div>
+
+      <AdNativeCard
+        title="Recommended Resources for Remote Teams"
+        resources={[
+          { title: 'Phishing Prevention Guide', description: '7 red flags your remote team must check before clicking any link.', href: '/blog/phishing-prevention/', icon: '📧', badge: 'Guide' },
+          { title: 'Social Engineering Defense', description: 'Beyond email — phone scams, fake invoices, USB drops, and tailgating.', href: '/blog/social-engineering-defense/', icon: '🕵️', badge: 'Guide' },
+          { title: 'Employee Security Training', description: '30-minute training script designed for distributed teams.', href: '/blog/employee-security-training/', icon: '👥', badge: 'Template' },
+        ]}
+      />
+    </article>
+  </div>
+</BaseLayout>

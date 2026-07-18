@@ -1,0 +1,165 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHero from '../../components/SectionHero.astro';
+import ContentCTA from '../../components/ContentCTA.astro';
+import AdNativeCard from '../../components/AdNativeCard.astro';
+---
+
+<BaseLayout
+  title="E-Commerce Security Guide — Shopify & WooCommerce Protection"
+  description="Protect your online store from payment fraud, plugin vulnerabilities, DDoS attacks, and data breaches. Practical security guide for Shopify, WooCommerce, and custom e-commerce sites."
+>
+  <SectionHero
+    icon="🛒"
+    title="E-Commerce Security"
+    description="Your online store is scanned thousands of times a day by automated bots looking for vulnerabilities. Whether you run Shopify, WooCommerce, or a custom build, here is how to lock it down."
+    badge="🛒 Industry Security"
+    gradient="from-primary-950 via-primary-900 to-cyan-950"
+  />
+
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <article class="mx-auto max-w-3xl">
+      <!-- Stats -->
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-3 mb-12">
+        <div class="rounded-xl bg-red-50 border border-red-100 p-5 text-center">
+          <div class="text-2xl font-bold text-red-700">2,000+</div>
+          <p class="mt-1 text-xs text-red-600">automated attack scans hit the average e-commerce site every day</p>
+        </div>
+        <div class="rounded-xl bg-orange-50 border border-orange-100 p-5 text-center">
+          <div class="text-2xl font-bold text-orange-700">46%</div>
+          <p class="mt-1 text-xs text-orange-600">of all website attacks target e-commerce platforms</p>
+        </div>
+        <div class="rounded-xl bg-primary-50 border border-primary-100 p-5 text-center">
+          <div class="text-2xl font-bold text-primary-700">$89</div>
+          <p class="mt-1 text-xs text-primary-600">average cost per stolen payment card record on dark web markets</p>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">The Threat Landscape for Online Stores</h2>
+      <p class="mt-4 text-gray-700 leading-relaxed">
+        E-commerce sites are among the most attacked targets on the internet. Unlike a company brochure site, your store processes payments, stores customer data, and runs on complex software stacks with plugins, themes, and third-party integrations — each one a potential entry point. Here are the threats you face daily:
+      </p>
+
+      <div class="mt-6 space-y-4">
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">💳 Payment Skimming (Magecart Attacks)</h3>
+          <p class="mt-1 text-sm text-gray-600">Attackers inject malicious JavaScript into your checkout page that silently captures credit card numbers as customers type them. These attacks often go undetected for weeks. In 2025 alone, over 10,000 e-commerce sites were compromised by Magecart-style attacks.</p>
+        </div>
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">🔌 Plugin & Theme Vulnerabilities</h3>
+          <p class="mt-1 text-sm text-gray-600">Every plugin you install expands your attack surface. In 2026, over 50,000 WordPress plugins have known vulnerabilities listed in public databases. WooCommerce add-ons are particularly targeted because they handle payment flows.</p>
+        </div>
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">🌊 DDoS & Bot Attacks During Sales Events</h3>
+          <p class="mt-1 text-sm text-gray-600">Black Friday, Cyber Monday, and flash sales attract not just customers — but attackers who know you cannot afford downtime. Competitor-driven DDoS attacks and scalper bots are increasingly common during peak sales periods.</p>
+        </div>
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">🔓 Credential Stuffing & Account Takeover</h3>
+          <p class="mt-1 text-sm text-gray-600">Attackers use leaked username/password pairs from other breaches to break into customer accounts on your store. Once inside, they can place fraudulent orders, steal loyalty points, or extract stored payment methods.</p>
+        </div>
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">📋 Customer Data Exposure & PCI Compliance</h3>
+          <p class="mt-1 text-sm text-gray-600">If you store customer PII (names, addresses, emails, purchase history) without proper protection, a single breach can trigger GDPR fines, PCI-DSS penalties, and permanent reputation damage.</p>
+        </div>
+      </div>
+
+      <ContentCTA
+        icon="📋"
+        title="Run a Free Security Assessment on Your Store"
+        description="Our 20-question assessment checks for the most common e-commerce vulnerabilities — payment security, admin access controls, plugin management, and backup readiness. Takes 3 minutes."
+        href="/tools/security-assessment/"
+        ctaText="Start Free Assessment →"
+      />
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">E-Commerce Security Checklist</h2>
+      <ol class="mt-4 space-y-4">
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">1</span>
+          <div>
+            <strong class="text-gray-900">Keep everything updated — automatically.</strong>
+            <p class="text-sm text-gray-600">Enable auto-updates for your CMS core, themes, and plugins. Most successful attacks exploit vulnerabilities that were patched months earlier. If you are on WooCommerce, use a managed host that handles updates for you.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">2</span>
+          <div>
+            <strong class="text-gray-900">Install a Web Application Firewall (WAF).</strong>
+            <p class="text-sm text-gray-600">Cloudflare (free plan included) blocks SQL injection, XSS, and DDoS attacks before they reach your server. For WooCommerce, add Wordfence or Sucuri as a second layer. This is the single highest-impact security measure you can take.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">3</span>
+          <div>
+            <strong class="text-gray-900">Enforce HTTPS everywhere.</strong>
+            <p class="text-sm text-gray-600">SSL certificates are free via Let's Encrypt. Enable HSTS (HTTP Strict Transport Security) to force all connections over HTTPS. Never serve any page — even a 404 error — over plain HTTP.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">4</span>
+          <div>
+            <strong class="text-gray-900">Harden your admin panel.</strong>
+            <p class="text-sm text-gray-600">Change the default admin URL (/wp-admin, /admin). Require two-factor authentication for all admin accounts. Limit login attempts and use strong, unique passwords for every admin user. Remove unused admin accounts immediately when staff leave.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">5</span>
+          <div>
+            <strong class="text-gray-900">Run regular malware scans and file integrity monitoring.</strong>
+            <p class="text-sm text-gray-600">Install a security plugin that scans for malware, backdoors, and unauthorized file changes daily. Wordfence, Sucuri, and MalCare all offer this. Set up email alerts for any detected changes.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">6</span>
+          <div>
+            <strong class="text-gray-900">Back up everything, every day.</strong>
+            <p class="text-sm text-gray-600">Automated daily backups stored off-site (not on your web server). This means your database (products, orders, customers) AND your files (themes, plugins, uploads). Test a full restore at least once per quarter. If you cannot restore, you do not have a backup.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">7</span>
+          <div>
+            <strong class="text-gray-900">Use a PCI-compliant payment gateway — do not store card data.</strong>
+            <p class="text-sm text-gray-600">Stripe, PayPal, and Square handle payment processing and PCI compliance for you. Never store raw credit card numbers on your server. If you absolutely must handle card data directly, you need a full PCI-DSS Level 1 audit — which costs $10,000+ per year. Just use Stripe.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">8</span>
+          <div>
+            <strong class="text-gray-900">Set up real-time security monitoring.</strong>
+            <p class="text-sm text-gray-600">Use Google Search Console to monitor for security issues and manual actions. Set up uptime monitoring (UptimeRobot is free). Configure your WAF to alert you on blocked attack patterns. The faster you detect a breach, the less damage it causes.</p>
+          </div>
+        </li>
+      </ol>
+
+      <ContentCTA
+        icon="🌐"
+        title="Website Security Guide: Full Protection for Your Store"
+        description="A complete guide to SSL, WAF setup, plugin hardening, backup configuration, and ongoing monitoring — all written for store owners who are not developers."
+        href="/blog/website-security-guide/"
+        ctaText="Read the Full Guide →"
+      />
+
+      <div class="mt-12 rounded-xl bg-cyan-50 border border-cyan-200 p-6">
+        <h2 class="text-lg font-bold text-cyan-900">Compliance Quick Reference for E-Commerce</h2>
+        <div class="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 text-sm">
+          <div><strong>PCI-DSS:</strong> Required if you accept credit cards. Use Stripe/PayPal to offload compliance.</div>
+          <div><strong>GDPR:</strong> Applies if you sell to EU customers. Requires cookie consent + data access/deletion rights.</div>
+          <div><strong>CCPA/CPRA:</strong> Applies if you serve California customers with $25M+ revenue or 100K+ records.</div>
+          <div><strong>PDPA/PDP:</strong> Singapore and Thailand data protection laws for cross-border sellers.</div>
+        </div>
+        <a href="/compliance/" class="inline-flex items-center gap-1 mt-4 text-sm font-semibold text-cyan-700 hover:text-cyan-900 transition-colors">
+          Explore Compliance Guides →
+        </a>
+      </div>
+
+      <AdNativeCard
+        title="Recommended Resources for Store Owners"
+        resources={[
+          { title: 'Website Firewall Review', description: 'Compare Cloudflare, Sucuri, Wordfence, and more for your store.', href: '/tool-reviews/website-firewall/', icon: '🌐', badge: 'Review' },
+          { title: 'Free Tool Comparison', description: 'Find the best free security tools for your e-commerce business.', href: '/tools/tool-comparison/', icon: '⚖️', badge: 'Tool' },
+          { title: 'Ransomware Protection Guide', description: 'What to do if your store gets hit — and how to prevent it.', href: '/blog/ransomware-protection/', icon: '🔒', badge: 'Guide' },
+        ]}
+      />
+    </article>
+  </div>
+</BaseLayout>

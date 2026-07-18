@@ -1,0 +1,154 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHero from '../../components/SectionHero.astro';
+import ContentCTA from '../../components/ContentCTA.astro';
+import AdNativeCard from '../../components/AdNativeCard.astro';
+---
+
+<BaseLayout
+  title="Local Retail Security Guide — POS, WiFi & Customer Data Protection"
+  description="Practical security for brick-and-mortar retail shops. Protect your POS systems, customer WiFi, payment terminals, and in-store data. Written for non-technical shop owners."
+>
+  <SectionHero
+    icon="🏪"
+    title="Local Retail Security"
+    description="Your cash register is now a computer. Your security cameras are on the network. Your customers use your WiFi. Here is how to protect your shop without becoming an IT expert."
+    badge="🏪 Industry Security"
+    gradient="from-red-950 via-primary-950 to-primary-900"
+  />
+
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <article class="mx-auto max-w-3xl">
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-3 mb-12">
+        <div class="rounded-xl bg-red-50 border border-red-100 p-5 text-center">
+          <div class="text-2xl font-bold text-red-700">72%</div>
+          <p class="mt-1 text-xs text-red-600">of POS data breaches target small-to-midsize retailers</p>
+        </div>
+        <div class="rounded-xl bg-orange-50 border border-orange-100 p-5 text-center">
+          <div class="text-2xl font-bold text-orange-700">43%</div>
+          <p class="mt-1 text-xs text-orange-600">of small retailers have zero network segmentation between POS and guest WiFi</p>
+        </div>
+        <div class="rounded-xl bg-primary-50 border border-primary-100 p-5 text-center">
+          <div class="text-2xl font-bold text-primary-700">4 days</div>
+          <p class="mt-1 text-xs text-primary-600">average downtime after a ransomware attack on a small retail chain</p>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">The Unique Security Challenges of Brick-and-Mortar Retail</h2>
+      <p class="mt-4 text-gray-700 leading-relaxed">
+        Physical stores face a hybrid threat landscape that pure e-commerce businesses do not: digital attacks targeting point-of-sale systems, physical tampering with payment terminals, unsecured networks spanning the sales floor and back office, and customer personal data collected through loyalty programs, receipts, and WiFi sign-ups. Your digital assets are physically accessible — to employees, customers, and sometimes anyone who walks in.
+      </p>
+
+      <div class="mt-6 space-y-4">
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">💳 POS Malware & RAM Scraping</h3>
+          <p class="mt-1 text-sm text-gray-600">Malware installed on point-of-sale systems silently collects credit card data from system memory during transactions. These attacks are highly targeted toward small retailers because you are less likely to have dedicated IT security staff monitoring endpoints.</p>
+        </div>
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">📡 Unsecured Guest WiFi Exploitation</h3>
+          <p class="mt-1 text-sm text-gray-600">When your customer WiFi shares the same network as your POS systems and back-office computers, an attacker sitting in your parking lot can reach critical business systems after breaking in through the guest network. Network segmentation is not optional.</p>
+        </div>
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">🔌 Physical Tampering & Skimming Devices</h3>
+          <p class="mt-1 text-sm text-gray-600">Physical credit card skimmers can be installed on payment terminals in seconds by someone pretending to be a customer. Train staff to inspect terminals daily — look for loose parts, mismatched colors, or anything that looks added on.</p>
+        </div>
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">👤 Customer Privacy & Surveillance Compliance</h3>
+          <p class="mt-1 text-sm text-gray-600">Security cameras, loyalty cards, email receipts, and WiFi sign-in portals all collect customer data. Depending on your jurisdiction, you may need to disclose surveillance, honor data deletion requests, and protect this data from breaches.</p>
+        </div>
+        <div class="rounded-lg bg-gray-50 p-5">
+          <h3 class="font-semibold text-gray-900">🔐 Vendor Backdoors & Remote Access</h3>
+          <p class="mt-1 text-sm text-gray-600">POS vendors, HVAC companies, and security system providers often have remote access to your network for maintenance. Each one is a potential entry point. You need to know who has access and lock it down when not actively in use.</p>
+        </div>
+      </div>
+
+      <ContentCTA
+        icon="📋"
+        title="Free Security Assessment for Your Retail Shop"
+        description="20 questions covering POS security, network setup, backup practices, and employee access controls. Get a personalized risk score and action plan in 3 minutes."
+        href="/tools/security-assessment/"
+        ctaText="Start Free Assessment →"
+      />
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10">Retail Security Checklist</h2>
+      <ol class="mt-4 space-y-4">
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">1</span>
+          <div>
+            <strong class="text-gray-900">Segment your network — today.</strong>
+            <p class="text-sm text-gray-600">Create at least three separate networks: one for POS/card processing, one for back-office systems and security cameras, and one for guest WiFi. They should not be able to talk to each other. If your ISP-provided router cannot do VLANs, buy a Ubiquiti or TP-Link Omada setup ($150-300 hardware cost).</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">2</span>
+          <div>
+            <strong class="text-gray-900">Use EMV/chip readers — and disable magstripe fallback.</strong>
+            <p class="text-sm text-gray-600">Chip cards (EMV) generate a unique code per transaction that is worthless if stolen. Magnetic stripe data, however, can be cloned. Most modern POS terminals support chip-only mode. Turn it on. If your terminal does not support EMV, upgrade it — the cost of one breach exceeds the hardware cost.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">3</span>
+          <div>
+            <strong class="text-gray-900">Lock down vendor remote access.</strong>
+            <p class="text-sm text-gray-600">Ask every vendor (POS, HVAC, security cameras, alarm system) whether they have remote access to your network. For those that do: require them to use a VPN or temporary access code that expires after each maintenance session. Never leave a permanent remote-access port open 24/7.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">4</span>
+          <div>
+            <strong class="text-gray-900">Physically inspect payment terminals daily.</strong>
+            <p class="mt-1 text-sm text-gray-600">Train opening staff to check each terminal for skimming devices: wiggle the card reader, look for color mismatches, check for extra bulk on top of the keypad. Take a photo of each terminal in its "clean" state and compare weekly.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">5</span>
+          <div>
+            <strong class="text-gray-900">Secure your security cameras.</strong>
+            <p class="mt-1 text-sm text-gray-600">IP cameras are notoriously insecure — many ship with default passwords that are never changed. Put cameras on their own VLAN separate from POS and office networks. Change default admin passwords. Disable remote viewing unless absolutely necessary, and then require VPN access.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">6</span>
+          <div>
+            <strong class="text-gray-900">Encrypt and back up customer data.</strong>
+            <p class="mt-1 text-sm text-gray-600">Loyalty program databases, email lists, and purchase histories should be encrypted at rest. Back up your POS and inventory databases daily. Store backups off-site (cloud backup is fine). If ransomware hits, your backup is your only way out.</p>
+          </div>
+        </li>
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-xs font-bold text-white">7</span>
+          <div>
+            <strong class="text-gray-900">Train staff on security basics.</strong>
+            <p class="mt-1 text-sm text-gray-600">Teach your team to recognize phishing emails about "missed deliveries" or "invoice overdue" — common lures targeting retail. Show them how to spot tampered terminals. Make security a 5-minute topic in your monthly staff meeting.</p>
+          </div>
+        </li>
+      </ol>
+
+      <ContentCTA
+        icon="👥"
+        title="30-Minute Employee Security Training"
+        description="Ready-to-use training script with real-world examples your retail staff will understand. Includes a follow-up plan to keep security top of mind."
+        href="/blog/employee-security-training/"
+        ctaText="Get the Training Script →"
+      />
+
+      <div class="mt-12 rounded-xl bg-red-50 border border-red-200 p-6">
+        <h2 class="text-lg font-bold text-red-900">Compliance Quick Reference for Retail</h2>
+        <div class="mt-4 space-y-2 text-sm">
+          <div><strong>PCI-DSS:</strong> Required for any business accepting credit cards. Use EMV terminals and never store full card numbers.</div>
+          <div><strong>FTC Safeguards Rule:</strong> May apply if you offer store credit or financing — requires a written security plan.</div>
+          <div><strong>State Breach Notification Laws:</strong> All 50 states require customer notification if payment or PII data is breached. Timelines vary (30-90 days).</div>
+          <div><strong>Video Surveillance Laws:</strong> Vary by state — some require signage, some restrict audio recording. Check your local laws.</div>
+        </div>
+      </div>
+
+      <AdNativeCard
+        title="Recommended Resources for Retail Shops"
+        resources={[
+          { title: 'Ransomware Protection Guide', description: 'What to do when your POS systems get locked by ransomware.', href: '/blog/ransomware-protection/', icon: '🔒', badge: 'Guide' },
+          { title: 'Essential Security Hardware', description: 'Firewalls, secure routers, and hardware recommendations for physical stores.', href: '/blog/essential-security-hardware/', icon: '🖥️', badge: 'Guide' },
+          { title: 'Incident Response: Ransomware', description: 'Step-by-step emergency guide when your store gets hit.', href: '/incident-response/ransomware-response/', icon: '🆘', badge: 'Emergency' },
+        ]}
+      />
+    </article>
+  </div>
+</BaseLayout>

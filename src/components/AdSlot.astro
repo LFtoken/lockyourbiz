@@ -1,0 +1,21 @@
+---
+export interface Props {
+  variant?: 'banner' | 'rectangle' | 'responsive';
+  class?: string;
+}
+
+const { variant = 'responsive', class: extraClass = '' } = Astro.props;
+// When AdSense is live, replace the fallback div below with:
+// <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXX" data-ad-slot="XXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+// <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+---
+
+<div class={`ad-slot-wrapper my-8 ${extraClass}`}>
+  <div class="rounded-2xl border border-dashed border-gray-300 bg-gray-50 p-5 text-center">
+    <span class="block text-xs font-medium text-gray-400 uppercase tracking-wider mb-2">Sponsored</span>
+    <p class="text-sm text-gray-500">
+      🛡️ <strong>Free Security Tools</strong> — No sign-up. No email. Just practical tools that work.
+      <a href="/tools/" class="ml-2 text-primary-600 font-medium hover:underline">Explore Tools →</a>
+    </p>
+  </div>
+</div>

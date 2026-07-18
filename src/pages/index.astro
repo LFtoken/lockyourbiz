@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroCarousel from '../components/HeroCarousel';
 import ToolCard from '../components/ToolCard.astro';
 import ArticleCard from '../components/ArticleCard.astro';
 
@@ -9,7 +10,7 @@ const featuredArticles = [
     excerpt: 'From hardware security keys to firewalls to backup NAS — exactly what to buy, with specific models and three budget tiers from $130 to $1,900.',
     href: '/blog/essential-security-hardware/',
     date: '2026-07-14',
-    category: 'Hardware',
+    category: 'Hardware & Services',
     readTime: '10',
   },
   {
@@ -17,7 +18,7 @@ const featuredArticles = [
     excerpt: 'MDR, vulnerability scanning, email gateways, security training — a clear breakdown of which services are worth paying for and when to buy them.',
     href: '/blog/essential-security-services/',
     date: '2026-07-14',
-    category: 'Services',
+    category: 'Hardware & Services',
     readTime: '11',
   },
   {
@@ -25,7 +26,7 @@ const featuredArticles = [
     excerpt: 'A comprehensive 46-point DIY security audit. Check your passwords, network, backups, devices, and employee practices — no consultants required.',
     href: '/blog/security-audit-checklist/',
     date: '2026-07-13',
-    category: 'Assessment',
+    category: 'Getting Started',
     readTime: '12',
   },
 ];
@@ -35,44 +36,7 @@ const featuredArticles = [
   title="Free Cybersecurity Tools & Guides for Small Business"
   description="Practical cybersecurity advice, free tools, and step-by-step guides for small business owners. No jargon. No enterprise budget required. Just actionable steps to protect your business."
 >
-  <section class="relative overflow-hidden bg-gradient-to-br from-primary-900 via-primary-800 to-primary-950">
-    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-30"></div>
-    <div class="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-      <div class="max-w-3xl">
-        <div class="inline-flex items-center rounded-full bg-white/10 px-4 py-1.5 mb-6">
-          <span class="text-sm font-medium text-white/90">🛡️ Free tools &amp; guides for small business owners</span>
-        </div>
-        <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
-          Cybersecurity for <span class="text-accent-400">real businesses</span>, not IT departments
-        </h1>
-        <p class="mt-6 text-lg leading-8 text-white/80 max-w-2xl">
-          Most security advice is written for enterprises with dedicated IT teams. We are different. Free tools, plain-English guides, and practical steps for business owners who just want to protect what they have built.
-        </p>
-        <div class="mt-10 flex flex-wrap gap-4">
-          <a href="/tools/security-assessment/" class="inline-flex items-center justify-center rounded-lg border-2 border-white px-8 py-4 text-base font-bold text-white shadow-lg hover:bg-white hover:text-primary-700 transition-all duration-200 no-underline">
-            Take Free Security Assessment &rarr;
-          </a>
-          <a href="/blog/cybersecurity-101/" class="inline-flex items-center justify-center rounded-lg border-2 border-white/70 px-8 py-4 text-base font-semibold text-white hover:bg-white/15 hover:border-white transition-colors no-underline">
-            Read the 101 Guide
-          </a>
-        </div>
-      </div>
-      <div class="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-3">
-        <div class="rounded-xl bg-white/10 backdrop-blur-sm p-5 border border-white/10">
-          <div class="text-2xl font-bold text-white">63%</div>
-          <p class="mt-1 text-sm text-white/70">of small businesses experienced a cyber attack in the past year</p>
-        </div>
-        <div class="rounded-xl bg-white/10 backdrop-blur-sm p-5 border border-white/10">
-          <div class="text-2xl font-bold text-white">$25,000</div>
-          <p class="mt-1 text-sm text-white/70">average cost of a data breach for a small business</p>
-        </div>
-        <div class="rounded-xl bg-white/10 backdrop-blur-sm p-5 border border-white/10">
-          <div class="text-2xl font-bold text-white">60%</div>
-          <p class="mt-1 text-sm text-white/70">of small businesses close within 6 months of a cyber attack</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <HeroCarousel client:load />
 
   <section class="py-20 bg-white">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -80,10 +44,11 @@ const featuredArticles = [
         <h2 class="section-title">Free Tools to Secure Your Business</h2>
         <p class="section-subtitle max-w-2xl mx-auto">No sign-up required. No email collection. Just practical tools that work.</p>
       </div>
-      <div class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
         <ToolCard title="Security Assessment" description="Answer 20 questions and get a personalized risk score with actionable recommendations. Takes 3 minutes." icon="📋" href="/tools/security-assessment/" />
         <ToolCard title="Password Strength Checker" description="Test how strong your passwords are and learn exactly what makes a password resistant to cracking." icon="🔐" href="/tools/password-checker/" />
         <ToolCard title="Free Tool Comparison" description="Compare the best free security tools side by side. Find the right password manager, antivirus, and backup solution." icon="⚖️" href="/tools/tool-comparison/" />
+        <ToolCard title="Phishing Email Quiz" description="Can your team spot a phishing email? 10 real-world scenarios with instant feedback. Free, no sign-up." icon="🎣" href="/tools/phishing-quiz/" />
       </div>
     </div>
   </section>
