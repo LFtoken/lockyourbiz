@@ -76,7 +76,7 @@ function isSmb(v: CisaVuln) {
 
 // Show most recent 200 for page size, rest available via search
 const displayVulns = allVulns.slice(0, 200);
-const PAGE_SIZE = 25;
+const PAGE_SIZE = 15;
 const totalPages = Math.ceil(displayVulns.length / PAGE_SIZE);
 ---
 
@@ -170,7 +170,7 @@ const totalPages = Math.ceil(displayVulns.length / PAGE_SIZE);
     <!-- Load More -->
     <div class="mt-6 text-center" id="load-more-container">
       <button id="load-more-btn" class="btn-primary cursor-pointer min-h-[44px]">
-        Load More (25 of {displayVulns.length})
+        Load More (15 of {displayVulns.length})
       </button>
       <p class="mt-2 text-xs text-gray-400" id="load-more-status"></p>
     </div>
