@@ -21,10 +21,6 @@ interface CisaResponse {
   vulnerabilities: CisaVuln[];
 }
 
-const THREATS_API = '/api/threats';
-const CISA_FALLBACK = 'https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json';
-
-// Small-business-relevant vendor keywords to highlight
 const SMB_VENDORS = [
   'Microsoft', 'Google', 'Apple', 'Adobe', 'Cisco', 'Fortinet', 'Palo Alto',
   'WordPress', 'Drupal', 'Apache', 'nginx', 'PHP', 'MySQL', 'Zoom', 'Slack',
@@ -69,7 +65,7 @@ function daysAgo(dateStr: string): string {
   return `${Math.floor(diff / 30)} months ago`;
 }
 
-export default function ThreatFeed() {
+export default function ThreatFeed(_props: any) {
   const [data, setData] = useState<CisaResponse | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -77,15 +73,30 @@ export default function ThreatFeed() {
   const [search, setSearch] = useState('');
   const [lastUpdated, setLastUpdated] = useState<string>('');
 
-  const fetchData = async () => {
+  useEffect(() => {
+    // Read build-time embedded data from script tag (no CORS, always works)
+    const el = document.getElementById('threat-data');
+    if (el && el.textContent) {
+      try {
+        const parsed = JSON.parse(el.textContent);
+        if (parsed.data?.vulnerabilities) {
+          setData(parsed.data);
+          setLastUpdated(parsed.buildTime ? new Date(parsed.buildTime).toLocaleString() : '');
+          setLoading(false);
+          return;
+        }
+      } catch {}
+    }
+    // Fallback: live client-side fetch (may hit CORS)
+    fetchLive();
+  }, []);
+
+  const fetchLive = async () => {
     try {
       setLoading(true);
-      // Try Cloudflare Pages Function proxy first, fallback to direct CISA
-      let resp = await fetch(THREATS_API);
-      if (!resp.ok) resp = await fetch(CISA_FALLBACK);
+      const resp = await fetch('https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json');
       if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
       const json: CisaResponse = await resp.json();
-      // Sort newest first
       json.vulnerabilities.sort((a, b) => new Date(b.dateAdded).getTime() - new Date(a.dateAdded).getTime());
       setData(json);
       setLastUpdated(new Date().toLocaleString());
@@ -96,8 +107,6 @@ export default function ThreatFeed() {
       setLoading(false);
     }
   };
-
-  useEffect(() => { fetchData(); }, []);
 
   const filtered = useMemo(() => {
     if (!data) return [];
@@ -116,21 +125,20 @@ export default function ThreatFeed() {
   const smbCount = data?.vulnerabilities.filter(v => isSmbRelevant(v)).length || 0;
   const recentCount = data?.vulnerabilities.filter(v => daysAgo(v.dateAdded).includes('day') || daysAgo(v.dateAdded) === 'Today' || daysAgo(v.dateAdded) === 'Yesterday').length || 0;
 
-  if (loading) return (
+  if (loading && !data) return (
     <div className="text-center py-12">
       <div className="inline-block animate-spin text-3xl mb-4">🔄</div>
-      <p className="text-gray-600">Fetching latest threat intelligence from CISA...</p>
+      <p className="text-gray-600">Loading threat intelligence...</p>
       <p className="text-xs text-gray-400 mt-2">Data source: CISA Known Exploited Vulnerabilities Catalog</p>
     </div>
   );
 
-  if (error) return (
+  if (error && !data) return (
     <div className="rounded-xl bg-red-50 border border-red-200 p-6 text-center">
       <div className="text-3xl mb-2">⚠️</div>
-      <p className="text-red-700 font-semibold">Unable to fetch threat data</p>
+      <p className="text-red-700 font-semibold">Unable to load threat data</p>
       <p className="text-sm text-red-600 mt-1">{error}</p>
-      <button onClick={fetchData} className="mt-4 btn-secondary cursor-pointer min-h-[44px] text-sm">Retry</button>
-      <p className="text-xs text-gray-400 mt-3">The CISA KEV feed may be temporarily unavailable. Please try again.</p>
+      <button onClick={fetchLive} className="mt-4 btn-secondary cursor-pointer min-h-[44px] text-sm">Retry</button>
     </div>
   );
 
@@ -140,15 +148,15 @@ export default function ThreatFeed() {
       <div className="grid grid-cols-1 sm:grid-cols-4 gap-3 mb-6">
         <div className="rounded-xl bg-gray-50 border border-gray-200 p-4 text-center">
           <div className="text-3xl font-extrabold text-primary-700">{data?.count || 0}</div>
-          <div className="text-xs text-gray-600 mt-1">Total Known Exploited Vulns</div>
+          <div className="text-xs text-gray-600 mt-1">Total KEV Entries</div>
         </div>
         <div className="rounded-xl bg-red-50 border border-red-200 p-4 text-center">
           <div className="text-3xl font-extrabold text-red-700">{ransomwareCount}</div>
-          <div className="text-xs text-red-600 mt-1">Used in Ransomware</div>
+          <div className="text-xs text-red-600 mt-1">Ransomware Used</div>
         </div>
         <div className="rounded-xl bg-orange-50 border border-orange-200 p-4 text-center">
           <div className="text-3xl font-extrabold text-orange-700">{smbCount}</div>
-          <div className="text-xs text-orange-600 mt-1">Affecting SMB Tools</div>
+          <div className="text-xs text-orange-600 mt-1">SMB-Relevant</div>
         </div>
         <div className="rounded-xl bg-blue-50 border border-blue-200 p-4 text-center">
           <div className="text-3xl font-extrabold text-blue-700">{recentCount}</div>
@@ -160,7 +168,7 @@ export default function ThreatFeed() {
       <div className="flex flex-wrap items-center gap-2 mb-6">
         {(['all', 'ransomware', 'smb', 'recent'] as const).map(f => (
           <button key={f} onClick={() => setFilter(f)} className={`rounded-full px-4 py-2 text-sm font-medium transition-colors cursor-pointer min-h-[44px] ${filter === f ? 'bg-primary-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`}>
-            {f === 'all' ? 'All Threats' : f === 'ransomware' ? '🔴 Ransomware' : f === 'smb' ? '🏢 SMB-Relevant' : '🆕 This Week'}
+            {f === 'all' ? 'All' : f === 'ransomware' ? '🔴 Ransomware' : f === 'smb' ? '🏢 SMB' : '🆕 Recent'}
           </button>
         ))}
         <input type="text" value={search} onChange={e => setSearch(e.target.value)} placeholder="Search vendor, product, CVE..." className="ml-auto rounded-lg border border-gray-300 px-3 py-2.5 text-sm min-h-[44px] w-full sm:w-64" />
@@ -200,8 +208,8 @@ export default function ThreatFeed() {
 
       {/* Footer */}
       <div className="mt-8 pt-6 border-t border-gray-200 text-center text-xs text-gray-400 space-y-1">
-        <p>Data source: <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener" class="underline">CISA Known Exploited Vulnerabilities Catalog</a></p>
-        <p>Last updated: {lastUpdated} · Auto-refresh on page reload · Total catalog: {data?.catalogVersion || 'N/A'}</p>
+        <p>Data: <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener" className="underline">CISA KEV Catalog</a> · Built at: {buildTime || lastUpdated || 'Unknown'}</p>
+        <p>Page rebuilds on every deployment — data is always fresh. Total catalog: {data?.catalogVersion || 'N/A'}</p>
       </div>
     </div>
   );
