@@ -1,0 +1,24 @@
+name: Daily Threat Feed Update
+
+on:
+  schedule:
+    # Runs every day at 06:00 UTC (configurable)
+    - cron: '0 6 * * *'
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Trigger rebuild via empty commit
+        run: |
+          git config user.name "Threat Feed Bot"
+          git config user.email "bot@lockyourbiz.com"
+          git commit --allow-empty -m "chore: daily threat feed refresh"
+          git push

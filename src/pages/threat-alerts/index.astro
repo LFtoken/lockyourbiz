@@ -76,6 +76,8 @@ function isSmb(v: CisaVuln) {
 
 // Show most recent 200 for page size, rest available via search
 const displayVulns = allVulns.slice(0, 200);
+const PAGE_SIZE = 25;
+const totalPages = Math.ceil(displayVulns.length / PAGE_SIZE);
 ---
 
 <BaseLayout
@@ -140,8 +142,8 @@ const displayVulns = allVulns.slice(0, 200);
 
     <!-- Threat List -->
     <div class="space-y-3" id="threat-list">
-      {displayVulns.map(v => (
-        <details class={`threat-item group rounded-xl border border-gray-200 bg-white hover:border-gray-300 transition-colors ${v.knownRansomwareCampaignUse === 'Known' ? 'border-l-4 border-l-red-400' : ''}`} data-ransomware={v.knownRansomwareCampaignUse === 'Known' ? '1' : '0'} data-smb={isSmb(v) ? '1' : '0'} data-date={v.dateAdded} data-search={`${v.cveID} ${v.vendorProject} ${v.product} ${v.vulnerabilityName}`.toLowerCase()}>
+      {displayVulns.map((v, i) => (
+        <details class={`threat-item group rounded-xl border border-gray-200 bg-white hover:border-gray-300 transition-colors ${v.knownRansomwareCampaignUse === 'Known' ? 'border-l-4 border-l-red-400' : ''} ${i >= PAGE_SIZE ? 'hidden' : ''}`} data-ransomware={v.knownRansomwareCampaignUse === 'Known' ? '1' : '0'} data-smb={isSmb(v) ? '1' : '0'} data-date={v.dateAdded} data-search={`${v.cveID} ${v.vendorProject} ${v.product} ${v.vulnerabilityName}`.toLowerCase()} data-page={String(Math.floor(i / PAGE_SIZE))}>
           <summary class="flex flex-wrap items-center gap-2 px-5 py-4 cursor-pointer min-h-[44px]">
             <span class={`text-xs font-bold px-2 py-0.5 rounded-full whitespace-nowrap ${sevClass(v)}`}>{sevLabel(v)}</span>
             <a href={`https://nvd.nist.gov/vuln/detail/${v.cveID}`} target="_blank" rel="noopener" class="text-sm font-bold text-primary-700 hover:underline" onclick="event.stopPropagation()">{v.cveID}</a>
@@ -165,8 +167,16 @@ const displayVulns = allVulns.slice(0, 200);
       ))}
     </div>
 
+    <!-- Load More -->
+    <div class="mt-6 text-center" id="load-more-container">
+      <button id="load-more-btn" class="btn-primary cursor-pointer min-h-[44px]">
+        Load More (25 of {displayVulns.length})
+      </button>
+      <p class="mt-2 text-xs text-gray-400" id="load-more-status"></p>
+    </div>
+
     <div class="mt-4 text-center text-xs text-gray-400">
-      Showing {displayVulns.length} of {totalCount} entries · Catalog: {catalogVersion} · Updated every site deployment
+      {displayVulns.length} of {totalCount} entries shown · Catalog: {catalogVersion} · <a href="https://github.com/LFtoken/lockyourbiz/actions" class="underline">Auto-rebuilt daily</a>
     </div>
 
     <!-- Curated Monthly Alerts -->
@@ -190,16 +200,36 @@ const displayVulns = allVulns.slice(0, 200);
 </BaseLayout>
 
 <script>
-  // Client-side filtering — same pattern as blog category filter
   const filterBtns = document.querySelectorAll('.filter-btn');
   const searchInput = document.getElementById('threat-search') as HTMLInputElement;
+  const loadMoreBtn = document.getElementById('load-more-btn');
+  const loadMoreContainer = document.getElementById('load-more-container');
+  const loadMoreStatus = document.getElementById('load-more-status');
   const items = document.querySelectorAll('.threat-item');
+  const PAGE_SIZE = {PAGE_SIZE};
 
   let activeFilter = 'all';
+  let visibleCount = PAGE_SIZE;
+
+  function updateLoadMoreButton() {
+    const visibleItems = Array.from(items).filter(el => {
+      const e = el as HTMLElement;
+      if (e.classList.contains('hidden')) return false;
+      return e.style.display !== 'none';
+    });
+    const remaining = visibleItems.length - visibleCount;
+    if (remaining > 0 && loadMoreContainer) {
+      loadMoreContainer.style.display = '';
+      if (loadMoreBtn) loadMoreBtn.textContent = `Load More (${visibleCount} shown, ${remaining} more)`;
+    } else if (loadMoreContainer) {
+      loadMoreContainer.style.display = 'none';
+    }
+  }
 
   function applyFilters() {
     const searchTerm = searchInput?.value.toLowerCase() || '';
     const weekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
+    visibleCount = PAGE_SIZE;
 
     items.forEach((item) => {
       const el = item as HTMLElement;
@@ -208,23 +238,58 @@ const displayVulns = allVulns.slice(0, 200);
       const dateAdded = new Date(el.dataset.date || '');
       const searchText = el.dataset.search || '';
       const isRecent = dateAdded >= weekAgo;
+      const itemPage = parseInt(el.dataset.page || '0');
 
       let show = true;
-
-      // Filter
       if (activeFilter === 'ransomware') show = isRansomware;
       else if (activeFilter === 'smb') show = isSmb;
       else if (activeFilter === 'recent') show = isRecent;
+      if (show && searchTerm) show = searchText.includes(searchTerm);
 
-      // Search
-      if (show && searchTerm) {
-        show = searchText.includes(searchTerm);
+      if (!show) {
+        el.style.display = 'none';
+        el.classList.add('hidden');
+      } else {
+        el.style.display = '';
+        // Only show first PAGE_SIZE, hide rest for load-more
+        const visibleIndex = Array.from(items).filter(i => {
+          const e = i as HTMLElement;
+          return !e.classList.contains('hidden') || e.style.display !== 'none';
+        }).indexOf(el);
+        // Actually simpler: just hide all, then show first visibleCount
       }
-
-      el.style.display = show ? '' : 'none';
     });
+
+    // Recalculate: show matching items up to visibleCount
+    let count = 0;
+    items.forEach((item) => {
+      const el = item as HTMLElement;
+      if (el.style.display === 'none') return;
+      if (count < visibleCount) {
+        el.classList.remove('hidden');
+      } else {
+        el.classList.add('hidden');
+      }
+      count++;
+    });
+
+    updateLoadMoreButton();
   }
 
+  // Load more
+  loadMoreBtn?.addEventListener('click', () => {
+    visibleCount += PAGE_SIZE;
+    let count = 0;
+    items.forEach((item) => {
+      const el = item as HTMLElement;
+      if (el.style.display === 'none') { el.classList.add('hidden'); return; }
+      if (count < visibleCount) el.classList.remove('hidden');
+      count++;
+    });
+    updateLoadMoreButton();
+  });
+
+  // Filters
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       activeFilter = (btn as HTMLElement).dataset.filter || 'all';
@@ -238,4 +303,7 @@ const displayVulns = allVulns.slice(0, 200);
   });
 
   searchInput?.addEventListener('input', applyFilters);
+
+  // Init
+  updateLoadMoreButton();
 </script>
