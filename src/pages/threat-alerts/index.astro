@@ -199,13 +199,13 @@ const totalPages = Math.ceil(displayVulns.length / PAGE_SIZE);
   </div>
 </BaseLayout>
 
-<script>
+<script is:inline>
   const filterBtns = document.querySelectorAll('.filter-btn');
   const searchInput = document.getElementById('threat-search');
   const loadMoreBtn = document.getElementById('load-more-btn');
   const loadMoreContainer = document.getElementById('load-more-container');
   const items = document.querySelectorAll('.threat-item');
-  const PAGE_SIZE = {PAGE_SIZE};
+  const PAGE_SIZE = 15;
 
   let activeFilter = 'all';
   let visibleCount = PAGE_SIZE;
