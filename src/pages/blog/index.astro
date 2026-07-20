@@ -4,6 +4,46 @@ import ArticleCard from '../../components/ArticleCard.astro';
 
 const articles = [
   {
+    title: 'Business Email Compromise: Stop CEO Fraud & Wire Transfer Scams',
+    excerpt: 'The FBI calls BEC the most expensive cybercrime — $2.7 billion in losses. Learn how attackers impersonate executives and vendors, and the one policy that stops it.',
+    href: '/blog/bec-prevention/',
+    date: '2026-07-22',
+    category: 'Threats',
+    readTime: '9',
+  },
+  {
+    title: 'DMARC, SPF & DKIM: Stop Email Spoofing in 30 Minutes',
+    excerpt: 'Anyone can send email that looks like it came from your domain. Three free DNS records stop this. Step-by-step for Google Workspace and Microsoft 365.',
+    href: '/blog/email-authentication-guide/',
+    date: '2026-07-22',
+    category: 'Tools & Tech',
+    readTime: '8',
+  },
+  {
+    title: 'PCI DSS Compliance for Small Business: What You Actually Need to Do',
+    excerpt: 'If you accept credit cards, PCI DSS applies to you. But for most small businesses, compliance is far simpler than it sounds — especially if you use Stripe or PayPal.',
+    href: '/blog/pci-dss-compliance/',
+    date: '2026-07-22',
+    category: 'Compliance',
+    readTime: '8',
+  },
+  {
+    title: 'Physical Security Guide: Locks, Cameras & Access Control',
+    excerpt: 'The best firewall means nothing if someone can walk into your office. Server room locks, security cameras, visitor policies, and device security for small business.',
+    href: '/blog/physical-security/',
+    date: '2026-07-22',
+    category: 'Hardware & Services',
+    readTime: '7',
+  },
+  {
+    title: 'Social Media Security: Stop Hackers from Hijacking Your Brand',
+    excerpt: 'A hacked Instagram or Facebook Business account can destroy years of brand building. Audit your admins, enable MFA, and claim your brand on every platform.',
+    href: '/blog/social-media-security/',
+    date: '2026-07-22',
+    category: 'Tools & Tech',
+    readTime: '7',
+  },
+  {
     title: 'Cloud & SaaS Security: Protect Your Business from Account Takeover & Shadow IT',
     excerpt: 'Your business runs on 40-60 SaaS apps — many of which you have forgotten about. Lock them down with MFA, SSO, sharing controls, and a proper offboarding process.',
     href: '/blog/saas-security-guide/',
@@ -141,7 +181,7 @@ const articles = [
   },
 ];
 
-const categories = ['All', 'Getting Started', 'Threats', 'Tools & Tech', 'Hardware & Services', 'Policies & Planning'];
+const categories = ['All', 'Getting Started', 'Threats', 'Tools & Tech', 'Hardware & Services', 'Policies & Planning', 'Compliance'];
 ---
 
 <BaseLayout

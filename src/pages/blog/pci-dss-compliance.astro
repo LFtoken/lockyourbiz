@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="PCI DSS Compliance for Small Business — Simple Guide 2026"
+  description="PCI DSS explained for small business owners who accept credit cards. What the 12 requirements mean, how to simplify compliance with Stripe/PayPal, and SAQ self-assessment steps."
+>
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <article class="mx-auto max-w-3xl">
+      <div class="flex flex-wrap items-center gap-3 text-sm text-gray-500 mb-6">
+        <time datetime="2026-07-22">July 22, 2026</time>
+        <span class="inline-flex items-center rounded-full bg-primary-50 px-3 py-1 text-xs font-medium text-primary-700">Compliance</span>
+        <span>8 min read</span>
+      </div>
+
+      <h1 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">PCI DSS Compliance for Small Business: What You Actually Need to Do</h1>
+      <p class="mt-4 text-lg leading-8 text-gray-600">
+        If you accept credit cards, PCI DSS applies to you — period. But for most small businesses, compliance is far simpler than the 139-page document suggests. Here is what actually matters and how to get it done without hiring a consultant.
+      </p>
+
+      <div class="mt-10 prose prose-lg prose-gray max-w-none">
+        <h2>The Short Version: Use Stripe and You Are 90% Done</h2>
+        <p>
+          Let me save you 1,000 words of anxiety: if you use <strong>Stripe, PayPal, Square, or Braintree</strong> to handle credit card payments on your website, you have already outsourced the hardest parts of PCI DSS compliance. These payment gateways are PCI DSS Level 1 certified (the highest level), and they handle card data so you never have to.
+        </p>
+        <p>
+          The critical distinction is between <strong>handling</strong> card data and <strong>redirecting</strong> customers to someone who handles it. If your checkout page redirects to Stripe or uses Stripe's embedded checkout (where the card number fields are hosted by Stripe), your website never touches card data. This is the "easy mode" of PCI compliance, called <strong>SAQ A</strong> — a 22-question self-assessment instead of a 329-question audit.
+        </p>
+
+        <div class="not-prose rounded-2xl bg-accent-50 border border-accent-200 p-6 my-8">
+          <h3 class="text-lg font-bold text-accent-900">The PCI DSS Cheat Sheet for Small Business</h3>
+          <div class="mt-3 space-y-3 text-sm">
+            <div class="bg-white rounded-lg p-3"><strong>🟢 SAQ A (22 questions):</strong> You use Stripe/PayPal/Square embedded checkout. Card data never touches your server. Compliance takes about 2 hours.</div>
+            <div class="bg-white rounded-lg p-3"><strong>🟡 SAQ A-EP (191 questions):</strong> You host the checkout page yourself but send card data to Stripe via API. More complex. If you are not a developer, stay in SAQ A.</div>
+            <div class="bg-white rounded-lg p-3"><strong>🔴 SAQ D (329 questions):</strong> You store, process, or transmit card data yourself. This requires quarterly external scans, penetration tests, and potentially an on-site audit. Avoid this.</div>
+          </div>
+        </div>
+
+        <h2>What PCI DSS Actually Requires</h2>
+        <p>The full standard has 12 requirements across 6 control objectives. Here is what they mean for a small business in plain English:</p>
+
+        <ol>
+          <li><strong>Install and maintain a firewall.</strong> Use Cloudflare (free) on your website. Use a router with a built-in firewall for your office network. Document your firewall rules.</li>
+          <li><strong>Do not use vendor default passwords.</strong> Change every default password on every device — routers, POS terminals, WiFi access points, IP cameras. Use a password manager to generate unique ones.</li>
+          <li><strong>Protect stored cardholder data.</strong> If you do not store card data (which you should not), this requirement is mostly satisfied. If you do store it, it must be encrypted with AES-256 and access must be strictly limited.</li>
+          <li><strong>Encrypt card data in transit.</strong> HTTPS everywhere. That means an SSL certificate on your website, encrypted WiFi, and never emailing full card numbers.</li>
+          <li><strong>Use and regularly update antivirus.</strong> Windows Defender counts. Enable automatic updates.</li>
+          <li><strong>Develop and maintain secure systems.</strong> Keep your CMS, plugins, and operating system updated. Remove unused software.</li>
+          <li><strong>Restrict access to card data by business need-to-know.</strong> Your marketing person does not need to see full card numbers. Nobody needs to see full card numbers.</li>
+          <li><strong>Assign a unique ID to each person with computer access.</strong> No shared logins. Every employee has their own account.</li>
+          <li><strong>Restrict physical access to cardholder data.</strong> Lock the server room. Lock the office. Do not leave POS terminals unattended.</li>
+          <li><strong>Track and monitor all access to network resources and card data.</strong> Turn on logging. Review it occasionally. Know who accessed what.</li>
+          <li><strong>Regularly test security systems.</strong> Run quarterly vulnerability scans if you are SAQ C or D. Use a free tool like OpenVAS or pay an Approved Scanning Vendor (ASV) — typically $200-500/year.</li>
+          <li><strong>Maintain an information security policy.</strong> Write down your security rules. It does not need to be long — a 3-page document covering passwords, access, updates, and incident response is sufficient.</li>
+        </ol>
+
+        <h2>The Self-Assessment Questionnaire (SAQ)</h2>
+        <p>
+          The SAQ is how you prove PCI compliance. It is a checklist of yes/no questions about your security practices. Most small businesses complete <strong>SAQ A</strong> (22 questions) because they use a hosted payment page. You fill it out once a year, keep it on file, and provide it to your payment processor or bank if they ask.
+        </p>
+        <p>
+          Key questions from SAQ A that trip up small businesses:
+        </p>
+        <ul>
+          <li>"Do you have a firewall installed and configured?" — Cloudflare counts. Document that you use it.</li>
+          <li>"Do you have a written information security policy?" — Write one. A 3-page document is enough.</li>
+          <li>"Do you restrict access to cardholder data to only those who need it?" — If you never see card data, answer yes and explain that your payment gateway handles it.</li>
+        </ul>
+
+        <h2>In-Person Payments: Your POS Terminal</h2>
+        <p>
+          If you accept cards in person, your POS terminal (the card reader) also needs to be PCI compliant. The good news: almost all modern terminals are. Use <strong>EMV chip readers</strong> (not magstripe-only), ensure the terminal is from a PCI-certified manufacturer (Square, Clover, Dejavoo all are), and verify that your terminal's firmware is set to auto-update.
+        </p>
+        <p>
+          <strong>Never</strong> write down customer card numbers on paper. Never store card numbers in a spreadsheet. Never email full card numbers. These are PCI violations and common causes of breaches at small businesses.
+        </p>
+
+        <h2>The Bottom Line</h2>
+        <p>
+          PCI DSS sounds terrifying, but for most small businesses the practical reality is simple: use a hosted payment gateway, keep your website updated, change default passwords, enable HTTPS, and fill out an annual self-assessment. That covers 95% of what a typical small business needs to do.
+        </p>
+      </div>
+
+      <div class="mt-12 rounded-2xl bg-primary-50 p-6">
+        <h2 class="text-lg font-bold text-primary-900">Related Guides</h2>
+        <ul class="mt-3 space-y-2">
+          <li><a href="/compliance/" class="text-primary-700 hover:underline font-medium">Global Compliance Guides →</a></li>
+          <li><a href="/blog/website-security-guide/" class="text-primary-700 hover:underline font-medium">Website Security Guide →</a></li>
+          <li><a href="/industries/ecommerce/" class="text-primary-700 hover:underline font-medium">E-Commerce Security Guide →</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</BaseLayout>

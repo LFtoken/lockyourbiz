@@ -1,0 +1,108 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="DMARC, SPF & DKIM Guide for Small Business — Stop Email Spoofing"
+  description="Set up SPF, DKIM and DMARC to stop attackers from spoofing your email domain. Step-by-step for Google Workspace and Microsoft 365. Free, takes 30 minutes."
+>
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <article class="mx-auto max-w-3xl">
+      <div class="flex flex-wrap items-center gap-3 text-sm text-gray-500 mb-6">
+        <time datetime="2026-07-22">July 22, 2026</time>
+        <span class="inline-flex items-center rounded-full bg-primary-50 px-3 py-1 text-xs font-medium text-primary-700">Tools & Tech</span>
+        <span>8 min read</span>
+      </div>
+
+      <h1 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Email Authentication: Stop Attackers from Sending Email That Looks Like It Came from You</h1>
+      <p class="mt-4 text-lg leading-8 text-gray-600">
+        Right now, anyone can send an email that looks like it came from your domain. SPF, DKIM, and DMARC are three free DNS records that stop this. Set them up in 30 minutes — no technical skills required.
+      </p>
+
+      <div class="mt-10 prose prose-lg prose-gray max-w-none">
+        <h2>The Problem: Your Domain Is Being Impersonated Right Now</h2>
+        <p>
+          Email was designed in the 1970s, when everyone on the internet knew each other. There is no built-in way to verify that an email claiming to be from <code>@yourcompany.com</code> actually came from your company. Attackers exploit this every day — sending fake invoices from "your" domain to your customers, phishing emails to your employees that appear to come from HR, and vendor payment requests that look like they came from your CEO.
+        </p>
+        <p>
+          The fix is three DNS records that together tell the world: "If an email claims to be from our domain but did not come from our approved mail servers, it is fake. Reject it." These records are <strong>free to set up</strong> and take about 30 minutes for most small businesses.
+        </p>
+
+        <h2>The Three Protocols Explained (in Plain English)</h2>
+
+        <div class="not-prose mt-6 space-y-4">
+          <div class="rounded-lg bg-gray-50 p-5">
+            <h3 class="font-semibold text-gray-900">📋 SPF (Sender Policy Framework)</h3>
+            <p class="mt-1 text-sm text-gray-700">SPF is a list of servers authorized to send email from your domain. It is like a bouncer at a club with a guest list. If a server not on the list tries to send email as @yourcompany.com, receiving mail servers know it is unauthorized.</p>
+            <p class="mt-1 text-xs text-gray-500">Example: "v=spf1 include:_spf.google.com ~all" means "Only Google's mail servers can send email for this domain. Treat anything else as suspicious."</p>
+          </div>
+          <div class="rounded-lg bg-gray-50 p-5">
+            <h3 class="font-semibold text-gray-900">🔑 DKIM (DomainKeys Identified Mail)</h3>
+            <p class="mt-1 text-sm text-gray-700">DKIM adds a digital signature to every email you send. The receiving server checks this signature against a public key published in your DNS. If the signature is valid, the email has not been tampered with in transit. Think of it as a tamper-evident seal on a package.</p>
+          </div>
+          <div class="rounded-lg bg-gray-50 p-5">
+            <h3 class="font-semibold text-gray-900">🛡️ DMARC (Domain-based Message Authentication, Reporting & Conformance)</h3>
+            <p class="mt-1 text-sm text-gray-700">DMARC is the policy layer on top of SPF and DKIM. It tells receiving servers: "Here is what to do with emails that fail SPF or DKIM checks — quarantine them, reject them, or let them through." It also sends you reports showing who is trying to spoof your domain (and how often — you will be surprised).</p>
+          </div>
+        </div>
+
+        <h2>Step-by-Step: Set Up All Three in 30 Minutes</h2>
+
+        <h3>Step 1: Set up SPF</h3>
+        <p>Log into your domain registrar's DNS management (GoDaddy, Namecheap, Cloudflare, etc.). Create a <strong>TXT record</strong> for your root domain (@) with the appropriate value for your email provider:</p>
+        <ul>
+          <li><strong>Google Workspace:</strong> <code>v=spf1 include:_spf.google.com ~all</code></li>
+          <li><strong>Microsoft 365:</strong> <code>v=spf1 include:spf.protection.outlook.com ~all</code></li>
+          <li><strong>Both + other services:</strong> Combine them: <code>v=spf1 include:_spf.google.com include:spf.protection.outlook.com ~all</code></li>
+        </ul>
+        <p>The <code>~all</code> at the end means "soft fail" — suspicious but not rejected. Once you are confident your SPF record is correct, you can change this to <code>-all</code> (hard fail — reject anything not on the list).</p>
+
+        <h3>Step 2: Enable DKIM</h3>
+        <p>DKIM is enabled in your email admin console, not your DNS:</p>
+        <ul>
+          <li><strong>Google Workspace:</strong> Admin → Apps → Google Workspace → Gmail → Authenticate email → Generate DKIM key. Copy the provided DNS record and add it to your domain's DNS.</li>
+          <li><strong>Microsoft 365:</strong> DKIM is enabled automatically for custom domains. Verify in Security Admin → Email & collaboration → DKIM.</li>
+        </ul>
+
+        <h3>Step 3: Publish a DMARC policy</h3>
+        <p>Create a TXT record at <code>_dmarc.yourdomain.com</code> with a policy. Start with monitoring mode first:</p>
+        <p><code>v=DMARC1; p=none; rua=mailto:you@yourcompany.com; ruf=mailto:you@yourcompany.com</code></p>
+        <p>This tells receiving servers: "Start checking SPF/DKIM, do not reject anything yet, and send me reports." After a few weeks of reviewing reports, tighten it:</p>
+        <p><code>v=DMARC1; p=quarantine; pct=100; rua=mailto:you@yourcompany.com</code></p>
+        <p>Eventually, move to <code>p=reject</code> — this is the gold standard. It tells the world: "If email from my domain fails SPF or DKIM, do not deliver it at all."</p>
+
+        <div class="not-prose rounded-xl bg-yellow-50 border border-yellow-200 p-5 my-6">
+          <h3 class="font-semibold text-yellow-900">⚠️ Common Mistakes to Avoid</h3>
+          <ul class="mt-2 space-y-1 text-sm text-yellow-800">
+            <li>• <strong>Forgetting third-party senders:</strong> If you use Mailchimp, HubSpot, or any service that sends email "from" your domain, you must include them in your SPF record. Most services provide their SPF include value in their documentation.</li>
+            <li>• <strong>Jumping straight to p=reject:</strong> Start with p=none. Monitor for a few weeks. Make sure legitimate email is not being flagged. Then escalate.</li>
+            <li>• <strong>Only setting SPF without DKIM:</strong> SPF alone is not enough. DKIM adds the signature that DMARC checks. You need both for full protection.</li>
+            <li>• <strong>Not monitoring DMARC reports:</strong> The reports tell you who is spoofing your domain. They are worth reading — many businesses discover spoofing campaigns they had no idea about.</li>
+          </ul>
+        </div>
+
+        <h2>Free Tools to Check Your Setup</h2>
+        <ul>
+          <li><a href="https://mxtoolbox.com/spf.aspx" target="_blank" rel="noopener">MXToolbox SPF Checker</a> — instant validation</li>
+          <li><a href="https://mxtoolbox.com/dkim.aspx" target="_blank" rel="noopener">MXToolbox DKIM Checker</a></li>
+          <li><a href="https://dmarcian.com/dmarc-inspector/" target="_blank" rel="noopener">Dmarcian DMARC Inspector</a> — validate and test your DMARC record</li>
+          <li>Google Admin Toolbox — <a href="https://toolbox.googleapps.com/apps/checkmx/" target="_blank" rel="noopener">Check MX</a> for Google Workspace users</li>
+        </ul>
+
+        <h2>The Bottom Line</h2>
+        <p>
+          SPF, DKIM, and DMARC are not optional anymore. Google and Yahoo started requiring DMARC for bulk senders in 2024. Without these records, your email is more likely to land in spam folders, and your domain is trivial for attackers to impersonate. The three records take about 30 minutes to set up, cost nothing, and protect both your business and your customers from one of the most common and effective attack techniques.
+        </p>
+      </div>
+
+      <div class="mt-12 rounded-2xl bg-primary-50 p-6">
+        <h2 class="text-lg font-bold text-primary-900">Related Guides</h2>
+        <ul class="mt-3 space-y-2">
+          <li><a href="/blog/phishing-prevention/" class="text-primary-700 hover:underline font-medium">Phishing Prevention: 7 Red Flags →</a></li>
+          <li><a href="/blog/social-engineering-defense/" class="text-primary-700 hover:underline font-medium">Social Engineering Defense →</a></li>
+          <li><a href="/tool-reviews/email-security/" class="text-primary-700 hover:underline font-medium">Email Security Gateway Comparison →</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</BaseLayout>

@@ -1,0 +1,102 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Social Media Account Security for Business — Stop Hackers from Hijacking Your Brand"
+  description="Protect your Instagram, Facebook, LinkedIn and TikTok business accounts from takeover. MFA setup, admin audit, recovery process, and what to do if you get hacked."
+>
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <article class="mx-auto max-w-3xl">
+      <div class="flex flex-wrap items-center gap-3 text-sm text-gray-500 mb-6">
+        <time datetime="2026-07-22">July 22, 2026</time>
+        <span class="inline-flex items-center rounded-full bg-primary-50 px-3 py-1 text-xs font-medium text-primary-700">Tools & Tech</span>
+        <span>7 min read</span>
+      </div>
+
+      <h1 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Social Media Security: When Your Instagram Gets Hacked and Suddenly You Are Selling Cryptocurrency</h1>
+      <p class="mt-4 text-lg leading-8 text-gray-600">
+        A hacked Facebook Business account can lock you out of your own ad campaigns. A compromised Instagram can destroy years of brand building in minutes. Here is how to lock down your social media accounts — before someone else takes them over.
+      </p>
+
+      <div class="mt-10 prose prose-lg prose-gray max-w-none">
+        <h2>Your Social Media Is a Bigger Target Than Your Website</h2>
+        <p>
+          Small business owners often obsess over website security while completely neglecting their social media accounts. This is backwards. Your Instagram or Facebook Business page is often <strong>more valuable to attackers</strong> than your website. A hacked Facebook page with 5,000 followers can be used to run scam ads charged to your credit card. A hijacked LinkedIn company page can be used to phish your employees and customers. A compromised TikTok account can destroy your brand reputation in hours with offensive content.
+        </p>
+        <p>
+          The most common attack path: a phishing email targeting your social media manager. They click a link, enter their credentials on a fake login page, and the attacker now owns your brand's social presence. Recovery can take weeks — if it happens at all.
+        </p>
+
+        <h2>Step 1: Audit Who Has Access</h2>
+        <p>
+          The most common social media security failure is admin sprawl. Over the years, you have given access to employees, interns, marketing agencies, and freelance social media managers — many of whom no longer work with you. Every one of those accounts is a potential entry point.
+        </p>
+
+        <div class="not-prose mt-4 space-y-3 text-sm">
+          <div class="rounded-lg bg-gray-50 p-4">
+            <strong>📱 Facebook Business Suite:</strong> Business Settings → People → Review every person with access. Remove anyone who no longer needs it. Check what level of access each person has — does the summer intern really need admin?
+          </div>
+          <div class="rounded-lg bg-gray-50 p-4">
+            <strong>📸 Instagram:</strong> Settings → Account → Linked Accounts. Check which Facebook page is connected. Review authorized apps and remove unused integrations.
+          </div>
+          <div class="rounded-lg bg-gray-50 p-4">
+            <strong>💼 LinkedIn:</strong> Company Page → Admin Tools → Page Admins. Remove former employees. Require 2-step verification for all admins.
+          </div>
+          <div class="rounded-lg bg-gray-50 p-4">
+            <strong>🐦 X/Twitter:</strong> Settings → Security and Account Access → Delegate. Remove old team members. Check connected apps.
+          </div>
+          <div class="rounded-lg bg-gray-50 p-4">
+            <strong>🎵 TikTok:</strong> Business Suite → Account Management → Remove unauthorized users.
+          </div>
+        </div>
+
+        <h2>Step 2: Enable MFA Everywhere</h2>
+        <p>
+          Every social media platform supports MFA. <strong>Enable it.</strong> Use an authenticator app, not SMS. The social media manager's personal account is often the gateway to the business account — make sure their personal account has MFA too.
+        </p>
+        <p>
+          For shared access accounts (where multiple people need to post), use a <strong>password manager with shared vaults</strong> (Bitwarden Teams, 1Password Business). Store the MFA seed in the shared vault so that authorized team members can generate codes. Never share MFA codes via SMS or Slack — if those get compromised, the attacker now has both the password and the MFA code.
+        </p>
+
+        <h2>Step 3: Lock Down Your Brand Identity</h2>
+        <ul>
+          <li><strong>Claim your brand on every platform — even ones you do not use.</strong> If you have not registered @YourBusiness on TikTok, someone else can. They will impersonate your brand, run scams in your name, and there is very little you can do about it after the fact. Spend 30 minutes claiming your handle on every major platform, even if you never post there.</li>
+          <li><strong>Set up two-factor for your domain registrar.</strong> If someone gets into your GoDaddy or Namecheap account, they can redirect your website, intercept your email, and use your domain to send phishing emails that pass SPF/DKIM checks. Your domain registrar account is the most important account you own — lock it with a hardware key if possible.</li>
+          <li><strong>Register common misspellings of your domain.</strong> If your business is "SmithConsulting.com," also register "SmithConsulting.co" and "Smith-Consulting.com." Redirect them to your main site. Prevents impersonation domains.</li>
+        </ul>
+
+        <h2>Step 4: What to Do When You Get Hacked</h2>
+        <p>Social media account recovery is notoriously difficult. The platforms have minimal support for small businesses. Your best strategy is preparation:</p>
+        <ol>
+          <li><strong>Save your Facebook Business ID and Instagram account ID somewhere offline.</strong> When you contact support, they will ask for these. If you are locked out, you cannot find them.</li>
+          <li><strong>Keep a record of when you created each account and from what email address.</strong> Support will ask: "What email address was used to create this account?" If you cannot answer, you cannot prove ownership.</li>
+          <li><strong>Maintain at least two admin accounts on every platform.</strong> If your only admin gets locked out or leaves the company, you are stuck. Two admins minimum, always.</li>
+          <li><strong>If you get hacked:</strong> immediately contact the platform's business support. Facebook Business Support is accessible through your ads account. LinkedIn has a dedicated business support team. Report the compromise, provide proof of ownership, and request account recovery.</li>
+          <li><strong>While waiting for recovery:</strong> post from an alternate account explaining that your main account was compromised. Alert your email list. Post on other platforms. Do not let the attacker control the narrative.</li>
+        </ol>
+
+        <div class="not-prose rounded-xl bg-red-50 border border-red-200 p-5 my-6">
+          <h3 class="font-semibold text-red-900">🚨 Red Flag: "Copyright Violation" DM Scams</h3>
+          <p class="mt-2 text-sm text-red-800">
+            If you receive a direct message claiming you have violated copyright and your account will be suspended unless you click a link to appeal — <strong>it is a scam.</strong> This is one of the most common social media phishing attacks right now. The link leads to a fake login page. Instagram and Facebook will never send account warnings via DM. They use in-app notifications or email.
+          </p>
+        </div>
+
+        <h2>The Bottom Line</h2>
+        <p>
+          Your social media accounts are a business asset worth real money — ad accounts with stored payment methods, audiences built over years, and brand trust earned one post at a time. Treat them with the same security care you treat your bank account. Audit your admins, enable MFA, claim your brand on every platform, and have a recovery plan. The cost of prevention is an afternoon of work. The cost of recovery is weeks of downtime and potentially permanent reputation damage.
+        </p>
+      </div>
+
+      <div class="mt-12 rounded-2xl bg-primary-50 p-6">
+        <h2 class="text-lg font-bold text-primary-900">Related Guides</h2>
+        <ul class="mt-3 space-y-2">
+          <li><a href="/blog/phishing-prevention/" class="text-primary-700 hover:underline font-medium">Phishing Prevention Guide →</a></li>
+          <li><a href="/blog/email-authentication-guide/" class="text-primary-700 hover:underline font-medium">DMARC, SPF & DKIM Guide →</a></li>
+          <li><a href="/tool-reviews/password-managers/" class="text-primary-700 hover:underline font-medium">Password Manager Comparison →</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</BaseLayout>

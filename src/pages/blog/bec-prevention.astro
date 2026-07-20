@@ -1,0 +1,112 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Business Email Compromise (BEC) — How to Stop CEO Fraud & Wire Transfer Scams"
+  description="BEC is the most expensive cybercrime — $2.7 billion lost annually. Learn how to spot fake CEO emails, vendor scams, and wire transfer fraud. Includes verification policy template."
+>
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <article class="mx-auto max-w-3xl">
+      <div class="flex flex-wrap items-center gap-3 text-sm text-gray-500 mb-6">
+        <time datetime="2026-07-22">July 22, 2026</time>
+        <span class="inline-flex items-center rounded-full bg-primary-50 px-3 py-1 text-xs font-medium text-primary-700">Threats</span>
+        <span>9 min read</span>
+      </div>
+
+      <h1 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Business Email Compromise: The $2.7 Billion Scam That Targets Your Inbox</h1>
+      <p class="mt-4 text-lg leading-8 text-gray-600">
+        The FBI calls BEC the most financially damaging cybercrime. Attackers impersonate your CEO, vendors, and clients — tricking your team into wiring money to fraudulent accounts. No malware, no hacking, just social engineering. Here is how to stop it.
+      </p>
+
+      <div class="mt-10 prose prose-lg prose-gray max-w-none">
+        <div class="not-prose rounded-2xl bg-red-50 border border-red-200 p-6 my-8">
+          <h3 class="text-lg font-bold text-red-900">BEC by the Numbers</h3>
+          <div class="mt-3 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+            <div><div class="text-2xl font-extrabold text-red-700">$2.7B</div><p class="text-xs text-red-700 mt-1">total BEC losses reported to FBI (2024)</p></div>
+            <div><div class="text-2xl font-extrabold text-red-700">$137K</div><p class="text-xs text-red-700 mt-1">median loss per BEC incident for small business</p></div>
+            <div><div class="text-2xl font-extrabold text-red-700">71%</div><p class="text-xs text-red-700 mt-1">of BEC attacks target companies with fewer than 100 employees</p></div>
+          </div>
+        </div>
+
+        <h2>What Business Email Compromise Actually Looks Like</h2>
+        <p>
+          Unlike phishing (which casts a wide net), BEC attacks are targeted and sophisticated. The attacker researches your company — who the CEO is, who handles payments, which vendors you work with, when people are on vacation. Then they craft an email that looks exactly like it came from the CEO, a vendor, or a client. The email is urgent, it references real projects and real people, and it asks for a wire transfer or sensitive information.
+        </p>
+
+        <p>The four most common BEC scenarios:</p>
+
+        <div class="not-prose mt-4 space-y-3">
+          <div class="rounded-lg bg-gray-50 p-4">
+            <strong>👔 CEO Fraud:</strong> An email "from the CEO" to the finance person: "I need you to process an urgent wire transfer to close a deal. I am in meetings all day and cannot take a call. Here are the bank details." The email address is spoofed or slightly altered (ceo@yourcompnay.com — note the missing 'a').
+          </div>
+          <div class="rounded-lg bg-gray-50 p-4">
+            <strong>🏢 Vendor Impersonation:</strong> An email "from a vendor you regularly work with": "We have changed banks. Please update our payment details and send the next invoice payment to this new account." The attacker has been monitoring email threads and knows exactly which vendors to impersonate.
+          </div>
+          <div class="rounded-lg bg-gray-50 p-4">
+            <strong>👤 Account Compromise:</strong> A real employee's email account is hacked. The attacker reads through email threads, learns the company's payment processes, and sends targeted requests to clients and vendors from a legitimate email address. This is the hardest to detect because the email really does come from the employee's account.
+          </div>
+          <div class="rounded-lg bg-gray-50 p-4">
+            <strong>📋 Payroll Diversion:</strong> An email "from an employee" to HR: "I have changed banks. Please update my direct deposit information." The employee's salary now goes to the attacker's account. This is particularly common during onboarding when HR expects new bank details.
+          </div>
+        </div>
+
+        <h2>Why BEC Works — and Why Your Business Is Vulnerable</h2>
+        <p>
+          BEC works because it bypasses every technical security control you have. There is no malware for your antivirus to detect. No malicious link for your spam filter to block. No attachment to sandbox. Just words in an email that look exactly like the words your CEO would write — because the attacker copied them from your CEO's LinkedIn posts and public interviews.
+        </p>
+        <p>
+          Small businesses are specifically targeted because:
+        </p>
+        <ul>
+          <li>Decision-makers are accessible — there is no security team screening emails to the CEO</li>
+          <li>Payment processes are informal — "just send the wire" does not require three levels of approval</li>
+          <li>Employees want to be helpful — especially to the boss, especially when something is "urgent"</li>
+        </ul>
+
+        <div class="not-prose rounded-xl bg-orange-50 border border-orange-200 p-5 my-6">
+          <h3 class="font-semibold text-orange-900">⚡ The One Policy That Stops 90% of BEC Attacks</h3>
+          <p class="mt-2 text-sm text-orange-800">
+            <strong>Any financial request received by email must be verified through a SECOND, independent channel before action is taken.</strong> Wire transfer request? Call the CEO on a known number (not the number in the email). Vendor bank change? Call your vendor contact at their known phone number. Payroll direct deposit change? Confirm in person or via video call with the employee.
+          </p>
+          <p class="mt-2 text-sm text-orange-800">
+            This policy must come from the top and be non-negotiable. The CEO must say: "Even if it looks like it came from me, even if I actually did send it — you verify by phone before sending money." This removes the social pressure that BEC exploits.
+          </p>
+        </div>
+
+        <h2>BEC Prevention Checklist</h2>
+        <ol>
+          <li><strong>Implement the verification policy above.</strong> Write it down. Have everyone sign it. Enforce it. No exceptions for "really urgent" requests.</li>
+          <li><strong>Set up DMARC with p=reject.</strong> This prevents attackers from spoofing your domain in email headers. See our DMARC/SPF/DKIM guide for setup instructions.</li>
+          <li><strong>Enable MFA on all email accounts.</strong> The account compromise scenario depends on the attacker being able to log into a real email account. MFA stops this — a stolen password is useless without the second factor.</li>
+          <li><strong>Add an external banner to all incoming email.</strong> Both Google Workspace and Microsoft 365 can prepend a warning like "[EXTERNAL]" to every email that comes from outside your organization. This is not foolproof, but it makes spoofed internal emails slightly harder to miss.</li>
+          <li><strong>Train your finance and HR teams specifically.</strong> These are the two departments that handle money and sensitive data changes. They need targeted BEC training, not just general phishing awareness. Show them real examples of BEC emails.</li>
+          <li><strong>Flag emails where the display name matches an executive but the email address is external.</strong> Advanced email security gateways (Avanan, Proofpoint) do this automatically. For small budgets, create a mail flow rule that prepends a warning.</li>
+          <li><strong>Review and limit who can approve payments.</strong> Reduce the number of people with authority to send wires. Require dual authorization for amounts over a threshold. The fewer people who can say "send money," the fewer targets for BEC attackers.</li>
+        </ol>
+
+        <h2>What to Do If You Have Already Sent the Money</h2>
+        <ol>
+          <li><strong>Contact your bank immediately.</strong> Ask for the wire transfer to be recalled. This must happen within hours — ideally within minutes. After 24-48 hours, recovery rates drop sharply.</li>
+          <li><strong>File a report with the FBI's IC3</strong> at ic3.gov. Include the wire transfer details, the attacker's bank account information, and all email headers from the BEC message.</li>
+          <li><strong>Contact your local FBI field office.</strong> The FBI has a Financial Fraud Kill Chain process specifically for BEC. In some cases, they can freeze the recipient account before the money is moved again.</li>
+          <li><strong>Notify your cyber insurance provider.</strong> BEC losses may be covered, but notification timing is critical — many policies require immediate notification.</li>
+        </ol>
+
+        <h2>The Bottom Line</h2>
+        <p>
+          BEC is not a technology problem — it is a process problem. The fix is not a better spam filter. The fix is a policy that says: <strong>no financial action happens based on an email alone.</strong> Ever. For any amount. No matter how urgent the email sounds or who it appears to come from. Implement that policy today, train your team, and you have eliminated the single most expensive threat to your business.
+        </p>
+      </div>
+
+      <div class="mt-12 rounded-2xl bg-primary-50 p-6">
+        <h2 class="text-lg font-bold text-primary-900">Related Guides</h2>
+        <ul class="mt-3 space-y-2">
+          <li><a href="/blog/phishing-prevention/" class="text-primary-700 hover:underline font-medium">Phishing Prevention Guide →</a></li>
+          <li><a href="/blog/email-authentication-guide/" class="text-primary-700 hover:underline font-medium">DMARC, SPF & DKIM Setup Guide →</a></li>
+          <li><a href="/blog/employee-security-training/" class="text-primary-700 hover:underline font-medium">30-Minute Employee Security Training →</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</BaseLayout>

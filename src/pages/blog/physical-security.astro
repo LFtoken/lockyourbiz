@@ -1,0 +1,106 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Physical Security for Small Business — Locks, Cameras & Access Control"
+  description="Physical security is the foundation of cybersecurity. Server room locks, security cameras, visitor policies, and device security for small business offices and retail spaces."
+>
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <article class="mx-auto max-w-3xl">
+      <div class="flex flex-wrap items-center gap-3 text-sm text-gray-500 mb-6">
+        <time datetime="2026-07-22">July 22, 2026</time>
+        <span class="inline-flex items-center rounded-full bg-primary-50 px-3 py-1 text-xs font-medium text-primary-700">Hardware & Services</span>
+        <span>7 min read</span>
+      </div>
+
+      <h1 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Physical Security: The Foundation Nobody Thinks About Until It Is Too Late</h1>
+      <p class="mt-4 text-lg leading-8 text-gray-600">
+        The best firewall in the world does not matter if someone can walk into your office, plug a USB drive into your server, and walk out. Physical security is the base layer — and most small businesses skip it entirely.
+      </p>
+
+      <div class="mt-10 prose prose-lg prose-gray max-w-none">
+        <h2>Why Physical Security Matters for a "Digital" Business</h2>
+        <p>
+          Cybersecurity people talk about "the attack surface" — every way an attacker can get in. The physical world is the biggest attack surface of all, and the one with the fewest controls. A locked screen is bypassed by rebooting from a USB drive. A strong password policy is irrelevant when someone steals the server itself. An encrypted laptop protects the data, but you still lose the device and everything on it was exposed for as long as it took you to realize it was gone.
+        </p>
+        <p>
+          Physical security is not about turning your office into Fort Knox. It is about raising the effort required to steal something to the point where it is not worth it. Most small business theft is opportunistic — a laptop left visible in a car, a server room with an unlocked door, a delivery person who wanders deeper into the office than they should. Simple measures eliminate these opportunities.
+        </p>
+
+        <h2>1. The Server Room (Or Closet)</h2>
+        <p>
+          Whether you have a dedicated server room or a closet with a NAS and a switch, it needs to be locked. Not "we keep it closed." Locked. With a key that only specific people have.
+        </p>
+        <ul>
+          <li><strong>Door lock:</strong> A $30 deadbolt is sufficient. For higher security, a keypad lock ($100-200) lets you revoke access without re-keying and provides an audit trail of who entered when.</li>
+          <li><strong>Temperature monitoring:</strong> If your server closet gets too hot, equipment fails. A $30 WiFi temperature sensor that sends alerts solves this.</li>
+          <li><strong>No shared space:</strong> Do not store office supplies, holiday decorations, or cleaning products in the server room. Every extra person who needs access is a risk.</li>
+          <li><strong>Cable management:</strong> Label your cables. Know which one goes where. When something breaks at 5 PM on a Friday, you do not want to spend 30 minutes tracing cables.</li>
+        </ul>
+
+        <h2>2. Security Cameras — Cheaper Than You Think</h2>
+        <p>
+          A basic IP camera system for a small office costs $300-500 and installs in an afternoon. The deterrent effect alone is worth the investment — visible cameras reduce theft by 50-70% according to multiple studies.
+        </p>
+        <ul>
+          <li><strong>Coverage:</strong> Front door, back door, server room, and any area where cash or valuables are handled. One camera per critical zone.</li>
+          <li><strong>Storage:</strong> At least 7 days of footage. Cloud storage is convenient but costs monthly. Local NVR (Network Video Recorder) with an SD card is a one-time purchase.</li>
+          <li><strong>Placement:</strong> Mount cameras high enough to be out of reach. Run cables through walls or conduit — exposed cables can be cut.</li>
+          <li><strong>Privacy:</strong> Do not put cameras in bathrooms, changing areas, or private offices where people have a reasonable expectation of privacy. This is illegal in most jurisdictions and also just wrong.</li>
+        </ul>
+
+        <h2>3. Visitor Access — Stop the Tailgater</h2>
+        <p>
+          Most physical breaches happen because someone held the door open for a stranger who looked like they belonged. It is called "tailgating" and it works against every type of business. The fix is process, not technology:
+        </p>
+        <ul>
+          <li><strong>Visitor log:</strong> A simple sign-in sheet at the front desk. Name, company, who they are visiting, time in, time out. Takes 30 seconds.</li>
+          <li><strong>Visitor badges:</strong> Cheap stick-on badges that make it obvious who belongs and who does not. If you see someone without a badge, you ask: "Can I help you find someone?"</li>
+          <li><strong>Escort policy:</strong> Visitors are escorted to their destination and back. They do not wander the office alone. No exceptions for "I know where the bathroom is."</li>
+          <li><strong>Delivery protocol:</strong> Packages go to a designated receiving area. Delivery personnel do not walk past the front desk. If a delivery requires access to a back area, someone escorts them.</li>
+        </ul>
+
+        <h2>4. Device Security — Laptops, Phones, and USB Drives</h2>
+        <ul>
+          <li><strong>Laptop locks:</strong> Kensington lock slots exist on most business laptops. A $20 cable lock anchors the laptop to the desk. It will not stop a determined thief with bolt cutters, but it stops the grab-and-run.</li>
+          <li><strong>Clean desk policy:</strong> Laptops, phones, and documents go into locked drawers at the end of the day. An empty desk is an unattractive target.</li>
+          <li><strong>USB port control:</strong> Unknown USB drives are a major attack vector — they can auto-execute malware when plugged in. If your business does not need USB, disable USB mass storage in your endpoint protection or group policy. If you find a USB drive in the parking lot, do not plug it in.</li>
+          <li><strong>Screen privacy filters:</strong> For laptops used in public (coffee shops, planes, client offices), a $15 privacy filter makes the screen visible only to the person directly in front of it.</li>
+          <li><strong>Secure disposal:</strong> Old hard drives should be physically destroyed or wiped with certified software (DBAN, Blancco). A hammer through the platters is crude but effective. Do not throw old drives in the trash with customer data on them.</li>
+        </ul>
+
+        <h2>5. The Office Network Closet</h2>
+        <p>
+          Your modem, router, and switch are the physical heart of your business internet. Anyone with physical access to these can plug in a device, intercept traffic, or disable your connection entirely. Lock this closet. Label the equipment. Consider an Uninterruptible Power Supply (UPS) — $80-150 — to keep equipment running through short power outages and protect against power surges.
+        </p>
+
+        <h2>Physical Security Checklist</h2>
+        <ol>
+          <li>Server room door has a working lock — check it today</li>
+          <li>At least one camera covering the main entrance</li>
+          <li>Visitor sign-in process exists and is followed</li>
+          <li>Employees know not to hold doors for strangers</li>
+          <li>Laptops are secured with cable locks or stored in locked drawers overnight</li>
+          <li>Network equipment is in a locked space</li>
+          <li>Old hard drives are destroyed, not trashed</li>
+          <li>Clean desk policy exists and is enforced</li>
+        </ol>
+
+        <h2>The Bottom Line</h2>
+        <p>
+          You can spend thousands on cybersecurity tools, but if someone can walk into your office and plug in a rogue device, none of it matters. Physical security is boring, unglamorous, and absolutely essential. Lock the doors. Install a camera. Log visitors. These three things prevent more breaches than any firewall.
+        </p>
+      </div>
+
+      <div class="mt-12 rounded-2xl bg-primary-50 p-6">
+        <h2 class="text-lg font-bold text-primary-900">Related Guides</h2>
+        <ul class="mt-3 space-y-2">
+          <li><a href="/blog/essential-security-hardware/" class="text-primary-700 hover:underline font-medium">Essential Security Hardware Guide →</a></li>
+          <li><a href="/industries/retail/" class="text-primary-700 hover:underline font-medium">Retail Security Guide →</a></li>
+          <li><a href="/blog/security-audit-checklist/" class="text-primary-700 hover:underline font-medium">Security Audit Checklist →</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</BaseLayout>
