@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Mobile Device Security for Small Business — BYOD Policy & Protection Guide"
+  description="Protect your business data on smartphones and tablets. BYOD policy template, device encryption, remote wipe setup, and practical mobile security steps for small teams."
+>
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <article class="mx-auto max-w-3xl">
+      <div class="flex flex-wrap items-center gap-3 text-sm text-gray-500 mb-6">
+        <time datetime="2026-07-21">July 21, 2026</time>
+        <span class="inline-flex items-center rounded-full bg-primary-50 px-3 py-1 text-xs font-medium text-primary-700">Tools & Tech</span>
+        <span>8 min read</span>
+      </div>
+
+      <h1 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Mobile Device Security for Small Business: Stop Treating Phones Like an Afterthought</h1>
+      <p class="mt-4 text-lg leading-8 text-gray-600">
+        Your team checks work email on personal phones. They have Slack, Teams, and shared drives in their pockets. One lost phone at an airport, and your entire business data walks out the door. Here is how to lock it down — without making everyone hate you.
+      </p>
+
+      <div class="mt-10 prose prose-lg prose-gray max-w-none">
+        <h2>The Problem Nobody Talks About</h2>
+        <p>
+          Walk through any small business and ask: "Does your phone have a passcode? Is it encrypted? What happens to company data if you lose it?" Most people cannot answer two out of three. And it is not their fault — nobody told them.
+        </p>
+        <p>
+          Here is what is on the average employee's personal phone right now: work email with years of client conversations, Slack or Teams messages including shared files, Google Drive or Dropbox with customer spreadsheets, the company WiFi password saved in plain text, and probably a notes app with a few passwords. If that phone gets left in a taxi, every one of those becomes a potential data breach.
+        </p>
+
+        <div class="not-prose rounded-2xl bg-red-50 border border-red-200 p-6 my-8">
+          <h3 class="text-lg font-bold text-red-900">The Numbers</h3>
+          <div class="mt-3 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+            <div><div class="text-2xl font-extrabold text-red-700">70M</div><p class="text-xs text-red-700 mt-1">phones lost or stolen globally each year</p></div>
+            <div><div class="text-2xl font-extrabold text-red-700">67%</div><p class="text-xs text-red-700 mt-1">of employees use personal phones for work without any security policy</p></div>
+            <div><div class="text-2xl font-extrabold text-red-700">52%</div><p class="text-xs text-red-700 mt-1">of data breaches involve a mobile device as the entry point</p></div>
+          </div>
+        </div>
+
+        <h2>Step 1: The Minimum — What Every Phone Must Have</h2>
+        <p>
+          Before you write a single policy, enforce these five things on every phone that touches company data. They take five minutes to set up and prevent the vast majority of mobile-related breaches.
+        </p>
+        <ol>
+          <li><strong>Screen lock with at least a 6-digit PIN — not a 4-digit PIN, not a pattern.</strong> Four digits can be brute-forced in minutes. Six digits takes hours. Face ID or fingerprint is fine as a convenience, but require the PIN as backup.</li>
+          <li><strong>Full-disk encryption enabled.</strong> iPhones encrypt automatically when you set a passcode. Android phones do too on modern versions. Verify this in Settings — if encryption is off, turn it on before anything else.</li>
+          <li><strong>Automatic OS updates turned on.</strong> Every iOS and Android update includes security patches for vulnerabilities that attackers are already exploiting. Delaying an update because "it might break something" is not acceptable for a device with company data on it.</li>
+          <li><strong>Find My Device / remote wipe enabled.</strong> Both Apple and Google provide free device tracking and remote wipe. Make sure every employee has this turned on and knows how to trigger a wipe if their phone goes missing.</li>
+          <li><strong>No jailbroken or rooted devices allowed.</strong> A jailbroken iPhone or rooted Android bypasses the phone's entire security model. Your policy should state clearly: rooted devices are not permitted to access company data, period.</li>
+        </ol>
+
+        <h2>Step 2: The BYOD Policy — One Page Is All You Need</h2>
+        <p>
+          Your Bring Your Own Device policy does not need to be 20 pages of legalese. It needs to be one page that every employee can understand. Here is what it should cover, in plain language:
+        </p>
+        <ul>
+          <li><strong>What "company data" means:</strong> Email, chat messages, files stored in company cloud accounts, customer contact information, internal documents. Be specific — people need to know exactly what they are protecting.</li>
+          <li><strong>Security requirements:</strong> The five minimums listed above. State them clearly. "You must have a 6-digit passcode, encryption, auto-updates, Find My Device enabled, and no jailbreaking."</li>
+          <li><strong>What happens if a device is lost or stolen:</strong> Who to notify, how quickly (immediately — not "on Monday"), and the expectation that the device will be remotely wiped. Make it clear this is not a punishment; it is standard procedure.</li>
+          <li><strong>What happens when you leave the company:</strong> Company data will be removed from personal devices. This can be done selectively through MDM (mobile device management) — your personal photos and messages are not touched.</li>
+          <li><strong>Use of public WiFi:</strong> Require a VPN when accessing company systems on public networks. Free options include Cloudflare WARP or ProtonVPN. Better yet, require using the phone's hotspot instead of public WiFi.</li>
+        </ul>
+
+        <div class="not-prose rounded-2xl bg-primary-50 border border-primary-200 p-6 my-8">
+          <h3 class="text-lg font-bold text-primary-900">Sample BYOD Policy Paragraph</h3>
+          <p class="mt-2 text-sm text-primary-800 leading-relaxed">
+            "If you use a personal device to access company email, chat, files, or systems, you agree to maintain a 6-digit or longer passcode, keep your operating system up to date, enable full-disk encryption, and immediately report a lost or stolen device to [contact]. Company data may be remotely removed from your device upon loss, theft, or end of employment. Personal data will not be affected."
+          </p>
+        </div>
+
+        <h2>Step 3: MDM — It Is Not Just for Big Companies</h2>
+        <p>
+          Mobile Device Management sounds like enterprise IT. But the reality is that both Apple and Google offer free, lightweight MDM tools that work perfectly for small businesses:
+        </p>
+        <ul>
+          <li><strong>Apple Business Essentials</strong> ($2.99/device/month) — Lets you enforce passcode policies, push WiFi and email settings, deploy apps, and remotely wipe company data only (not personal data). Works with any Apple ID.</li>
+          <li><strong>Google Workspace MDM</strong> (included with Business plans) — Enforce screen lock, encryption, and remote wipe on Android devices. Basic iOS management included too. Already built into the Google Workspace you probably already pay for.</li>
+          <li><strong>Microsoft Intune</strong> (included with Microsoft 365 Business Premium) — Full MDM for Windows, iOS, and Android. If you are on M365 Business Premium, you already have this. Turn it on.</li>
+        </ul>
+        <p>
+          The key benefit of MDM is not control — it is separation. MDM creates a secure "work container" on the phone. Company data lives inside it. When someone leaves, you remove the container. Their personal photos, texts, and apps are untouched. This one feature eliminates the biggest friction of BYOD.
+        </p>
+
+        <h2>Step 4: The Apps — Less Is Safer</h2>
+        <p>
+          Every app on a phone is a potential data leak. Many free apps request access to contacts, photos, and files — and then upload that data to advertising networks. Your customer list should not end up in an ad-tech database because someone installed a flashlight app.
+        </p>
+        <p>
+          For company communication and file access, stick to a small set of approved apps that have strong security track records:
+        </p>
+        <ul>
+          <li><strong>Email:</strong> Use the official Gmail or Outlook app — both support remote wipe and containerization. Do not use third-party email clients.</li>
+          <li><strong>Messaging:</strong> Slack, Teams, or Signal. Not WhatsApp (owned by Meta, shares data with Facebook). Not WeChat (data stored on Chinese servers).</li>
+          <li><strong>File access:</strong> Google Drive, OneDrive, or Dropbox Business — with access controls set to "specific people," never "anyone with the link."</li>
+          <li><strong>Password management:</strong> Bitwarden or 1Password mobile apps. Do not use the built-in browser password manager for work accounts.</li>
+          <li><strong>VPN:</strong> Cloudflare WARP (free), ProtonVPN (free tier), or Tailscale (free for up to 3 users). Use it on any network that is not your home or office.</li>
+        </ul>
+
+        <h2>Step 5: What to Do When a Phone Goes Missing</h2>
+        <p>
+          A phone is missing. Do not spend three hours hoping it turns up. Here is the 15-minute response:
+        </p>
+        <ol>
+          <li><strong>Try Find My Device / locate it.</strong> If it is at a restaurant or a friend's house, great — go get it. If it is somewhere you cannot reach or the location is unknown, proceed to step 2.</li>
+          <li><strong>Trigger remote wipe.</strong> Yes, even if you hope it might turn up. The risk of company data walking around in someone else's pocket is greater than the inconvenience of restoring from iCloud backup. Wipe it.</li>
+          <li><strong>Revoke access tokens.</strong> Go to Google Workspace or Microsoft 365 admin and sign out all sessions for that user. Change the password. Rotate any API keys or app-specific passwords.</li>
+          <li><strong>Check for unusual activity.</strong> Look at the user's email login history, file access logs, and any admin console audit trails for the past 24 hours. Confirm the device has not already been used to access anything.</li>
+          <li><strong>Document it.</strong> When, where, what data was on the device, what steps you took. This is your paper trail if the incident escalates into a reportable data breach.</li>
+        </ol>
+
+        <h2>One Thing You Can Do Today</h2>
+        <p>
+          Right now, ask everyone on your team one question: "Do you have a 6-digit passcode on your phone?" If the answer from anyone is "no" or "I use a 4-digit" or "I use face unlock only," stop what you are doing and have them fix it. It takes 30 seconds. It costs nothing. And it is the single most effective mobile security measure you can implement.
+        </p>
+      </div>
+
+      <div class="mt-12 rounded-2xl bg-primary-50 p-6">
+        <h2 class="text-lg font-bold text-primary-900">Related Guides</h2>
+        <ul class="mt-3 space-y-2">
+          <li><a href="/blog/remote-work-security/" class="text-primary-700 hover:underline font-medium">Securing Remote Workers: A Practical Guide →</a></li>
+          <li><a href="/blog/employee-security-training/" class="text-primary-700 hover:underline font-medium">30-Minute Employee Security Training →</a></li>
+          <li><a href="/tool-reviews/mfa-tools/" class="text-primary-700 hover:underline font-medium">MFA Tools Comparison →</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</BaseLayout>

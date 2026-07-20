@@ -1,0 +1,140 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Cloud & SaaS Security for Small Business — Protect Your Online Accounts"
+  description="Your business runs on cloud apps — Google Workspace, Microsoft 365, Slack, Dropbox. Protect them from account takeover, shadow IT, and misconfiguration. Practical SaaS security guide."
+>
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <article class="mx-auto max-w-3xl">
+      <div class="flex flex-wrap items-center gap-3 text-sm text-gray-500 mb-6">
+        <time datetime="2026-07-21">July 21, 2026</time>
+        <span class="inline-flex items-center rounded-full bg-primary-50 px-3 py-1 text-xs font-medium text-primary-700">Tools & Tech</span>
+        <span>9 min read</span>
+      </div>
+
+      <h1 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Cloud & SaaS Security: Your Business Runs on 47 Apps You Forgot About</h1>
+      <p class="mt-4 text-lg leading-8 text-gray-600">
+        Google Workspace, Microsoft 365, Slack, Dropbox, Zoom, HubSpot, Mailchimp, QuickBooks, GitHub, Figma — and those are just the ones you remember. Every one of them is a door into your business. Here is how to lock them all.
+      </p>
+
+      <div class="mt-10 prose prose-lg prose-gray max-w-none">
+        <h2>The Real Problem Is Not the Cloud — It Is the Sprawl</h2>
+        <p>
+          Five years ago, a small business had maybe five cloud accounts: email, file storage, accounting, CRM, and maybe a project management tool. Today, the average small business uses <strong>40-60 SaaS applications</strong>, most of which were adopted without IT ever knowing. Every employee who signed up for a free trial of something two years ago — and never deleted it — has an account sitting out there with company data in it.
+        </p>
+        <p>
+          This is called <strong>shadow IT</strong> — technology adopted without IT approval or oversight — and it is the biggest SaaS security risk you have never heard of. Each orphaned account represents an attack surface: a login that is not monitored, a password that is probably reused, and data that nobody remembers exists.
+        </p>
+
+        <div class="not-prose rounded-2xl bg-red-50 border border-red-200 p-6 my-8">
+          <h3 class="text-lg font-bold text-red-900">The SaaS Sprawl Problem</h3>
+          <div class="mt-3 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+            <div><div class="text-2xl font-extrabold text-red-700">40-60</div><p class="text-xs text-red-700 mt-1">average SaaS apps used by a 50-person company</p></div>
+            <div><div class="text-2xl font-extrabold text-red-700">44%</div><p class="text-xs text-red-700 mt-1">of SaaS licenses are unused or unmanaged</p></div>
+            <div><div class="text-2xl font-extrabold text-red-700">82%</div><p class="text-xs text-red-700 mt-1">of breaches involve data stored in a cloud service</p></div>
+          </div>
+        </div>
+
+        <h2>Step 1: Enforce MFA on Every SaaS Account — No Exceptions</h2>
+        <p>
+          If you read one paragraph in this article, make it this one. <strong>Multi-factor authentication is the single most effective defense against cloud account takeover.</strong> It blocks 99% of credential-based attacks. And the best part: it is free on virtually every SaaS platform.
+        </p>
+        <p>
+          Go through every SaaS application your business uses and enable MFA. Start with the ones that would hurt the most if compromised:
+        </p>
+        <ol>
+          <li><strong>Email (Google Workspace / Microsoft 365):</strong> If an attacker gets into your email, they can reset passwords on every other service. This is priority #1. Use hardware keys (YubiKey) for admin accounts and authenticator apps for everyone else.</li>
+          <li><strong>Financial systems (QuickBooks, Stripe, PayPal, bank):</strong> Direct path to your money. Hardware keys or authenticator apps. Never SMS — SIM-swap attacks make SMS-based MFA unreliable for financial accounts.</li>
+          <li><strong>CRM and customer data (HubSpot, Salesforce, Mailchimp):</strong> These contain customer lists, email histories, and purchase data. A breach here triggers notification requirements.</li>
+          <li><strong>Code repositories (GitHub, GitLab, Bitbucket):</strong> If you have a website or app, source code access means the attacker can inject malware directly into your product.</li>
+          <li><strong>Everything else:</strong> Slack, Zoom, Dropbox, Figma, project management tools — enable MFA on all of them. Attackers use Slack access to impersonate executives and request fraudulent transfers.</li>
+        </ol>
+
+        <div class="not-prose rounded-2xl bg-primary-50 border border-primary-200 p-6 my-8">
+          <h3 class="text-lg font-bold text-primary-900">Quick Wins: SaaS Security in 60 Minutes</h3>
+          <ul class="mt-2 space-y-2 text-sm text-primary-800">
+            <li><strong>00:00-00:15:</strong> Enable MFA on email (Google Workspace or Microsoft 365 admin) — enforce for all users</li>
+            <li><strong>00:15-00:25:</strong> Enable MFA on financial accounts (QuickBooks, Stripe, bank)</li>
+            <li><strong>00:25-00:40:</strong> Check Google Workspace / M365 admin for third-party apps with account access — revoke anything unrecognized</li>
+            <li><strong>00:40-00:55:</strong> Audit your SaaS list (Step 2 below) — identify high-risk orphaned accounts</li>
+            <li><strong>00:55-01:00:</strong> Create a shared password vault in Bitwarden or 1Password — stop emailing passwords</li>
+          </ul>
+        </div>
+
+        <h2>Step 2: Audit Your SaaS Inventory</h2>
+        <p>
+          You cannot secure what you do not know exists. Do a SaaS audit:
+        </p>
+        <ul>
+          <li><strong>Check Google Workspace / Microsoft 365 admin:</strong> Both platforms show you every third-party app that employees have granted access to using their work account. Go to admin console → Security → Third-party apps. You will find apps you forgot existed. Revoke anything that is not actively used.</li>
+          <li><strong>Check your credit card statements:</strong> Look for recurring SaaS subscriptions. Every line item is an account that someone created. Cross-reference with your known services list. Cancel anything unused.</li>
+          <li><strong>Ask your team:</strong> Send a simple email: "What apps and services do you use for work that IT might not know about?" Most people will honestly tell you. They just never thought to mention it before.</li>
+          <li><strong>Use a free discovery tool:</strong> Tools like Torii or Zluri offer free SaaS discovery for small teams. They scan your email domain and financial records to generate an inventory of every SaaS tool connected to your business.</li>
+        </ul>
+
+        <h2>Step 3: Lock Down Sharing Settings</h2>
+        <p>
+          The fastest way to leak data is a sharing link set to "Anyone with the link can edit." It happens constantly — someone pastes a link into a public forum, a customer forwards it to their team, and suddenly your internal pricing spreadsheet is indexed by Google.
+        </p>
+        <p>
+          Fix this at the admin level:
+        </p>
+        <ul>
+          <li><strong>Google Workspace:</strong> Admin → Apps → Google Drive → Sharing settings → Set "Shared link default" to "Restricted" (not "Anyone in your organization"). Disable the ability for users to change this default.</li>
+          <li><strong>Microsoft 365 / SharePoint:</strong> Admin → SharePoint → Sharing → Set default link type to "Specific people." Disable "Anyone with the link" at the tenant level unless explicitly approved.</li>
+          <li><strong>Dropbox Business:</strong> Admin → Settings → Sharing → Default link access to "Team members." Disable "Anyone with the link can edit."</li>
+          <li><strong>Slack:</strong> Review public channel membership — any external guest who no longer needs access should be removed. Set file sharing defaults to require authentication.</li>
+        </ul>
+
+        <h2>Step 4: Offboarding — The Step Everyone Skips</h2>
+        <p>
+          When an employee leaves, someone usually remembers to disable their email. Almost nobody remembers the 12 SaaS accounts they created. Former employees retaining access to company SaaS tools is frighteningly common — and it is often not malicious. They just still have the password saved in their browser. But an attacker who compromises that ex-employee's personal email now has a backdoor into your company's tools.
+        </p>
+        <p>
+          Create an offboarding checklist — a simple list in a shared document:
+        </p>
+        <ol>
+          <li>Disable email / Google Workspace / Microsoft 365 account</li>
+          <li>Revoke access to: CRM, project management, file storage, accounting, email marketing, social media, code repos, design tools, analytics</li>
+          <li>Remove from shared password vault</li>
+          <li>Remove from any "shared" login credentials (stop sharing logins!)</li>
+          <li>Change any API keys or service account credentials the person had access to</li>
+          <li>Document that offboarding was completed — date, who did it, what was revoked</li>
+        </ol>
+
+        <h2>Step 5: Use SSO (Single Sign-On) Where Possible</h2>
+        <p>
+          Single Sign-On means employees use one set of credentials (their Google or Microsoft account) to log into all your SaaS tools. The benefits for security are enormous:
+        </p>
+        <ul>
+          <li>One place to enforce MFA — not 40 places</li>
+          <li>One place to disable access when someone leaves — not 40 places</li>
+          <li>Employees do not create 40 weak, reused passwords — they use one strong, managed account</li>
+          <li>You can see every login in one audit log</li>
+        </ul>
+        <p>
+          Most modern SaaS tools support "Sign in with Google" or "Sign in with Microsoft." Encourage — or require — employees to use SSO when available. For tools that do not support SSO, use the password manager to generate and store unique credentials.
+        </p>
+
+        <h2>The Bottom Line</h2>
+        <p>
+          Your business runs on SaaS. You cannot avoid it — and you should not try. Cloud tools make small businesses more productive, more flexible, and more competitive. The security answer is not "use fewer tools." It is "know what you are using, lock it down, and have a plan for when someone leaves."
+        </p>
+        <p>
+          Start with the 60-minute checklist above. Do it this week. The biggest risk is not the cloud itself — it is the accounts nobody remembers exist, with passwords nobody has changed in three years, holding data nobody thought to protect.
+        </p>
+      </div>
+
+      <div class="mt-12 rounded-2xl bg-primary-50 p-6">
+        <h2 class="text-lg font-bold text-primary-900">Related Guides</h2>
+        <ul class="mt-3 space-y-2">
+          <li><a href="/blog/mobile-device-security/" class="text-primary-700 hover:underline font-medium">Mobile Device Security Guide →</a></li>
+          <li><a href="/tool-reviews/mfa-tools/" class="text-primary-700 hover:underline font-medium">MFA Tools Comparison →</a></li>
+          <li><a href="/tool-reviews/password-managers/" class="text-primary-700 hover:underline font-medium">Password Manager Comparison →</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</BaseLayout>
