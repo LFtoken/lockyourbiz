@@ -1,0 +1,121 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHero from '../../components/SectionHero.astro';
+import ContentCTA from '../../components/ContentCTA.astro';
+---
+
+<BaseLayout
+  title="Microsoft Security Alert — Actively Exploited Windows & Office Vulnerabilities"
+  description="Multiple Microsoft products are under active attack. Windows, Office, Exchange, and SharePoint vulnerabilities being exploited right now. What small businesses must patch immediately."
+>
+  <SectionHero
+    icon="🪟"
+    title="Microsoft Vulnerabilities Alert"
+    description="Microsoft products are the #1 target for attackers going after small businesses. Multiple actively exploited flaws in Windows, Office, Exchange, and SharePoint need immediate patching. Here is your priority list."
+    badge="🪟 Critical Alert · August 2026"
+    gradient="from-blue-950 via-primary-950 to-primary-900"
+  />
+
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <article class="mx-auto max-w-3xl">
+      <div class="flex items-center gap-3 mb-8">
+        <span class="inline-flex items-center rounded-full bg-red-100 px-3 py-1 text-sm font-semibold text-red-700">🔴 Critical — Patch Now</span>
+        <time datetime="2026-08-02" class="text-sm text-gray-500">August 2, 2026</time>
+      </div>
+
+      <div class="prose prose-lg prose-gray max-w-none">
+
+        <h2>Microsoft Is the Most Targeted Vendor — By Far</h2>
+        <p>
+          Of the 1,600+ actively exploited vulnerabilities in CISA's Known Exploited Vulnerabilities catalog, <strong>Microsoft accounts for more entries than any other vendor</strong>. Windows, Office, Exchange, SharePoint, and .NET Framework vulnerabilities are consistently the most exploited by ransomware gangs, nation-state actors, and cybercriminals alike.
+        </p>
+        <p>
+          The reason is simple: Microsoft software runs on virtually every business computer. A single Windows vulnerability can affect millions of potential targets. And many small businesses delay patching because "updates might break something." Attackers know this and exploit the gap.
+        </p>
+
+        <div class="not-prose rounded-2xl bg-red-50 border border-red-200 p-6 my-8">
+          <h3 class="text-lg font-bold text-red-900">The Most Exploited Microsoft Products in 2026</h3>
+          <div class="mt-3 space-y-3 text-sm">
+            <div class="flex items-center justify-between bg-white rounded-lg p-3">
+              <span class="font-semibold">Windows Kernel & OS</span>
+              <span class="text-red-700 font-bold">40%+</span>
+            </div>
+            <div class="flex items-center justify-between bg-white rounded-lg p-3">
+              <span class="font-semibold">Microsoft Office / 365</span>
+              <span class="text-red-700 font-bold">20%+</span>
+            </div>
+            <div class="flex items-center justify-between bg-white rounded-lg p-3">
+              <span class="font-semibold">Exchange Server</span>
+              <span class="text-red-700 font-bold">15%+</span>
+            </div>
+            <div class="flex items-center justify-between bg-white rounded-lg p-3">
+              <span class="font-semibold">SharePoint</span>
+              <span class="text-red-700 font-bold">10%+</span>
+            </div>
+            <div class="flex items-center justify-between bg-white rounded-lg p-3">
+              <span class="font-semibold">Edge / Internet Explorer / .NET</span>
+              <span class="text-red-700 font-bold">15%+</span>
+            </div>
+          </div>
+        </div>
+
+        <h2>The Attack Chain: How Hackers Use Microsoft Flaws</h2>
+        <p>
+          Understanding the attack pattern helps you prioritize. Here is how a typical Microsoft-based attack unfolds against a small business:
+        </p>
+        <ol>
+          <li><strong>Initial Access:</strong> Attacker sends a phishing email with a malicious Office document. The document exploits a macro or Office vulnerability to run code on the victim's computer. Alternatively, they exploit an unpatched Exchange or SharePoint server that is exposed to the internet.</li>
+          <li><strong>Privilege Escalation:</strong> Once on the system, the attacker exploits a Windows Kernel vulnerability to gain administrator privileges. This gives them control over the entire machine.</li>
+          <li><strong>Lateral Movement:</strong> Using Windows credential theft techniques, the attacker moves from the initial compromised machine to the file server, the domain controller, and any machine with valuable data.</li>
+          <li><strong>Data Exfiltration + Ransomware:</strong> Sensitive files are copied out, then ransomware encrypts everything. The attacker demands payment for both the decryption key and a promise not to leak the stolen data (double extortion).</li>
+        </ol>
+
+        <div class="not-prose rounded-xl bg-orange-50 border border-orange-200 p-5 my-6">
+          <h3 class="font-semibold text-orange-900">⚡ Priority Patch List — Do These First</h3>
+          <ul class="mt-2 space-y-2 text-sm text-orange-800">
+            <li>• <strong>Windows Update:</strong> Settings → Windows Update → Check for updates. Install ALL "Critical" and "Security" updates. Restart. This covers the Windows Kernel, TCP/IP, and OS-level flaws.</li>
+            <li>• <strong>Microsoft 365 / Office:</strong> File → Account → Update Options → Update Now. This patches Office macro and document-parsing vulnerabilities exploited through phishing attachments.</li>
+            <li>• <strong>Exchange Server:</strong> If you run your own Exchange server, apply the latest Cumulative Update and Security Update immediately. Unpatched Exchange servers are the #1 entry point for ransomware. Better yet: migrate to Microsoft 365 and let Microsoft manage Exchange patching.</li>
+            <li>• <strong>Edge browser:</strong> Edge updates automatically, but verify: Settings → About Microsoft Edge. The browser is a common entry point via malicious websites.</li>
+          </ul>
+        </div>
+
+        <h2>Enable Automatic Updates — The Single Best Defense</h2>
+        <p>
+          If you do only one thing after reading this, do this: <strong>verify that automatic updates are enabled on every Windows computer in your business.</strong> Go to Settings → Windows Update → Advanced options → make sure "Receive updates for other Microsoft products" is ON. This covers Windows, Office, Edge, and .NET in one setting.
+        </p>
+        <p>
+          For businesses with more than 10 computers, consider using Windows Update for Business (included with Microsoft 365 Business Premium) to manage update rollouts. You can defer feature updates while still applying security patches immediately — there is no reason to delay security updates.
+        </p>
+
+        <h2>What About Businesses That Cannot Patch Immediately?</h2>
+        <p>
+          Some small businesses run specialized software that breaks when Windows updates are applied. If this is you, you need compensating controls: isolate those unpatched machines on a separate network segment, disable their internet access, and apply strict firewall rules so they cannot communicate with anything except the specific application they need. This is not ideal — it is a stopgap until you upgrade the legacy software.
+        </p>
+
+        <h2>Bottom Line</h2>
+        <p>
+          Microsoft products are the primary battlefield of cybersecurity. The good news is that Microsoft's patching system is the most mature in the industry — patches are well-tested and rarely break things. Turn on automatic updates, install this month's patches within 48 hours, and you have eliminated the most common attack vectors used against small businesses today.
+        </p>
+
+      </div>
+
+      <ContentCTA
+        icon="🛡️"
+        title="Compare Endpoint Protection for Windows"
+        description="Antivirus and EDR tools that add another layer of defense on top of Windows updates. See our honest comparison."
+        href="/tool-reviews/smb-antivirus/"
+        ctaText="Compare Antivirus & EDR →"
+      />
+
+      <div class="mt-8 rounded-2xl bg-primary-50 p-6">
+        <h2 class="text-lg font-bold text-primary-900">Related Resources</h2>
+        <ul class="mt-3 space-y-2">
+          <li><a href="/threat-alerts/" class="text-primary-700 hover:underline font-medium">Live Threat Intelligence Feed (CISA KEV) →</a></li>
+          <li><a href="/blog/ransomware-protection/" class="text-primary-700 hover:underline font-medium">Ransomware Protection Guide →</a></li>
+          <li><a href="/blog/phishing-prevention/" class="text-primary-700 hover:underline font-medium">Phishing Prevention: 7 Red Flags →</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</BaseLayout>

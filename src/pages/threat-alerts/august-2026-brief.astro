@@ -1,0 +1,108 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHero from '../../components/SectionHero.astro';
+import ContentCTA from '../../components/ContentCTA.astro';
+---
+
+<BaseLayout
+  title="August 2026 Threat Brief — Ransomware Surge, VPN Exploits & MFA Bypass Attacks"
+  description="August 2026 threat intelligence for small businesses. Surge in NAS-targeting ransomware, Ivanti/Citrix VPN exploits, MFA fatigue bypass attacks, and critical Microsoft patches."
+>
+  <SectionHero
+    icon="🚨"
+    title="August 2026 Threat Brief"
+    description="This month: ransomware gangs pivot to NAS devices, VPN appliances are the #1 entry point for attackers, and MFA fatigue attacks are bypassing two-factor authentication. Here is what small businesses need to know and do."
+    badge="🚨 August 2, 2026 · Monthly Brief"
+    gradient="from-red-950 via-primary-950 to-primary-900"
+  />
+
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <article class="mx-auto max-w-3xl">
+      <div class="flex items-center gap-3 mb-8">
+        <span class="inline-flex items-center rounded-full bg-red-100 px-3 py-1 text-sm font-semibold text-red-700">🔴 High Severity</span>
+        <time datetime="2026-08-02" class="text-sm text-gray-500">August 2, 2026</time>
+      </div>
+
+      <div class="prose prose-lg prose-gray max-w-none">
+
+        <h2>1. NAS Devices Become the #1 Ransomware Target</h2>
+        <p>
+          The biggest trend in ransomware this month is not attacking servers or workstations — it is going after <strong>network-attached storage (NAS) devices</strong>. Attackers have realized that small businesses increasingly use NAS devices (QNAP, Synology, Western Digital) as their primary backup target. Encrypt the NAS, and you destroy both live data AND backups in one attack.
+        </p>
+        <p>
+          Multiple NAS vulnerabilities have been added to CISA's Known Exploited Vulnerabilities catalog since June, and ransomware gangs are actively scanning for unpatched devices. The attack chain is simple: scan the internet for NAS admin panels exposed to the web → try default credentials → deploy ransomware → demand payment in Bitcoin.
+        </p>
+
+        <div class="not-prose rounded-xl bg-red-50 border border-red-200 p-5 my-6">
+          <h3 class="font-semibold text-red-900">🛡️ What to do RIGHT NOW:</h3>
+          <ul class="mt-2 space-y-1 text-sm text-red-800">
+            <li>• <strong>Disable internet access to your NAS admin panel.</strong> If you need remote file access, use a VPN — never expose the admin interface to the public internet.</li>
+            <li>• <strong>Change default passwords immediately.</strong> If your NAS username is still "admin", assume it is already compromised.</li>
+            <li>• <strong>Update NAS firmware.</strong> QNAP, Synology, and WD have all released security patches. Install them now.</li>
+            <li>• <strong>Verify your 3-2-1 backup strategy.</strong> If your only backup is on a NAS in the same building, you do not have a backup. Add an off-site cloud backup.</li>
+          </ul>
+        </div>
+
+        <h2>2. VPN Appliances — The Front Door Is Unlocked</h2>
+        <p>
+          VPN appliances from Ivanti, Citrix, Fortinet, and SonicWall continue to be the most common entry point for ransomware attacks. These devices sit at the edge of your network, exposed to the internet, and are frequently exploited within days of a vulnerability being disclosed. CISA has added dozens of VPN-related CVEs to the KEV catalog in 2026 alone.
+        </p>
+        <p>
+          The pattern is consistent: a VPN vulnerability is disclosed → attackers scan for vulnerable devices within hours → they gain initial access → move laterally through the network → deploy ransomware. The entire process can take less than 24 hours from patch release to exploitation.
+        </p>
+
+        <div class="not-prose rounded-xl bg-orange-50 border border-orange-200 p-5 my-6">
+          <h3 class="font-semibold text-orange-900">🔧 If you use any of these VPN products:</h3>
+          <ul class="mt-2 space-y-1 text-sm text-orange-800">
+            <li>• Check for firmware updates <strong>weekly</strong> — not monthly. Subscribe to your vendor's security advisory list.</li>
+            <li>• Enable MFA on VPN access — a stolen password alone should never be enough to connect to your network.</li>
+            <li>• If your VPN appliance is end-of-life and no longer receiving patches, <strong>replace it immediately.</strong></li>
+          </ul>
+        </div>
+
+        <h2>3. MFA Fatigue — When Two-Factor Is Not Enough</h2>
+        <p>
+          Attackers have found a way around MFA: <strong>MFA fatigue attacks</strong> (also called "push bombing"). When an attacker already has a valid username and password (from a phishing attack or data breach), they trigger repeated push notifications to the victim's phone. The victim, annoyed and confused, eventually taps "Accept" — and the attacker is in.
+        </p>
+        <p>
+          This technique has been used in several high-profile breaches this year, including attacks on Uber, Cisco, and Microsoft. The defense is simple but requires configuration: enable <strong>number matching</strong> on your MFA system. Instead of just tapping "Accept", the user must type a code displayed on the login screen. This prevents accidental approval.
+        </p>
+
+        <h2>4. Microsoft August Patch Tuesday — Critical Updates</h2>
+        <p>
+          Microsoft's August 2026 security update includes patches for 6 actively exploited vulnerabilities, including remote code execution flaws in Windows TCP/IP and the Windows Kernel. These vulnerabilities are being used in the wild right now to gain initial access to business networks.
+        </p>
+        <p>
+          If you manage your own Windows updates: install this month's patches within 48 hours. If you use managed IT: verify with your provider that August patches have been deployed. Do not defer these updates — the exploits are already in circulation.
+        </p>
+
+        <h2>August 2026 To-Do List</h2>
+        <ol>
+          <li>Check your NAS: is the admin panel exposed to the internet? Fix that now.</li>
+          <li>Update all VPN/firewall appliances to the latest firmware.</li>
+          <li>Enable number matching on your MFA system to block push-bombing attacks.</li>
+          <li>Apply Microsoft August security updates within 48 hours.</li>
+          <li>Review your off-site backup — if ransomware hits, can you restore without the NAS?</li>
+        </ol>
+
+      </div>
+
+      <ContentCTA
+        icon="📋"
+        title="Free Security Assessment — Check Your Exposure"
+        description="20 questions covering backup strategy, endpoint protection, access controls, and network security. Get your risk score in 3 minutes."
+        href="/tools/security-assessment/"
+        ctaText="Start Free Assessment →"
+      />
+
+      <div class="mt-8 rounded-2xl bg-primary-50 p-6">
+        <h2 class="text-lg font-bold text-primary-900">More Threat Coverage</h2>
+        <ul class="mt-3 space-y-2">
+          <li><a href="/threat-alerts/ransomware-july-2026/" class="text-primary-700 hover:underline font-medium">July 2026: Ransomware Variants & Phishing Campaigns →</a></li>
+          <li><a href="/threat-alerts/" class="text-primary-700 hover:underline font-medium">Live Threat Intelligence Feed (CISA KEV) →</a></li>
+          <li><a href="/blog/ransomware-protection/" class="text-primary-700 hover:underline font-medium">Ransomware Protection Guide →</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</BaseLayout>

@@ -1,0 +1,133 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHero from '../../components/SectionHero.astro';
+import ContentCTA from '../../components/ContentCTA.astro';
+---
+
+<BaseLayout
+  title="NAS Device Ransomware Warning — Protect Your QNAP, Synology & WD from Attack"
+  description="Ransomware gangs are aggressively targeting NAS devices from QNAP, Synology, and Western Digital. If your NAS admin panel is exposed to the internet, patch it or disconnect it now."
+>
+  <SectionHero
+    icon="💾"
+    title="NAS Ransomware Warning"
+    description="Network-attached storage devices from QNAP, Synology, and Western Digital are the hottest target for ransomware gangs right now. If your NAS admin panel is reachable from the internet, you are being actively scanned. Secure it today."
+    badge="💾 Critical Alert · August 2026"
+    gradient="from-red-950 via-orange-950 to-primary-950"
+  />
+
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <article class="mx-auto max-w-3xl">
+      <div class="flex items-center gap-3 mb-8">
+        <span class="inline-flex items-center rounded-full bg-red-100 px-3 py-1 text-sm font-semibold text-red-700">🔴 Critical — Disconnect or Patch Now</span>
+        <time datetime="2026-08-02" class="text-sm text-gray-500">August 2, 2026</time>
+      </div>
+
+      <div class="prose prose-lg prose-gray max-w-none">
+
+        <h2>The Attack That Destroys Both Your Data AND Your Backups</h2>
+        <p>
+          Here is a nightmare scenario that is happening right now to small businesses across the country: a business buys a NAS device — a QNAP, Synology, or WD My Cloud — to serve as their central file server and backup target. They set it up, plug it into the network, and forget about it. Years pass. The firmware is never updated. The default admin password is never changed. The admin panel is accessible from the internet because someone wanted remote file access.
+        </p>
+        <p>
+          Then an attacker finds the NAS on an automated scan. They log in with the default credentials. And they deploy ransomware that encrypts <strong>everything on the NAS</strong> — the live data, the backups, the archives. The business discovers they have lost everything when they come in on Monday morning and find a ransom note on every shared drive.
+        </p>
+        <p>
+          <strong>This is not hypothetical.</strong> Ransomware gangs have shifted focus to NAS devices specifically because small businesses use them as backup targets. Encrypting the NAS means there is no backup to restore from. The victim has no choice but to pay — or lose everything.
+        </p>
+
+        <div class="not-prose rounded-2xl bg-red-50 border border-red-200 p-6 my-8">
+          <h3 class="text-lg font-bold text-red-900">NAS Vulnerabilities Added to CISA KEV in 2026</h3>
+          <div class="mt-3 space-y-3 text-sm">
+            <div class="bg-white rounded-lg p-3"><strong>QNAP:</strong> Multiple vulnerabilities in QTS, QuTS Hero, and QNAP NAS devices. Remote code execution, command injection, and authentication bypass flaws. All actively exploited.</div>
+            <div class="bg-white rounded-lg p-3"><strong>Synology:</strong> DiskStation Manager (DSM) remote code execution and improper access control vulnerabilities. Default credentials exploited in the wild.</div>
+            <div class="bg-white rounded-lg p-3"><strong>Western Digital:</strong> My Cloud OS vulnerabilities allowing unauthenticated remote access to files. Multiple models affected. Check your firmware version.</div>
+          </div>
+        </div>
+
+        <h2>Step 1: Check If Your NAS Is Exposed to the Internet</h2>
+        <p>
+          The single most important question: <strong>is your NAS admin panel reachable from the public internet?</strong> If yes, you are in immediate danger.
+        </p>
+        <p>
+          How to check:
+        </p>
+        <ul>
+          <li>Open your NAS admin panel. Go to Network Settings or Remote Access.</li>
+          <li>Look for any feature labeled "Remote Access," "Cloud Access," "myQNAPcloud," "QuickConnect," or "My Cloud."</li>
+          <li>If any of these are enabled, your NAS is almost certainly reachable from the internet.</li>
+          <li>Also check: did you set up port forwarding on your router to make the NAS accessible from outside? If so, disable it.</li>
+        </ul>
+
+        <div class="not-prose rounded-xl bg-orange-50 border border-orange-200 p-5 my-6">
+          <h3 class="font-semibold text-orange-900">🛡️ Immediate Steps to Lock Down Your NAS</h3>
+          <ol class="mt-2 space-y-2 text-sm text-orange-800">
+            <li><strong>1. Disable internet access to the admin panel.</strong> Turn off cloud access features. Remove port forwarding rules. The NAS admin interface should only be accessible from your local network — nowhere else.</li>
+            <li><strong>2. If you genuinely need remote file access:</strong> Use a VPN to connect to your local network first, then access the NAS. Never expose the NAS directly to the internet. Cloudflare Tunnel (free) and Tailscale (free) are better alternatives to port forwarding.</li>
+            <li><strong>3. Change ALL default passwords.</strong> Admin accounts, user accounts, service accounts — every password on the NAS must be unique and strong. Use your password manager.</li>
+            <li><strong>4. Update the firmware.</strong> Download and install the latest firmware from the manufacturer. Enable automatic updates if available.</li>
+            <li><strong>5. Disable any services you do not use.</strong> FTP, Telnet, SSH, DLNA media server, iTunes server — if you are not actively using it, turn it off. Each one is an attack surface.</li>
+            <li><strong>6. Enable firewall rules on the NAS.</strong> Block connections from countries you do not do business with. Rate-limit login attempts. Enable IP blocking after repeated failures.</li>
+          </ol>
+        </div>
+
+        <h2>Step 2: Your NAS Backup Is Not a Backup</h2>
+        <p>
+          Many small businesses set up their NAS and think "great, we have backups." Then ransomware hits, encrypts the NAS, and they realize they had no off-site backup at all. A NAS sitting in the same building as your computers is <strong>not an off-site backup</strong> — it is just a second copy on the same power grid, in the same fire zone, connected to the same network.
+        </p>
+        <p>
+          The 3-2-1 backup rule exists for exactly this reason:
+        </p>
+        <ul>
+          <li><strong>3 copies</strong> of your data (production + 2 backups)</li>
+          <li><strong>2 different types of media</strong> (NAS + cloud, or NAS + external drive)</li>
+          <li><strong>1 copy off-site</strong> (cloud backup, or a drive stored at a different location)</li>
+        </ul>
+        <p>
+          If your NAS is your only backup location, you are a single ransomware attack away from complete data loss. Add a cloud backup layer: Backblaze ($7/month/computer, unlimited), IDrive, or Wasabi + a backup tool. The cloud copy is air-gapped from your network — even if ransomware encrypts everything on-premises, your cloud backup is untouched.
+        </p>
+
+        <h2>NAS Brands — What to Do for Each</h2>
+        <div class="not-prose mt-6 space-y-3 text-sm">
+          <div class="rounded-lg bg-gray-50 p-4">
+            <strong>QNAP Users:</strong> Update QTS/QuTS Hero to the latest version immediately. Disable myQNAPcloud if you do not absolutely need it. Remove default "admin" account and create a new admin with a unique name. Enable IP access protection (Control Panel → Security → IP Access Protection).
+          </div>
+          <div class="rounded-lg bg-gray-50 p-4">
+            <strong>Synology Users:</strong> Update DSM to the latest version. Disable QuickConnect if internet access is not required. Enable auto-block for failed login attempts (Control Panel → Security → Account). Enable 2-factor authentication for all admin accounts. Run the Security Advisor tool to identify misconfigurations.
+          </div>
+          <div class="rounded-lg bg-gray-50 p-4">
+            <strong>Western Digital My Cloud Users:</strong> Update to My Cloud OS 5 (if still on OS 3, upgrade immediately — OS 3 is end-of-life and no longer receiving security patches). Disable cloud access unless necessary. Change default "admin" password. Enable auto-update.
+          </div>
+        </div>
+
+        <h2>Bottom Line</h2>
+        <p>
+          NAS devices are powerful, affordable, and easy to set up — which is exactly why they have become a prime target. Do these three things today:
+        </p>
+        <ol>
+          <li><strong>Disconnect your NAS admin panel from the internet.</strong> If you need remote access, use a VPN.</li>
+          <li><strong>Update the firmware and change all default passwords.</strong></li>
+          <li><strong>Add an off-site cloud backup.</strong> Your NAS backup is not a backup if it sits in the same building.</li>
+        </ol>
+
+      </div>
+
+      <ContentCTA
+        icon="💾"
+        title="Small Business Backup Strategy Guide"
+        description="Set up a ransomware-proof 3-2-1 backup strategy. Exactly what to back up, which tools to use, and how to test that restores actually work."
+        href="/blog/small-business-backup-strategy/"
+        ctaText="Read Backup Strategy Guide →"
+      />
+
+      <div class="mt-8 rounded-2xl bg-primary-50 p-6">
+        <h2 class="text-lg font-bold text-primary-900">Related Resources</h2>
+        <ul class="mt-3 space-y-2">
+          <li><a href="/threat-alerts/" class="text-primary-700 hover:underline font-medium">Live Threat Intelligence Feed →</a></li>
+          <li><a href="/tool-reviews/cloud-backup/" class="text-primary-700 hover:underline font-medium">Cloud Backup Comparison →</a></li>
+          <li><a href="/blog/ransomware-protection/" class="text-primary-700 hover:underline font-medium">Ransomware Protection Guide →</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</BaseLayout>

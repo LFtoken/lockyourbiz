@@ -1,0 +1,106 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHero from '../../components/SectionHero.astro';
+import ContentCTA from '../../components/ContentCTA.astro';
+---
+
+<BaseLayout
+  title="VPN & Remote Access Gateway Attacks — Small Business Alert 2026"
+  description="VPN appliances from Ivanti, Citrix, Fortinet, SonicWall, and Palo Alto are the top entry point for ransomware. Unpatched remote access gateways are being exploited within hours. Fix them now."
+>
+  <SectionHero
+    icon="🔐"
+    title="VPN & Remote Access Alert"
+    description="VPN and remote access gateways are the #1 entry point for ransomware gangs targeting small businesses. An unpatched VPN appliance is scanned and exploited within hours of a vulnerability being disclosed. Here is your urgent fix list."
+    badge="🔐 Critical Alert · August 2026"
+    gradient="from-orange-950 via-primary-950 to-primary-900"
+  />
+
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <article class="mx-auto max-w-3xl">
+      <div class="flex items-center gap-3 mb-8">
+        <span class="inline-flex items-center rounded-full bg-red-100 px-3 py-1 text-sm font-semibold text-red-700">🔴 Critical — Patch Within 24 Hours</span>
+        <time datetime="2026-08-02" class="text-sm text-gray-500">August 2, 2026</time>
+      </div>
+
+      <div class="prose prose-lg prose-gray max-w-none">
+
+        <h2>Your VPN Is the Front Door — And It Is Being Kicked In</h2>
+        <p>
+          VPN appliances sit at the very edge of your network, directly connected to the internet. They are the first thing an attacker sees when they scan your business. And for the past two years, VPN vulnerabilities have been the single most common way ransomware gangs gain initial access to small business networks.
+        </p>
+        <p>
+          The timeline is frighteningly fast: a VPN vendor releases a security patch → within hours, attackers reverse-engineer the patch to understand the vulnerability → within 24-48 hours, automated scanning tools are searching the entire internet for unpatched devices → vulnerable devices are compromised and ransomware is deployed. If you patch weekly, you are already too slow.
+        </p>
+
+        <div class="not-prose rounded-2xl bg-red-50 border border-red-200 p-6 my-8">
+          <h3 class="text-lg font-bold text-red-900">VPN Products Under Active Attack (CISA KEV, 2026)</h3>
+          <div class="mt-3 space-y-2 text-sm">
+            <div class="bg-white rounded-lg p-3"><strong>Ivanti Connect Secure / Policy Secure:</strong> Multiple critical vulnerabilities exploited in the wild. Patches available now.</div>
+            <div class="bg-white rounded-lg p-3"><strong>Citrix NetScaler / ADC:</strong> Remote code execution flaws actively exploited by ransomware groups. Update to latest build immediately.</div>
+            <div class="bg-white rounded-lg p-3"><strong>Fortinet FortiOS / FortiGate:</strong> Authentication bypass and SSL-VPN vulnerabilities. Patch or implement workarounds.</div>
+            <div class="bg-white rounded-lg p-3"><strong>SonicWall SMA / SSLVPN:</strong> Stack-based buffer overflow and authentication flaws. Firmware update required.</div>
+            <div class="bg-white rounded-lg p-3"><strong>Palo Alto PAN-OS:</strong> GlobalProtect gateway vulnerabilities. Security patches available — apply now.</div>
+          </div>
+        </div>
+
+        <h2>Why Small Businesses Are Especially Vulnerable</h2>
+        <p>
+          Large enterprises have dedicated security teams that monitor for VPN vulnerabilities and patch within hours. Small businesses typically rely on an MSP or IT contractor who checks for updates monthly — or not at all. Many small businesses are running VPN appliances with firmware from 2-3 years ago, blissfully unaware that the device protecting their network is itself the weakest link.
+        </p>
+        <p>
+          Even worse: many small businesses bought a VPN appliance once, plugged it in, and never touched it again. If nobody is logging into the admin panel to check for updates, that device is almost certainly vulnerable. Attackers count on this neglect.
+        </p>
+
+        <div class="not-prose rounded-xl bg-orange-50 border border-orange-200 p-5 my-6">
+          <h3 class="font-semibold text-orange-900">🔧 Immediate Actions for Any VPN/Remote Access Device</h3>
+          <ul class="mt-2 space-y-2 text-sm text-orange-800">
+            <li>• <strong>Log into the admin panel today.</strong> Check the current firmware version. Compare it to the latest available from the vendor's website. Update if behind.</li>
+            <li>• <strong>Subscribe to your vendor's security advisory.</strong> Every VPN vendor has a security mailing list. Sign up. You need to know about patches within hours, not weeks.</li>
+            <li>• <strong>Enable MFA on all VPN accounts.</strong> A stolen password should never be enough to connect. Require a second factor for every user.</li>
+            <li>• <strong>Disable outdated protocols.</strong> If your VPN supports legacy SSL/TLS versions, disable them. If it supports PPTP or L2TP, disable them. Modern VPNs should use IKEv2/IPSec or WireGuard.</li>
+            <li>• <strong>Check for end-of-life devices.</strong> If your VPN appliance is no longer receiving security updates from the vendor, it is a ticking time bomb. Replace it.</li>
+          </ul>
+        </div>
+
+        <h2>Consider: Do You Even Need a VPN Anymore?</h2>
+        <p>
+          Traditional VPNs were designed for an era when everyone worked in an office and needed occasional remote access. Today, with distributed teams and cloud applications, the VPN model is showing its age. Alternatives like <strong>Zero Trust Network Access (ZTNA)</strong> provide the same remote access without exposing a VPN gateway to the internet at all.
+        </p>
+        <p>
+          <strong>Cloudflare Zero Trust</strong> is free for up to 50 users and replaces your VPN with a software-defined perimeter. Users authenticate to individual applications through Cloudflare's network — there is no appliance to patch and no public IP address for attackers to scan. Similarly, <strong>Tailscale</strong> (free for up to 3 users, $6/user/month beyond that) creates an encrypted mesh network between your devices without any exposed gateway.
+        </p>
+
+        <h2>The Bottom Line</h2>
+        <p>
+          VPN appliances are the front door to your business, and attackers are kicking them in every single day. If you run your own VPN:
+        </p>
+        <ol>
+          <li>Check for firmware updates <strong>right now</strong></li>
+          <li>Enable MFA on every VPN account</li>
+          <li>Sign up for your vendor's security mailing list</li>
+          <li>If your device is end-of-life, replace it this week</li>
+          <li>Consider moving to a cloud-based zero-trust solution that eliminates the exposed appliance entirely</li>
+        </ol>
+
+      </div>
+
+      <ContentCTA
+        icon="🔐"
+        title="VPN vs Zero Trust: What to Use in 2026"
+        description="Traditional VPNs are being replaced by zero-trust access. Learn how Cloudflare Zero Trust gives you secure remote access with nothing to patch."
+        href="/blog/vpn-vs-zerotrust/"
+        ctaText="Read VPN vs Zero Trust →"
+      />
+
+      <div class="mt-8 rounded-2xl bg-primary-50 p-6">
+        <h2 class="text-lg font-bold text-primary-900">More Security Resources</h2>
+        <ul class="mt-3 space-y-2">
+          <li><a href="/threat-alerts/" class="text-primary-700 hover:underline font-medium">Live Threat Intelligence Feed →</a></li>
+          <li><a href="/blog/remote-work-security/" class="text-primary-700 hover:underline font-medium">Remote Work Security Guide →</a></li>
+          <li><a href="/tool-reviews/website-firewall/" class="text-primary-700 hover:underline font-medium">Website Firewall Comparison →</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</BaseLayout>
