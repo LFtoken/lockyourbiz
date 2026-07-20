@@ -75,22 +75,24 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </div>
 </BaseLayout>
 
-<script>
-  // Fallback: if Formspree is not configured yet, use mailto as fallback
-  const form = document.getElementById('contact-form');
+<script is:inline>
+  // Fallback: if Formspree is not configured yet, use mailto
+  var form = document.getElementById('contact-form');
   if (form) {
     form.addEventListener('submit', function(e) {
-      const action = form.getAttribute('action');
-      // If the form action is still the placeholder, use mailto fallback
-      if (action && action.includes('xxxxxxxx')) {
+      var action = form.getAttribute('action');
+      if (action && action.indexOf('xxxxxxxx') !== -1) {
         e.preventDefault();
-        const name = (document.getElementById('name') as HTMLInputElement)?.value || '';
-        const email = (document.getElementById('email') as HTMLInputElement)?.value || '';
-        const subject = (document.getElementById('subject') as HTMLSelectElement)?.value || '';
-        const message = (document.getElementById('message') as HTMLTextAreaElement)?.value || '';
-
-        const body = `From: ${name} (${email})%0D%0A%0D%0A${message}`;
-        const mailto = `mailto:hello@lockyourbiz.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+        var nameEl = document.getElementById('name');
+        var emailEl = document.getElementById('email');
+        var subjectEl = document.getElementById('subject');
+        var messageEl = document.getElementById('message');
+        var name = nameEl ? nameEl.value : '';
+        var email = emailEl ? emailEl.value : '';
+        var subject = subjectEl ? subjectEl.value : '';
+        var message = messageEl ? messageEl.value : '';
+        var body = 'From: ' + name + ' (' + email + ')%0D%0A%0D%0A' + message;
+        var mailto = 'mailto:hello@lockyourbiz.com?subject=' + encodeURIComponent(subject) + '&body=' + body;
         window.location.href = mailto;
       }
     });

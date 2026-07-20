@@ -17,18 +17,20 @@ export default function CookieConsent() {
   useEffect(() => {
     // Check if consent was already given
     const saved = localStorage.getItem('cookie-consent');
+    let timer: ReturnType<typeof setTimeout>;
     if (!saved) {
       // Small delay so the banner animates in
-      setTimeout(() => setStage('banner'), 400);
+      timer = setTimeout(() => setStage('banner'), 400);
     } else {
       try {
         const parsed = JSON.parse(saved);
         setPreferences(parsed);
       } catch {
         // Corrupt data — re-show banner
-        setTimeout(() => setStage('banner'), 400);
+        timer = setTimeout(() => setStage('banner'), 400);
       }
     }
+    return () => { if (timer) clearTimeout(timer); };
   }, []);
 
   const applyConsent = (prefs: ConsentState) => {
