@@ -87,7 +87,10 @@ export default function MfaEligibilityChecker() {
     <div>
       <div className="text-center mb-6">
         <h2 className="text-2xl font-bold text-gray-900">MFA Eligibility Checker</h2>
-        <p className="mt-2 text-gray-600">Select all the online services your business uses. We will tell you which ones support MFA and show you exactly how to enable it — with step-by-step instructions.</p>
+        <p className="mt-2 text-gray-600 max-w-lg mx-auto">
+          <strong>MFA (Multi-Factor Authentication)</strong> means you need two things to log in — your password <em>plus</em> a code from your phone or a hardware key. It stops 99% of account takeovers, even if your password is stolen.
+        </p>
+        <p className="mt-3 text-gray-500 text-sm">Select the services your business uses below. We will show you exactly how to turn on MFA for each one.</p>
       </div>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 mb-6">

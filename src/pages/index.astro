@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import HeroCarousel from '../components/HeroCarousel';
 import ToolCard from '../components/ToolCard.astro';
 import ArticleCard from '../components/ArticleCard.astro';
 
@@ -36,7 +35,61 @@ const featuredArticles = [
   title="Free Cybersecurity Tools & Guides for Small Business"
   description="Practical cybersecurity advice, free tools, and step-by-step guides for small business owners. No jargon. No enterprise budget required. Just actionable steps to protect your business."
 >
-  <HeroCarousel client:load />
+  <section class="relative overflow-hidden bg-gradient-to-br from-primary-900 via-primary-800 to-primary-950">
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-30"></div>
+    <div class="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+      <div class="max-w-3xl mx-auto text-center">
+        <div class="inline-flex items-center rounded-full bg-white/10 px-4 py-1.5 mb-6">
+          <span class="text-sm font-medium text-white/90">&#x1f6e1;&#xfe0f; Free tools &amp; guides for small business owners</span>
+        </div>
+        <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
+          Cybersecurity for <span class="text-accent-400">real businesses</span>, not IT departments
+        </h1>
+        <p class="mt-6 text-lg leading-8 text-white/80 max-w-2xl mx-auto">
+          Most security advice is written for enterprises with dedicated IT teams. We are different. Free tools, plain-English guides, and practical steps for business owners who just want to protect what they have built.
+        </p>
+        <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="/tools/security-assessment/" class="inline-flex items-center justify-center rounded-lg bg-accent-500 px-8 py-4 text-base font-bold text-white shadow-lg hover:bg-accent-400 transition-all duration-200 no-underline min-h-[44px]">
+            Take Free Security Assessment &rarr;
+          </a>
+          <a href="/blog/cybersecurity-101/" class="inline-flex items-center justify-center rounded-lg border-2 border-white/60 px-8 py-4 text-base font-semibold text-white hover:bg-white/10 hover:border-white transition-colors no-underline min-h-[44px]">
+            Start with the 101 Guide
+          </a>
+        </div>
+        <p class="mt-6 text-sm text-white/50">No sign-up. No email. Takes 3 minutes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- New? Start Here -->
+  <section class="py-16 bg-primary-50 border-b border-primary-100">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <span class="inline-flex items-center rounded-full bg-primary-100 px-4 py-1.5 text-sm font-bold text-primary-700 mb-4">&#x1f449; New? Start Here</span>
+        <h2 class="text-2xl font-bold text-gray-900">3 steps to protect your business — this afternoon</h2>
+      </div>
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-3 max-w-4xl mx-auto">
+        <a href="/tools/security-assessment/" class="group rounded-2xl bg-white p-6 shadow-sm hover:shadow-md transition-shadow no-underline text-center">
+          <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-primary-100 text-2xl group-hover:bg-primary-200 transition-colors">1</div>
+          <h3 class="mt-4 font-bold text-gray-900">Take the Assessment</h3>
+          <p class="mt-2 text-sm text-gray-600">20 questions, 3 minutes. Find out where you are vulnerable right now.</p>
+          <span class="inline-block mt-3 text-sm font-semibold text-primary-700 group-hover:underline">Start &rarr;</span>
+        </a>
+        <a href="/tools/password-checker/" class="group rounded-2xl bg-white p-6 shadow-sm hover:shadow-md transition-shadow no-underline text-center">
+          <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-primary-100 text-2xl group-hover:bg-primary-200 transition-colors">2</div>
+          <h3 class="mt-4 font-bold text-gray-900">Check Your Passwords</h3>
+          <p class="mt-2 text-sm text-gray-600">See how strong your passwords really are. Takes 10 seconds.</p>
+          <span class="inline-block mt-3 text-sm font-semibold text-primary-700 group-hover:underline">Check Now &rarr;</span>
+        </a>
+        <a href="/blog/cybersecurity-101/" class="group rounded-2xl bg-white p-6 shadow-sm hover:shadow-md transition-shadow no-underline text-center">
+          <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-primary-100 text-2xl group-hover:bg-primary-200 transition-colors">3</div>
+          <h3 class="mt-4 font-bold text-gray-900">Read the 101 Guide</h3>
+          <p class="mt-2 text-sm text-gray-600">Everything you need to know in plain English. No tech background needed.</p>
+          <span class="inline-block mt-3 text-sm font-semibold text-primary-700 group-hover:underline">Read Guide &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
 
   <section class="py-20 bg-white">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
