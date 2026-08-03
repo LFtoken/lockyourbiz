@@ -29,15 +29,17 @@ export default function SmbBudgetCalculator() {
     return Math.round(raw / 100) * 100;
   }, [employees, revenue, industryMultiplier, riskMultiplier]);
 
-  const categories: Category[] = useMemo(() => [
-    { name: 'Endpoint Protection', icon: '🛡️', pct: 0.25, description: 'Antivirus, EDR, device management', tools: 'Bitdefender GravityZone, Microsoft Defender for Business' },
+  const categories: Category[] = useMemo(() => {
+    const isSmall = employees <= 3;
+    return [
+    { name: 'Endpoint Protection', icon: '🛡️', pct: isSmall ? 0.30 : 0.25, description: 'Antivirus, device protection', tools: 'Bitdefender GravityZone, Microsoft Defender for Business' },
     { name: 'Email Security', icon: '📧', pct: 0.15, description: 'Anti-phishing gateway, spam filtering', tools: 'Avanan, Proofpoint Essentials, Barracuda' },
-    { name: 'Backup & Recovery', icon: '💾', pct: 0.18, description: 'Cloud backup, disaster recovery', tools: 'Backblaze, Acronis, IDrive' },
-    { name: 'Identity & Access', icon: '🔑', pct: 0.12, description: 'Password manager, MFA, SSO', tools: 'Bitwarden, Duo, YubiKey' },
-    { name: 'Training & Awareness', icon: '👥', pct: 0.10, description: 'Security training, phishing simulations', tools: 'KnowBe4, free training scripts, phishing quiz' },
+    { name: 'Backup & Recovery', icon: '💾', pct: isSmall ? 0.23 : 0.18, description: 'Cloud backup, disaster recovery', tools: 'Backblaze, Acronis, IDrive' },
+    { name: 'Identity & Access', icon: '🔑', pct: isSmall ? 0.14 : 0.12, description: 'Password manager, MFA', tools: 'Bitwarden, Duo, YubiKey' },
+    ...(isSmall ? [] : [{ name: 'Training & Awareness', icon: '👥', pct: 0.10, description: 'Security training, phishing simulations', tools: 'KnowBe4, free training scripts, phishing quiz' }]),
     { name: 'Network Security', icon: '🌐', pct: 0.12, description: 'Firewall, VPN, WiFi security', tools: 'Cloudflare, Ubiquiti, Tailscale' },
-    { name: 'Insurance & Compliance', icon: '📋', pct: 0.08, description: 'Cyber insurance, compliance tools', tools: 'Cyber policy, compliance toolkit, legal review' },
-  ], []);
+    { name: 'Insurance & Compliance', icon: '📋', pct: isSmall ? 0.06 : 0.08, description: 'Cyber insurance, compliance tools', tools: 'Cyber policy, compliance toolkit, legal review' },
+  ]}, [employees]);
 
   return (
     <div>
@@ -119,7 +121,7 @@ export default function SmbBudgetCalculator() {
       </div>
 
       <div className="mt-8 rounded-xl bg-accent-50 border border-accent-200 p-5 text-sm text-accent-800">
-        <strong>💡 Budget Tip:</strong> Start with the highest-impact items (endpoint protection + backup) and build out from there. Many tools have free tiers for very small teams. For businesses with fewer than 10 employees, some categories can be consolidated to reduce cost.
+        <strong>💡 How this is calculated:</strong> ${"$800/employee + 0.8% of annual revenue"}, adjusted by industry risk and company size. For solo businesses and micro-teams (1-3 people), categories like training are removed and budget shifts to tools. <strong>Tip:</strong> Start with endpoint protection + backup. Many tools have free tiers for very small teams.
       </div>
     </div>
   );

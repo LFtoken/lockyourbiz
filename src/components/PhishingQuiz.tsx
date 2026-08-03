@@ -465,64 +465,34 @@ export default function PhishingQuiz() {
   if (stage === 'intro') {
     return (
       <div className="mx-auto max-w-2xl">
-        <div className="text-center mb-8">
-          <div className="text-6xl mb-4">🎣</div>
-          <h2 className="text-3xl font-extrabold text-gray-900">Can You Spot a Phishing Email?</h2>
-          <p className="mt-4 text-lg text-gray-600 leading-relaxed">
-            10 emails. Some are real, some are scams. Can you tell the difference?
-          </p>
+        <div className="text-center mb-6">
+          <div className="text-5xl mb-3">🎣</div>
+          <h2 className="text-2xl font-extrabold text-gray-900 sm:text-3xl">Can You Spot a Phishing Email?</h2>
+          <p className="mt-2 text-gray-600">10 realistic emails. Real or scam? You decide. Learn the patterns that give attackers away.</p>
         </div>
 
-        <div className="rounded-2xl bg-yellow-50 border border-yellow-200 p-6 mb-8">
-          <p className="text-sm font-semibold text-yellow-800">Why This Matters</p>
-          <p className="mt-2 text-sm text-yellow-700">
-            91% of cyberattacks start with a phishing email. The average small business employee receives 14 phishing emails per month. But here is the thing: <strong>once you know the patterns, most phishing emails are obvious.</strong> This quiz teaches you those patterns — using emails that look and feel real.
-          </p>
+        <div className="grid grid-cols-3 gap-3 mb-6">
+          <div className="rounded-xl border border-gray-200 bg-white p-3 text-center"><div className="text-xl font-bold text-gray-900">10</div><div className="text-xs text-gray-500">Emails</div></div>
+          <div className="rounded-xl border border-gray-200 bg-white p-3 text-center"><div className="text-xl font-bold text-gray-900">5min</div><div className="text-xs text-gray-500">Quick</div></div>
+          <div className="rounded-xl border border-gray-200 bg-white p-3 text-center"><div className="text-xl font-bold text-gray-900">🎓</div><div className="text-xs text-gray-500">Learn</div></div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-          <div className="rounded-xl border border-gray-200 bg-white p-4 text-center">
-            <div className="text-3xl mb-2">📧</div>
-            <div className="text-2xl font-bold text-gray-900">10</div>
-            <div className="text-xs text-gray-500 mt-1">Realistic Emails</div>
-          </div>
-          <div className="rounded-xl border border-gray-200 bg-white p-4 text-center">
-            <div className="text-3xl mb-2">⏱️</div>
-            <div className="text-2xl font-bold text-gray-900">5 min</div>
-            <div className="text-xs text-gray-500 mt-1">To Complete</div>
-          </div>
-          <div className="rounded-xl border border-gray-200 bg-white p-4 text-center">
-            <div className="text-3xl mb-2">🎓</div>
-            <div className="text-2xl font-bold text-gray-900">Learn</div>
-            <div className="text-xs text-gray-500 mt-1">After Each Answer</div>
-          </div>
-        </div>
-
-        <div className="rounded-2xl bg-gray-50 border border-gray-200 p-6 mb-8">
-          <h3 className="font-semibold text-gray-900 mb-3">How It Works</h3>
-          <ol className="text-sm text-gray-700 space-y-2">
-            <li><strong>1.</strong> We will show you 10 emails, one at a time — some are real business emails, some are phishing attempts.</li>
-            <li><strong>2.</strong> For each one, decide: <strong>Legitimate</strong> or <strong>Phishing</strong>?</li>
-            <li><strong>3.</strong> After each answer, we will break down exactly what gave it away (or what made it safe) — with the specific red flags and green flags highlighted.</li>
-            <li><strong>4.</strong> At the end, you will get your score plus a breakdown of which phishing types you are good at spotting and which ones you need to watch for.</li>
-          </ol>
-        </div>
+        <p className="text-sm text-gray-500 text-center mb-6">91% of cyberattacks start with phishing. Once you know the patterns, most are obvious.</p>
 
         <div className="text-center">
           <button
             onClick={() => setStage('quiz')}
-            className="inline-flex items-center gap-2 rounded-xl bg-primary-600 px-8 py-3.5 text-base font-semibold text-white shadow-md hover:bg-primary-700 transition-all duration-200 cursor-pointer"
+            className="inline-flex items-center gap-2 rounded-xl bg-primary-600 px-8 py-3.5 text-base font-semibold text-white shadow-md hover:bg-primary-700 transition-all duration-200 cursor-pointer min-h-[44px]"
           >
             Start the Quiz
-            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
           </button>
-          <p class="mt-3 text-xs text-gray-400">No sign-up. Nothing leaves your browser.</p>
+          <p className="mt-3 text-xs text-gray-400">No sign-up. Nothing leaves your browser.</p>
         </div>
       </div>
     );
   }
 
-  // === QUIZ STAGE ===
   if (stage === 'quiz') {
     const scenario = scenarios[currentQuestion];
     return (
