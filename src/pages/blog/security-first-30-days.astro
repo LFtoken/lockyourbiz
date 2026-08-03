@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Your First 30 Days of Cybersecurity — A Day-by-Day Plan for Small Business"
+  description="Starting from zero. A realistic 30-day security plan for small business owners who don't have IT staff. What to do each day — and what you can skip."
+>
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <article class="mx-auto max-w-3xl">
+      <div class="flex flex-wrap items-center gap-3 text-sm text-gray-500 mb-6">
+        <time datetime="2026-07-23">July 23, 2026</time>
+        <span class="inline-flex items-center rounded-full bg-primary-50 px-3 py-1 text-xs font-medium text-primary-700">Getting Started</span>
+        <span>8 min read</span>
+      </div>
+
+      <h1 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Your First 30 Days of Cybersecurity</h1>
+      <p class="mt-4 text-lg leading-8 text-gray-600">
+        You have decided to take security seriously. But where do you start? Here is a day-by-day plan that does not assume you have an IT background — or an IT budget. Most days take 15-30 minutes.
+      </p>
+
+      <div class="mt-10 prose prose-lg prose-gray max-w-none">
+
+        <div class="not-prose rounded-2xl bg-primary-50 border border-primary-200 p-5 my-8">
+          <p class="text-sm text-primary-800"><strong>Before you start:</strong> This plan assumes you are starting from roughly zero — maybe you have been putting off security because it seemed overwhelming. That is fine. The goal here is not to become a security expert in 30 days. The goal is to get the basics right and build momentum. By the end of the month, you will have eliminated the vulnerabilities that attackers actually exploit against small businesses.</p>
+        </div>
+
+        <h2>Week 1: The Quick Wins</h2>
+
+        <h3>Day 1 — Turn on MFA for email (15 minutes)</h3>
+        <p>This is always #1. Go to your email admin console (Google Workspace or Microsoft 365). Find the security settings. Enable multi-factor authentication for all users. Require it — do not make it optional. This single step blocks 99% of account takeover attacks.</p>
+
+        <h3>Day 2 — Install a password manager (10 minutes)</h3>
+        <p>Install Bitwarden (free). Create your account. Generate your first strong password. Install the browser extension. The goal today is just to get it set up. Building the habit of using it comes over the next few weeks.</p>
+
+        <h3>Day 3 — Check your backups (20 minutes)</h3>
+        <p>Do you have automated backups running? For what? How often? When was the last test restore? If you do not have answers to all three of these questions, spend today figuring them out. If you have no backup system at all, sign up for Backblaze ($7/month/computer) and start the first backup.</p>
+
+        <h3>Day 4 — Turn on automatic updates everywhere (15 minutes)</h3>
+        <p>Go to every computer in the office. Settings → Windows Update / Software Update → turn on automatic updates. Check your phone while you are at it.</p>
+
+        <h3>Day 5 — Put your website behind Cloudflare (30 minutes)</h3>
+        <p>Create a free Cloudflare account. Change your domain's nameservers to Cloudflare's. Enable HTTPS, turn on the basic WAF. This is genuinely one of the highest-impact security measures you can take for $0.</p>
+
+        <h2>Week 2: The Foundation</h2>
+
+        <h3>Day 6 — Make a list of all your accounts (30 minutes)</h3>
+        <p>Sit down with a spreadsheet. List every online service your business uses — email, accounting, CRM, file storage, project management, social media, banking, payroll, everything. For each one, note: who has access, whether MFA is enabled, and when you last changed the password. This list will be longer than you expect.</p>
+
+        <h3>Day 7 — Enable MFA on financial accounts (20 minutes)</h3>
+        <p>Bank. QuickBooks/Xero. Stripe/PayPal. Payroll provider. These are the accounts where a compromise means direct financial loss. MFA every one of them. Use an authenticator app, not SMS.</p>
+
+        <h3>Day 8 — Audit who has access to what (30 minutes)</h3>
+        <p>Take yesterday's spreadsheet. For each service, look at the user list. Remove anyone who no longer works with you. Remove anyone who has more access than they need. The summer intern does not need admin on your domain registrar.</p>
+
+        <h3>Day 9 — Set up email authentication (30 minutes)</h3>
+        <p>Add SPF, DKIM, and DMARC DNS records for your domain. This stops attackers from spoofing your email address. Follow our DMARC/SPF/DKIM guide for the exact steps.</p>
+
+        <h3>Day 10 — Write your security policy (2 hours)</h3>
+        <p>Use the template from our Cybersecurity Policy article. Fill in the brackets. Print it. Have everyone sign it. Congratulations — you now have a written information security plan, which is required by the FTC Safeguards Rule and asked for by cyber insurance applications.</p>
+
+        <h2>Week 3: The Harder Stuff</h2>
+
+        <h3>Day 11-12 — Train your team (two 30-minute sessions)</h3>
+        <p>Session 1: Phishing. Show them real phishing emails. Show them what to look for. Make it interactive — nobody learns from a PowerPoint. Use the phishing quiz on our tools page as a group exercise.</p>
+        <p>Session 2: Passwords and MFA. Walk through the password manager. Make sure everyone's MFA is set up. Show them how to use an authenticator app.</p>
+
+        <h3>Day 13 — Check your third-party app permissions (20 minutes)</h3>
+        <p>Go to Google Workspace or Microsoft 365 admin → Security → Third-party apps. You will find apps connected to your account that you have never heard of. Revoke everything that is not actively used. Every one of those apps was granted access by an employee who clicked "Sign in with Google" on some website two years ago.</p>
+
+        <h3>Day 14 — Do a backup test restore (1 hour)</h3>
+        <p>Pick one important file and one unimportant file. Restore both from backup. Time how long it takes. Verify the files are intact. Do not skip this — untested backups are the #1 reason small businesses pay ransoms.</p>
+
+        <h3>Day 15 — Review your domain and DNS security (20 minutes)</h3>
+        <p>Log into your domain registrar (GoDaddy, Namecheap, etc.). Enable MFA on the registrar account. Enable registry lock if available. Check that your contact email is current. Your domain is the root of your online identity — if someone gains control of it, they can redirect your website and intercept your email.</p>
+
+        <h2>Week 4: Lock It In</h2>
+
+        <h3>Day 16-20 — Finish remaining MFA (spread across 5 days, 15 min/day)</h3>
+        <p>Go through the rest of your spreadsheet from Day 6. Enable MFA on every remaining service. Four or five per day. By the end of this week, every account should have MFA.</p>
+
+        <h3>Day 21 — Set up monitoring (30 minutes)</h3>
+        <p>Sign up for Have I Been Pwned domain monitoring. Set up Google Search Console for your website. Connect UptimeRobot for uptime alerts.</p>
+
+        <h3>Day 22 — Write your incident response one-pager (1 hour)</h3>
+        <p>Who do you call first when something goes wrong? What is the backup person if they are unavailable? Write down names and phone numbers — not just email. Print it. Put it somewhere visible.</p>
+
+        <h3>Day 23 — Do a phishing simulation (15 minutes)</h3>
+        <p>Send a fake phishing email to your team. Nothing malicious — just a test. See who clicks. Follow up with those who do. No blame, just training. You will learn more from this 15-minute exercise than from any policy document.</p>
+
+        <h3>Day 24 — Secure your WiFi (20 minutes)</h3>
+        <p>Change the default router admin password. Make sure your WiFi uses WPA3 encryption (or WPA2 if WPA3 is not available). Create a separate guest network if you have not already.</p>
+
+        <h3>Day 25 — Review your cyber insurance (30 minutes)</h3>
+        <p>Do you have it? If not, get a quote. If yes, review the coverage. Does it include breach response costs? Ransom payments? Business interruption? When is the last time you updated the application?</p>
+
+        <h3>Day 26-29 — Catch-up days</h3>
+        <p>Something on this list took longer than expected. Something came up at work. Use these days to finish whatever you skipped.</p>
+
+        <h3>Day 30 — Review and plan next quarter</h3>
+        <p>Look at your spreadsheet from Day 6. Everything should have MFA now. Your backups should be tested. Your team should be trained. Your policy should be signed. You are not "done" — security is never done — but you are ahead of 90% of small businesses.</p>
+        <p>Put a recurring calendar reminder: "Security check — 1st of every quarter." Spend 30 minutes going through this list again. Tweak the things that are slipping. That is how you stay ahead.</p>
+
+        <h2>What I Left Out (On Purpose)</h2>
+        <p>You will notice there is no "install an enterprise firewall" or "hire a penetration testing firm" on this list. Those are great things to do eventually. But they are not where you start. The 30-day plan above focuses on what actually causes breaches at small businesses: stolen credentials, unpatched software, untested backups, and untrained people. Fix those first. Everything else can wait.</p>
+
+      </div>
+
+      <div class="mt-12 rounded-2xl bg-primary-50 p-6">
+        <h2 class="text-lg font-bold text-primary-900">Related Guides</h2>
+        <ul class="mt-3 space-y-2">
+          <li><a href="/blog/cybersecurity-101/" class="text-primary-700 hover:underline font-medium">Cybersecurity 101 Guide →</a></li>
+          <li><a href="/blog/cybersecurity-policy-template/" class="text-primary-700 hover:underline font-medium">Write Your Security Policy →</a></li>
+          <li><a href="/blog/security-audit-checklist/" class="text-primary-700 hover:underline font-medium">Security Audit Checklist →</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</BaseLayout>

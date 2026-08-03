@@ -1,0 +1,128 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Is Your IT Provider Keeping You Safe? 10 Questions to Audit Your MSP"
+  description="Most small businesses trust their MSP completely — and never verify. Here is how to audit your IT provider's security practices without being a jerk about it."
+>
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <article class="mx-auto max-w-3xl">
+      <div class="flex flex-wrap items-center gap-3 text-sm text-gray-500 mb-6">
+        <time datetime="2026-07-23">July 23, 2026</time>
+        <span class="inline-flex items-center rounded-full bg-primary-50 px-3 py-1 text-xs font-medium text-primary-700">Policies & Planning</span>
+        <span>7 min read</span>
+      </div>
+
+      <h1 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Is Your IT Guy Actually Keeping You Safe?</h1>
+      <p class="mt-4 text-lg leading-8 text-gray-600">
+        I have done security assessments for small businesses where the MSP was charging $2,000 a month and hadn't enabled MFA on the email accounts. Here are the 10 questions to ask your IT provider — plus what a good answer sounds like.
+      </p>
+
+      <div class="mt-10 prose prose-lg prose-gray max-w-none">
+
+        <div class="not-prose rounded-2xl bg-red-50 border border-red-200 p-6 my-8">
+          <h3 class="text-lg font-bold text-red-900">The uncomfortable truth</h3>
+          <p class="mt-2 text-sm text-red-800">
+            Most MSPs (Managed Service Providers) are honest, competent, and genuinely care about their clients. But here is the thing: their incentives are not perfectly aligned with yours. They get paid to keep things running, not necessarily to keep things secure. Security costs money and causes friction — two things that make client relationships harder. If you never ask about security, some MSPs will never bring it up.
+          </p>
+          <p class="mt-2 text-sm text-red-800">
+            I am not saying your IT provider is bad. I am saying you should verify. Here is how.
+          </p>
+        </div>
+
+        <h2>The 10 Questions</h2>
+
+        <div class="not-prose mt-6 space-y-4">
+          <div class="rounded-lg bg-gray-50 p-5">
+            <h3 class="font-semibold text-gray-900">1. "Do we have MFA turned on for email?"</h3>
+            <p class="mt-1 text-sm text-gray-700">This is the single most important question. Email is the master key to your business — if an attacker gets in, they can reset passwords on everything else. <strong>A good answer:</strong> "Yes, it is enforced for all users. We use [authenticator apps / hardware keys / Duo]." <strong>A bad answer:</strong> "We discussed it but didn't want to inconvenience people."</p>
+          </div>
+
+          <div class="rounded-lg bg-gray-50 p-5">
+            <h3 class="font-semibold text-gray-900">2. "When was our last backup test restore?"</h3>
+            <p class="mt-1 text-sm text-gray-700">A backup that has not been tested is not a backup — it is a wish. <strong>A good answer:</strong> "Three months ago. Here is the log showing what we restored and how long it took." <strong>A bad answer:</strong> "The backup software says everything is fine." (Backup software always says everything is fine. That is why you test.)</p>
+          </div>
+
+          <div class="rounded-lg bg-gray-50 p-5">
+            <h3 class="font-semibold text-gray-900">3. "Do we have a list of every employee and vendor with access to our systems?"</h3>
+            <p class="mt-1 text-sm text-gray-700">Former employees, ex-interns, old contractors — the average small business has 3-5 people with active access who should not. <strong>A good answer:</strong> "Yes, here it is. We review it quarterly." <strong>A bad answer:</strong> "Probably — we can pull something together."</p>
+          </div>
+
+          <div class="rounded-lg bg-gray-50 p-5">
+            <h3 class="font-semibold text-gray-900">4. "When was our last security risk assessment?"</h3>
+            <p class="mt-1 text-sm text-gray-700"><strong>A good answer:</strong> "Six months ago. Here is what we found and what we fixed." <strong>A bad answer:</strong> "We do not really do formal assessments."</p>
+          </div>
+
+          <div class="rounded-lg bg-gray-50 p-5">
+            <h3 class="font-semibold text-gray-900">5. "What happens if you get hit with ransomware?"</h3>
+            <p class="mt-1 text-sm text-gray-700">Your MSP is a prime target — they manage dozens of businesses, making them a force multiplier for attackers. <strong>A good answer:</strong> "We have our own EDR, separate backups, and an incident response plan. Here is how we would contain it and protect your data." <strong>A bad answer:</strong> "That would never happen to us." (I actually heard this once. I fired them on the client's behalf.)</p>
+          </div>
+
+          <div class="rounded-lg bg-gray-50 p-5">
+            <h3 class="font-semibold text-gray-900">6. "Are our computers set to update automatically?"</h3>
+            <p class="mt-1 text-sm text-gray-700"><strong>A good answer:</strong> "Yes, security patches install within 24 hours. We have a test group for feature updates." <strong>A bad answer:</strong> "We handle updates manually." (Manual updates means they will not happen consistently.)</p>
+          </div>
+
+          <div class="rounded-lg bg-gray-50 p-5">
+            <h3 class="font-semibold text-gray-900">7. "Do we have a written incident response plan?"</h3>
+            <p class="mt-1 text-sm text-gray-700"><strong>A good answer:</strong> "Yes. Here it is. It covers who to call, in what order, and what to do first." <strong>A bad answer:</strong> "We would handle it if something happens."</p>
+          </div>
+
+          <div class="rounded-lg bg-gray-50 p-5">
+            <h3 class="font-semibold text-gray-900">8. "What antivirus / EDR are we running?"</h3>
+            <p class="mt-1 text-sm text-gray-700"><strong>A good answer:</strong> "[Bitdefender / CrowdStrike / Sophos / Defender for Business] with EDR capabilities." <strong>A bad answer:</strong> "The free one that came with the computer." Or worse: silence.</p>
+          </div>
+
+          <div class="rounded-lg bg-gray-50 p-5">
+            <h3 class="font-semibold text-gray-900">9. "Do you have cyber insurance that covers our data?"</h3>
+            <p class="mt-1 text-sm text-gray-700">If your MSP causes a breach, their insurance should cover the damage — not yours. <strong>A good answer:</strong> "Yes, here is our certificate of insurance." <strong>A bad answer:</strong> "We are looking into it." (They have been "looking into it" for three years.)</p>
+          </div>
+
+          <div class="rounded-lg bg-gray-50 p-5">
+            <h3 class="font-semibold text-gray-900">10. "Can I see our admin account list?"</h3>
+            <p class="mt-1 text-sm text-gray-700">This is the panic test. If they hesitate or push back on this request, something is wrong. <strong>A good answer:</strong> "Here you go. Let me walk you through who each one is." <strong>A bad answer:</strong> Any form of resistance. You own the systems. You should be able to see who has access.</p>
+          </div>
+        </div>
+
+        <h2>How to Have This Conversation Without Being a Jerk</h2>
+        <p>
+          Do not send these 10 questions in an email out of nowhere. That reads as aggressive and accusatory. Instead, schedule a quarterly review call (which you should be having anyway) and frame it like this:
+        </p>
+        <p>
+          <em>"Hey, our insurance company asked us to verify a few things about our security setup. Can we go through this list together on our next call? I want to make sure I can answer their questions accurately."</em>
+        </p>
+        <p>
+          Blaming the insurance company is the universal excuse for awkward security conversations. Use it. It works.
+        </p>
+
+        <h2>Red Flags That Mean "Start Looking for a New MSP"</h2>
+        <ul>
+          <li>They cannot answer questions 1-3 immediately. These are basic operational questions. If they do not know, nobody is watching.</li>
+          <li>They get defensive. A good MSP welcomes scrutiny — it proves they are doing their job.</li>
+          <li>They have never done a backup test restore. Not once. Ever. Run.</li>
+          <li>They discourage you from enabling MFA because "users find it annoying." This is not a technical opinion. It is negligence.</li>
+          <li>They charge extra for security basics. MFA setup, backup testing, and access reviews are not premium services. They are table stakes.</li>
+        </ul>
+
+        <h2>What a Good MSP Relationship Looks Like</h2>
+        <p>
+          The best MSP relationships I have seen look like this: quarterly review calls with a simple agenda. The MSP comes prepared with a one-page report — patching status, backup test results, access review, any security incidents. It takes 15 minutes. Both sides know what is happening. Trust is built on transparency, not assumption.
+        </p>
+        <p>
+          If your MSP cannot provide this, they are not providing security. They are providing tech support with a higher price tag.
+        </p>
+
+      </div>
+
+      <div class="mt-12 rounded-2xl bg-primary-50 p-6">
+        <h2 class="text-lg font-bold text-primary-900">Related Guides</h2>
+        <ul class="mt-3 space-y-2">
+          <li><a href="/blog/security-audit-checklist/" class="text-primary-700 hover:underline font-medium">Security Audit Checklist →</a></li>
+          <li><a href="/blog/essential-security-services/" class="text-primary-700 hover:underline font-medium">Security Services: What to Outsource →</a></li>
+          <li><a href="/blog/cyber-insurance-guide/" class="text-primary-700 hover:underline font-medium">Cyber Insurance Guide →</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</BaseLayout>

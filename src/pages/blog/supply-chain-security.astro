@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Supply Chain Attacks: Your Vendors Are a Backdoor Into Your Business"
+  description="When your supplier gets hacked, your data goes with them. How to assess vendor risk, write security requirements into contracts, and protect your business from third-party breaches."
+>
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <article class="mx-auto max-w-3xl">
+      <div class="flex flex-wrap items-center gap-3 text-sm text-gray-500 mb-6">
+        <time datetime="2026-07-23">July 23, 2026</time>
+        <span class="inline-flex items-center rounded-full bg-primary-50 px-3 py-1 text-xs font-medium text-primary-700">Threats</span>
+        <span>7 min read</span>
+      </div>
+
+      <h1 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Supply Chain Attacks: The Backdoor You Forgot About</h1>
+      <p class="mt-4 text-lg leading-8 text-gray-600">
+        Your business might have perfect security. Your payroll provider might not. Your HVAC vendor with remote building access might not. Your cloud file-sharing service might not. Here is what to do about risks you cannot directly control.
+      </p>
+
+      <div class="mt-10 prose prose-lg prose-gray max-w-none">
+
+        <div class="not-prose rounded-2xl bg-red-50 border border-red-200 p-6 my-8">
+          <h3 class="text-lg font-bold text-red-900">The wake-up call</h3>
+          <p class="mt-2 text-sm text-red-800">In 2024, a single software update from an IT management company called Kaseya was compromised. Attackers pushed ransomware through the update to 1,500 businesses — none of whom had done anything wrong. They trusted their IT provider. That trust cost them an average of $45,000 per business in recovery costs.</p>
+        </div>
+
+        <h2>You Are Only as Secure as Your Weakest Vendor</h2>
+        <p>
+          Think about every company that has access to your data or systems: your payroll provider has Social Security numbers and bank details for every employee. Your accounting firm has your financial records. That cloud storage service has your customer contracts. The HVAC company has a remote login to your building management system. Your website host has your customer database. Your email marketing tool has your client list. Your IT support company has administrator access to everything.
+        </p>
+        <p>
+          Any one of these companies getting breached means <strong>your</strong> data gets exposed. And under most data protection laws, <strong>you</strong> are responsible for notifying <strong>your</strong> customers — not the vendor who got hacked.
+        </p>
+
+        <div class="not-prose mt-6 overflow-x-auto">
+          <table class="min-w-full text-sm">
+            <thead class="bg-gray-50">
+              <tr><th class="px-4 py-3 text-left font-semibold">Vendor Type</th><th class="px-4 py-3 text-left font-semibold">Data They Have</th><th class="px-4 py-3 text-center font-semibold">Risk Level</th></tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr><td class="px-4 py-3 font-semibold">Payroll / HR provider</td><td class="text-sm">SSNs, bank accounts, salary data</td><td class="text-center text-red-700 font-bold">Critical</td></tr>
+              <tr><td class="px-4 py-3 font-semibold">MSP / IT support</td><td class="text-sm">Admin access to all systems</td><td class="text-center text-red-700 font-bold">Critical</td></tr>
+              <tr><td class="px-4 py-3 font-semibold">Accounting firm / bookkeeper</td><td class="text-sm">Financial records, tax data</td><td class="text-center text-red-700 font-bold">Critical</td></tr>
+              <tr><td class="px-4 py-3 font-semibold">Cloud storage / file sharing</td><td class="text-sm">Contracts, customer data, IP</td><td class="text-center text-orange-700 font-bold">High</td></tr>
+              <tr><td class="px-4 py-3 font-semibold">Email marketing platform</td><td class="text-sm">Customer list, email history</td><td class="text-center text-orange-700 font-bold">High</td></tr>
+              <tr><td class="px-4 py-3 font-semibold">Website host / e-commerce</td><td class="text-sm">Customer orders, payment records</td><td class="text-center text-red-700 font-bold">Critical</td></tr>
+              <tr><td class="px-4 py-3 font-semibold">CRM system</td><td class="text-sm">Customer details, pipeline, notes</td><td class="text-center text-orange-700 font-bold">High</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Step 1: Inventory Every Vendor</h2>
+        <p>
+          Most small business owners cannot name every company that has their data off the top of their head. That is the first problem. Pull your accounts payable list. Every recurring charge is a vendor. Every vendor either has your data or could get it. Make the list. It will be longer than you think. (The average 20-person company I have audited has 40-60 vendors with some level of data access.)
+        </p>
+
+        <h2>Step 2: Sort by Risk</h2>
+        <p>
+          Not all vendors are equal. Triage them into three buckets:
+        </p>
+        <ul>
+          <li><strong>Tier 1 (Critical):</strong> Has your customer data, financial data, employee PII, or admin access to your systems. These get the full treatment below.</li>
+          <li><strong>Tier 2 (Significant):</strong> Has business contact information, non-sensitive communications. Basic due diligence.</li>
+          <li><strong>Tier 3 (Minimal):</strong> No data access (office cleaning, vending machine supplier). No action needed.</li>
+        </ul>
+
+        <h2>Step 3: Send the Security Questionnaire</h2>
+        <p>
+          For Tier 1 vendors, send a simple questionnaire. I have used this exact one with clients. It fits on one page:
+        </p>
+
+        <div class="not-prose rounded-xl border border-gray-300 bg-white p-5 my-6 font-mono text-sm leading-relaxed text-gray-700">
+          <p><strong class="text-gray-900">Vendor Security Assessment — Quick Version</strong></p>
+          <p>1. Do you require multi-factor authentication (MFA) for all user accounts that access customer data? [Yes / No]</p>
+          <p>2. Do you encrypt customer data at rest and in transit? [Yes / No]</p>
+          <p>3. Do you have a written incident response plan? [Yes / No]</p>
+          <p>4. Will you notify us within 24 hours of discovering a breach affecting our data? [Yes / No]</p>
+          <p>5. Do you undergo independent security testing (penetration test, SOC 2 audit, ISO 27001 certification)? [Yes / No] — If yes, can you share the latest summary report?</p>
+          <p>6. Do you carry cyber insurance that covers client data? [Yes / No]</p>
+          <p>7. How do you handle data deletion when our contract ends?</p>
+        </div>
+        <p>
+          A vendor that answers "No" to questions 1, 2, or 4 is a serious risk. A vendor that will not answer at all is an even bigger risk.
+        </p>
+
+        <h2>Step 4: Put It in the Contract</h2>
+        <p>
+          If you have any leverage at all — and if you are paying them, you have leverage — add these three clauses to vendor contracts:
+        </p>
+        <ul>
+          <li><strong>Data Processing Agreement (DPA):</strong> Required under GDPR, recommended everywhere else. Specifies what data they can process, for what purpose, and what security measures they must maintain.</li>
+          <li><strong>Breach notification clause:</strong> "Vendor shall notify Client within 24 hours of discovering a security incident affecting Client data." 24 hours, not 30 days. You need time to respond.</li>
+          <li><strong>Right to audit:</strong> "Client reserves the right to request evidence of Vendor's security controls annually." You may never exercise this. But having it means they cannot ignore your questionnaire.</li>
+        </ul>
+
+        <h2>Step 5: Have an Offboarding Plan</h2>
+        <p>
+          When you stop working with a vendor, your data should stop being in their systems. Send a formal offboarding request: delete our data, confirm in writing. For Tier 1 vendors, request a certificate of deletion. Most will push back — "our retention policy keeps backups for 90 days." Accept that, but get the timeline in writing. After 90 days, follow up.
+        </p>
+
+        <h2>The Bottom Line</h2>
+        <p>
+          You cannot prevent your vendors from getting breached. You can make sure that when they do, you find out fast, your notification obligations are clear, and your liability is limited. The difference between a vendor breach that costs you $10,000 and one that costs you $100,000 is usually just one thing: whether you had a contract that required them to tell you within 24 hours, or whether you found out from a news article three weeks later.
+        </p>
+
+      </div>
+
+      <div class="mt-12 rounded-2xl bg-primary-50 p-6">
+        <h2 class="text-lg font-bold text-primary-900">Related Guides</h2>
+        <ul class="mt-3 space-y-2">
+          <li><a href="/incident-response/vendor-breach/" class="text-primary-700 hover:underline font-medium">Vendor Breach Response Guide →</a></li>
+          <li><a href="/compliance/compliance-toolkit/" class="text-primary-700 hover:underline font-medium">Compliance Toolkit (DPA Templates) →</a></li>
+          <li><a href="/blog/security-audit-checklist/" class="text-primary-700 hover:underline font-medium">Security Audit Checklist →</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</BaseLayout>

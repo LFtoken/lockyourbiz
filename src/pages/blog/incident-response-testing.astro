@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Test Your Incident Response Plan Before You Need It — Tabletop Exercise Guide"
+  description="An untested incident response plan is just a document. Here is how to run a simple tabletop exercise with your team — no consultants, no fake news cameras, just honest practice."
+>
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <article class="mx-auto max-w-3xl">
+      <div class="flex flex-wrap items-center gap-3 text-sm text-gray-500 mb-6">
+        <time datetime="2026-07-23">July 23, 2026</time>
+        <span class="inline-flex items-center rounded-full bg-primary-50 px-3 py-1 text-xs font-medium text-primary-700">Policies & Planning</span>
+        <span>7 min read</span>
+      </div>
+
+      <h1 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Test Your Incident Response Plan Before You Need It</h1>
+      <p class="mt-4 text-lg leading-8 text-gray-600">
+        A plan nobody has practiced is not a plan. It is wishful thinking. Here is how to run a 90-minute tabletop exercise that will reveal every gap in your incident response — before the attackers do.
+      </p>
+
+      <div class="mt-10 prose prose-lg prose-gray max-w-none">
+
+        <h2>The $50,000 Typo</h2>
+        <p>
+          A small marketing agency had an incident response plan. It was a nice document. Six pages. Clear steps. Contact numbers. They had paid a consultant $3,000 to write it two years ago.
+        </p>
+        <p>
+          When ransomware hit on a Friday afternoon, they pulled out the plan. The first person on the contact list had left the company 18 months ago. The second number was a desk phone that nobody answered on a Friday. The third contact was their MSP — whose email was part of the same system that was down. Nobody had their direct phone number. It took four hours to reach someone who could start the response.
+        </p>
+        <p>
+          Four hours. In ransomware response, four hours is the difference between one infected computer and every computer on the network. That four-hour delay turned a manageable incident into a six-figure recovery. All because nobody had tested the plan.
+        </p>
+
+        <h2>What Is a Tabletop Exercise?</h2>
+        <p>
+          A tabletop exercise is the simplest form of incident response testing. You get the key people in a room. You present them with a scenario. They talk through what they would do, step by step. You discover what works and what does not. Nobody actually has to respond to a real incident. Nothing gets shut down. It is a conversation, not a drill.
+        </p>
+        <p>
+          The goal is not to test whether people can memorize a procedure. The goal is to find out: do the phone numbers work? Does everyone know who to call? Are there decision points where people hesitate because authority is unclear? Does the plan assume systems will be available that might not be?
+        </p>
+
+        <h2>How to Run One (90 Minutes Total)</h2>
+
+        <div class="not-prose mt-6 space-y-4">
+          <div class="rounded-lg bg-gray-50 p-5">
+            <h3 class="font-semibold text-gray-900">Preparation (15 minutes before the meeting)</h3>
+            <p class="mt-1 text-sm text-gray-700">Pick a scenario relevant to your business. Write it down in 2-3 sentences. Do not over-prepare — the point is to see how people react, not to test your creative writing. Have a printed copy of the current incident response plan in the room. Make sure the key people are there: the owner or decision-maker, whoever handles IT, whoever handles communications, and whoever would deal with legal/insurance.</p>
+          </div>
+
+          <div class="rounded-lg bg-gray-50 p-5">
+            <h3 class="font-semibold text-gray-900">Minute 0-5: Present the scenario</h3>
+            <p class="mt-1 text-sm text-gray-700">Read it aloud. Keep it simple. Example: "It is 3 PM on a Tuesday. Susan in accounting receives an email that looks like an invoice from a vendor. She opens the attachment. Her screen changes — files are being renamed. A message appears demanding $50,000 in Bitcoin within 72 hours. Susan calls you. What do you do?"</p>
+          </div>
+
+          <div class="rounded-lg bg-gray-50 p-5">
+            <h3 class="font-semibold text-gray-900">Minute 5-30: Walk through the first 30 minutes</h3>
+            <p class="mt-1 text-sm text-gray-700">Who gets called first? What is their actual phone number — look it up right now, do not assume. Who makes the decision about whether to disconnect systems? Who contacts the insurance company? Does anyone know the insurance company's breach hotline number? Write down every phone number that someone says they would need. Then verify each one. Last time I did this with a client, 3 of 7 phone numbers were wrong.</p>
+          </div>
+
+          <div class="rounded-lg bg-gray-50 p-5">
+            <h3 class="font-semibold text-gray-900">Minute 30-60: The hard decisions</h3>
+            <p class="mt-1 text-sm text-gray-700">Now introduce complications. "The MSP says it will take 48 hours to restore from backup. Your biggest client has a deliverable due tomorrow. Do you pay the ransom to speed things up?" "The forensic firm says customer data may have been accessed. Do you notify customers now with incomplete information, or wait until you know more?" "A reporter from a local news outlet has heard about the breach and is calling. Who talks to them? What do you say?" The value of the exercise is in these uncomfortable moments — where the plan says "notify legal counsel" but nobody knows who legal counsel is on a Friday at 4 PM.</p>
+          </div>
+
+          <div class="rounded-lg bg-gray-50 p-5">
+            <h3 class="font-semibold text-gray-900">Minute 60-75: Review and fix</h3>
+            <p class="mt-1 text-sm text-gray-700">Go through what worked and what did not. Update the plan immediately — do not put it on a to-do list. Wrong phone numbers get corrected right now. Missing contacts get added. Decision-making gaps get documented. The goal is to walk out of the room with an updated plan that is better than the one you walked in with.</p>
+          </div>
+
+          <div class="rounded-lg bg-gray-50 p-5">
+            <h3 class="font-semibold text-gray-900">Minute 75-90: Schedule the next one</h3>
+            <p class="mt-1 text-sm text-gray-700">Put a recurring calendar invite for 6 months from now. Pick a different scenario next time — website defacement, phishing attack that exposed credentials, lost laptop with customer data, vendor breach. Different scenarios reveal different gaps.</p>
+          </div>
+        </div>
+
+        <h2>Three Scenarios to Start With</h2>
+        <div class="not-prose mt-4 space-y-3">
+          <div class="rounded-lg bg-red-50 border border-red-200 p-4 text-sm">
+            <strong class="text-red-900">Scenario 1: Ransomware</strong>
+            <p class="mt-1 text-red-800">An employee opens a malicious attachment. Files across the network are encrypted. A ransom note demands $75K in Bitcoin within 72 hours. Your main file server and backup NAS are both encrypted. The off-site backup is a week old. What do you do?</p>
+          </div>
+          <div class="rounded-lg bg-orange-50 border border-orange-200 p-4 text-sm">
+            <strong class="text-orange-900">Scenario 2: Lost Laptop</strong>
+            <p class="mt-1 text-orange-800">Your sales director's laptop is stolen from their car. It contains customer contracts, pricing spreadsheets, and cached email with 3 years of client communications. The laptop has full-disk encryption but was logged in when stolen. What do you do?</p>
+          </div>
+          <div class="rounded-lg bg-yellow-50 border border-yellow-200 p-4 text-sm">
+            <strong class="text-yellow-900">Scenario 3: Phishing + Wire Transfer</strong>
+            <p class="mt-1 text-yellow-800">Your finance person receives an email that appears to be from you (the owner) asking for an urgent wire transfer to close a deal. The email uses your actual signature block and references real projects. They send $42,000. Then they mention it to you in passing and you realize it was fraud. What do you do?</p>
+          </div>
+        </div>
+
+        <h2>The Most Common Gaps (What You Will Probably Find)</h2>
+        <p>After running dozens of these with small businesses, the same gaps come up every time:</p>
+        <ol>
+          <li><strong>Phone numbers are wrong.</strong> People leave, desk phones change, nobody updates the plan.</li>
+          <li><strong>The plan assumes email is available.</strong> In a ransomware incident, it probably is not. You need phone numbers and a backup communication method (Signal, WhatsApp group, personal emails).</li>
+          <li><strong>Nobody knows who has authority to make decisions.</strong> Can the IT person authorize a $50K ransom payment? Probably not. But waiting for the owner to get back from vacation is not a plan either. Document decision-making authority for financial commitments during an incident.</li>
+          <li><strong>The insurance contact information is wrong or missing.</strong> Cyber insurance policies have a specific breach notification number. It is different from your regular claims number. Find it. Put it in the plan.</li>
+          <li><strong>Nobody knows the backup restoration timeline.</strong> "Restore from backup" sounds quick. It is not. Ask your MSP: "If we had to do a full restore of our file server today, how long would it take?" Write that number down.</li>
+        </ol>
+
+        <h2>The Bottom Line</h2>
+        <p>
+          An untested plan is a document that makes you feel prepared without actually preparing you. A 90-minute tabletop exercise costs nothing, requires no consultants, and will reveal more about your readiness than any checklist. Run one this quarter. Update the phone numbers. You will sleep better knowing the plan actually works — or at least knowing exactly what does not.
+        </p>
+
+      </div>
+
+      <div class="mt-12 rounded-2xl bg-primary-50 p-6">
+        <h2 class="text-lg font-bold text-primary-900">Related Guides</h2>
+        <ul class="mt-3 space-y-2">
+          <li><a href="/incident-response/" class="text-primary-700 hover:underline font-medium">Incident Response Center →</a></li>
+          <li><a href="/blog/cybersecurity-policy-template/" class="text-primary-700 hover:underline font-medium">Write Your Security Policy →</a></li>
+          <li><a href="/blog/ransomware-negotation/" class="text-primary-700 hover:underline font-medium">Inside a Ransomware Negotiation →</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</BaseLayout>

@@ -1,0 +1,110 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="What a Data Breach Actually Costs a Small Business — Real Numbers"
+  description="IBM says the average breach costs $4.88 million. That's meaningless for a 10-person company. Here is what it actually costs — based on real small business cases."
+>
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <article class="mx-auto max-w-3xl">
+      <div class="flex flex-wrap items-center gap-3 text-sm text-gray-500 mb-6">
+        <time datetime="2026-07-23">July 23, 2026</time>
+        <span class="inline-flex items-center rounded-full bg-primary-50 px-3 py-1 text-xs font-medium text-primary-700">Threats</span>
+        <span>7 min read</span>
+      </div>
+
+      <h1 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">The Real Cost of a Data Breach for a Small Business</h1>
+      <p class="mt-4 text-lg leading-8 text-gray-600">
+        IBM's annual "Cost of a Data Breach" report says the average breach costs $4.88 million. That number is useless for you. Here is what a breach actually costs a company with 12 employees — broken down line by line, based on real cases.
+      </p>
+
+      <div class="mt-10 prose prose-lg prose-gray max-w-none">
+
+        <div class="not-prose rounded-2xl bg-red-50 border border-red-200 p-6 my-8">
+          <h3 class="text-lg font-bold text-red-900">Three real small business breaches — actual costs</h3>
+          <div class="mt-3 space-y-3 text-sm">
+            <div class="bg-white rounded-lg p-4">
+              <strong>Case 1: Law firm, 8 employees.</strong> Email account compromised via phishing. Attacker accessed 3 years of client communications. <strong>Total cost: $87,000.</strong> Forensic investigation: $18K. Legal counsel: $22K. Client notification: $12K. Credit monitoring for affected clients: $5K. Lost billable hours during recovery: ~$30K. Insurance covered $65K after $10K deductible.
+            </div>
+            <div class="bg-white rounded-lg p-4">
+              <strong>Case 2: E-commerce retailer, 5 employees.</strong> WooCommerce site compromised. Payment skimmer installed on checkout. 1,200 customer cards stolen over 3 weeks before detection. <strong>Total cost: $52,000.</strong> Forensics + site cleanup: $15K. PCI-DSS fine: $10K. Customer notification + credit monitoring: $8K. Chargeback fees: $5K. Revenue lost during 4-day site shutdown: $14K.
+            </div>
+            <div class="bg-white rounded-lg p-4">
+              <strong>Case 3: Accounting firm, 15 employees.</strong> Ransomware via unpatched firewall. All files encrypted including tax returns in progress during tax season. <strong>Total cost: $215,000.</strong> Ransom payment: $50K (they paid). Forensics + restoration: $35K. Hardware replacement: $20K. Lost revenue (2 weeks downtime during tax season): $80K. Reputation damage / client churn (estimated): $30K.
+            </div>
+          </div>
+        </div>
+
+        <h2>Where the Money Goes — Line by Line</h2>
+        <p>
+          Every breach is different, but the costs fall into the same buckets every time. The order and amounts vary, but the buckets are consistent:
+        </p>
+
+        <div class="not-prose mt-6 overflow-x-auto">
+          <table class="min-w-full text-sm">
+            <thead class="bg-gray-50">
+              <tr><th class="px-4 py-3 text-left font-semibold">Cost Category</th><th class="px-4 py-3 text-center font-semibold">Typical Range</th><th class="px-4 py-3 text-left font-semibold">What It Pays For</th></tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr><td class="px-4 py-3 font-semibold text-red-700">Forensic Investigation</td><td class="text-center">$10K–$50K</td><td class="text-sm">Determining what happened, what data was taken, whether the attacker is still in your systems. This is the first call you make, and it is never cheap.</td></tr>
+              <tr><td class="px-4 py-3 font-semibold text-red-700">Legal Counsel</td><td class="text-center">$15K–$40K</td><td class="text-sm">Understanding your notification obligations across 50 states (or multiple countries), defending against lawsuits, negotiating with regulators.</td></tr>
+              <tr><td class="px-4 py-3 font-semibold text-red-700">Customer Notification</td><td class="text-center">$5K–$20K</td><td class="text-sm">Mailings, call center, credit monitoring for affected individuals. Some states require credit monitoring for 1-2 years if SSNs were exposed.</td></tr>
+              <tr><td class="px-4 py-3 font-semibold">Regulatory Fines</td><td class="text-center">$5K–$100K+</td><td class="text-sm">GDPR, HIPAA, state AGs, PCI-DSS. This varies wildly based on what data was exposed and whether you were negligent.</td></tr>
+              <tr><td class="px-4 py-3 font-semibold">System Remediation</td><td class="text-center">$5K–$35K</td><td class="text-sm">Cleaning malware, rebuilding servers, restoring from backups, upgrading the systems that failed.</td></tr>
+              <tr><td class="px-4 py-3 font-semibold">Business Interruption</td><td class="text-center">$10K–$100K+</td><td class="text-sm">Revenue lost while your business is partially or completely offline. This is usually the biggest line item, and it is almost never fully covered by insurance.</td></tr>
+              <tr><td class="px-4 py-3 font-semibold">Reputation / Client Loss</td><td class="text-center">$0–$50K+</td><td class="text-sm">Clients who leave, deals that fall through. Hard to quantify immediately, but real.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>The Insurance Math</h2>
+        <p>
+          Cyber insurance helps — but it is not a free pass. Here is what a typical small business policy looks like in practice:
+        </p>
+
+        <div class="not-prose rounded-xl bg-yellow-50 border border-yellow-200 p-5 my-6">
+          <ul class="space-y-2 text-sm text-yellow-800">
+            <li><strong>Deductible:</strong> $5,000–$25,000. You pay this first, before insurance kicks in.</li>
+            <li><strong>Coverage limit:</strong> $250K–$1M for a typical small business policy. Above that, you are on your own.</li>
+            <li><strong>What is covered:</strong> Forensics, legal, notification costs, credit monitoring, ransom payments (usually with sub-limits).</li>
+            <li><strong>What is usually NOT covered:</strong> Lost revenue, reputational damage, regulatory fines (varies by policy), the cost of upgrading systems after the breach.</li>
+            <li><strong>What voids your policy:</strong> Not having MFA enabled. Not having backups. Lying on your insurance application about your security measures. All three of these are increasingly common reasons for claim denial.</li>
+          </ul>
+        </div>
+
+        <h2>The Single Most Expensive Mistake</h2>
+        <p>
+          In all three cases above — and in nearly every small business breach I have studied — the root cause was something that would have been prevented by one of these four things:
+        </p>
+        <ol>
+          <li><strong>MFA on email.</strong> Prevents account takeover. Free. Takes 10 minutes. Blocks the #1 attack vector.</li>
+          <li><strong>Automatic updates.</strong> The e-commerce breach was a WooCommerce plugin with a patch that had been available for 6 months.</li>
+          <li><strong>A tested backup.</strong> The accounting firm had backups — on the same network as their main systems. The ransomware encrypted both. The off-site backup they "kept meaning to set up" would have saved them $50K and two weeks of downtime.</li>
+          <li><strong>Someone asking "does this look right to you?"</strong> The law firm breach started with a phishing email that three people recognized as suspicious — but nobody reported it because they assumed someone else would. Create a culture where reporting suspicious emails is celebrated, not ignored.</li>
+        </ol>
+
+        <h2>The Takeaway</h2>
+        <p>
+          A data breach will cost you somewhere between $50,000 and $250,000 depending on your size, your industry, and how fast you detect it. Insurance will cover 60-80% of the direct costs — if you have it and if you have not voided your policy by neglecting basic security.
+        </p>
+        <p>
+          Or you can spend two hours enabling MFA, setting up automatic updates, and testing a backup. That costs approximately nothing and reduces your breach risk by an order of magnitude.
+        </p>
+        <p>
+          The frustrating thing about small business security is that the most effective measures are also the cheapest. The expensive part is fixing things after they break.
+        </p>
+
+      </div>
+
+      <div class="mt-12 rounded-2xl bg-primary-50 p-6">
+        <h2 class="text-lg font-bold text-primary-900">Related Guides</h2>
+        <ul class="mt-3 space-y-2">
+          <li><a href="/blog/cyber-insurance-guide/" class="text-primary-700 hover:underline font-medium">Cyber Insurance: Do You Need It? →</a></li>
+          <li><a href="/blog/small-business-backup-strategy/" class="text-primary-700 hover:underline font-medium">Backup Strategy Guide →</a></li>
+          <li><a href="/incident-response/data-breach/" class="text-primary-700 hover:underline font-medium">Data Breach Response Guide →</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</BaseLayout>

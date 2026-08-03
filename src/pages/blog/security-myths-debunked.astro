@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="7 Security Myths That Small Business Owners Still Believe"
+  description="'We are too small to be a target.' 'We have nothing worth stealing.' 'Our IT guy handles security.' These beliefs are why small businesses get breached every day."
+>
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <article class="mx-auto max-w-3xl">
+      <div class="flex flex-wrap items-center gap-3 text-sm text-gray-500 mb-6">
+        <time datetime="2026-07-23">July 23, 2026</time>
+        <span class="inline-flex items-center rounded-full bg-primary-50 px-3 py-1 text-xs font-medium text-primary-700">Getting Started</span>
+        <span>6 min read</span>
+      </div>
+
+      <h1 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">7 Security Myths I Hear from Small Business Owners Every Week</h1>
+      <p class="mt-4 text-lg leading-8 text-gray-600">
+        I have these conversations so often I can predict the script. Here are the seven things business owners tell themselves about security — and why every single one is wrong.
+      </p>
+
+      <div class="mt-10 prose prose-lg prose-gray max-w-none">
+
+        <div class="not-prose mt-6 space-y-6">
+
+          <div class="rounded-2xl bg-red-50 border border-red-200 p-6">
+            <h3 class="text-lg font-bold text-red-900">Myth #1: "We are too small to be a target."</h3>
+            <p class="mt-2 text-sm text-red-800">
+              This is the one I hear most often, and it is the one that does the most damage. Here is why it is wrong: attackers are not targeting <em>you specifically</em>. They are running automated scans that hit every business with an internet connection. Your website gets scanned thousands of times a day by bots looking for vulnerabilities. Your email domain gets spoofed automatically by phishing kits. Ransomware does not check your revenue before encrypting your files.
+            </p>
+            <div class="mt-2 rounded-lg bg-white p-3 text-sm">
+              <strong>The reality:</strong> <a href="https://www.verizon.com/business/resources/reports/dbir/" target="_blank" rel="noopener" class="text-red-700 underline">Verizon's 2025 Data Breach Investigations Report</a> found that 43% of cyberattacks targeted small businesses. Not enterprises. Small businesses. You are not too small to be a target. You are exactly the right size — big enough to pay a ransom, too small to have a security team.
+            </div>
+          </div>
+
+          <div class="rounded-2xl bg-orange-50 border border-orange-200 p-6">
+            <h3 class="text-lg font-bold text-orange-900">Myth #2: "We have nothing worth stealing."</h3>
+            <p class="mt-2 text-sm text-orange-800">
+              You have a bank account. You have customer email addresses. You have employee Social Security numbers in your payroll system. You have an email system that can be used to phish your customers and vendors. You have computing power that can be used to mine cryptocurrency. You have data that can be held for ransom.
+            </p>
+            <p class="mt-1 text-sm text-orange-800">
+              And even if you genuinely have nothing worth stealing — which you do not — ransomware does not care. It encrypts everything and demands payment to unlock it. The attacker does not need to find anything valuable. They just need you to need your files back.
+            </p>
+          </div>
+
+          <div class="rounded-2xl bg-red-50 border border-red-200 p-6">
+            <h3 class="text-lg font-bold text-red-900">Myth #3: "Our IT person handles security."</h3>
+            <p class="mt-2 text-sm text-red-800">
+              Your IT person is probably very good at keeping your computers running and your printer connected to the network. That does not mean they are good at security. IT and security are different disciplines. IT is about making things work. Security is about making things harder to break. These goals conflict.
+            </p>
+            <p class="mt-1 text-sm text-red-800">
+              I have done assessments where the MSP had been managing the client's IT for five years and had never: enabled MFA, tested a backup, reviewed third-party app permissions, or conducted a security risk assessment. Not because they were incompetent — because they were IT people, not security people, and their client never asked.
+            </p>
+            <div class="mt-2 rounded-lg bg-white p-3 text-sm">
+              <strong>What to do:</strong> Ask your IT person the 10 questions from our <a href="/blog/msp-security-audit/" class="text-red-700 underline">MSP security audit guide</a>. Their answers will tell you everything you need to know.
+            </div>
+          </div>
+
+          <div class="rounded-2xl bg-orange-50 border border-orange-200 p-6">
+            <h3 class="text-lg font-bold text-orange-900">Myth #4: "We use a Mac, so we are safe."</h3>
+            <p class="mt-2 text-sm text-orange-800">
+              Macs have excellent built-in security. They are not immune to phishing. They are not immune to credential theft. They are not immune to someone tricking you into approving an MFA prompt. The attack vectors that hit small businesses — phishing, credential theft, BEC, MFA fatigue — are platform-independent. They target the human, not the operating system.
+            </p>
+          </div>
+
+          <div class="rounded-2xl bg-red-50 border border-red-200 p-6">
+            <h3 class="text-lg font-bold text-red-900">Myth #5: "We have cyber insurance, so we are covered."</h3>
+            <p class="mt-2 text-sm text-red-800">
+              Cyber insurance is a safety net, not a security strategy. It covers financial losses from a breach — sometimes. It does not cover the 3 AM panic attack. It does not cover the lost clients. It does not cover the months of rebuilding trust. And your policy has exclusions you probably have not read. Many policies now exclude coverage if you did not have MFA enabled or backups in place when the attack happened.
+            </p>
+            <p class="mt-1 text-sm text-red-800">
+              Insurance pays for the cleanup. It does not prevent the mess. And if you lied on your application about your security measures, it might not even do that.
+            </p>
+          </div>
+
+          <div class="rounded-2xl bg-orange-50 border border-orange-200 p-6">
+            <h3 class="text-lg font-bold text-orange-900">Myth #6: "Security is expensive."</h3>
+            <p class="mt-2 text-sm text-orange-800">
+              The most effective security measures are free or nearly free. MFA is free. A password manager has an excellent free tier. Windows Defender is built into Windows. Cloudflare's basic WAF is free. Automatic updates are free. Security awareness training costs your time, not money.
+            </p>
+            <p class="mt-1 text-sm text-orange-800">
+              What is expensive is recovering from a breach that these free measures would have prevented. The average cost for a small business data breach is somewhere between $50,000 and $250,000 depending on the details. <em>That</em> is expensive.
+            </p>
+          </div>
+
+          <div class="rounded-2xl bg-red-50 border border-red-200 p-6">
+            <h3 class="text-lg font-bold text-red-900">Myth #7: "We will deal with security when we get bigger."</h3>
+            <p class="mt-2 text-sm text-red-800">
+              This is like saying "we will buy fire insurance after the fire." Security is not a growth milestone. It is not a phase 2 initiative. It is a basic operational requirement, like having a lock on your front door. The time to implement security is before you need it. And the best time was six months ago. The second best time is today.
+            </p>
+          </div>
+
+        </div>
+
+        <h2>The Truth Nobody Wants to Hear</h2>
+        <p>
+          Every business owner I have talked to after a breach said some version of the same thing: "I knew I should have done something sooner. I just kept putting it off." The breach was not a surprise. The timing was. They knew they had weak spots. They knew they were putting it off. They just assumed they had more time.
+        </p>
+        <p>
+          Attackers do not care about your timeline. They do not care that you were planning to set up MFA next quarter. They do not care that backups were on your to-do list. They care that your email account does not have MFA <em>right now</em>.
+        </p>
+        <p>
+          So here is the uncomfortable question: which of these seven myths are you still believing? And what are you going to do about it today?
+        </p>
+
+      </div>
+
+      <div class="mt-12 rounded-2xl bg-primary-50 p-6">
+        <h2 class="text-lg font-bold text-primary-900">Related Guides</h2>
+        <ul class="mt-3 space-y-2">
+          <li><a href="/blog/cybersecurity-101/" class="text-primary-700 hover:underline font-medium">Cybersecurity 101: Start Here →</a></li>
+          <li><a href="/blog/small-business-security-on-budget/" class="text-primary-700 hover:underline font-medium">$0 Budget Security Stack →</a></li>
+          <li><a href="/blog/data-breach-cost-breakdown/" class="text-primary-700 hover:underline font-medium">What a Breach Actually Costs →</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</BaseLayout>

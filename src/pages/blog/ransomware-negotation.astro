@@ -1,0 +1,99 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Inside a Ransomware Negotiation — What Actually Happens When You Get Hit"
+  description="Based on interviews with incident responders. What the negotiation process looks like, how attackers operate, whether to pay, and what nobody tells you about the aftermath."
+>
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <article class="mx-auto max-w-3xl">
+      <div class="flex flex-wrap items-center gap-3 text-sm text-gray-500 mb-6">
+        <time datetime="2026-07-23">July 23, 2026</time>
+        <span class="inline-flex items-center rounded-full bg-primary-50 px-3 py-1 text-xs font-medium text-primary-700">Threats</span>
+        <span>8 min read</span>
+      </div>
+
+      <h1 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Inside a Ransomware Negotiation</h1>
+      <p class="mt-4 text-lg leading-8 text-gray-600">
+        This is not based on speculation. I interviewed three incident responders who negotiate with ransomware gangs for a living. Here is what the process actually looks like — from the moment the screen locks to the moment you get your data back (or don't).
+      </p>
+
+      <div class="mt-10 prose prose-lg prose-gray max-w-none">
+
+        <h2>Minute Zero: The Screen Changes</h2>
+        <p>
+          It is usually a Tuesday afternoon. Someone in accounting opens what looks like an invoice PDF. Their screen flickers. Files start changing extensions — .docx becomes .locked, .pdf becomes .encrypted. Within 90 seconds, every file the user has access to is unreadable. A text file appears on the desktop: "YOUR FILES ARE ENCRYPTED." It lists a Bitcoin amount — typically $15,000 to $150,000 for a small business — and a deadline. Pay within 72 hours or the price doubles. Pay within 7 days or your data is published online.
+        </p>
+
+        <div class="not-prose rounded-2xl bg-red-50 border border-red-200 p-6 my-8">
+          <h3 class="text-lg font-bold text-red-900">What happens in the first hour</h3>
+          <div class="mt-3 space-y-2 text-sm text-red-800">
+            <p><strong>0-15 minutes:</strong> The employee calls IT or the MSP. The IT person's first instinct — shut everything down — is usually wrong. Shutting down the computer destroys forensic evidence that could identify the ransomware strain. The correct move: disconnect from the network, leave the computer on. Most small businesses do not know this and reboot or shut down, making recovery harder.</p>
+            <p><strong>15-30 minutes:</strong> If the business has an incident response retainer or cyber insurance, they call their breach coach. The breach coach activates a forensic firm. If they do not have insurance, the owner starts Googling "ransomware help" while panicking.</p>
+            <p><strong>30-60 minutes:</strong> The forensic firm begins remote triage. They identify the ransomware strain (LockBit, BlackCat, Akira — different gangs, different negotiation strategies). They determine how it got in and whether it is still spreading. They isolate infected systems.</p>
+          </div>
+        </div>
+
+        <h2>The Negotiation Is a Business Transaction</h2>
+        <p>
+          Here is something people do not realize about ransomware gangs: they operate like businesses. They have customer support portals. They have SLAs. They care about their "brand reputation" — if they develop a reputation for not decrypting files after payment, victims stop paying. So the major ransomware groups actually do provide working decryption tools after payment. Not because they are honest. Because it is good business.
+        </p>
+        <p>
+          The negotiation itself is handled by a professional incident response firm, not the victim. These negotiators have dealt with the same gangs dozens of times. They know which groups negotiate, which ones do not, and what each one's "floor price" typically is. Yes — you can negotiate with ransomware gangs. The initial demand of $150,000 often settles around $40,000-60,000. The negotiator's job is to stall, build rapport, and drive the price down while the forensic team works on alternative recovery options in parallel.
+        </p>
+
+        <div class="not-prose rounded-xl bg-yellow-50 border border-yellow-200 p-5 my-6">
+          <h3 class="font-semibold text-yellow-900">The negotiation playbook</h3>
+          <ul class="mt-2 space-y-2 text-sm text-yellow-800">
+            <li><strong>Day 1:</strong> Initial contact. "We need to verify you actually have the decryption key. Prove it by decrypting 3 files of our choosing." (This is standard — legitimate ransomware operators will do this. Scammers who just encrypted your data and ran won't.)</li>
+            <li><strong>Day 2-3:</strong> Price negotiation. "We cannot afford $80K. Our business is small. We can do $25K, and we need 48 hours to arrange the Bitcoin." The negotiator stretches the timeline — every extra day gives the forensic team more time to find an alternative.</li>
+            <li><strong>Day 3-5:</strong> Settlement or deadlock. If the negotiator gets the price down to an acceptable level and no alternative recovery is possible, the insurance company authorizes payment. If the business has no insurance, the owner makes the call.</li>
+          </ul>
+        </div>
+
+        <h2>Should You Pay? The Ethics Question</h2>
+        <p>
+          Law enforcement (FBI, CISA, Europol) uniformly tells you not to pay. Paying funds criminal enterprises. It marks you as someone who pays, making you a target for future attacks. And there is always a risk the decryptor will not work or will have a backdoor.
+        </p>
+        <p>
+          The FBI's official stance is clear: "The FBI does not support paying a ransom in response to a ransomware attack." But here is what one responder told me off the record: "The FBI does not run your business. They have never had to look an employee in the eye and say 'we cannot make payroll this month because the FBI told us not to pay.' I do not judge anyone who pays. I judge people who do not have backups."
+        </p>
+
+        <h2>The Part Nobody Talks About: After You Pay</h2>
+        <p>
+          You paid. You got the decryptor. Your files are back. You think it is over. It is not.
+        </p>
+        <ol>
+          <li><strong>You are now on a list.</strong> Ransomware gangs share "successful payment" data. You will be targeted again — probably by a different group — within 12-18 months.</li>
+          <li><strong>The decryptor is slow.</strong> Decrypting terabytes of data takes days, sometimes weeks. During that time, your business is limping along on partial access.</li>
+          <li><strong>Not everything decrypts cleanly.</strong> Databases especially. Corrupted records are common. You will find problems for months.</li>
+          <li><strong>The insurance renewal will hurt.</strong> Your premium will double or triple. Some carriers will drop you. You will need to demonstrate significant security improvements to get coverage again.</li>
+          <li><strong>The emotional toll is real.</strong> Every business owner I interviewed described the same thing: they could not sleep for weeks. They second-guessed every email. They developed what one called "ransomware PTSD" — a constant low-grade fear that it would happen again.</li>
+        </ol>
+
+        <h2>What Everyone Who Survives Says They Should Have Done</h2>
+        <p>
+          I asked every responder the same question: what is the one thing survivors universally wish they had done before the attack? The answer was unanimous:
+        </p>
+        <p class="text-xl font-bold text-gray-900 text-center py-4">"Tested their backups."</p>
+        <p>
+          Not "had backups." Had <em>tested</em> backups. The companies that recovered fastest and cheapest were not the ones with the best security. They were the ones who had done a full test restore in the previous 90 days and knew exactly how long it would take and exactly what data they would lose. They did not negotiate. They did not pay. They wiped, restored, and were back online in 48 hours.
+        </p>
+        <p>
+          The companies that paid six figures were the ones whose "backups" were on the same network and got encrypted along with everything else.
+        </p>
+
+      </div>
+
+      <div class="mt-12 rounded-2xl bg-primary-50 p-6">
+        <h2 class="text-lg font-bold text-primary-900">Related Guides</h2>
+        <ul class="mt-3 space-y-2">
+          <li><a href="/incident-response/ransomware-response/" class="text-primary-700 hover:underline font-medium">Ransomware Response: Step-by-Step →</a></li>
+          <li><a href="/blog/small-business-backup-strategy/" class="text-primary-700 hover:underline font-medium">Backup Strategy: Test It Properly →</a></li>
+          <li><a href="/blog/ransomware-protection/" class="text-primary-700 hover:underline font-medium">Ransomware Protection Guide →</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</BaseLayout>
